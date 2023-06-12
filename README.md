@@ -2,6 +2,28 @@
 
 web site for geomatical test with laravel
 
-started 0612
 
-added seri-dev
+#INSTALLING
+
+```
+composer install
+```
+
+it maight be installed laravel 10x and PHP 8.2
+
+when installing finished, set .env file like this.
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=<DATABASENAME>
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+And then run this code to migrate.
+
+```
+php artisan migrate
+```
