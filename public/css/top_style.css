@@ -89,6 +89,9 @@ header {
 .customer{
     display: none;
 }
+.spbtn{
+    display: none;
+}
 @media only screen and (max-width:1330px) {
     .top_link .faq{
         display: none;
@@ -113,7 +116,24 @@ header {
     .customer{
         display: block;
     }
-
+}
+@media only screen and (max-width:768px) {
+    .pcbtn .button{
+        display: none;
+    }
+    .spbtn .button{
+        display: inline;
+        color: black;
+        font-size: 15px;
+        margin: 10px auto;
+    }
+    .spbtn{
+        background: none;
+        display: flex;
+    }
+    .spbtn .logout{
+        display: none;
+    }
 }
 /* ----------hamberger------------- */
 #toggle {
@@ -162,7 +182,7 @@ header {
 
 .menu_items {
     width: 360px;
-    margin: 17px;
+    margin: 10px;
     margin-right: 190px;
 }
 
@@ -184,7 +204,7 @@ nav a:before {
 }
 
 nav a:hover {
-    color: red;
+    color: antiquewhite;
 }
 
 nav a:hover:before {
@@ -194,6 +214,26 @@ nav a:hover:before {
 #toggle:checked+.hamburger+.nav {
     top: 0;
     transform: scale(1);
+}
+@media only screen and (max-width:768px) {
+    .nav-wrapper {
+        padding-top: 60px;
+    }
+    .wrapper-items {
+        width: 100%;
+    }
+    .menu_items {
+        margin: 17px;
+        margin-left: 80px;
+    }
+    nav a {
+        margin-top: 34px;
+        font-size: 20px;
+    }
+    nav .menu_items img{
+        width: 20px;
+        height: auto;
+    }
 }
 /* ------------mainvisual-------- */
 .mainvisual {
@@ -206,6 +246,7 @@ nav a:hover:before {
 }
 .top_screen img{
     width: 100%;
+    object-fit: cover;
     height: calc(100vh - 170px);
 }
 .top_left{
@@ -240,12 +281,12 @@ nav a:hover:before {
     color: white;
     padding: 27px;
     text-align: center;
-    border-top-left-radius: 19px;
-    border-top-right-radius: 19px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 .sch-content{
     width: 100%;
-    height: calc(100vh - 380px);
+    height: calc(100vh - 415px);
     overflow-y: scroll;
 }
 .sch_footer{
@@ -261,10 +302,17 @@ nav a:hover:before {
     color: white;
     padding: 32px;
     text-align: center;
-    border-radius: 0 0 19px 19px;
+    border-radius: 0 0 17px 17px;
     margin: 0;
 }
-@media only screen and (max-width:1024px) {
+.test_schedul-modal{
+    display: none;
+}
+.top_right__close {
+    display: none;
+}
+@media only screen and (max-width:1330px) {
+    
     .top_left{
         width: 100%;
         position: relative;
@@ -274,6 +322,7 @@ nav a:hover:before {
         height: auto;
     }
     .top_right{
+        width: 300px;
         position: absolute;
         right: 0;
         padding-right: 5;
@@ -289,6 +338,90 @@ nav a:hover:before {
     }
     .top_screen img{
         height: calc(100vh - 100px);
+    }
+}
+@media only screen and (max-width:768px) {
+    .sch_title{
+        padding: 10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .list_footer{
+        padding: 10px;
+        border-radius: 0 0 15px 15px;
+
+    }
+    .top_right {
+        visibility: hidden;
+        width: 100%;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .4s;
+      }
+    .test_schedul{
+        height: calc(100vh - 150px);
+    }
+    .sch-content{
+        height: calc(100vh - 255px);
+    }
+    .top_right:target {
+    visibility: visible;
+    opacity: 1;
+    }
+    .top_right__close {
+        display: inline;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #585858;
+        text-decoration: none;
+        z-index: 99999;
+    }
+    .test_schedul-modal{
+        display: inline;
+        position: absolute;
+        top: 100px;
+        right: 20px;
+    }
+    .test_schedul-modal a {
+        padding: 20px;
+        background-color: #13AE6A;
+        display: inline-block;
+        color: white;
+        border-radius: 50%;
+        font-size: 25px;
+        text-align: center;
+    }
+    .test_schedul-modal a:hover {
+        background-color: white;
+        border: 1px solid #13AE6A;
+        color: #13AE6A;
+    }
+    .test_schedul-modal a:visited {
+        display: none;
+    }
+    
+    .top_logo img, .menu img{
+        height: 50px;
+        width: auto;
+    }
+    .top_logo{
+        margin: 0 20px;
+    }
+    header{
+        height: 50px;
+    }
+    .top_screen img{
+        height: calc(100vh - 50px);
+    }
+    .top_screen{
+        padding-top: 50px;
     }
 }
 /* --------------promotion--------------   */
@@ -339,6 +472,18 @@ nav a:hover:before {
 .area_img{
     background-color: white;
     position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.area_img img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.area_img:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
 }
 .area_detail p{
     margin: 0;
@@ -360,6 +505,7 @@ nav a:hover:before {
     padding: 22px 15px;
     font-size: 35px;
     margin: 0;
+    z-index: 99;
 }
 .to_area-list{
     display: flex;
@@ -382,6 +528,41 @@ nav a:hover:before {
         padding: 20px 40px;
     }
 }
+@media only screen and (max-width:768px) {
+    .to_area-list-btn{
+        padding: 20px 40px;
+        font-size: 20px;
+    }
+    .test_area-title{
+        font-size: 30px;
+    }
+    .test_area-part{
+        padding: 23px 25px;
+        margin: 10px;
+    }
+    .area_detail{
+        background-color: white;
+        padding: 20px;
+        padding-bottom: 70px;
+    }
+    .area_detail p{
+        font-size: 15px;
+    }
+    .area_detail-title{
+        font-size: 20px !important;
+    }
+    .area_img img{
+        width: 100%;
+        margin: 0 auto;
+        
+    }
+    .area_name{
+        top: 10px; left: 15px;
+        font-size: 15px !important;
+        padding: 22px 15px;
+        margin: 0;
+    }
+}
 /* ---------SNSmedia----------- */
 .sns_media{
     max-width: 900px;
@@ -400,9 +581,32 @@ nav a:hover:before {
     justify-content: center;
     padding-top: 15px;
 }
+.sns-items-img{
+    overflow: hidden;
+    border-radius: 20px;
+}
 .sns-items-img img{
     width: 245px;
     padding: 10px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.sns-items-img:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+@media only screen and (max-width:768px) {
+    .sns-items-img img{
+        width: 130px;
+    }
+    .sns-title{
+        font-size: 30px!important;
+    }
+    .sns-items-img{
+        overflow: visible;
+    }
 }
 /* ----------search_by_ganre----------- */
 .search_by_ganre{
@@ -432,6 +636,20 @@ nav a:hover:before {
     margin: 0 20px;
     margin-bottom: 40px;
 }
+.search_ganre-btns-btn:hover {
+    background-color: #13AE6A;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+@media only screen and (max-width:768px) {
+    .search_ganre-btns{
+        justify-content: center;
+    }
+    .search_ganre-title{
+        font-size: 30px!important;
+    }
+
+}
 /* ------------content--------------- */
 .content{
     max-width: 1240px;
@@ -448,9 +666,28 @@ nav a:hover:before {
     display: flex;
     justify-content: center;
 }
+.content-items-left img, .content-items-right img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.content-items-left:hover img, .content-items-right:hover img {
+	opacity: .5;
+}
 @media only screen and (max-width:1440px) {
     .content-items img{
         width: 100%;
+    }
+}
+@media only screen and (max-width:768px) {
+    .content-items img{
+        width: 100%;
+    }
+    .content-items{
+        flex-wrap: wrap;
+    }
+    .content-title{
+        font-size: 30px!important;
     }
 }
 /* ---------footer------------ */
@@ -525,4 +762,18 @@ footer{
 }
 #back:hover{
     cursor: pointer;
+}
+@media only screen and (max-width:768px) {
+    footer{
+        font-size: 20px;
+    }
+    .footer-btns{
+        width: 70%;
+    }
+    .footer_logo-img{
+        width: 50%;
+    }
+    .footer_logo{
+        margin-top: 10px;
+    }
 }
