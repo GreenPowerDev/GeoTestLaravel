@@ -145,20 +145,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <link rel="stylesheet" href="{{asset('public/css/button_hover_style.scss')}}">
-    <link rel="stylesheet" href="{{asset('public/css/top_style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/button_hover_style.scss')}}">
+    <link rel="stylesheet" href="{{asset('css/top_style.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Yu Gothic' rel='stylesheet'>
 </head>
 <body>
     <header>
         <div class="header">
             <div class="top_logo">
-                <img src="{{asset('public/img/top/mainvisual/header/top_logo.png')}}" alt="">
+                <img src="{{asset('img/top/mainvisual/header/top_logo.png')}}" alt="">
             </div>
             <div class="top_buttons pcbtn">
-                <a href="#" class="button register">会員登録</a>
-                <a href="#" class="button login"> ログイン</a>
-                <a href="#" class="button logout"> ログアウト</a>
+                <a href="{{route('register')}}" class="button register">会員登録</a>
+                <a href="{{route('login')}}" class="button login"> ログイン</a>
+                <a href="{{route('logout')}}" class="button logout"> ログアウト</a>
             </div>
             <div class="top_link">
                 <div class="customer_info">
@@ -170,23 +170,23 @@
                 <div class="menu ">
                     <input id="toggle" type="checkbox">
                     <label for="toggle" class="hamburger">
-                        <img src="{{asset('public/img/top/mainvisual/header/top_menu.png')}}" alt="">
+                        <img src="{{asset('img/top/mainvisual/header/top_menu.png')}}" alt="">
                     </label>
                     <div class="nav">
                         <div class="nav-wrapper">
                             <nav>
                                 <div class="wrapper-items">
                                     <div class="menu_items">
-                                        <img src="{{asset('public/img/top/mainvisual/header/top_go_icon.png')}}" alt="">
+                                        <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                         <a href="">お問合せ</a></div>
                                     <div class="menu_items">
-                                        <img src="{{asset('public/img/top/mainvisual/header/top_go_icon.png')}}" alt="">
+                                        <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                         <a href="">Q&A</a></div>
                                     <div class="menu_items">
-                                        <img src="{{asset('public/img/top/mainvisual/header/top_go_icon.png')}}" alt="">
+                                        <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                         <a href="">サイトからのお知らせ</a></div>
                                     <div class="menu_items">
-                                        <img src="{{asset('public/img/top/mainvisual/header/top_go_icon.png')}}" alt="">
+                                        <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                         <a href="">このサイトについて</a></div>
                                     <div class="menu_items">
                                         <a href="">サイトポリシー</a></div>
@@ -196,9 +196,9 @@
                                         <a href="">お客様情報</a>
                                     </div>
                                     <div class="top_buttons spbtn">
-                                        <a href="#" class="button register">会員登録</a>
-                                        <a href="#" class="button login"> ログイン</a>
-                                        <a href="#" class="button logout"> ログアウト</a>
+                                        <a href="{{route('register')}}" class="button register">会員登録</a>
+                                        <a href="{{route('login')}}" class="button login"> ログイン</a>
+                                        <a href="{{route('logout')}}" class="button logout"> ログアウト</a>
                                     </div>
                                 </div>
                             </nav>
@@ -211,7 +211,7 @@
     <section class="mainvisual">
         <div class="top_screen">
             <div class="top_left">
-                <img src="{{asset('public/img/top/mainvisual/top_background.png')}}" alt="">
+                <img src="{{asset('img/top/mainvisual/top_background.png')}}" alt="">
             </div>
             <div class="test_schedul-modal">
                 <a href="#modal-btn" class="schedul_btn"><p style="margin:0; padding:0;">情報</p> </a>
@@ -273,7 +273,7 @@
                 <a href="#">
                     <div class="area_img">
                         <p class="area_name">福<br>岡</p>
-                        <img src="{{asset('public/img/top/test_area/top_fukuoka.png')}}" alt="">
+                        <img src="{{asset('img/top/test_area/top_fukuoka.png')}}" alt="">
                     </div>
                     <div class="area_detail">
                         <p class="area_detail-title">最近の開催試験</p>
@@ -288,7 +288,7 @@
                 <a href="#">
                     <div class="area_img">
                         <p class="area_name">香<br>川</p>
-                        <img src="{{asset('public/img/top/test_area/top_kagawa.png')}}" alt="">
+                        <img src="{{asset('img/top/test_area/top_kagawa.png')}}" alt="">
                     </div>
                     <div class="area_detail">
                         <p class="area_detail-title">最近の開催試験</p>
@@ -303,7 +303,7 @@
                 <a href="#">
                     <div class="area_img">
                         <p class="area_name">広<br>島</p>
-                        <img src="{{asset('public/img/top/test_area/top_hiroshima.png')}}" alt="">
+                        <img src="{{asset('img/top/test_area/top_hiroshima.png')}}" alt="">
                     </div>
                     <div class="area_detail">
                         <p class="area_detail-title">最近の開催試験</p>
@@ -318,7 +318,7 @@
                 <a href="#">
                     <div class="area_img">
                         <p class="area_name">長<br>野</p>
-                        <img src="{{asset('public/img/top/test_area/top_nagano.png')}}" alt="">
+                        <img src="{{asset('img/top/test_area/top_nagano.png')}}" alt="">
                     </div>
                     <div class="area_detail">
                         <p class="area_detail-title">最近の開催試験</p>
@@ -340,22 +340,22 @@
         <p class="sns-title">SNSメディア</p>
         <div class="sns-items">
             <div class="sns-items-img">
-                <a href="#"><img src="{{asset('public/img/top/sns_media/top_spotify.png')}}" alt=""></a>
+                <a href="#"><img src="{{asset('img/top/sns_media/top_spotify.png')}}" alt=""></a>
             </div>
             <div class="sns-items-img">
-                <a href="#"><img src="{{asset('public/img/top/sns_media/top_youtube.png')}}" alt=""></a>
+                <a href="#"><img src="{{asset('img/top/sns_media/top_youtube.png')}}" alt=""></a>
             </div>
             <div class="sns-items-img">
-                <a href="#"><img src="{{asset('public/img/top/sns_media/top_twiter.png')}}" alt=""></a>
+                <a href="#"><img src="{{asset('img/top/sns_media/top_twiter.png')}}" alt=""></a>
             </div>
             <div class="sns-items-img">
-                <a href="#"><img src="{{asset('public/img/top/sns_media/top_facebook.png')}}" alt=""></a>
+                <a href="#"><img src="{{asset('img/top/sns_media/top_facebook.png')}}" alt=""></a>
             </div>
             <div class="sns-items-img">
-                <a href="#"><img src="{{asset('public/img/top/sns_media/top_instagram.png')}}" alt=""></a>
+                <a href="#"><img src="{{asset('img/top/sns_media/top_instagram.png')}}" alt=""></a>
             </div>
             <div class="sns-items-img">
-                <a href="#"><img src="{{asset('public/img/top/sns_media/top_tiktok.png')}}" alt=""></a>
+                <a href="#"><img src="{{asset('img/top/sns_media/top_tiktok.png')}}" alt=""></a>
             </div>
         </div>
     </section>
@@ -386,30 +386,30 @@
     <section class="content">
         <p class="content-title">コンテンツ</p>
         <div class="content-items">
-            <div class="content-items-left"><a href="#"><img src="{{asset('public/img/top/content/top_about.png')}}" alt=""></a>
+            <div class="content-items-left"><a href="#"><img src="{{asset('img/top/content/top_about.png')}}" alt=""></a>
             </div>
-            <div class="content-items-right"><a href="#"><img src="{{asset('public/img/top/content/top_method.png')}}" alt=""></a></div>
+            <div class="content-items-right"><a href="#"><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
         </div>
     </section>
     <footer>
         <div class="footer">
             <div class="footer_logo">
                 <a id="back">
-                    <img class="footer_logo-img" src="{{asset('public/img/top/top_footer-logo.png')}}" alt="">
+                    <img class="footer_logo-img" src="{{asset('img/top/top_footer-logo.png')}}" alt="">
                 </a>
             </div>
             <div class="footer-question">
                 <div class="footer-btns">
                     <div class="inqury">
                         <div class="footer_items">
-                            <img src="{{asset('public/img/top/mainvisual/header/top_go_icon.png')}}" alt="">
+                            <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                             <a href="" >お問合せ</a></div>
                         <div class="footer_items">
-                            <img src="{{asset('public/img/top/mainvisual/header/top_go_icon.png')}}" alt="">
+                            <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                             <a href="">サイトからのお知らせ</a></div>
                     </div>
                     <div class="footer_items">
-                        <img src="{{asset('public/img/top/mainvisual/header/top_go_icon.png')}}" alt="">
+                        <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                         <a href="">このサイトについて</a></div>
                     <div class="footer_items" style="padding-left: 50px;">
                         <a href="">サイトポリシー</a></div>
@@ -424,6 +424,6 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{{asset('public/js/top_scroll_tool.js')}}"></script>
+    <script src="{{asset('js/top_scroll_tool.js')}}"></script>
 </body>
 </html>
