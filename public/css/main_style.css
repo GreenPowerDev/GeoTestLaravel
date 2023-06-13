@@ -152,6 +152,13 @@ h1 {
 .agileits-top {
   padding: 3em;
   min-width: 500px;
+  position: relative;
+}
+.cross-home{
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
@@ -270,7 +277,7 @@ input[type="submit"]:hover {
 }
 
 input.checkbox {
-  background: #FFFFFF;
+  background: #13AE6A;
   cursor: pointer;
   width: 1.2em;
   height: 1.2em;

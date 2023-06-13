@@ -8,7 +8,7 @@
 <!-- Custom Theme files -->
 
 <!-- //Custom Theme files -->
-<link href="{{asset('public/css/main_style.css')}}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{asset('css/main_style.css')}}" rel="stylesheet" type="text/css" media="all" />
 <!-- web font -->
 
 <!-- //web font -->
@@ -20,6 +20,7 @@
             <h1>新規登録</h1>
             <div class="main-agileinfo">
                 <div class="agileits-top">
+                    <a href="{{route('welcome')}}" class="cross-home">&cross;</a>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
