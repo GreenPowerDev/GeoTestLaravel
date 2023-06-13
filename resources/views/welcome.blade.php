@@ -145,6 +145,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
+    <link rel="stylesheet" href="{{asset('public/css/button_hover_style.scss')}}">
     <link rel="stylesheet" href="{{asset('public/css/top_style.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Yu Gothic' rel='stylesheet'>
 </head>
@@ -154,7 +155,7 @@
             <div class="top_logo">
                 <img src="{{asset('public/img/top/mainvisual/header/top_logo.png')}}" alt="">
             </div>
-            <div class="top_buttons">
+            <div class="top_buttons pcbtn">
                 <a href="#" class="button register">会員登録</a>
                 <a href="#" class="button login"> ログイン</a>
                 <a href="#" class="button logout"> ログアウト</a>
@@ -192,7 +193,13 @@
                                     <div class="menu_items">
                                         <a href="">プライバシーポリシー</a></div>
                                     <div class="menu_items customer">
-                                        <a href="">お客様情報</a></div>
+                                        <a href="">お客様情報</a>
+                                    </div>
+                                    <div class="top_buttons spbtn">
+                                        <a href="#" class="button register">会員登録</a>
+                                        <a href="#" class="button login"> ログイン</a>
+                                        <a href="#" class="button logout"> ログアウト</a>
+                                    </div>
                                 </div>
                             </nav>
                         </div>
@@ -206,8 +213,12 @@
             <div class="top_left">
                 <img src="{{asset('public/img/top/mainvisual/top_background.png')}}" alt="">
             </div>
-            <div class="top_right">
+            <div class="test_schedul-modal">
+                <a href="#modal-btn" class="schedul_btn"><p style="margin:0; padding:0;">情報</p> </a>
+             </div>
+            <div id="modal-btn" class="top_right" >
                 <div class="test_schedul">
+                    <a href="#" class="top_right__close">&times;</a>          
                     <div class="sch_title">
                         インフォメーション
                     </div>
@@ -245,7 +256,7 @@
                     </div>
                     <div class="sch_footer">
                         <a href="#"><p class="list_footer">一覧を見る</p></a>
-                    </div>            
+                    </div>  
                 </div>
             </div>
         </div>
@@ -364,7 +375,7 @@
                     <a href="#" ><p class="search_ganre-btns-btn">歴史</p></a>
                 </div>
                 <div >
-                    <a href="#" ><p class="search_ganre-btns-btn">産業</p></a>
+                    <a class="btn-11" href="#" ><p class="search_ganre-btns-btn">産業</p></a>
                 </div>
             </div>
             <div >
@@ -411,6 +422,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{asset('public/js/top_scroll_tool.js')}}"></script>
 </body>
