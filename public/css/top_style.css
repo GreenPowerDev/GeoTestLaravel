@@ -584,6 +584,9 @@ nav a:hover:before {
 .sns-items-img{
     overflow: hidden;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .sns-items-img img{
     width: 245px;
@@ -599,13 +602,19 @@ nav a:hover:before {
 }
 @media only screen and (max-width:768px) {
     .sns-items-img img{
-        width: 130px;
+        width: 200px;
     }
     .sns-title{
         font-size: 30px!important;
     }
     .sns-items-img{
         overflow: visible;
+        width: 50%;
+    }
+}
+@media only screen and (max-width:450px) {
+    .sns-items-img img{
+        width: 150px;
     }
 }
 /* ----------search_by_ganre----------- */
