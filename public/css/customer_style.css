@@ -1,0 +1,48 @@
+.customer_inforamtion{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-top: 170px;
+}
+.title{
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 65px;
+}
+.customer_title{
+    padding-top: 50px;
+}
+.customer_data{
+    width: 100%;
+    padding-top: 20px;
+    font-size: 20px;
+}
+.recent, .reserve, .pass{
+    margin-top: 130px;
+}
+.recent_detail, .reserve_detail, .pass_detail{
+    width: 100%;
+    border: 1px solid #13AE6A;
+    padding: 43px 53px;
+    height: 381px;
+    overflow-y: scroll;
+}
+.reserve_detail, .pass_detail{
+    background-color: #CEFFEA;
+}
+.recent_detail_content, .reserve_detail_content, .pass_detail_content{
+    padding-bottom: 38px;
+}
+.d-flex-left{
+    display: flex;
+    justify-content: left;
+}
+.d-flex-left p{
+    padding-right: 50px;
+    margin: 0;
+}
+@media only screen and (max-width:1440px) {
+    .customer_inforamtion{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
