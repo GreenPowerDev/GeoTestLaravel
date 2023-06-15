@@ -9,12 +9,16 @@
     line-height: 65px;
 }
 .customer_title{
-    padding-top: 50px;
+    /* padding-top: 20px; */
+    margin-top: 20px;
 }
 .customer_data{
     width: 100%;
     padding-top: 20px;
     font-size: 20px;
+}
+.customer_data p{
+    margin: 0;
 }
 .recent, .reserve, .pass{
     margin-top: 130px;
@@ -44,5 +48,24 @@
     .customer_inforamtion{
         width: 90%;
         margin: 0 auto;
+    }
+    .recent, .reserve, .pass{
+        margin-top: 50px;
+    }
+}
+@media only screen and (max-width:1024px) {
+    .d-flex-left p{
+        font-size: 15px;
+        padding-right: 20px;
+    }
+}
+@media only screen and (max-width:768px) {
+    .recent_detail_time, .reserve_detail_time, .pass_detail_time{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width:450px) {
+    .recent_detail, .pass_detail, .reserve_detail{
+        padding: 30px 20px;
     }
 }

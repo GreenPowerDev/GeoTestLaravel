@@ -17,8 +17,8 @@ use App\Http\Controllers\VerificationController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return view('customer');
+})->name('customer');
 
 Auth::routes(['verify' => true]);
 
