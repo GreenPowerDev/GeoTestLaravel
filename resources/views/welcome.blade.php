@@ -156,7 +156,7 @@
                 <img src="{{asset('img/top/mainvisual/header/top_logo.png')}}" alt="">
             </div>
             <div class="top_buttons pcbtn">
-                <a href="{{route('register')}}" class="button register">会員登録</a>
+                <a href="{{route('verify.send')}}" class="button register">会員登録</a>
                 <a href="{{route('login')}}" class="button login"> ログイン</a>
                 <a href="{{route('logout')}}" class="button logout"> ログアウト</a>
             </div>
@@ -196,7 +196,7 @@
                                         <a href="">お客様情報</a>
                                     </div>
                                     <div class="top_buttons spbtn">
-                                        <a href="{{route('register')}}" class="button register">会員登録</a>
+                                        <a href="{{route('verify.send')}}" class="button register">会員登録</a>
                                         <a href="{{route('login')}}" class="button login"> ログイン</a>
                                         <a href="{{route('logout')}}" class="button logout"> ログアウト</a>
                                     </div>
