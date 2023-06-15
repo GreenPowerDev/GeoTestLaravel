@@ -46,7 +46,7 @@
     <div class="m-container">
 	<!-- main -->
         <div class="main-w3layouts wrapper">
-            <h1>パスワード確認</h1>
+            <h1>確認メール送信</h1>
             <div class="main-agileinfo">
                 <div class="agileits-top">
                     @if (session('status'))
@@ -54,7 +54,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <form method="POST" action="{{ route('verification.resend') }}">
+                    <form method="POST" action="{{ route('verifyMailSend') }}">
                         @csrf
                         <input id="email" type="email" class="text email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">
                         @error('email')
