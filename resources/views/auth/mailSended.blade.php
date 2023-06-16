@@ -49,27 +49,34 @@
             <h1>確認メール送信</h1>
             <div class="main-agileinfo">
                 <div class="agileits-top">
-                    <a href="{{route('welcome')}}" class="cross-home">&cross;</a>
-                    @if (session('status'))
-                    <div class="" role="alert">
-                        {{ session('status') }}
+                    <p>メールアドレスに確認メールを送信しました。</p>
+                    <p>送信した確認メールで新規登録を進めてください。</p>
+                    <div class="btn-href">
+                        <a href="{{route('_verifyMailSend')}}"> メール再送信</a>
                     </div>
-                    @endif
-                    <form method="POST" action="{{ route('verifyMailSend') }}">
-                        @csrf
-                        <input id="email" type="email" class="text email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                        <input type="submit" value="確認メール送信">
-                    </form>
-                    <p><a href="{{route('_login')}}"> Login画面に。。。</a></p>
                 </div>
             </div>
         </div>
 	<!-- //main -->
     </div>
 </body>
+<style>
+    .agileits-top p{
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    a{
+        font-weight: 700;
+        font-size: 1rem;
+        color: #13ae6a;
+    }
+    .btn-href{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding: 1rem 0;
+        width: 100%;
+        background: white;
+        text-align: center;
+    }
+</style>
 </html>

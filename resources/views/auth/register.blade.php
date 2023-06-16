@@ -30,9 +30,8 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                        <input id="current_email" type="email" class="text email" name="email" placeholder="メールアドレス" value="{{ isset($email) ? $email : old('email') }}" readonly autocomplete="email">
 
-
-                        <input id="email" type="email" class="text email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -47,6 +46,7 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                        <input id="email" type="hidden" class="text email" name="email" placeholder="メールアドレス" value="{{ isset($email) ? $email : old('email') }}" required autocomplete="email">
 
 
                         <input id="password-confirm" type="password" class="text w3lpass" placeholder="パスワード確認" name="password_confirmation" required autocomplete="new-password">
@@ -61,7 +61,7 @@
                         </div>
                         <input type="submit" value="登録">
                     </form>
-                    <p><a href="{{route('login')}}"> Login画面に。。。</a></p>
+                    <p><a href="{{route('_login')}}"> Login画面に。。。</a></p>
                 </div>
             </div>
         </div>

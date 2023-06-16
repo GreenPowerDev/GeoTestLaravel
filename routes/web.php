@@ -38,13 +38,4 @@ Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend']
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');
 Route::get('/email/verify/{hash}', [VerificationController::class, 'getVerifyMail'])->name('getVerifyMail');
 
-Route::group(['middleware' => ['auth']], function() {
-
-    /**
-    * Verification Routes
-    */
-    Route::get('/email/verify', [VerificationController::class,'show'])->name('verification.notice');
-    Route::get('/email/verify/{id}/{hash}', [VerificationController::class,'verify'])->name('verification.verify')->middleware(['signed']);
-    Route::post('/email/resend', [VerificationController::class,'resend'])->name('verification.resend');
-
-});
+Route::get('/mailSended', [VerificationController::class, 'mailSended'])->name('mailSended');
