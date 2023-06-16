@@ -6,18 +6,17 @@
     </head>
 
     <body>
-        <p>Dear Client,</p>
         <p>
-            Please click the button below to verify your email address.
+            ここで登録を進めてください。
         </p>
 
         
         <a href="{{ $actionUrl }}" class="button">{{$actionText}}</a>
         
-        <p>If you did not create an account, no further action is required.</p>
+        <p>アカウントを作成していない場合は、それ以上のアクションは必要ありません。</p>
 
         <p>
-            Best regards, <br>
+            よろしくお願いします、 <br>
             
             {{ config('app.name')}}
         </p>
@@ -25,12 +24,11 @@
         <p>
             <hr>
             <span class="break-all">
-            <strong>If you’re having trouble clicking the link, copy and paste the URL below into your web browser:</strong><br/>
+            <strong>リンクをクリックできない場合は、以下の URL をコピーして Web ブラウザに貼り付けてください。</strong><br/>
             <em>{{$actionUrl}}</em>
         </p>
 
         
-
     </body>
 
 </html>

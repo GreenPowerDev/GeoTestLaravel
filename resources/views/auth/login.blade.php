@@ -47,15 +47,16 @@
                     </form>
 
                         @if (Route::has('password.request'))
-                            <p>
+                            
                                 <a class="small" href="{{ route('password.request') }}">
                                     {{ __('パスワードをお忘れですか?') }}
                                 </a>
 
                         @endif
 
-                        @if (Route::has('register'))
-                                <a class="small" href="{{ route('register') }}">{{ __('ユーザー登録!') }}</a>
+                        @if (Route::has('_verifyMailSend'))
+                            <p>
+                                <a class="small" href="{{ route('_verifyMailSend') }}">{{ __('ユーザー登録!') }}</a>
                             </p>
                         @endif
                 </div>

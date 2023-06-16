@@ -17,8 +17,11 @@
                 <img src="{{asset('img/top/mainvisual/header/top_logo.png')}}" alt="">
             </div>
             <div class="top_buttons pcbtn">
-                <a href="{{route('_verifyMailSend')}}" class="button register">会員登録</a>
-                <a href="{{route('_login')}}" class="button login"> ログイン</a>
+                {{-- <a href="{{route('logout')}}" class="button logout"> ログアウト</a> --}}
+                <a class="button logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
             <div class="top_link">
                 <div class="customer_info">
@@ -56,8 +59,8 @@
                                         <a href="">お客様情報</a>
                                     </div>
                                     <div class="top_buttons spbtn">
-                                        <a href="{{route('_verifyMailSend')}}" class="button register">会員登録</a>
-                                        <a href="{{route('_login')}}" class="button login"> ログイン</a>
+                                        {{-- <a href="{{route('logout')}}" class="button logout"> ログアウト</a> --}}
+                                        <a class="button logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
                                     </div>
                                 </div>
                             </nav>

@@ -54,7 +54,7 @@ header {
     background-color: white;
 }
 .top_buttons .logout{
-    display: none;
+
 }
 .top_buttons .button:hover {
     background-color: #13AE6A;
@@ -139,7 +139,7 @@ header {
         display: flex;
     }
     .spbtn .logout{
-        display: none;
+
     }
 }
 /* ----------hamberger------------- */
