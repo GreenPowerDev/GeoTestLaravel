@@ -32,7 +32,7 @@ class VerificationController extends Controller
             'actionText' => $actionText,
             'actionUrl' => $actionUrl,
         ];
-        //Mail::to($email)->send(new VerifyMail($mailData));
+        Mail::to($email)->send(new VerifyMail($mailData));
         return ;
     }
     public function mailSended(){
