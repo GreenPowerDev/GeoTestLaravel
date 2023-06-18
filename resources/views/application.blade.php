@@ -34,6 +34,6 @@
         </div>
     </section>
     <div class="to_pay">
-        <a href="#" class="to_pay_btn">決済画面へ</a>
+        <a href="{{route('payment.apply', ['id'=>$test->id])}}" class="to_pay_btn">決済画面へ</a>
     </div>    
 @endsection

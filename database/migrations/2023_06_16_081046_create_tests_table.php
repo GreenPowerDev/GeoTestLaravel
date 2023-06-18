@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('ganre');
             $table->integer('level_id');
             $table->integer('province_id');
+            $table->integer('price');
             $table->timestamps();
         });
     }
