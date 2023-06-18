@@ -15,6 +15,7 @@
         </div>
     </section>
     <section class="prefecture_detail">
+        @if(!$tests->isEmpty())
         <p class="predetail_title">最近の開催試験</p>
         
 
@@ -24,7 +25,7 @@
                 <p class="ganre_date">開催日：{{$tests[0]->get_test_date()}}</p>
                 <p class="ganre_time">開催時間：{{$tests[0]->get_begin_time()}}～{{$tests[0]->get_end_time()}}</p>
                 <p class="ganre_level">レベル：{{$tests[0]->get_level_name()}}</p>
-                <p class="ganre_level">ジャンル：{{$tests[0]->ganre}}</p>
+                <p class="ganre_level">ジャンル：{{$tests[0]->get_ganre_name()}}</p>
             </div>
             <div class="ganre_apply">
                 <a href="{{route('test.apply',['id'=>$tests[0]->id])}}" class="ganre_apply-btn">申し込む</a>
@@ -45,7 +46,7 @@
                     <p class="ganre_date">開催日：{{$test->get_test_date()}}</p>
                     <p class="ganre_time">開催時間：{{$test->get_begin_time()}}～{{$test->get_end_time()}}</p>
                     <p class="ganre_level">レベル：{{$test->get_level_name()}}</p>
-                    <p class="ganre_level">ジャンル：{{$test->ganre}}</p>
+                    <p class="ganre_level">ジャンル：{{$test->get_ganre_name()}}</p>
                 </div>
                 <div class="ganre_apply">
                     <a href="{{route('test.apply',['id'=>$test->id])}}" class="ganre_apply-btn">申し込む</a>
@@ -55,6 +56,9 @@
         @endforeach
 
         </div>
+        @else
+        <p class="predetail_title">テストはありません。</p>
+        @endif
 
     </section>
     <script>

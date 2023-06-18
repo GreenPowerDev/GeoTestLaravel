@@ -13,6 +13,7 @@ class ProvinceController extends Controller
     public function index_selected($id){
         $province = Province::find($id);
         $tests = Test::where('test_date', '>=', Carbon::now())
+            ->where('province_id', $id)
             ->orderBy('test_date')
             ->get();
         return view('prefecture', [

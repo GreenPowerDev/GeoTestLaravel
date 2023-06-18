@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             ProvinceSeeder::class,
             LevelSeeder::class,
             TestSeeder::class,
+            GanreSeeder::class,
     	]);
         
     }

@@ -15,7 +15,7 @@ class Test extends Model
         'test_data',
         'begin_time',
         'end_time',
-        'ganre',
+        'ganre_id',
         'level_id',
         'province_id',
         'price',
@@ -25,6 +25,11 @@ class Test extends Model
     {
         return $this->belongsTo('App\Models\Level','level_id','id');
     }
+    public function ganre()
+    {
+        return $this->belongsTo('App\Models\Ganre','ganre_id','id');
+    }
+
 
     public function get_level_name()
     {
@@ -43,6 +48,11 @@ class Test extends Model
     public function get_end_time(){
         $end_time = Carbon::parse($this->end_time);
         return $end_time->format('H時i分');
+    }
+
+    public function get_ganre_name(){
+        
+        return $this->ganre->ganre_name;
     }
     // public function get_province_name()
     // {

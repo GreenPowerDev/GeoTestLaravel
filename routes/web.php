@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\TestPaymantController;
 
 
 /*
@@ -40,6 +41,8 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected'])->name('prefecture.select');
 
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
+
+Route::get('payment/apply/{id}', [TestPaymantController::class, 'payment_apply'])->name('payment.apply');
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');
