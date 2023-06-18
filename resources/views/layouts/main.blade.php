@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <link rel="stylesheet" href="{{asset('css/button_hover_style.scss')}}">
     <link rel="stylesheet" href="{{asset('css/top_style.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Yu Gothic' rel='stylesheet'>
 </head>
 <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <header>
         <div class="header">
             <div class="top_logo">
@@ -84,7 +84,7 @@
                                         <a href="{{route('_login')}}" class="button login"> ログイン</a>
                         
                                         @endif
-                                        
+
                                     </div>
                                 </div>
                             </nav>
@@ -127,8 +127,6 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{asset('js/top_scroll_tool.js')}}"></script>
-
 </body>
 </html>

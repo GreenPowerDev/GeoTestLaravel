@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('test_date');
             $table->time('begin_time');
             $table->time('end_time');
-            $table->string('genre');
+            $table->string('ganre');
             $table->integer('level_id');
             $table->integer('province_id');
             $table->timestamps();

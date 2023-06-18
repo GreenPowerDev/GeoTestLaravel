@@ -17,6 +17,13 @@
     border-radius: 16px;
     position: absolute;
 }
+
+.test_list_btn:hover{
+    background-color: #13AE6A;
+    border: 1px solid #13AE6A;
+    color: blueviolet;
+    cursor: pointer;
+}
 /* ----------prefecture_detail-------- */
 .prefecture_detail{
     max-width: 1120px;
@@ -43,10 +50,30 @@
     margin-top: 0;
     margin-bottom: 140px;
 }
-.ganre_name{
+.test_list_btn_group{
     font-size: 40px;
     font-weight: bold;
     line-height: 65px;
+    display: flex;
+    justify-content: flex-end;
+}
+.test_list_btn{
+    /* margin: .5rem;
+    width: 6rem;
+    height: 3rem; */
+    padding: 15px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #13AE6A;
+    border-radius: 18px;
+    margin-right: 25px;
+    margin-top: 20px;
+    margin-bottom: 23px;
+    background-color: white;
+}
+.ganre_group{
+    display: flex;
+    flex-direction: column;
 }
 .ganre_detail{
     border: 1px solid #13AE6A;

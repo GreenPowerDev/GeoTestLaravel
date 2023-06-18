@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     //
     public function index(){
-        $provinces = Province::all();
+        $provinces = Province::take(4)->get();
         return view('welcome', ['provinces'=>$provinces]);
     }
 }
