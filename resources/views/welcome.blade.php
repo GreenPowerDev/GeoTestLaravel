@@ -4,7 +4,8 @@
 <section class="mainvisual">
         <div class="top_screen">
             <div class="top_left">
-                <img src="{{asset('img/top/mainvisual/top_background.png')}}" alt="">
+                <img src="{{asset('img/top/mainvisual/top_background.png')}}" alt="" class="back_pc">
+                <img src="{{asset('img/top/mainvisual/top_sp.jpg')}}" alt="" class="back_sp">
             </div>
             <div class="test_schedul-modal">
                 <a href="#modal-btn" class="schedul_btn"><p style="margin:0; padding:0;">情報</p> </a>
