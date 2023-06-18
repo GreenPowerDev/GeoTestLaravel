@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             UserRole::class,
             ProvinceSeeder::class,
             LevelSeeder::class,
+            TestSeeder::class,
     	]);
         
     }

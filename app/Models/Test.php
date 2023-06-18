@@ -18,6 +18,7 @@ class Test extends Model
         'ganre',
         'level_id',
         'province_id',
+        'price',
     ];
 
     public function level()
