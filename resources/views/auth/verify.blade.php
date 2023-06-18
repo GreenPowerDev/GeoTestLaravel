@@ -49,7 +49,7 @@
             <h1>確認メール送信</h1>
             <div class="main-agileinfo">
                 <div class="agileits-top">
-                    <a href="{{route('welcome')}}" class="cross-home">&cross;</a>
+                    <a href="{{route('welcome_page')}}" class="cross-home">&cross;</a>
                     @if (session('status'))
                     <div class="" role="alert">
                         {{ session('status') }}
