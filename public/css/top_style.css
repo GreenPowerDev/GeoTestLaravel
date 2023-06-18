@@ -43,18 +43,15 @@ header {
 }
 
 .top_buttons .button {
-    padding: 15px 90px;
+    padding: 6px 59px;
     font-size: 20px;
     font-weight: bold;
     border: 1px solid #13AE6A;
     border-radius: 18px;
-    margin-right: 25px;
+    margin: 13px;
     margin-top: 20px;
     margin-bottom: 23px;
     background-color: white;
-}
-.top_buttons .logout{
-
 }
 .top_buttons .button:hover {
     background-color: #13AE6A;
@@ -70,18 +67,42 @@ header {
     justify-content: end;
 }
 
-.top_link .faq {
-    padding: 37px 10px;
-    border: 1px solid #13AE6A;
+.top_link .question {
+    padding: 0px 10px;
+    border-left: 1px solid #13AE6A;
     border-top: none;
 }
 
 .top_link .customer_info {
-    padding: 37px 35px;
-    border: 1px solid #13AE6A;
+    padding: 0px 35px;
+    border-left: 1px solid #13AE6A;
     border-top: none;
+    text-align: center;
 }
+.to_my_page{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
+}
+.user_icon, .message_icon{
+    padding: 0;
+    margin: 0 auto;
+    width: 75%;
+}
+.to_my_page img{
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.to_question img{
+    margin: 10px;
+    margin-left: 5px;
+}
+.to_my_page p, .to_question p {
+    padding-top: 0;
+    margin-top: -25px;
+}
 .top_link .menu {
     width: 107px;
     position: relative;
@@ -95,12 +116,39 @@ header {
 .hamburger img{
     height: 107px;
 }
-@media only screen and (max-width:1330px) {
-    .top_link .faq{
+.menubar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.menubar a{
+    width: 20%;
+    height: 80px;
+}
+.menubar p{
+    margin: 0;
+    padding: 22px 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    font-size: 20px;
+    color: white;
+    background-color: #13AE6A;
+}
+@media only screen and (max-width:1280px) {
+    .top_link .question{
         display: none;
     }
+    .menubar p{
+        padding: 15px 0;
+        font-size: 18px;
+    }
+    .menubar a{
+        height: 63px;
+    }
     .top_buttons .button {
-        padding: 10px 40px;
+        padding: 6px 40px;
     }
     header{
         height: 100px;
@@ -109,19 +157,23 @@ header {
         width: 100px;
     }
     .top_link .customer_info{
-        padding: 33px 35px;
+        padding: 0px 10px;
     }
     .hamburger img{
         width: 100px;
         height: auto;
     }
 }
-@media only screen and (max-width:980px) {
+
+@media only screen and (max-width:900px) {
     .top_link .customer_info{
         display: none;
     }
     .customer{
         display: block;
+    }
+    .menubar p{
+        font-size: 15px;
     }
 }
 @media only screen and (max-width:768px) {
@@ -138,8 +190,11 @@ header {
         background: none;
         display: flex;
     }
-    .spbtn .logout{
-
+    .spbtn .button {
+        border:1px solid white;
+    }
+    .menubar{
+        display: none;
     }
 }
 /* ----------hamberger------------- */

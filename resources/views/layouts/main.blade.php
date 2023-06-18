@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
-    <link rel="stylesheet" href="{{asset('css/button_hover_style.scss')}}">
-    <link rel="stylesheet" href="{{asset('css/top_style.css')}}">
-    <link href='https://fonts.googleapis.com/css?family=Yu Gothic' rel='stylesheet'>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HOME</title>
+        <link rel="stylesheet" href="{{asset('css/top_style.css')}}">
+        <link href='https://fonts.googleapis.com/css?family=Yu Gothic' rel='stylesheet'>
+    </head>
+    <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <header>
         <div class="header">
             <div class="top_logo">
@@ -36,11 +36,20 @@
             </div>
             <div class="top_link">
                 <div class="customer_info">
-                    <a href="#">お客様情報</a>  
+                    <a href="#"><div class="to_my_page"><div class="user_icon">
+                        <img src="{{asset('img/top/mainvisual/header/user_icon.png')}}" alt="">
+                    </div>
+                        <p>マイページ</p>
+                    </div></a>  
                 </div>
-                <div class="faq">
-                    <a href="#">お問合せ</a>
+                <div class="question">
+                    <a href="#"><div class="to_question"><div class="message_icon">
+                        <img src="{{asset('img/top/mainvisual/header/message_icon.png')}}" alt="">
+                    </div>
+                        <p>お問合せ</p>
+                    </div></a>  
                 </div>
+
                 <div class="menu ">
                     <input id="toggle" type="checkbox">
                     <label for="toggle" class="hamburger">
@@ -91,6 +100,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="menubar">
+                <a href="#"><p>このサイトについて</p></a>
+                <a href="#"><p>試験エリア一覧</p></a>
+                <a href="#"><p>試験内容と受験方法</p></a>
+                <a href="#"><p>サイトポリシー</p></a>
+                <a href="#"><p>プライバシーポリシー</p></a>
             </div>
         </div>
     </header>
