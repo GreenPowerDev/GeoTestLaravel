@@ -7,9 +7,15 @@
     padding-top: 170px;
     display: flex;
 }
+.back_sp{
+    display: none;
+}
+.back_pc{
+    display: inline;
+}
 .top_screen img{
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
     height: calc(100vh - 170px);
 }
 .top_left{
@@ -74,7 +80,7 @@
 .top_right__close {
     display: none;
 }
-@media only screen and (max-width:1330px) {
+@media only screen and (max-width:1280px) {
     
     .top_left{
         width: 100%;
@@ -91,7 +97,7 @@
         background-color: white;
     }
     .top_screen{
-        padding-top: 100px;
+        padding-top: 150px;
     }
     .test_schedul{
     height: calc(100vh - 250px);
@@ -101,6 +107,12 @@
     }
 }
 @media only screen and (max-width:768px) {
+    .back_sp{
+    display: inline;
+    }
+    .back_pc{
+        display: none;
+    }
     .sch_title{
         padding: 10px;
         border-top-left-radius: 15px;
@@ -163,7 +175,7 @@
         border: 1px solid #13AE6A;
         color: #13AE6A;
     }
-    .test_schedul-modal a:visited {
+    .test_schedul-modal:visited {
         display: none;
     }
     .top_screen img{
@@ -171,6 +183,17 @@
     }
     .top_screen{
         padding-top: 50px;
+    }
+}
+@media only screen and (max-width:768px) {
+    .test_schedul-modal{
+        top: 70px;
+        right: 10px;
+    }
+    .test_schedul-modal a{
+        font-size: 20px;
+        padding: 15px;
+
     }
 }
 /* --------------promotion--------------   */

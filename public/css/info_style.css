@@ -51,14 +51,14 @@
 }
 @media only screen and (max-width:1330px) {
     .info_screen img{
-        height: calc(100vh - 190px);
+        height: calc(100vh - 240px);
     }
     .hamburger img{
         width: 100px;
         height: auto;
     }
     .info_screen{
-        padding-top: 100px;
+        padding-top: 150px;
     }
     .info-list-btn{
         padding: 20px 100px;
