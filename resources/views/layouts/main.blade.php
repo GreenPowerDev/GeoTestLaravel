@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
     <link rel="stylesheet" href="{{asset('css/top_style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">    
     <link href='https://fonts.googleapis.com/css?family=Yu Gothic' rel='stylesheet'>
 </head>
 <body>
@@ -145,5 +146,12 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('js/top_scroll_tool.js')}}"></script>
+    <script src="{{asset('js/toastr.js')}}"></script>
+    <script src="{{asset('js/toastr_sr.js')}}"></script>
+    @if(session()->has('message'))
+    <script>
+        toastr.success("{{ session()->get('message') }}");
+    </script>
+    @endif
 </body>
 </html>

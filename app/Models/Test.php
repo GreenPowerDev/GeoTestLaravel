@@ -27,7 +27,7 @@ class Test extends Model
     }
     public function ganre()
     {
-        return $this->belongsTo('App\Models\Ganre','ganre_id','id');
+        return $this->belongsTo('App\Models\Ganre','ganre_id','ganre_num');
     }
 
 

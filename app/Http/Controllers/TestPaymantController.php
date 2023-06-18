@@ -8,6 +8,7 @@ class TestPaymantController extends Controller
 {
     //
     public function payment_apply($id){
-        return;
+        //return redirect->
+        return redirect()->route('reserve.add',['id'=>$id]);
     }
 }
