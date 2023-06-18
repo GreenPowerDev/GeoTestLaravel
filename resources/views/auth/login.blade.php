@@ -20,7 +20,7 @@
             <div class="main-agileinfo">
                 
                 <div class="agileits-top">
-                    <a href="{{route('welcome')}}" class="cross-home">&cross;</a>
+                    <a href="{{route('welcome_page')}}" class="cross-home">&cross;</a>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <input id="email" type="email" class="text email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">

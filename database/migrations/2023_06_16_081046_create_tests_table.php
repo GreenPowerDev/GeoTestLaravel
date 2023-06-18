@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->dateTime('test_begin');
-            $table->dateTime('test_end');
+            $table->date('test_date');
+            $table->time('begin_time');
+            $table->time('end_time');
             $table->string('genre');
             $table->integer('level_id');
             $table->integer('province_id');

@@ -3,8 +3,15 @@
 <link href="{{asset('/css/prefecture_style.css')}}" rel='stylesheet'>
 <section class="manvisual">
         <div class="prefecture_img">
-            <p class="prefecture_name">香<br>川</p>
-            <img src="{{asset('/img/prefecture/wakayama.png')}}" alt="">
+            <p class="prefecture_name">
+
+            @foreach(mb_str_split($province->name) as $char)
+                {{$char}}
+                <br>
+            @endforeach
+            
+            </p>
+            <img src="{{$province->img_url}}" alt="">
         </div>
     </section>
     <section class="prefecture_detail">

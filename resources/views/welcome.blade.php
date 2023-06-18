@@ -62,11 +62,20 @@
     <section class="test_area">
         <p class="test_area-title">試験エリア</p>
         <div class="test_areas">
+            @foreach($provinces as $province)
+
             <div class="test_area-part">
-                <a href="#">
+                <a href="{{route('prefecture.select', ['id'=>$province->id])}}">
                     <div class="area_img">
-                        <p class="area_name">福<br>岡</p>
-                        <img src="{{asset('img/top/test_area/top_fukuoka.png')}}" alt="">
+                        <p class="area_name">
+                            
+                            @foreach(mb_str_split($province->name) as $char)
+                                {{$char}}
+                                <br>
+                            @endforeach
+                            
+                        </p>
+                        <img src="{{$province->img_url}}" alt="">
                     </div>
                     <div class="area_detail">
                         <p class="area_detail-title">最近の開催試験</p>
@@ -77,51 +86,9 @@
                     </div>
                 </a>
             </div>
-            <div class="test_area-part">
-                <a href="#">
-                    <div class="area_img">
-                        <p class="area_name">香<br>川</p>
-                        <img src="{{asset('img/top/test_area/top_kagawa.png')}}" alt="">
-                    </div>
-                    <div class="area_detail">
-                        <p class="area_detail-title">最近の開催試験</p>
-                        <p class="area_detail-date">開催日：2023年○○月○○日</p>
-                        <p class="area_detail-time">開催時間：○○時○○分～○○時○○分</p>
-                        <p class="area_detail-ganre">ジャンル：○○○○</p>
-                        <p class="area_detail-level">レベル：○○</p>
-                    </div>
-                </a>
-            </div>
-            <div class="test_area-part">
-                <a href="#">
-                    <div class="area_img">
-                        <p class="area_name">広<br>島</p>
-                        <img src="{{asset('img/top/test_area/top_hiroshima.png')}}" alt="">
-                    </div>
-                    <div class="area_detail">
-                        <p class="area_detail-title">最近の開催試験</p>
-                        <p class="area_detail-date">開催日：2023年○○月○○日</p>
-                        <p class="area_detail-time">開催時間：○○時○○分～○○時○○分</p>
-                        <p class="area_detail-ganre">ジャンル：○○○○</p>
-                        <p class="area_detail-level">レベル：○○</p>
-                    </div>
-                </a>
-            </div>
-            <div class="test_area-part">
-                <a href="#">
-                    <div class="area_img">
-                        <p class="area_name">長<br>野</p>
-                        <img src="{{asset('img/top/test_area/top_nagano.png')}}" alt="">
-                    </div>
-                    <div class="area_detail">
-                        <p class="area_detail-title">最近の開催試験</p>
-                        <p class="area_detail-date">開催日：2023年○○月○○日</p>
-                        <p class="area_detail-time">開催時間：○○時○○分～○○時○○分</p>
-                        <p class="area_detail-ganre">ジャンル：○○○○</p>
-                        <p class="area_detail-level">レベル：○○</p>
-                    </div>
-                </a>
-            </div>
+
+            @endforeach
+
         </div>
         <div class="to_area-list">
             <div>

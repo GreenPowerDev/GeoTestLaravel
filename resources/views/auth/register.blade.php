@@ -20,7 +20,7 @@
             <h1>新規登録</h1>
             <div class="main-agileinfo">
                 <div class="agileits-top">
-                    <a href="{{route('welcome')}}" class="cross-home">&cross;</a>
+                    <a href="{{route('welcome_page')}}" class="cross-home">&cross;</a>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
