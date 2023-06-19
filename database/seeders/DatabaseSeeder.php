@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             LevelSeeder::class,
             TestSeeder::class,
             GanreSeeder::class,
+            ProblemSeeder::class,
     	]);
         
     }
