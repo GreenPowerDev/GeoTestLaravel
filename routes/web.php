@@ -42,6 +42,11 @@ Route::post('register', [RegisterController::class, 'register'])->name('register
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
+
+Route::get('mypage/test_login_/{id}', [GuideController::class, 'test_login_form'])->name('test.login_form');
+
+
+
 Route::get('guide/notice', [GuideController::class, 'notice'])->name('guide.notice');
 Route::get('guide/about_site', [GuideController::class, 'about_site'])->name('guide.about_site');
 Route::get('guide/area', [GuideController::class, 'area'])->name('guide.area');
