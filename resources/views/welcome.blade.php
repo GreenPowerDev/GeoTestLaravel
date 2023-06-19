@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="sch_footer">
-                        <a href="#"><p class="list_footer">一覧を見る</p></a>
+                        <a href="{{route('guide.notice')}}"><p class="list_footer">一覧を見る</p></a>
                     </div>  
                 </div>
             </div>
