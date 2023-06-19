@@ -4,9 +4,9 @@
 <section class="mypage">
         <div class="user_information">
             <p class="title">お客様情報</p>
-            <p class="user_name">氏名:　<span>○○○○</span></p>
-            <p class="user_id">お客様ID： <span>○○○○</span></p>
-            <p class="user_mail_address">メールアドレス:　<span>test@admin.gamil</span></p>
+            <p class="user_name">氏名:　<span>{{Auth::user()->name}}</span></p>
+            {{-- <p class="user_id">お客様ID： <span>○○○○</span></p> --}}
+            <p class="user_mail_address">メールアドレス:　<span>{{Auth::user()->email}}</span></p>
         </div>
         <div class="recent_result">
             <p class="recent_result_title title">最近受けた検定</p>
@@ -56,8 +56,10 @@
             </div>
         </div>
         <div class="reservation_list">
-            <p class="reservation_title title">予約済み検定</p>
+            <p class="reservation_title title">予約済み検定</p>    
             <div class="reservation_detail">
+
+                @foreach($reserved_tests as $reserved_test)
                 <div class="reservation_content">
                     <div class="reservation_when">
                         <p class="reservation_date">開催日：2023年○○月○○日</p>
@@ -68,38 +70,14 @@
                         <p class="reservation_ganre">ジャンル： <span>○○○○</span></p>
                         <p class="reservation_level">レベル：<span>○○</span></p>
                     </div>
-                    <div class="to_test_site">
-                        試験画面へ進む
-                    </div>
+                    <a href="{{route('test.site.login', ['id'=>$reserved_test->id])}}">
+                        <div class="to_test_site">
+                            試験画面へ進む
+                        </div>
+                    </a>
                 </div>
-                <div class="reservation_content">
-                    <div class="reservation_when">
-                        <p class="reservation_date">開催日：2023年○○月○○日</p>
-                        <p class="reservation_time">開催時間：○○時○○分～○○時○○分</p>
-                    </div>
-                    <div class="reservation_context">
-                        <p class="reservation_area">エリア： <span>○○○○</span></p>
-                        <p class="reservation_ganre">ジャンル： <span>○○○○</span></p>
-                        <p class="reservation_level">レベル：<span>○○</span></p>
-                    </div>
-                    <div class="to_test_site">
-                        試験画面へ進む
-                    </div>
-                </div>
-                <div class="reservation_content">
-                    <div class="reservation_when">
-                        <p class="reservation_date">開催日：2023年○○月○○日</p>
-                        <p class="reservation_time">開催時間：○○時○○分～○○時○○分</p>
-                    </div>
-                    <div class="reservation_context">
-                        <p class="reservation_area">エリア： <span>○○○○</span></p>
-                        <p class="reservation_ganre">ジャンル： <span>○○○○</span></p>
-                        <p class="reservation_level">レベル：<span>○○</span></p>
-                    </div>
-                    <div class="to_test_site">
-                        試験画面へ進む
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
         <div class="passed_test_list">
