@@ -20,18 +20,18 @@
             <div class="main-agileinfo">
                 
                 <div class="agileits-top">
-                    <a href="{{route('welcome_page')}}" class="cross-home">&cross;</a>
-                    <form method="POST" action="{{ route('login') }}">
+                    <a href="{{route('my_page')}}" class="cross-home">&cross;</a>
+                    <form method="POST" action="{{ route('signin') }}">
                         <!-- ==if time is right -->
                         @csrf
-                        <input id="email" type="email" class="text email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">
+                        <input id="test_pass_id" type="number" class="text _pass_id" name="_pass_id" placeholder="テストID" value="{{ old('test_pass_id') }}" required autocomplete="test_pass_id">
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                        <input id="password" type="password" class="text" name="password" placeholder="パスワード" required autocomplete="current-password">
-                        @error('password')
+                        <input id="test_pass_pwd" type="test_pass_pwd" class="text" name="test_pass_pwd" placeholder="パスワード" required autocomplete="current-test_pass_pwd">
+                        @error('test_pass_pwd')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -45,20 +45,7 @@
                             <div class="clear"> </div>
                         </div>
                         <input type="submit" value="試験開始">
-                        <!-- if time is wrong -->
-                        <p>試験開始まで<span> 10</span>分残りました。</p>
-                        <p>お待ちください。</p>
                     </form>
-
-                        @if (Route::has('password.request'))
-                            
-                                <a class="small" href="{{ route('password.request') }}">
-                                    {{ __('パスワードをお忘れですか?') }}
-                                </a>
-
-                        @endif
-                        
-
                 </div>
             </div>
         </div>

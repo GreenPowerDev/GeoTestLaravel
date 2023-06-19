@@ -1,7 +1,4 @@
-.recent_result_detail p{
-    padding: 0;
-    margin: 0;
-}
+
 .mypage{
     padding-top: 170px;
     max-width: 1120px;
@@ -12,66 +9,72 @@
     margin-bottom: 20px;
 }
 .user_information{
-    margin-top: 30px;
-    border: 1px solid #13AE6A;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 62px;
 }
-.edit_btn p{
-    background-color: #13AE6A;
-    color: white;
-    margin: 20px;
-    padding: 15px 100px;
-    border-radius: 20px;
-}
-.recent_result_detail, .passed_list_items, .reservation_items{
-    border: 1px solid #13AE6A;
-    padding: 20px;
-    margin-top: 20px;
-}
-.recent_mark{
-    text-align: center;
-}
-.user_lists{
-    display: flex;
-    justify-content: space-between;
-}
-.passed_list, .reservation_list{
-    width: 49%;
-}
-.user_content{
-    height: 470px;
-    width: 100%;
-    padding: 20px;
-    border: 1px solid #13AE6A;
-    overflow-y: scroll;
-}
-.passed_list_items, .reservation_items{
-    width: 100% ;
-}
-.passed_list_items p, .reservation_items p{
-    padding: 0;
+.user_information p{ 
     margin: 0;
 }
+.recent_result{
+    margin-top: 88px;
+}
+.recent_result_detail, .reservation_detail, .passed_test_detail{
+    border: 1px solid #13AE6A;
+    padding: 43px;
+    height: 800px;
+    overflow-y: scroll;
+}
+
+.recent_result_detail p, .reservation_detail p, .passed_test_detail p{
+    margin: 0;
+}
+.recent_test, .reservation_content, .passed_test_content{
+    width: 100%;
+    padding-left: 10px;
+}
+.recent_when, .recent_context, .reservation_when, .reservation_context, .passed_test_when, .passed_test_context{
+    display: flex;
+    justify-content: left;
+}
+.recent_when p, .recent_context p, .reservation_when p, .reservation_context p, .passed_test_when p, .passed_test_context p {
+    padding-right: 50px;
+}
+.recent_test_result, .to_test_site{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    margin-top: 17px;
+    margin-bottom: 77px;
+}
 .pass_style{
-    background-color: #13AE6A;
-    padding:5px 10px;
-    color: white;
-    font-size:25px;
+    background-color: #FFED08;
 }
 .fail_style{
-    background-color: red;
-    color: white;
-    font-size: 25px;
-    padding: 5px 10px;
+    background-color: #F68961;
 }
 .nogaze_style{
-    background-color: yellow;
-    color: #13AE6A;
-    font-size: 25px;
-    padding: 5px 10px;
+    background-color: #C7C7C7;
+}
+.reservation_list{
+    padding-top: 66px;
+}
+.reservation_detail{
+    background-color: #CEFFEA;
+}
+.to_test_site{
+    background-color: #FFFFFF;
+    border: 1px solid #13AE6A;
+    border-radius: 18px;
+}
+.passed_test_list{
+    padding-top: 100px;
+}
+.passed_test_detail{
+    height: 380px;
+    background-color: #CEFFEA;
+}
+.passed_test_content{
+    padding-bottom: 38px;
 }
 @media only screen and (max-width:1280px) {
     .mypage{
@@ -90,12 +93,18 @@
     .pass_style, .fail_style, .nogaze_style{
         font-size: 20px;
     }
+    .to_test_site{
+        font-size: 20px;
+    }
+    .recent_result_detail, .reservation_detail{
+        height: 400px;
+    }
 }
 
 @media only screen and (max-width:768px) {
     .title{
         font-size: 30px;
-    }
+    }   
     p{
         font-size: 15px;
     }
@@ -105,13 +114,42 @@
     .mypage{
         padding-top: 80px;
     }
+    .recent_when, .recent_context, .reservation_when, .reservation_context, .passed_test_when, .passed_test_context{
+        justify-content: left;
+        flex-direction: column;
+    }
+    .recent_result_detail, .reservation_detail, .passed_test_detail{
+        padding: 20px;
+    }
+    .to_test_site{
+        padding: 5px;
+        width: 80%;
+        margin: 9px auto;
+        margin-bottom: 20px;
+    }
+    .recent_test_result{
+        padding: 5px;
+        font-size: 20px;
+    }
 }
 @media only screen and (max-width:530px) {
-    .user_information{
-        flex-direction: column;
-        align-items: unset;
+    .mypage{
+        padding: 0px;
+        padding-top: 60px;
+        
     }
-    .edit_btn_dv{
-        margin: 0 auto;
+    .user_information{
+        padding: 10px;
+    }
+    .recent_result_detail, .reservation_detail, .passed_test_detail{
+        padding: 10px;
+    }
+}
+@media only screen and (max-width:420px) {
+    .title{
+        font-size: 25px;
+    }
+    .recent_when p, .recent_context p, .reservation_when p, .reservation_context p, .passed_test_when p, .passed_test_context p {
+        font-size: 13px;
     }
 }

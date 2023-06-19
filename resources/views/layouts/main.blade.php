@@ -52,7 +52,7 @@
                 @endif
                 @endif
                 <div>
-                    <a href="#" class="my_page">
+                    <a href="{{route('my_page')}}" class="my_page">
                         <div class="to_mine">
                             <div class="header_icon_right">
                                 <img src="{{asset('img/top/mainvisual/header/user_icon.png')}}" alt="">
@@ -71,7 +71,7 @@
                         </div>
                     </a>  
                 </div>
-
+                
                 <div class="menu">
                     <input id="toggle" type="checkbox">
                     <label for="toggle" class="hamburger">
@@ -124,8 +124,8 @@
                 </div>
             </div>
             <div class="menubar">
-                <a href="#"><p>このサイトについて</p></a>
-                <a href="#"><p>試験エリア一覧</p></a>
+                <a href="{{route('guide.about_site')}}"><p>このサイトについて</p></a>
+                <a href="{{route('guide.area')}}"><p>試験エリア一覧</p></a>
                 <a href="#"><p>試験内容と受験方法</p></a>
                 <a href="#"><p>サイトポリシー</p></a>
                 <a href="#"><p>プライバシーポリシー</p></a>
