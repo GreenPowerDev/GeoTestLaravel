@@ -20,4 +20,7 @@ class GuideController extends Controller
     public function my_page(){
         return view('my_page');
     }
+    public function method(){
+        return view('method');
+    }
 }
