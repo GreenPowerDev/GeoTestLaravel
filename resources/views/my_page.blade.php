@@ -70,7 +70,7 @@
                         <p class="reservation_ganre">ジャンル： <span>○○○○</span></p>
                         <p class="reservation_level">レベル：<span>○○</span></p>
                     </div>
-                    <a href="{{route('test.site.login', ['id'=>$reserved_test->id])}}">
+                    <a href="{{route('test.login_form', ['id'=>$reserved_test->id])}}">
                         <div class="to_test_site">
                             試験画面へ進む
                         </div>
