@@ -11,6 +11,7 @@ use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestPaymantController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -46,6 +47,13 @@ Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test
 Route::get('payment/apply/{id}', [TestPaymantController::class, 'payment_apply'])->name('payment.apply');
 
 Route::get('reserve/add/{id}', [ReserveController::class, 'add'])->name('reserve.add');
+
+Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
+Route::get('admin/reserve/accept', [AdminController::class, 'reserve_accept'])->name('admin.reserve.accept');
+Route::get('admin/reserve/delete/{id}', [AdminController::class, 'reserve_delete'])->name('admin.reserve.delete');
+Route::get('admin/reserve/agree/{id}', [AdminController::class, 'reserve_agree'])->name('admin.reserve.agree');
+Route::get('admin/reserve/mail_send/{id}', [AdminController::class, 'reserve_mail_send'])->name('admin.reserve.mail_send');
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');

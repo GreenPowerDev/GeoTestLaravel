@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('test_id');
-            $table->integer('reservation_id');
-            $table->integer('allowed_id');
-            $table->integer('passed_id');
-            $table->integer('payment_id');
+            $table->integer('reservation_id')->nullable()->default(0);
+            $table->integer('allowed_id')->nullable()->default(0);
+            $table->integer('passed_id')->nullable()->default(0);
+            $table->integer('payment_id')->nullable()->default(0);
             $table->timestamps();
         });
     }
