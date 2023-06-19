@@ -29,6 +29,10 @@ class Test extends Model
     {
         return $this->belongsTo('App\Models\Ganre','ganre_id','ganre_num');
     }
+    public function reservation()
+    {   
+        return $this->hasMany('App\Models\Reservation');
+    }
 
 
     public function get_level_name()
