@@ -12,6 +12,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\TestPaymantController;
 use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GuideController;
 
 
 /*
@@ -40,6 +41,17 @@ Route::get('_register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
+
+Route::get('guide/notice', [GuideController::class, 'notice'])->name('guide.notice');
+Route::get('guide/about_site', [GuideController::class, 'about_site'])->name('guide.about_site');
+Route::get('guide/area', [GuideController::class, 'area'])->name('guide.area');
+Route::get('guide/method', [GuideController::class, 'method'])->name('guide.method');
+Route::get('guide/qustion', [GuideController::class, 'qustion'])->name('guide.qustion');
+Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
+
+
+
+
 Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected'])->name('prefecture.select');
 
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
@@ -54,6 +66,10 @@ Route::get('admin/reserve/accept', [AdminController::class, 'reserve_accept'])->
 Route::get('admin/reserve/delete/{id}', [AdminController::class, 'reserve_delete'])->name('admin.reserve.delete');
 Route::get('admin/reserve/agree/{id}', [AdminController::class, 'reserve_agree'])->name('admin.reserve.agree');
 Route::get('admin/reserve/mail_send/{id}', [AdminController::class, 'reserve_mail_send'])->name('admin.reserve.mail_send');
+
+
+
+
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');
