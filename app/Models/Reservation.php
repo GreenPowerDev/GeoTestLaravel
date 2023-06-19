@@ -45,4 +45,17 @@ class Reservation extends Model
 
         return $out_string;
     }
+
+    public function get_reserve_state(){
+        $result = '';
+        $result = ($this->test2user()->first()->allowed_id == 0) ? '未許可' : '許可';
+        return $result;
+    }
+    
+
+    public function get_mail_state(){
+        $result = '';
+        $result = ($this->test2user()->first()->mail_sended == 0) ? '送信しない' : '送信済み';
+        return $result;
+    }
 }

@@ -70,9 +70,11 @@ class AdminController extends Controller
             'user_id'=>Auth::user()->id,
             'reservation_id'=>$id
         ])->first();
+
         $reservation = Reservation::find($id);
         
         if(is_null($test2user)) return redirect()->route('admin.reserve.accept');
+        if($test2user->allowed_id == 0) return redirect()->route('admin.reserve.accept');
         $test_pass_id = $test2user->allowed()->first()->test_pass_id;
         $test_pass_pwd = $test2user->allowed()->first()->test_pass_pwd;
         
@@ -87,8 +89,11 @@ class AdminController extends Controller
             'test_pass_id' => $test_pass_id,
             'test_pass_pwd' => $test_pass_pwd,
         ];
-        Mail::to(Auth::user()->email)->send(new AllowedMail($mailData));
-        return ;
+        //Mail::to(Auth::user()->email)->send(new AllowedMail($mailData));
+
+        $test2user->mail_sended = 1;
+        $test2user->save();
+        return redirect()->route('admin.reserve.accept');
 
     }
 }

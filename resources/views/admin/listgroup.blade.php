@@ -52,6 +52,14 @@
                                             ジャンル：{{$reservation->test()->first()->get_ganre_name()}}
                                         </p>
                                     </div>
+                                    <div class="d-flex">
+                                        <p class="mb-1 mr-4">
+                                            予約同意：{{$reservation->get_reserve_state()}} 
+                                        </p>
+                                        <p class="mb-1 mx-4">
+                                            通知送信：{{$reservation->get_mail_state()}}
+                                        </p>
+                                    </div>
                                     <small class="text-muted">
                                         {{$reservation->test()->first()->get_test_date()}}
                                         ：{{$reservation->test()->first()->get_begin_time()}}
