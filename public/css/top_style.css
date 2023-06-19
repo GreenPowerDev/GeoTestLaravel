@@ -74,10 +74,11 @@ header {
     text-align: center;
     border-left: 1px solid #13AE6A;
     border-top: none;
+    text-align: center;
 }
 .header_icon_right {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     margin: 0 auto;
     padding: 0;
     padding-bottom: 0;
@@ -85,7 +86,12 @@ header {
 }
 .header_icon_right img{
     width: 100%;
+    margin-top: 3px;
 }
+/* .header_icon_right img{
+    width: 100%;
+    margin-top: 3px;
+} */
 .to_admin p, .to_mine p, .to_question  p {
     margin: 0;
     font-size: 16px;
