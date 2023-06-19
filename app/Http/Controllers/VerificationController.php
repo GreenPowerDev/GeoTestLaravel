@@ -43,7 +43,7 @@ class VerificationController extends Controller
         $current_email = Crypt::decryptString($hash);
         $user = User::where('email', $current_email)->first();
         if(isset($user)){
-            return view('auth.disallow', ['email'=>$current_email]);
+            return view('welcome_page');
         }
         else{
             return view('auth.register', ['email'=>$current_email]);
