@@ -67,41 +67,25 @@ header {
     justify-content: end;
 }
 
-.top_link .question {
-    padding: 0px 10px;
+.to_admin, .to_mine, .to_question {
+    padding: 10px 16px;
     border-left: 1px solid #13AE6A;
     border-top: none;
 }
-
-.top_link .customer_info {
-    padding: 0px 35px;
-    border-left: 1px solid #13AE6A;
-    border-top: none;
-    text-align: center;
-}
-.to_my_page{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-}
-.user_icon, .message_icon{
-    padding: 0;
+.header_icon_right {
+    width: 50px;
+    height: 50px;
     margin: 0 auto;
-    width: 75%;
-}
-.to_my_page img{
-    width: 100%;
-    margin-bottom: 0;
+    padding: 0;
     padding-bottom: 0;
+    margin-bottom: 0;
 }
-.to_question img{
-    margin: 10px;
-    margin-left: 5px;
+.header_icon_right img{
+    width: 100%;
 }
-.to_my_page p, .to_question p {
-    padding-top: 0;
-    margin-top: -25px;
+.to_admin p, .to_mine p, .to_question  p {
+    margin: 0;
+    
 }
 .top_link .menu {
     width: 107px;
@@ -137,7 +121,7 @@ header {
     background-color: #13AE6A;
 }
 @media only screen and (max-width:1280px) {
-    .top_link .question{
+    .top_link .question_page{
         display: none;
     }
     .menubar p{
@@ -166,7 +150,7 @@ header {
 }
 
 @media only screen and (max-width:900px) {
-    .top_link .customer_info{
+    .top_link .my_page{
         display: none;
     }
     .customer{
@@ -177,6 +161,9 @@ header {
     }
 }
 @media only screen and (max-width:768px) {
+    .admin_page{
+        display: none;
+    }
     .pcbtn .button{
         display: none;
     }

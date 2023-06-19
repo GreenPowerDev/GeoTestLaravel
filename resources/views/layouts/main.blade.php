@@ -37,22 +37,42 @@
 
             </div>
             <div class="top_link">
-                <div class="customer_info">
-                    <a href="#"><div class="to_my_page"><div class="user_icon">
-                        <img src="{{asset('img/top/mainvisual/header/user_icon.png')}}" alt="">
+                @if(Auth::check())
+                @if(Auth::user()->user_role == 1)
+                    <div>
+                        <a href="#" class="admin_page">
+                            <div class="to_admin">
+                                <div class="header_icon_right">
+                                    <img src="{{asset('img/top/mainvisual/header/admin_icon.png')}}" alt="">
+                                </div>
+                                <p>管理者</p>
+                            </div>
+                        </a>  
                     </div>
-                        <p>マイページ</p>
-                    </div></a>  
+                @endif
+                @endif
+                <div>
+                    <a href="#" class="my_page">
+                        <div class="to_mine">
+                            <div class="header_icon_right">
+                                <img src="{{asset('img/top/mainvisual/header/user_icon.png')}}" alt="">
+                            </div>
+                            <p>マイページ</p>
+                        </div>
+                    </a>  
                 </div>
-                <div class="question">
-                    <a href="#"><div class="to_question"><div class="message_icon">
-                        <img src="{{asset('img/top/mainvisual/header/message_icon.png')}}" alt="">
-                    </div>
-                        <p>お問合せ</p>
-                    </div></a>  
+                <div>
+                    <a href="#" class="question_page">
+                        <div class="to_question">
+                            <div class="header_icon_right">
+                                <img src="{{asset('img/top/mainvisual/header/message_icon.png')}}" alt="">
+                            </div>
+                            <p>お問合せ</p>
+                        </div>
+                    </a>  
                 </div>
 
-                <div class="menu ">
+                <div class="menu">
                     <input id="toggle" type="checkbox">
                     <label for="toggle" class="hamburger">
                         <img src="{{asset('img/top/mainvisual/header/top_menu.png')}}" alt="">
