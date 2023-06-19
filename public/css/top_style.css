@@ -87,6 +87,10 @@ header {
     width: 100%;
     margin-top: 3px;
 }
+/* .header_icon_right img{
+    width: 100%;
+    margin-top: 3px;
+} */
 .to_admin p, .to_mine p, .to_question  p {
     margin: 0;
     font-size: 16px;
