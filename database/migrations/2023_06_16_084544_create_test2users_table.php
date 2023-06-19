@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('reservation_id')->nullable()->default(0);
             $table->integer('allowed_id')->nullable()->default(0);
             $table->integer('passed_id')->nullable()->default(0);
+            $table->integer('mail_sended')->nullable()->default(0);
             $table->integer('payment_id')->nullable()->default(0);
             $table->timestamps();
         });

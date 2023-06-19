@@ -43,7 +43,7 @@ class VerificationController extends Controller
         $current_email = Crypt::decryptString($hash);
         $user = User::where('email', $current_email)->first();
         if(isset($user)){
-            return view('welcome_page');
+            return redirect()->route('welcome_page')->with('message', 'メールアドレスが既に存在します。');
         }
         else{
             return view('auth.register', ['email'=>$current_email]);
