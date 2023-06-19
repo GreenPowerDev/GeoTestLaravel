@@ -50,7 +50,6 @@
                         </a>  
                     </div>
                 @endif
-                @endif
                 <div>
                     <a href="{{route('my_page')}}" class="my_page">
                         <div class="to_mine">
@@ -61,6 +60,7 @@
                         </div>
                     </a>  
                 </div>
+                @endif
                 <div>
                     <a href="#" class="question_page">
                         <div class="to_question">
