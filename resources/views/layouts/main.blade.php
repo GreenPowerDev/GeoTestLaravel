@@ -40,7 +40,7 @@
                 @if(Auth::check())
                 @if(Auth::user()->user_role == 1)
                     <div>
-                        <a href="#" class="admin_page">
+                        <a href="{{route('admin.dashboard')}}" class="admin_page">
                             <div class="to_admin">
                                 <div class="header_icon_right">
                                     <img src="{{asset('img/top/mainvisual/header/admin_icon.png')}}" alt="">
