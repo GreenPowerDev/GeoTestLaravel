@@ -14,6 +14,7 @@ use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\GanreController;
 
 
 /*
@@ -52,14 +53,14 @@ Route::post('mypage/test/enter', [MypageController::class, 'test_enter'])->name(
 
 Route::get('guide/notice', [GuideController::class, 'notice'])->name('guide.notice');
 Route::get('guide/about_site', [GuideController::class, 'about_site'])->name('guide.about_site');
-Route::get('guide/area', [GuideController::class, 'area'])->name('guide.area');
 Route::get('guide/method', [GuideController::class, 'method'])->name('guide.method');
 Route::get('guide/qustion', [GuideController::class, 'qustion'])->name('guide.qustion');
 Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
 
-
-
 Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected'])->name('prefecture.select');
+Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
+
+
 
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
 
