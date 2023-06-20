@@ -13,4 +13,9 @@ class Province extends Model
         'name',
         'img_url',
     ];
+
+    public function tests()
+    {   
+        return $this->hasMany('App\Models\Test');
+    }
 }

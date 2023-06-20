@@ -18,4 +18,9 @@ class Test2user extends Model
     {
         return $this->belongsTo('App\Models\Allowed','allowed_id','id');
     }
+
+    public function test()
+    {
+        return $this->belongsTo('App\Models\Test','test_id','id');
+    }
 }

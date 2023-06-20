@@ -25,18 +25,18 @@ class GuideController extends Controller
         if(!Auth::check()) return redirect()->route('_login');
         $test2users = Test2user::where('user_id', Auth::user()->id)->get();
 
-        $reserved_tests = [];
+        $allowed_tests = [];
         foreach($test2users as $test2user){
             //dd($test2user->allowed_id);
             if($test2user->allowed_id !== 0 && $test2user->mail_sended === 1){
-                array_push($reserved_tests, $test2user);
+                array_push($allowed_tests, $test2user);
             }
             else{
                 //if($test2user->allowed_id)
             }
         }
 
-        return view('my_page', ['reserved_tests'=>$reserved_tests]);
+        return view('my_page', ['allowed_tests'=>$allowed_tests]);
     }
     public function method(){
         return view('method');
