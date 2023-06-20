@@ -1,6 +1,6 @@
 @extends('admin.admin_layouts.admin_main')
 @section('page-title')
-    試験作成
+    試験問題選択
 @endsection
 @section('root')
     管理ページ
@@ -9,7 +9,7 @@
     試験管理
 @endsection
 @section('sub-root2')
-    試験作成
+    試験問題選択
 @endsection
 @section('main-content')
 <div class="row">
@@ -18,73 +18,115 @@
     <!-- ============================================================== -->
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
-            <h5 class="card-header">試験作成</h5>
-            <div class="card-body">
-                <form id="validationform" data-parsley-validate="" novalidate="">
-                    <div class="form-group row">
-                        <label class="col-12 col-sm-3 col-form-label text-sm-right">試験名</label>
-                        <div class="col-12 col-sm-8 col-lg-6">
-                            <input type="text" required="" placeholder="" class="form-control">
+            <h5 class="card-header">試験問題選択</h5>
+            <div class="row px-2">
+                <!-- ============================================================== -->
+                <!-- accrodions style one -->
+                <!-- ============================================================== -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="section-block">
+                        <h5 class="section-title">試験選択</h5>
+                        <div class="img-modal-search-bar">
+                            <input type="text" class="pl-5" id="search_card" placeholder="テスト名検索" style="width: 400px; padding-left: 20px;">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-12 col-sm-3 col-form-label text-sm-right">試験金額</label>
-                        <div class="col-12 col-sm-8 col-lg-6">
-                            <input required="" type="number" min="0" placeholder="" class="form-control">
-                        </div>
-                    </div>
-                    <div class="card-body border-top d-flex justify-content-center">
-                        <h5>試験開始日</h5>
-                        <div class="form-group mx-3">
-                            <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4">
-                                <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                    <div class="accrodion-regular hx-500">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                       Accordion Heading Title Here
+                                       </button>
+                                      </h5>
                                 </div>
-                            </div>
-                        </div>
-                        <h5>開始時間</h5>
-                        <div class="form-group mx-3">
-                            <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3">
-                                <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5>期限時間</h5>
-                        <div class="form-group mx-3">
-                            <div class="input-group date" id="datetimepicker3_1" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3_1">
-                                <div class="input-group-append" data-target="#datetimepicker3_1" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
+                                    <div class="card-body">
+                                        <p class="lead"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p>
+                                        <p> Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+                                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="form-group d-flex justify-content-center">
-
-                            <label for="input-select">県選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select">
-                                <option>Choose Example</option>
-                            </select>
-
-                            <label for="input-select">ジャンル選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select">
-                                <option>Choose Example</option>
-                            </select>
-
-                            <label for="input-select">レベル選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select">
-                                <option>Choose Example</option>
-                            </select>
-     
+                </div>
+                <!-- ============================================================== -->
+                <!-- end accrodions style one -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- end accrodions style two -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- accrodions style four -->
+                <!-- ============================================================== -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="section-block">
+                        <h5 class="section-title">試験</h5>
                     </div>
-                    <div class="d-flex w-100">
-                        <button type="submit" class="btn btn-space btn-primary mx-auto">Submit</button>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end accrodions style four -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- accrodions style two -->
+                <!-- ============================================================== -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="section-block">
+                        <h5 class="section-title">問題選択</h5>
                     </div>
-                </form>
+                    <div class="accrodion-outline hx-500">
+                        <div id="accordion2">
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h5 class="mb-0">
+                                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                       Accordion Heading Title Here
+                                       </button>
+                                      </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion2" style="">
+                                    <div class="card-body">
+                                        <p class="lead"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p>
+                                        <p> Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+                                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end accrodions style two -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- accrodions style three -->
+                <!-- ============================================================== -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="section-block">
+                        <h5 class="section-title">試験問題</h5>
+                    </div>
+                    <div class="accrodion-regular hx-500">
+                        <div id="accordion3">
+                            <div class="card">
+                                <div class="card-header" id="headingSeven">
+                                    <h5 class="mb-0">
+                                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                         <span class="fas mr-3 fa-angle-down"></span>Accordion Heading Title Here
+                                       </button>
+                                      </h5>
+                                </div>
+                                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion3" style="">
+                                    <div class="card-body">
+                                        <p class="lead"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p>
+                                        <p> Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+                                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -95,5 +137,26 @@
     <!-- end valifation types -->
     <!-- ============================================================== -->
 </div>
-
+<script>
+    $(document).on('keyup', '#search_card', function () {
+        // alert($('#th_check').prop('checked'));
+        var filter = $(this).val();
+        $("#accordion").find(".collapse").each(function () {
+            var title = $(this).find(".lead").text();
+            if (title.indexOf(filter) > -1) {
+                $(this).parent().parent().css('display', 'block');
+            }
+            else {
+                $(this).parent().parent().css('display', 'none');
+            }
+        });
+    });
+</script>
+<style>
+    .hx-500{
+        height: 300px!important;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+</style>
 @endsection
