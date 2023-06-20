@@ -1,0 +1,217 @@
+/* -----------mainviual----------- */
+.mainvisual{
+    padding-top: 180px;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+.problem_count{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.problem_no, .answer_no{
+    font-size: 40px;
+}
+.problem_number{
+    padding: 14px 60px;
+    background-color: #13AE6A;
+    color: white;
+}
+.problem_detail{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.answer_count{
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+}
+.answer_number{
+    padding: 20px 38px;
+    border: 1px solid #13AE6A;
+    border-radius: 18px;
+    margin-left: 170px;
+    margin-top: 36px;
+}
+.answer_detail textarea{
+    width: 100%;
+    height: 174px;
+    border: 1px solid #707070;
+    border-radius: 22px;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 20px;
+}
+.next_problem{
+    padding: 28px;
+    width: 100%;
+    border-radius: 26px;
+    background-color: #13AE6A;
+    color: white;
+    font-size: 40px;
+    margin-top: 94px;
+    text-align: center;
+}
+
+@media only screen and (max-width:1440px) {
+    .test_site_detail{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .ganre_apply-btn{
+        background-color: #13AE6A;
+        color: white;
+        padding: 15px 50px;
+        font-size: 30px;
+        font-weight: bold;
+        border-radius: 18px;
+    }
+    .test_site_name{
+        font-size: 30px;
+        padding: 20px 15px 20px 15px;
+    }
+    .recent_detail p, .ganre_detail p {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width:900px) {
+    .ganre_detail{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .ganre_name{
+        font-size: 30px;
+    }
+    .ganre_apply{
+        margin-top: 30px;
+    }
+    .ganre_type{
+        padding: 10px;
+    }
+    .ganre_detail{
+        padding: 10px
+    }
+}
+@media only screen and (max-width:460px) {
+    .recent_detail p, .ganre_detail p {
+        font-size: 15px;
+    }
+    .ganre_apply-btn{
+        font-size: 25px;
+        padding: 15px 20px;
+    }
+    
+}
+@media only screen and (max-width:1330px) {
+    
+    .top_left{
+        width: 100%;
+        position: relative;
+    }
+    .hamburger img{
+        width: 100px;
+        height: auto;
+    }
+    .top_right{
+        width: 300px;
+        position: absolute;
+        right: 0;
+        padding-right: 5;
+    }
+    .sch-content{
+        background-color: white;
+    }
+    .test_site_img{
+        padding-top: 100px;
+    }
+    .test_schedul{
+    height: calc(100vh - 250px);
+    }
+    .test_site_img img{
+        height: calc(100vh - 100px);
+    }
+}
+@media only screen and (max-width:768px) {
+    .sch_title{
+        padding: 10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .list_footer{
+        padding: 10px;
+        border-radius: 0 0 15px 15px;
+
+    }
+    .top_right {
+        visibility: hidden;
+        width: 100%;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .4s;
+      }
+    .test_schedul{
+        height: calc(100vh - 150px);
+    }
+    .sch-content{
+        height: calc(100vh - 255px);
+    }
+    .top_right:target {
+    visibility: visible;
+    opacity: 1;
+    }
+    .top_right__close {
+        display: inline;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #585858;
+        text-decoration: none;
+        z-index: 99999;
+    }
+    .test_schedul-modal{
+        display: inline;
+        position: absolute;
+        top: 100px;
+        right: 20px;
+    }
+    .test_schedul-modal a {
+        padding: 20px;
+        background-color: #13AE6A;
+        display: inline-block;
+        color: white;
+        border-radius: 50%;
+        font-size: 25px;
+        text-align: center;
+    }
+    .test_schedul-modal a:hover {
+        background-color: white;
+        border: 1px solid #13AE6A;
+        color: #13AE6A;
+    }
+    .test_schedul-modal a:visited {
+        display: none;
+    }
+    
+    .top_logo img, .menu img{
+        height: 50px;
+        width: auto;
+    }
+    .top_logo{
+        margin: 0 20px;
+    }
+    header{
+        height: 50px;
+    }
+    .test_site_img img{
+        height: calc(100vh - 50px);
+    }
+    .test_site_img{
+        padding-top: 50px;
+    }
+}
