@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('main-content')
 <link href="{{asset('/css/top_ex_style.css')}}" rel='stylesheet'>
-<section class="mainvisual">
+    <section class="mainvisual">
         <div class="top_screen">
             <div class="top_left">
                 <img src="{{asset('img/top/mainvisual/top_background.png')}}" alt="" class="back_pc">
@@ -93,7 +93,7 @@
         </div>
         <div class="to_area-list">
             <div>
-                <a href="#" class="to_area-list-btn">試験エリア一覧ページへ</a>
+                <a href="{{route('search.area')}}" class="to_area-list-btn">試験エリア一覧ページへ</a>
             </div>
         </div>
     </section>
@@ -123,25 +123,15 @@
     <section class="search_by_ganre">
         <p class="search_ganre-title">ジャンルから探す</p>
         <div class="search_ganre-btns">
-            <div>
-                <div >
-                    <a href="#" ><p class="search_ganre-btns-btn">グルメ</p></a>
-                </div>
-                <div >
-                    <a href="#" ><p class="search_ganre-btns-btn">市町村</p></a>
-                </div>
+            @foreach($ganres as $ganre)
+
+            <div class="search_each_ganre">
+                <a href="{{route('ganre.select', ['id'=>$ganre->id])}}" >
+                    <p class="search_ganre-btns-btn">{{$ganre->ganre_name}}</p>
+                </a>
             </div>
-            <div>
-                <div >
-                    <a href="#" ><p class="search_ganre-btns-btn">歴史</p></a>
-                </div>
-                <div >
-                    <a class="btn-11" href="#" ><p class="search_ganre-btns-btn">産業</p></a>
-                </div>
-            </div>
-            <div >
-                <a href="#" ><p class="search_ganre-btns-btn">観光</p></a>
-            </div>
+
+            @endforeach
         </div>
     </section>
     <section class="content">

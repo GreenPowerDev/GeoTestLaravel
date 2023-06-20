@@ -9,6 +9,11 @@ class Ganre extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'ganre_id',
+        'ganre_name',
+    ];
+
     public function tests()
     {   
         return $this->hasMany('App\Models\Test');

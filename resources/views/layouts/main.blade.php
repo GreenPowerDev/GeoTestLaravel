@@ -89,16 +89,16 @@
                                         <a href="">Q&A</a></div>
                                     <div class="menu_items">
                                         <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                                        <a href="">サイトからのお知らせ</a></div>
+                                        <a href="{{route('guide.notice')}}">サイトからのお知らせ</a></div>
                                     <div class="menu_items">
                                         <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                                        <a href="">このサイトについて</a></div>
+                                        <a href="{{route('guide.about_site')}}">このサイトについて</a></div>
                                     <div class="menu_items">
                                         <a href="">サイトポリシー</a></div>
                                     <div class="menu_items">
                                         <a href="">プライバシーポリシー</a></div>
                                     <div class="menu_items customer">
-                                        <a href="">お客様情報</a>
+                                        <a href="{{route('my_page')}}">マイページ</a>
                                     </div>
                                     <div class="top_buttons spbtn">
 
@@ -125,8 +125,8 @@
             </div>
             <div class="menubar">
                 <a href="{{route('guide.about_site')}}"><p>このサイトについて</p></a>
-                <a href="{{route('guide.area')}}"><p>試験エリア一覧</p></a>
-                <a href="#"><p>試験内容と受験方法</p></a>
+                <a href="{{route('search.area')}}"><p>試験エリア一覧</p></a>
+                <a href="{{route('guide.method')}}"><p>試験内容と受験方法</p></a>
                 <a href="#"><p>サイトポリシー</p></a>
                 <a href="#"><p>プライバシーポリシー</p></a>
             </div>
@@ -148,11 +148,11 @@
                             <a href="" >お問合せ</a></div>
                         <div class="footer_items">
                             <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                            <a href="">サイトからのお知らせ</a></div>
+                            <a href="{{route('guide.notice')}}">サイトからのお知らせ</a></div>
                     </div>
                     <div class="footer_items">
                         <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                        <a href="">このサイトについて</a></div>
+                        <a href="{{route('guide.about_site')}}">このサイトについて</a></div>
                     <div class="footer_items" style="padding-left: 50px;">
                         <a href="">サイトポリシー</a></div>
                     <div class="footer_items" >

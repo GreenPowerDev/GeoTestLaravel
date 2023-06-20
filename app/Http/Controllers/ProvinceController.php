@@ -21,4 +21,14 @@ class ProvinceController extends Controller
             'tests' => $tests
         ]);
     }
+    public function all_area_selected(){
+        $tests = Test::where('test_date', '>=', Carbon::now())
+            ->orderBy('test_date')
+            ->paginate(4);
+        // $province = $tests->province;
+        return view('area', [
+
+            'tests' => $tests
+        ]);
+    }
 }
