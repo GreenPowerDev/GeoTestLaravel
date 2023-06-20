@@ -25,13 +25,19 @@ jQuery(document).ready(function($) {
     if ($("#datetimepicker3").length) {
 
         $('#datetimepicker3').datetimepicker({
-            format: 'LT'
+            format: 'hh時mm分'
+        });
+    }
+    if ($("#datetimepicker3_1").length) {
+
+        $('#datetimepicker3_1').datetimepicker({
+            format: 'hh時mm分'
         });
     }
 
     if ($("#datetimepicker4").length) {
         $('#datetimepicker4').datetimepicker({
-            format: 'L'
+            format: 'YYYY年MM月DD日'
         });
 
     }
