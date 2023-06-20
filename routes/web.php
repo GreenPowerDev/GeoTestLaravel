@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\GanreController;
+use App\Http\Controllers\TestProblemController;
 
 
 /*
@@ -76,9 +77,11 @@ Route::get('admin/reserve/delete/{id}', [AdminController::class, 'reserve_delete
 Route::get('admin/reserve/agree/{id}', [AdminController::class, 'reserve_agree'])->name('admin.reserve.agree');
 Route::get('admin/reserve/mail_send/{id}', [AdminController::class, 'reserve_mail_send'])->name('admin.reserve.mail_send');
 Route::get('admin/test/make',[AdminController::class, 'test_make'])->name('admin.test.make');
-Route::get('admin/test/problem', [AdminController::class, 'test_problem'])->name('admin.test.problem');
 Route::post('admin/test/add_test', [AdminController::class, 'add_test'])->name('admin.test.add_test');
 
+
+Route::get('admin/test/problem', [TestProblemController::class, 'test_problem'])->name('admin.test.problem');
+Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
 
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
