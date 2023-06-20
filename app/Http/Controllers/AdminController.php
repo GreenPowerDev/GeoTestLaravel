@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Test2user;
 use App\Models\Reservation;
 use App\Models\Allowed;
+use App\Models\Province;
+use App\Models\Level;
+use App\Models\Ganre;
 use Mail;
 use App\Mail\AllowedMail;
 
@@ -98,9 +101,26 @@ class AdminController extends Controller
     }
 
     public function test_make(){
-        return view('admin.make_test');
+        $ganres = Ganre::all();
+        $levels = Level::all();
+        $provinces = Province::all();
+        return view('admin.make_test', [
+            'levels'=>$levels,
+            'provinces'=>$provinces,
+            'ganres'=>$ganres
+        ]);
     }
     public function test_problem(){
         return view('admin.test_problem');
+    }
+
+    public function add_test(Request $request){
+        dd($request->add_test_name);
+        // add_test_name,
+        // add_test_start,
+        // add_test_main,
+        // add_level,
+        // add_ganre,
+        // add_province,
     }
 }
