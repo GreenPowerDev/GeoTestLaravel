@@ -57,6 +57,7 @@ Route::get('guide/method', [GuideController::class, 'method'])->name('guide.meth
 Route::get('guide/qustion', [GuideController::class, 'qustion'])->name('guide.qustion');
 Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
 
+Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
 Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected'])->name('prefecture.select');
 Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
 
@@ -76,6 +77,7 @@ Route::get('admin/reserve/agree/{id}', [AdminController::class, 'reserve_agree']
 Route::get('admin/reserve/mail_send/{id}', [AdminController::class, 'reserve_mail_send'])->name('admin.reserve.mail_send');
 Route::get('admin/test/make',[AdminController::class, 'test_make'])->name('admin.test.make');
 Route::get('admin/test/problem', [AdminController::class, 'test_problem'])->name('admin.test.problem');
+Route::post('admin/test/add_test', [AdminController::class, 'add_test'])->name('admin.test.add_test');
 
 
 

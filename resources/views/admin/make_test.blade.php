@@ -20,24 +20,25 @@
         <div class="card">
             <h5 class="card-header">試験作成</h5>
             <div class="card-body">
-                <form id="validationform" data-parsley-validate="" novalidate="">
+                <form method="POST" action="{{route('admin.test.add_test')}}" id="validationform" >
+                    @csrf
                     <div class="form-group row">
                         <label class="col-12 col-sm-3 col-form-label text-sm-right">試験名</label>
                         <div class="col-12 col-sm-8 col-lg-6">
-                            <input type="text" required="" placeholder="" class="form-control">
+                            <input type="text" required placeholder="" class="form-control" name="add_test_name">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-12 col-sm-3 col-form-label text-sm-right">試験金額</label>
                         <div class="col-12 col-sm-8 col-lg-6">
-                            <input required="" type="number" min="0" placeholder="" class="form-control">
+                            <input required type="number" min="0" placeholder="" class="form-control" name="add_test_price">
                         </div>
                     </div>
                     <div class="card-body border-top d-flex justify-content-center">
                         <h5>試験開始日</h5>
                         <div class="form-group mx-3">
-                            <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4">
+                            <div class="input-group date" id="datetimepicker4" data-target-input="nearest" >
+                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" name="add_test_date">
                                 <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
@@ -46,7 +47,7 @@
                         <h5>開始時間</h5>
                         <div class="form-group mx-3">
                             <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" name="add_test_start">
                                 <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
                                 </div>
@@ -55,7 +56,7 @@
                         <h5>期限時間</h5>
                         <div class="form-group mx-3">
                             <div class="input-group date" id="datetimepicker3_1" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3_1">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3_1" name="add_test_end">
                                 <div class="input-group-append" data-target="#datetimepicker3_1" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
                                 </div>
@@ -66,18 +67,24 @@
                     <div class="form-group d-flex justify-content-center">
 
                             <label for="input-select">県選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select">
-                                <option>Choose Example</option>
+                            <select class="form-control mx-3" style="width: 150px;" id="input-select" name="add_province">
+                            @foreach($provinces as $province)
+                                <option>{{$province->name}}</option>
+                            @endforeach
                             </select>
 
                             <label for="input-select">ジャンル選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select">
-                                <option>Choose Example</option>
+                            <select class="form-control mx-3" style="width: 150px;" id="input-select" name="add_ganre">
+                            @foreach($ganres as $ganre)
+                                <option>{{$ganre->ganre_name}}</option>
+                            @endforeach
                             </select>
 
                             <label for="input-select">レベル選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select">
-                                <option>Choose Example</option>
+                            <select class="form-control mx-3" style="width: 150px;" id="input-select" name="add_level">
+                            @foreach($levels as $level)
+                                <option>{{$level->level_name}}</option>
+                            @endforeach
                             </select>
      
                     </div>
