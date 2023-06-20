@@ -100,4 +100,7 @@ class AdminController extends Controller
     public function test_make(){
         return view('admin.make_test');
     }
+    public function test_problem(){
+        return view('admin.test_problem');
+    }
 }

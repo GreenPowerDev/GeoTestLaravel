@@ -75,7 +75,7 @@ Route::get('admin/reserve/delete/{id}', [AdminController::class, 'reserve_delete
 Route::get('admin/reserve/agree/{id}', [AdminController::class, 'reserve_agree'])->name('admin.reserve.agree');
 Route::get('admin/reserve/mail_send/{id}', [AdminController::class, 'reserve_mail_send'])->name('admin.reserve.mail_send');
 Route::get('admin/test/make',[AdminController::class, 'test_make'])->name('admin.test.make');
-
+Route::get('admin/test/problem', [AdminController::class, 'test_problem'])->name('admin.test.problem');
 
 
 
