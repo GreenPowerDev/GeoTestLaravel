@@ -1,0 +1,83 @@
+/* -----------mainviual----------- */
+.mainvisual{
+    padding-top: 170px;
+}
+.mainvisual img{
+    width: 100%;
+    height: calc(100vh - 170px);
+    object-fit: cover;
+    position: relative;
+}
+.endtext{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: white;
+}
+.test_end_notice{
+    width: 100%;
+}
+.test_end_notice p {
+    text-align: left;
+}
+.end_field{
+    width: 570px;
+    margin: 0 auto;
+}
+.end_title{
+    font-size: 70px;
+    line-height: 113px;
+}
+.end_context{
+    font-size: 25px;
+    padding: 5px;
+    line-height: 40px;
+}
+
+/* ------------------------------------ */
+@media only screen and (max-width:1280px) {
+    .mainvisual{
+        padding-top: 150px;
+    }
+    .mainvisual img{
+        height: calc(100vh - 150px);
+    }
+    .endtext{
+        font-size: 60px;
+    }
+}
+@media only screen and (max-width:768px) {
+    .mainvisual{
+        padding-top: 50px;
+    }
+    .mainvisual img{
+        height: calc(100vh - 50px);
+    }
+    .endtext{
+        font-size: 60px;
+    }
+}
+@media only screen and (max-width:768px) {
+    .endtext{
+        font-size: 40px;
+    }
+    .end_field{
+        width: 100%;
+    }
+    .end_field p{
+        text-align: center;
+    }
+    .end_title{
+        font-size: 40px;
+    }
+    .end_context{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width:768px) {
+    .end_context{
+        font-size: 18px;
+    }
+}
