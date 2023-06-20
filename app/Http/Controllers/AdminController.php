@@ -25,7 +25,7 @@ class AdminController extends Controller
 
         $test2users = Test2user::all();
         //dd($test2users[0]->reservation->user()->id);
-        return view('admin.listgroup', ['test2users'=>$test2users]);
+        return view('admin.reservation', ['test2users'=>$test2users]);
     }
 
     public function reserve_delete($id){
@@ -34,7 +34,7 @@ class AdminController extends Controller
 
         Reservation::where('id',$id)->delete();
         $test2users = Test2user::all();
-        return view('admin.listgroup', ['test2users'=>$test2users]);
+        return view('admin.reservation', ['test2users'=>$test2users]);
     }
 
     public function reserve_agree($id){
@@ -95,5 +95,9 @@ class AdminController extends Controller
         $test2user->save();
         return redirect()->route('admin.reserve.accept');
 
+    }
+
+    public function test_make(){
+        return view('admin.make_test');
     }
 }

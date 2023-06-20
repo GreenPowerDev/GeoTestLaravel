@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('main-content')
-    <link href="{{asset('/css/test_site_style.css')}}" rel='stylesheet'>
+    <link href="{{asset('/css/test_process_style.css')}}" rel='stylesheet'>
     <section class="mainvisual">
         <div class="problem_count">
             <div class="problem_no">問<span>1</span></div>
@@ -28,17 +28,17 @@
         </a>
     </section>
     <script>
-        $(document).ready(function(){
-            $("#test_asc").click(function(){
-                $("#show_test_group").css('flex-direction', 'column');
-                $(this).css('background','#13AE6A');
-                $("#test_desc").css('background','white');
-            });
-            $("#test_desc").click(function(){
-                $("#show_test_group").css('flex-direction', 'column-reverse');
-                $(this).css('background','#13AE6A');
-                $("#test_asc").css('background','white');
-            });
-        })   
+    window.onbeforeunload = function() {
+        return "試験に再受験できません。本当に脱退しますか？";
+    }
+
+    function disableF5(e) {
+        if ((e.which || e.keyCode) == 116 || (e.which || e.keyCode) == 82) e.preventDefault(); 
+    }
+
+    $(document).ready(function(){
+        $(document).on("keydown", disableF5);
+    });
+
     </script>
 @endsection

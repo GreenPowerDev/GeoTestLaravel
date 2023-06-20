@@ -46,6 +46,8 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('mypage/test_login_/{id}', [MypageController::class, 'test_login_form'])->name('test.login_form');
 Route::post('mypage/test_login', [MypageController::class, 'test_login'])->name('test.login');
+Route::post('mypage/test/enter', [MypageController::class, 'test_enter'])->name('test.enter');
+
 
 
 Route::get('guide/notice', [GuideController::class, 'notice'])->name('guide.notice');
@@ -54,7 +56,6 @@ Route::get('guide/area', [GuideController::class, 'area'])->name('guide.area');
 Route::get('guide/method', [GuideController::class, 'method'])->name('guide.method');
 Route::get('guide/qustion', [GuideController::class, 'qustion'])->name('guide.qustion');
 Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
-
 
 
 
@@ -72,7 +73,7 @@ Route::get('admin/reserve/accept', [AdminController::class, 'reserve_accept'])->
 Route::get('admin/reserve/delete/{id}', [AdminController::class, 'reserve_delete'])->name('admin.reserve.delete');
 Route::get('admin/reserve/agree/{id}', [AdminController::class, 'reserve_agree'])->name('admin.reserve.agree');
 Route::get('admin/reserve/mail_send/{id}', [AdminController::class, 'reserve_mail_send'])->name('admin.reserve.mail_send');
-
+Route::get('admin/test/make',[AdminController::class, 'test_make'])->name('admin.test.make');
 
 
 

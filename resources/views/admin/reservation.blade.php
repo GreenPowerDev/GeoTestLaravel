@@ -6,6 +6,9 @@
     管理ページ
 @endsection
 @section('sub-root1')
+    試験予約管理
+@endsection
+@section('sub-root2')
     試験申込受付
 @endsection
 @section('main-content')

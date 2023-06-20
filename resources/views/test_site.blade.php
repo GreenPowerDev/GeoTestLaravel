@@ -43,29 +43,16 @@
             今しばらくお待ちください。</p>
         </div>
         {{-- @endif --}}
-        <form method="POST" action="{{route('test_process')}}" id="enter_test_form">
+        <form method="POST" action="{{route('test.enter')}}" id="enter_test_form">
             @csrf
             <input type="hidden" name="test_id" value="{{$test->id}}">
         </form>
     </section>
-    <script>console.log($('#test_begin_time').val())</script>
     <script>
-        $(document).ready(function(){
-            $("#test_asc").click(function(){
-                $("#show_test_group").css('flex-direction', 'column');
-                $(this).css('background','#13AE6A');
-                $("#test_desc").css('background','white');
-            });
-            $("#test_desc").click(function(){
-                $("#show_test_group").css('flex-direction', 'column-reverse');
-                $(this).css('background','#13AE6A');
-                $("#test_asc").css('background','white');
-            });
-        })
         var startDate = new Date();
         var timestamp = $('#test_begin_time').val(); 
-        var endDate = new Date(timestamp * 1000);
-        //var endDate = new Date('2023-06-20 10:13:00');
+        //var endDate = new Date(timestamp * 1000);
+        var endDate = new Date('2023-06-20 10:29:00');
         var seconds = Math.floor((endDate - startDate)/1000);
         var interval = setInterval(function() {
 
@@ -81,7 +68,6 @@
         if(r_hours > 0) out_time_string += r_hours + "時";
         if(r_minutes > 0) out_time_string += r_minutes + "分";
         if(r_seconds > 0) out_time_string += r_seconds + "秒";
-
             $('#calc_time').html(out_time_string);
         }, 1000);
         function enter_test(){

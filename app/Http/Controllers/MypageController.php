@@ -31,4 +31,10 @@ class MypageController extends Controller
         //dd($province);
         return view('test_site', ['province'=>$province, 'test'=>$test]);
     }
+
+    public function test_enter(Request $request){
+        //dd('ok');
+        
+        return view('test_process');
+    }
 }

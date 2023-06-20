@@ -15,10 +15,20 @@
     <link rel="stylesheet" href="{{asset('admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/vendor/charts/c3charts/c3.css')}}">
     <link rel="stylesheet" href="{{asset('admin/vendor/fonts/flag-icon-css/flag-icon.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/vendor/datepicker/tempusdominus-bootstrap-4.css')}}">
     <title>管理ページ</title>
 </head>
 
 <body>
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="{{asset('admin/vendor/jquery/jquery-3.3.1.min.js')}}"></script>
+    <!-- bootstap bundle js -->
+    <script src="{{asset('admin/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+    <!-- slimscroll js -->
+    <script src="{{asset('admin/vendor/slimscroll/jquery.slimscroll.js')}}"></script>
+    <!-- main js -->
+    <script src="{{asset('admin/libs/js/main-js.js')}}"></script>
     <!-- ============================================================== -->
     <!-- main wrapper -->
     <!-- ============================================================== -->
@@ -157,6 +167,26 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.reserve.accept')}}">試験申込受付</a>
+                                        </li>
+                                        {{-- <li class="nav-item">
+                                            <a class="nav-link" href="pages/form-validation.html">Parsely Validations</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/multiselect.html">Multiselect</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/datepicker.html">Date Picker</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/bootstrap-select.html">Bootstrap Select</a>
+                                        </li> --}}
+                                    </ul>
+                                </div>
+                                <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>試験管理</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.test.make')}}">試験作成</a>
                                         </li>
                                         {{-- <li class="nav-item">
                                             <a class="nav-link" href="pages/form-validation.html">Parsely Validations</a>
@@ -471,7 +501,8 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">@yield('root')</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">@yield('sub-root1')</li>
+                                            <li class="breadcrumb-item" aria-current="page">@yield('sub-root1')</li>
+                                            <li class="breadcrumb-item active" aria-current="page">@yield('sub-root2')</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -497,15 +528,7 @@
     <!-- ============================================================== -->
     <!-- end main wrapper  -->
     <!-- ============================================================== -->
-    <!-- Optional JavaScript -->
-    <!-- jquery 3.3.1 -->
-    <script src="{{asset('admin/vendor/jquery/jquery-3.3.1.min.js')}}"></script>
-    <!-- bootstap bundle js -->
-    <script src="{{asset('admin/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
-    <!-- slimscroll js -->
-    <script src="{{asset('admin/vendor/slimscroll/jquery.slimscroll.js')}}"></script>
-    <!-- main js -->
-    <script src="{{asset('admin/libs/js/main-js.js')}}"></script>
+
     <!-- chart chartist js -->
     {{-- <script src="{{asset('admin/vendor/charts/chartist-bundle/chartist.min.js')}}"></script>
     <!-- sparkline js -->
