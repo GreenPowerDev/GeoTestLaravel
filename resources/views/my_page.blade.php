@@ -59,7 +59,7 @@
             <p class="reservation_title title">予約済み検定</p>    
             <div class="reservation_detail">
 
-                @foreach($reserved_tests as $reserved_test)
+                @foreach($allowed_tests as $allowed_test)
                 <div class="reservation_content">
                     <div class="reservation_when">
                         <p class="reservation_date">開催日：2023年○○月○○日</p>
@@ -70,7 +70,7 @@
                         <p class="reservation_ganre">ジャンル： <span>○○○○</span></p>
                         <p class="reservation_level">レベル：<span>○○</span></p>
                     </div>
-                    <a href="{{route('test.login_form', ['id'=>$reserved_test->id])}}">
+                    <a href="{{route('test.login_form', ['id'=>$allowed_test->id])}}">
                         <div class="to_test_site">
                             試験画面へ進む
                         </div>

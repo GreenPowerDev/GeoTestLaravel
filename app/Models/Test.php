@@ -33,6 +33,12 @@ class Test extends Model
     {   
         return $this->hasMany('App\Models\Reservation');
     }
+    public function province()
+    {   
+        return $this->belongsTo('App\Models\Province', 'province_id','id');
+    }
+
+
 
 
     public function get_level_name()

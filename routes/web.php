@@ -13,6 +13,7 @@ use App\Http\Controllers\TestPaymantController;
 use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuideController;
+use App\Http\Controllers\MypageController;
 
 
 /*
@@ -43,8 +44,8 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
-Route::get('mypage/test_login_/{id}', [GuideController::class, 'test_login_form'])->name('test.login_form');
-
+Route::get('mypage/test_login_/{id}', [MypageController::class, 'test_login_form'])->name('test.login_form');
+Route::post('mypage/test_login', [MypageController::class, 'test_login'])->name('test.login');
 
 
 Route::get('guide/notice', [GuideController::class, 'notice'])->name('guide.notice');
