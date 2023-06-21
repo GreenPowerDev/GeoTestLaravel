@@ -18,4 +18,18 @@ class Problem extends Model
         'province_num',
         'level_num',
     ];
+
+    public function level()
+    {
+        return $this->belongsTo('App\Models\Level','level_num','id');
+    }
+    public function ganre()
+    {
+        return $this->belongsTo('App\Models\Ganre','ganre_num','ganre_num');
+    }
+    public function province()
+    {   
+        return $this->belongsTo('App\Models\Province', 'province_num','id');
+    }
+
 }

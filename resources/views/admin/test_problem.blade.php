@@ -105,13 +105,13 @@
                                 </div>
                                 <div id="collapseFour_{{$problem->id}}" class="collapse" aria-labelledby="headingFour" data-parent="#accordion2" style="">
                                     <div class="card-body">
-                                        <p class="lead">{{$problem->get_ganre_name()}}</p>
+                                        <p class="lead"></p>
                                         <p>
-                                            レベル：{{$problem->get_level_name()}}&nbsp;&nbsp;&nbsp;
-                                            ジャンル：{{$problem->get_ganre_name()}} &nbsp;&nbsp;&nbsp;
-                                            県名：{{$problem->get_province_name()}}
+                                            レベル：{{$problem->level->level_name}}&nbsp;&nbsp;&nbsp;
+                                            ジャンル：{{$problem->ganre->ganre_name}} &nbsp;&nbsp;&nbsp;
+                                            県名：{{$problem->province->name}}
                                         </p>
-                                        <button onclick="add_problem({{$problem->id}})" class="btn btn-secondary">Go somewhere</button>
+                                        <button onclick="add_problem({{$problem->id}})" class="btn btn-secondary">追加</button>
                                     </div>
                                 </div>
                             </div>

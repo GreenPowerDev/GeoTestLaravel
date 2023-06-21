@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Province;
-use App\Models\Test;
 
 class Province extends Model
 {
@@ -21,6 +20,10 @@ class Province extends Model
     public function tests()
     {   
         return $this->hasMany('App\Models\Test');
+    }
+    public function problems()
+    {   
+        return $this->hasMany('App\Models\Problem');
     }
 
     public function province_first_test(){
