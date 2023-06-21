@@ -32,22 +32,37 @@
                     </div>
                     <div class="accrodion-regular hx-500">
                         <div id="accordion">
+
+                            @foreach($tests as $test)
+
+
                             <div class="card">
                                 <div class="card-header" id="headingOne">
                                     <h5 class="mb-0">
-                                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                       Accordion Heading Title Here
+                                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne_{{$test->id}}" aria-expanded="false" aria-controls="collapseOne_{{$test->id}}">
+                                       <span class="title-text">{{$test->name}}</span>
                                        </button>
-                                      </h5>
+                                    </h5>
                                 </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
+                                <div id="collapseOne_{{$test->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
                                     <div class="card-body">
-                                        <p class="lead"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p>
-                                        <p> Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-                                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                                        <p class="lead"> 
+                                            {{$test->get_test_date()}} &nbsp;&nbsp;&nbsp; 
+                                            {{$test->get_begin_time()}}～{{$test->get_end_time()}} 
+                                        </p>
+                                        <p>
+                                            レベル：{{$test->get_level_name()}}&nbsp;&nbsp;&nbsp;
+                                            ジャンル：{{$test->get_ganre_name()}} &nbsp;&nbsp;&nbsp;
+                                            県名：{{$test->get_province_name()}}       
+                                        </p>
+                                        <button onclick="" class="btn btn-secondary">選択</button>
                                     </div>
                                 </div>
                             </div>
+
+                            @endforeach
+
+
                         </div>
                     </div>
                 </div>
@@ -142,12 +157,13 @@
         // alert($('#th_check').prop('checked'));
         var filter = $(this).val();
         $("#accordion").find(".collapse").each(function () {
-            var title = $(this).find(".lead").text();
+            var title = $(this).parent().find(".title-text").text();
+            console.log($(this).parent());
             if (title.indexOf(filter) > -1) {
-                $(this).parent().parent().css('display', 'block');
+                $(this).parent().css('display', 'block');
             }
             else {
-                $(this).parent().parent().css('display', 'none');
+                $(this).parent().css('display', 'none');
             }
         });
     });
