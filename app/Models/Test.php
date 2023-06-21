@@ -60,9 +60,11 @@ class Test extends Model
         return $end_time->format('H時i分');
     }
 
-    public function get_ganre_name(){
-        
+    public function get_ganre_name(){   
         return $this->ganre->ganre_name;
+    }
+    public function get_province_name(){
+        return $this->province->name;
     }
     // public function get_province_name()
     // {
