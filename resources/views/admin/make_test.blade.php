@@ -47,7 +47,7 @@
                         <h5>開始時間</h5>
                         <div class="form-group mx-3">
                             <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" name="add_test_start">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" name="add_test_begin">
                                 <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
                                 </div>

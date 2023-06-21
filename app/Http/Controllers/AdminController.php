@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Test2user;
+use App\Models\Test;
 use App\Models\Reservation;
 use App\Models\Allowed;
 use App\Models\Province;
 use App\Models\Level;
 use App\Models\Ganre;
 use Mail;
+use Carbon\Carbon;
 use App\Mail\AllowedMail;
 
 class AdminController extends Controller
@@ -115,12 +117,32 @@ class AdminController extends Controller
     }
 
     public function add_test(Request $request){
-        dd($request->add_test_name);
-        // add_test_name,
-        // add_test_start,
-        // add_test_main,
-        // add_level,
-        // add_ganre,
-        // add_province,
+        $test = new Test();
+        
+        
+        $date = $request->add_test_date;
+        $newDate = Carbon::createFromFormat('Y年m月d日', $date)->format('Y-m-d');
+        
+        $begin_time = $request->add_test_begin;
+        $new_begin_time = Carbon::createFromFormat('H時i分', $begin_time)->format('H:i:00');
+        
+        $end_time = $request->add_test_end;
+        $new_end_time = Carbon::createFromFormat('H時i分', $end_time)->format('H:i:00');
+        
+        $province_id = Province::where('name', $request->add_province)->first()->id; 
+        $ganre_id = Ganre::where('ganre_name', $request->add_ganre)->first()->id; 
+        $level_id = Level::where('level_name', $request->add_level)->first()->id; 
+
+        $test->name = $request->add_test_name;
+        $test->price = $request->add_test_price;
+        $test->test_date = $newDate;
+        $test->begin_time = $new_begin_time;
+        $test->end_time = $new_end_time;
+        $test->province_id = $province_id;
+        $test->ganre_id = $ganre_id;
+        $test->level_id = $level_id;
+
+        $test->save();
+
     }
 }
