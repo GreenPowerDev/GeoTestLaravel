@@ -235,6 +235,7 @@
     border-radius: 12px;
     padding: 33px 35px 45px 43px;
     margin: 21px 10px 46px 10px;
+    height: 100%;
 }
 .area_detail{
     background-color: white;

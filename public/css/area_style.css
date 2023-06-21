@@ -23,6 +23,7 @@
     border-radius: 19px;
     width: 410px;
     font-size: 35px;
+    padding-left: 20px;
 }
 .test_areas{
     display: flex;
