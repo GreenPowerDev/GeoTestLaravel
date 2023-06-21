@@ -80,10 +80,16 @@
                     </div>
                     <div class="area_detail">
                         <p class="area_detail-title">最近の開催試験</p>
-                        <p class="area_detail-date">開催日：2023年○○月○○日</p>
-                        <p class="area_detail-time">開催時間：○○時○○分～○○時○○分</p>
-                        <p class="area_detail-ganre">ジャンル：○○○○</p>
-                        <p class="area_detail-level">レベル：○○</p>
+                        @if (is_null($province->province_first_test()))
+                        <p class="predetail_title" >テストはありません。</p>
+                        @else
+                            <p class="area_detail-date">開催日：{{$province->province_first_test()->get_test_date()}}</p>
+                            <p class="area_detail-time">開催時間：{{$province->province_first_test()->get_begin_time()}}
+                                                        ～{{$province->province_first_test()->get_end_time()}}</p>
+                            <p class="area_detail-ganre">ジャンル：{{$province->province_first_test()->get_ganre_name()}}</p>
+                            <p class="area_detail-level">レベル：{{$province->province_first_test()->get_level_name()}}</p>
+                        @endif
+                    
                     </div>
                 </a>
             </div>
