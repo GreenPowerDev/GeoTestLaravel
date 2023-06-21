@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Province;
-use App\Models\Test;
 
 class Province extends Model
 {

@@ -111,7 +111,7 @@
                                             ジャンル：{{$problem->ganre->ganre_name}} &nbsp;&nbsp;&nbsp;
                                             県名：{{$problem->province->name}}
                                         </p>
-                                        <button onclick="add_problem({{$problem->id}})" class="btn btn-secondary">Go somewhere</button>
+                                        <button onclick="add_problem({{$problem->id}})" class="btn btn-secondary">追加</button>
                                     </div>
                                 </div>
                             </div>
