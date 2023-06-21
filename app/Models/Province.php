@@ -22,6 +22,10 @@ class Province extends Model
     {   
         return $this->hasMany('App\Models\Test');
     }
+    public function problems()
+    {   
+        return $this->hasMany('App\Models\Problem');
+    }
 
     public function province_first_test(){
         return $this->tests()->where('test_date', '>=', Carbon::now())->first();

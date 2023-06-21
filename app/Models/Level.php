@@ -13,4 +13,8 @@ class Level extends Model
     {   
         return $this->hasMany('App\Models\Test');
     }
+    public function problems()
+    {   
+        return $this->hasMany('App\Models\Problem');
+    }
 }
