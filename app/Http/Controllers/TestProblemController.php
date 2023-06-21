@@ -10,12 +10,14 @@ use App\Models\Province;
 use App\Models\Level;
 use App\Models\Ganre;
 use App\Models\Test;
+use App\Models\Problem;
 
 class TestProblemController extends Controller
 {
     //
     public function test_problem(){
         $tests = Test::all();
-        return view('admin.test_problem',['tests'=>$tests]);
+        $problems = Problem::all();
+        return view('admin.test_problem',['tests'=>$tests, 'problems'=>$problems]);
     }
 }

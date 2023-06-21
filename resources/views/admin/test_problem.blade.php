@@ -55,7 +55,7 @@
                                             ジャンル：{{$test->get_ganre_name()}} &nbsp;&nbsp;&nbsp;
                                             県名：{{$test->get_province_name()}}       
                                         </p>
-                                        <button onclick="" class="btn btn-secondary">選択</button>
+                                        <button onclick="select_test({{$test->id}})" class="btn btn-secondary">選択</button>
                                     </div>
                                 </div>
                             </div>
@@ -92,22 +92,32 @@
                     </div>
                     <div class="accrodion-outline hx-500">
                         <div id="accordion2">
+
+                            @foreach($problems as $problem)
+
                             <div class="card">
                                 <div class="card-header" id="headingFour">
                                     <h5 class="mb-0">
-                                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                       Accordion Heading Title Here
+                                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour_{{$problem->id}}" aria-expanded="false" aria-controls="collapseFour_{{$problem->id}}">
+                                        <span class="title-text">{{$problem->answer_text}}</span>
                                        </button>
-                                      </h5>
+                                    </h5>
                                 </div>
-                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion2" style="">
+                                <div id="collapseFour_{{$problem->id}}" class="collapse" aria-labelledby="headingFour" data-parent="#accordion2" style="">
                                     <div class="card-body">
-                                        <p class="lead"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p>
-                                        <p> Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-                                        <a href="#" class="btn btn-secondary">Go somewhere</a>
+                                        <p class="lead">{{$problem->get_ganre_name()}}</p>
+                                        <p>
+                                            レベル：{{$problem->get_level_name()}}&nbsp;&nbsp;&nbsp;
+                                            ジャンル：{{$problem->get_ganre_name()}} &nbsp;&nbsp;&nbsp;
+                                            県名：{{$problem->get_province_name()}}
+                                        </p>
+                                        <button onclick="add_problem({{$problem->id}})" class="btn btn-secondary">Go somewhere</button>
                                     </div>
                                 </div>
                             </div>
+
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
