@@ -1,6 +1,6 @@
 @extends('admin.admin_layouts.admin_main')
 @section('page-title')
-    問題作成
+    作成
 @endsection
 @section('root')
     管理ページ
@@ -9,7 +9,7 @@
     試験管理
 @endsection
 @section('sub-root2')
-    試験作成
+    作成
 @endsection
 @section('main-content')
 <div class="row">
@@ -19,86 +19,32 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
             <h5 class="card-header">試験作成</h5>
-            <div class="card-body">
-                <form method="POST" action="{{route('admin.test.add_test')}}" id="validationform" >
-                    @csrf
-                    <div class="form-group row">
-                        <label class="col-12 col-sm-3 col-form-label text-sm-right">試験名</label>
-                        <div class="col-12 col-sm-8 col-lg-6">
-                            <input type="text" required placeholder="" class="form-control" name="add_test_name">
-                        </div>
-                        <label for="input-select">ジャンル選択</label>
-                            <select class="form-control mx-3" id="input-select" name="add_ganre">
-                            @foreach($ganres as $ganre)
-                                <option>{{$ganre->ganre_name}}</option>
-                            @endforeach
-                            </select>
+            <form action="{{route('admin.test.problem_make')}}" method="post">
+                <div class="card-body">
+                    <div class="pstyle">
+                        <label for="pstyle_id">test type</label>
+                        <select name="pstyle_id" id="pstyle_id" class="">
+                            <option value="">checkbox</option>
+                            <option value="">radio</option>
+                            <option value="">input</option>
+                        </select><br>
+                        <label for="problem_text">problem text</label>
+                        <input type="text" class="form-control" name="answer_text" Required>
+                        <button onclick="pstyle()">ok</button>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-12 col-sm-3 col-form-label text-sm-right">試験金額</label>
-                        <div class="col-12 col-sm-8 col-lg-6">
-                            <input required type="number" min="0" placeholder="" class="form-control" name="add_test_price">
-                        </div>
+                    <div>
+                        <label for="preanswer">preanswer</label>
+                        <input type="text" id="preanswer" class="form-control col-12 col-sm-3 ml-3 " required>
+                        <button onclick="preanswer_add()" class="form-control btn btn-space btn-primary col-12 col-sm-1 ml-5">add</button>
                     </div>
-                    <div class="card-body border-top d-flex justify-content-center">
-                        <h5>試験開始日</h5>
-                        <div class="form-group mx-3">
-                            <div class="input-group date" id="datetimepicker4" data-target-input="nearest" >
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" name="add_test_date">
-                                <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5>開始時間</h5>
-                        <div class="form-group mx-3">
-                            <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" name="add_test_begin">
-                                <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5>期限時間</h5>
-                        <div class="form-group mx-3">
-                            <div class="input-group date" id="datetimepicker3_1" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3_1" name="add_test_end">
-                                <div class="input-group-append" data-target="#datetimepicker3_1" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div >
+                        <label for="correct_answer" >crrect answer</label>
+                        <input type="text" id="correct_answer" class="form-control col-12 col-sm-3 ml-3" required>
+                        <button type="submit" class="form-control btn btn-space btn-primary col-12 col-sm-1 ml-5">add</button>
                     </div>
-
-                    <div class="form-group d-flex justify-content-center">
-
-                            <label for="input-select">県選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select" name="add_province">
-                            @foreach($provinces as $province)
-                                <option>{{$province->name}}</option>
-                            @endforeach
-                            </select>
-
-                            <label for="input-select">ジャンル選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select" name="add_ganre">
-                            @foreach($ganres as $ganre)
-                                <option>{{$ganre->ganre_name}}</option>
-                            @endforeach
-                            </select>
-
-                            <label for="input-select">レベル選択</label>
-                            <select class="form-control mx-3" style="width: 150px;" id="input-select" name="add_level">
-                            @foreach($levels as $level)
-                                <option>{{$level->level_name}}</option>
-                            @endforeach
-                            </select>
-     
-                    </div>
-                    <div class="d-flex w-100">
-                        <button type="submit" class="btn btn-space btn-primary mx-auto">Submit</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <button type="submit">next problem</button>
+            </form>
         </div>
     </div>
         <script src="{{asset('admin/vendor/datepicker/moment.js')}}"></script>
