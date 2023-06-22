@@ -83,7 +83,7 @@ Route::post('admin/test/problem_make', [AdminController::class, 'problem_make'])
 
 Route::get('admin/test/problem', [TestProblemController::class, 'test_problem'])->name('admin.test.problem');
 Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
-
+Route::post('admin/test/add_problem_test', [TestProblemController::class, 'add_problem_test'])->name('admin.test.add_problem_test');
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');
