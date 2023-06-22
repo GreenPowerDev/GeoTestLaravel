@@ -31,5 +31,8 @@ class Problem extends Model
     {   
         return $this->belongsTo('App\Models\Province', 'province_num','id');
     }
-
+    public function test2problem()
+    {   
+        return $this->hasMany('App\Models\Test2problem');
+    }
 }
