@@ -145,4 +145,8 @@ class AdminController extends Controller
         $test->save();
 
     }
+    public function problem_make(Request $rewuest){
+        
+        return view('admin.problem_make');
+    }
 }
