@@ -160,8 +160,7 @@ class ProblemSeeder extends Seeder
           ]);
           Problem::create([
               'pstyle'=>'1',
-              'answer_text'=>'
-              次のうち、日本の代表的な麺料理はどれか。',
+              'answer_text'=>'次のうち、日本の代表的な麺料理はどれか。',
               'pre_answer'=>'うどん＃そば#ラーメン#パスタ',
               'correct_answer'=>'ラーメン',
               'ganre_num'=>'2',
@@ -200,8 +199,7 @@ class ProblemSeeder extends Seeder
           
           Problem::create([
               'pstyle'=>'1',
-              'answer_text'=>'
-              次のうち、日本の代表的な観光地はどれか。',
+              'answer_text'=>'次のうち、日本の代表的な観光地はどれか。',
               'pre_answer'=>'グランドキャニオン＃エッフェル塔#富士山#ニューヨークのタイムズスクエア',
               'correct_answer'=>'富士山',
               'ganre_num'=>'3',
@@ -210,8 +208,7 @@ class ProblemSeeder extends Seeder
           ]);
           Problem::create([
               'pstyle'=>'1',
-              'answer_text'=>'
-              次のうち、日本の代表的な祭りはどれか。',
+              'answer_text'=>'次のうち、日本の代表的な祭りはどれか。',
               'pre_answer'=>'マルディグラ＃オクトーバーフェスト#天神祭#パレード・オブ・ナショナル・コスチュームズ',
               'correct_answer'=>'天神祭',
               'ganre_num'=>'3',

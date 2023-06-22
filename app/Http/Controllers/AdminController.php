@@ -11,6 +11,7 @@ use App\Models\Allowed;
 use App\Models\Province;
 use App\Models\Level;
 use App\Models\Ganre;
+use App\Models\Problem;
 use Mail;
 use Carbon\Carbon;
 use App\Mail\AllowedMail;
@@ -144,9 +145,45 @@ class AdminController extends Controller
 
         $test->save();
 
+        return redirect()->route('admin.test.make');
+
     }
-    public function problem_make(Request $rewuest){
-        
-        return view('admin.problem_make');
+
+    public function problem_make(){
+        $ganres = Ganre::all();
+        $levels = Level::all();
+        $provinces = Province::all();
+
+        return view('admin.problem_make', [
+            'levels'=>$levels,
+            'provinces'=>$provinces,
+            'ganres'=>$ganres
+        ]);
     }
+
+    public function add_problem(Request $request){
+        $problem = new Problem();
+
+        $snd_province_id = Province::where('name', $request->snd_province)->first()->id; 
+        $snd_ganre_id = Ganre::where('ganre_name', $request->snd_ganre)->first()->id; 
+        $snd_level_id = Level::where('level_name', $request->snd_level)->first()->id;
+        $snd_problem_time = $request->snd_mintime * 60 + $request->snd_secondtime;
+
+
+        $problem->pstyle = $request->snd_pstyle_id;
+        $problem->answer_text = $request->snd_problem_text;
+        $problem->pre_answer = $request->snd_pre_answers;
+        $problem->correct_answer = $request->snd_correct_answers;
+        $problem->province_num = $snd_province_id;
+        $problem->ganre_num = $snd_ganre_id;
+        $problem->level_num = $snd_level_id;
+        $problem->problem_time = $snd_problem_time;
+
+        $problem->save();
+
+        return redirect()->route('admin.test.problem_make');
+
+    }
+
+
 }
