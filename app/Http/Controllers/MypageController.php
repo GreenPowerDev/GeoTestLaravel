@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Test2user;
+use App\Models\Test;
+use App\Models\Test2problem;
+use Illuminate\Support\Facades\Auth;
+
 
 class MypageController extends Controller
 {
@@ -35,6 +39,15 @@ class MypageController extends Controller
     public function test_enter(Request $request){
         //dd('ok');
         
-        return view('test_process');
+        $user_id = Auth::user()->id;
+        $test_id = $request->test_id;//dd($test_id);
+        $test = Test::find($test_id);
+        $problem_ids = Test2problem::where('test_id', $test_id)->get();
+        //dd($problem_ids);
+        return view('test_process',[
+            'user_id'=>$user_id,
+            'test'=>$test,
+            'problem_ids'=>$problem_ids
+        ]);
     }
 }

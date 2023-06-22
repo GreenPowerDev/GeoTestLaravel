@@ -79,6 +79,7 @@
                 <!-- ============================================================== -->
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                     <form action="{{route('admin.test.add_problem_test')}}" method="post">
+                        @csrf
                         <div class="section-block">
                             <h5 class="section-title">試験</h5>
                         </div>

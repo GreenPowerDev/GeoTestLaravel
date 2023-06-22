@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('ganre_num');
             $table->integer('province_num');
             $table->integer('level_num');
+            $table->integer('problem_time');
             $table->timestamps();
         });
     }
