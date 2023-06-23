@@ -44,7 +44,7 @@ class dbcreate extends Command
         config(["database.connections.mysql.database" => null]);
 
         $query = "CREATE DATABASE IF NOT EXISTS `$schemaName` CHARACTER SET $charset COLLATE $collation;";
-        dd($query);
+
         DB::statement($query);
 
         config(["database.connections.mysql.database" => $schemaName]);
