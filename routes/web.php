@@ -78,7 +78,8 @@ Route::get('admin/reserve/agree/{id}', [AdminController::class, 'reserve_agree']
 Route::get('admin/reserve/mail_send/{id}', [AdminController::class, 'reserve_mail_send'])->name('admin.reserve.mail_send');
 Route::get('admin/test/make',[AdminController::class, 'test_make'])->name('admin.test.make');
 Route::post('admin/test/add_test', [AdminController::class, 'add_test'])->name('admin.test.add_test');
-Route::post('admin/test/problem_make', [AdminController::class, 'problem_make'])->name('admin.test.problem_make');
+Route::get('admin/test/problem_make', [AdminController::class, 'problem_make'])->name('admin.test.problem_make');
+Route::post('admin/test/add_problem', [AdminController::class, 'add_problem'])->name('admin.test.add_problem');
 
 
 Route::get('admin/test/problem', [TestProblemController::class, 'test_problem'])->name('admin.test.problem');

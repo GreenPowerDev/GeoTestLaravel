@@ -12,6 +12,11 @@
     試験問題選択
 @endsection
 @section('main-content')
+<style>
+    label{
+        margin:auto 0!important;
+    }
+</style>
 <div class="row">
     <!-- ============================================================== -->
     <!-- valifation types -->

@@ -12,6 +12,14 @@
     試験作成
 @endsection
 @section('main-content')
+<style>
+    label{
+        margin:auto 0!important;
+    }
+    h5{
+        margin-top: 5px;
+    }
+</style>
 <div class="row">
     <!-- ============================================================== -->
     <!-- valifation types -->
