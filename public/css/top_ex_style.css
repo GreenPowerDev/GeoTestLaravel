@@ -137,7 +137,7 @@
         transition: all .4s;
       }
     .test_schedul{
-        height: calc(100vh - 150px);
+        height: calc(100vh - 170px);
     }
     .sch-content{
         height: calc(100vh - 255px);

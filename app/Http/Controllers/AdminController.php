@@ -167,7 +167,7 @@ class AdminController extends Controller
         $snd_province_id = Province::where('name', $request->snd_province)->first()->id; 
         $snd_ganre_id = Ganre::where('ganre_name', $request->snd_ganre)->first()->id; 
         $snd_level_id = Level::where('level_name', $request->snd_level)->first()->id;
-        $snd_problem_time = $request->snd_mintime * 60 + $request->snd_secondtime;
+        $snd_problem_time = (int)$request->snd_mintime * 60 + (int)$request->snd_secondtime;
 
 
         $problem->pstyle = $request->snd_pstyle_id;
