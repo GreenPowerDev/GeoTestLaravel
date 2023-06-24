@@ -35,4 +35,16 @@ class TestProblemController extends Controller
         }
         return $this->test_problem();
     }
+
+    public function calc_test(Request $request){
+
+        $test_id = $request->test_id;
+        $test = Test::find($test_id);
+        $count_problem = aizeof($test->problem)
+
+        return "okok";
+        dd("okok");
+        $i=0;
+        dd($request->get("problem_answer_".$i));
+    }
 }
