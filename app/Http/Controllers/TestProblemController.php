@@ -40,9 +40,13 @@ class TestProblemController extends Controller
 
         $test_id = $request->test_id;
         $test = Test::find($test_id);
-        $count_problem = aizeof($test->problem)
+        $problem_count = $requset->problem_count;
+        for($i = 0; i < $problem_count; $i++){
+            $problem = Problem::find($request->get('problem_id_'.$i));
 
-        return "okok";
+        }
+
+        //return "okok";
         dd("okok");
         $i=0;
         dd($request->get("problem_answer_".$i));

@@ -33,9 +33,9 @@
         <div class="wait_time">
             <?php
             $date_scr = $test->test_date." ".$test->begin_time;
-            $timestamp_scr = strtotime($date_scr);
+            //$timestamp_scr = strtotime($date_scr);
             ?>
-            <input type="hidden" id="test_begin_time" value="{{$timestamp_scr}}">
+            <input type="hidden" id="test_begin_time" value="{{$date_scr}}">
             
             <p>試験申し込みありがとうございます。 <br>
             試験開始まであと <span id="calc_time"></span>です<br>
@@ -50,10 +50,11 @@
         </form>
     </section>
     <script>
+        //alert();
         var startDate = new Date();
         var timestamp = $('#test_begin_time').val(); 
-        //var endDate = new Date(timestamp * 1000);
-        var endDate = new Date('2023-06-20 10:29:00');
+        var endDate = new Date(timestamp);
+
         var seconds = Math.floor((endDate - startDate)/1000);
         var interval = setInterval(function() {
 
@@ -72,7 +73,8 @@
             $('#calc_time').html(out_time_string);
         }, 1000);
         function enter_test(){
-            $("#enter_test_form").submit();
+           $("#enter_test_form").submit();
         }
+
     </script>
 @endsection
