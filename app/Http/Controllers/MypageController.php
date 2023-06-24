@@ -18,8 +18,8 @@ class MypageController extends Controller
 
     public function test_login(Request $request){
         $test2user = Test2user::find($request->allowed_test_id);
-        $origin_id = $test2user->allowed()->first()->test_pass_id;
-        $origin_pwd = $test2user->allowed()->first()->test_pass_pwd;
+        $origin_id = $test2user->allowed->test_pass_id;
+        $origin_pwd = $test2user->allowed->test_pass_pwd;
         if($origin_id === $request->test_pass_id && $origin_pwd === $request->test_pass_pwd){
             return $this->go_test_site($request->allowed_test_id);
         }
@@ -30,8 +30,8 @@ class MypageController extends Controller
 
     public function go_test_site($tp_id){
         $test2user = Test2user::find($tp_id);
-        $province = $test2user->test()->first()->province()->first();
-        $test = $test2user->test()->first();
+        $province = $test2user->test->province;
+        $test = $test2user->test;
         //dd($province);
         return view('test_site', ['province'=>$province, 'test'=>$test]);
     }
