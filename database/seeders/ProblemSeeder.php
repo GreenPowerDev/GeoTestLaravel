@@ -261,7 +261,7 @@ class ProblemSeeder extends Seeder
             'pre_answer' => '',
             'answer_text'=>'真田昌幸によって築城され,真田氏・仙石氏・松平氏が城主となった城は何か。',
             'correct_answer'=>'上田城#尼ヶ淵城',
-            'province_num'=>'10',
+            'province_num'=>'4',
             'ganre_num'=>'2',
             'level_num'=>'1',
             'problem_time'=>'20',

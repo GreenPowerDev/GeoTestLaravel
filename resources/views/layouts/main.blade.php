@@ -14,9 +14,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <header>
         <div class="header">
-            <div class="top_logo">
+            <a class="top_logo" href="{{route('welcome_page')}}">
                 <img src="{{asset('img/top/mainvisual/header/top_logo.png')}}" alt="">
-            </div>
+            </a>
             <div class="top_buttons pcbtn">
                 
                 @if(Auth::check())

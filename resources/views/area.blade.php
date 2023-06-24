@@ -11,7 +11,7 @@
             @if(!$tests->isEmpty())
                 @foreach($tests as $test)
                 <div class="test_area-part">
-                    <a href="#">
+                    <a href="{{route('prefecture.select', ['id'=>$test->province->id])}}">
                         <div class="area_img">
                             <p class="area_name">
                                 @foreach(mb_str_split($test->province->name) as $char)

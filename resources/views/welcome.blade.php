@@ -78,7 +78,7 @@
                         </p>
                         <img src="{{$province->img_url}}" alt="">
                     </div>
-                    <div class="area_detail">
+                    <div class="area_detail" id="areadetail">
                         <p class="area_detail-title">最近の開催試験</p>
                         @if (is_null($province->province_first_test()))
                         <p class="predetail_title" >テストはありません。</p>
@@ -148,4 +148,17 @@
             <div class="content-items-right"><a href="{{route('guide.method')}}"><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
         </div>
     </section>
+
+
+<script>
+const areaImg = document.querySelector('.area_img img');
+
+areaImg.addEventListener('load', () => {
+  const areaImgHeight = areaImg.offsetHeight;  
+  const areaDetail = document.getElementById('areadetail');  
+  areaDetail.style.height = areaImgHeight + 'px';
+});
+
+</script>
+    
 @endsection

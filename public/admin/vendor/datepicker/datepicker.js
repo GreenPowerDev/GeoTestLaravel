@@ -25,13 +25,13 @@ jQuery(document).ready(function($) {
     if ($("#datetimepicker3").length) {
 
         $('#datetimepicker3').datetimepicker({
-            format: 'hh時mm分'
+            format: 'HH時mm分'
         });
     }
     if ($("#datetimepicker3_1").length) {
 
         $('#datetimepicker3_1').datetimepicker({
-            format: 'hh時mm分'
+            format: 'HH時mm分'
         });
     }
 

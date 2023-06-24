@@ -38,10 +38,10 @@ class MypageController extends Controller
 
     public function test_enter(Request $request){
         //dd('ok');
-        
         $user_id = Auth::user()->id;
         $test_id = $request->test_id;//dd($test_id);
         $test = Test::find($test_id);
+        // dd($test);
         $problem_ids = Test2problem::where('test_id', $test_id)->get();
         //dd($problem_ids);
         return view('test_process',[
