@@ -153,7 +153,6 @@
                 pstyle_set.style.display = "none";
                 pstyle_detail.style.display = "block";
                 if(pstyle_id == 3){pre_answer_home.style.display = "none";}
-        
             }
 
             function add_preanswer(){

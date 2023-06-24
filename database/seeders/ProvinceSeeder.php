@@ -34,5 +34,25 @@ class ProvinceSeeder extends Seeder
             'name'=>'大阪',
             'img_url'=>asset('img/top/test_area/top_akita.png')
         ]);
+        Province::create([
+            'name'=>'北海道',
+            'img_url'=>asset('img/top/test_area/top_hokaido.jpg')
+        ]);
+        Province::create([
+            'name'=>'東京',
+            'img_url'=>asset('img/top/test_area/top_tokyo.jpg')
+        ]);
+        Province::create([
+            'name'=>'神奈川',
+            'img_url'=>asset('img/top/test_area/top_kanagawa.jpg')
+        ]);
+        Province::create([
+            'name'=>'沖縄',
+            'img_url'=>asset('img/top/test_area/top_okinawa.jpg')
+        ]);
+        Province::create([
+            'name'=>'長野',
+            'img_url'=>asset('img/top/test_area/top_nagoya.jpg')
+        ]);
     }
 }

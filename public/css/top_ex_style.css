@@ -250,6 +250,8 @@
     overflow: hidden;
 }
 .area_img img {
+    width: 503px;
+    height: 309px;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
