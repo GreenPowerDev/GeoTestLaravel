@@ -102,4 +102,8 @@ class TestProblemController extends Controller
         //Mail::to(Auth::user()->email)->send(new EndMail($mailData));
         return;
     }
+    public function test_select(){
+        $tests = Test::all();
+        return view('admin.test_select', ['tests'=>$tests]);
+    }
 }

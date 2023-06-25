@@ -17,7 +17,6 @@
     </section>
     <section class="test_site_detail">
         {{-- @if(!$test->isEmpty()) --}}
-        <p class="predetail_title">最近の開催試験</p>
         
 
         <div class="ganre_detail" style="border:0;">

@@ -83,8 +83,9 @@ Route::get('admin/test/make',[AdminController::class, 'test_make'])->name('admin
 Route::post('admin/test/add_test', [AdminController::class, 'add_test'])->name('admin.test.add_test');
 Route::get('admin/test/problem_make', [AdminController::class, 'problem_make'])->name('admin.test.problem_make');
 Route::post('admin/test/add_problem', [AdminController::class, 'add_problem'])->name('admin.test.add_problem');
-// Route::get('admin/test/problem', [AdminController::class, 'test_problem'])->name('admin.test.problem');
 
+Route::get('admin/test/test_problem_edit/{id}', [AdminController::class, 'test_problem'])->name('admin.test.test_problem_edit');
+Route::get('admin/test/test_select', [TestProblemController::class, 'test_select'])->name('admin.test.test_select');
 Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
 Route::post('admin/test/add_problem_test', [TestProblemController::class, 'add_problem_test'])->name('admin.test.add_problem_test');
 Route::post('admin/test/estimate/calc', [TestProblemController::class, 'calc_test'])->name('admin.test.estimate.calc');
