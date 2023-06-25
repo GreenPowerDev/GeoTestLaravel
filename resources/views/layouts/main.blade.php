@@ -62,7 +62,7 @@
                 </div>
                 @endif
                 <div>
-                    <a href="#" class="question_page">
+                    <a href="{{route('guide.question')}}" class="question_page">
                         <div class="to_question">
                             <div class="header_icon_right">
                                 <img src="{{asset('img/top/mainvisual/header/message_icon.png')}}" alt="">
@@ -83,7 +83,7 @@
                                 <div class="wrapper-items">
                                     <div class="menu_items">
                                         <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                                        <a href="">お問合せ</a></div>
+                                        <a href="{{route('guide.question')}}">お問合せ</a></div>
                                     <div class="menu_items">
                                         <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                         <a href="">Q&A</a></div>
@@ -145,7 +145,7 @@
                     <div class="inqury">
                         <div class="footer_items">
                             <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                            <a href="" >お問合せ</a></div>
+                            <a href="{{route('guide.question')}}" >お問合せ</a></div>
                         <div class="footer_items">
                             <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                             <a href="{{route('guide.notice')}}">サイトからのお知らせ</a></div>

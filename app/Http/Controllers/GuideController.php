@@ -41,4 +41,7 @@ class GuideController extends Controller
     public function method(){
         return view('method');
     }
+    public function question(){
+        return view('question');
+    }
 }
