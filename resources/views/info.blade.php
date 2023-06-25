@@ -15,7 +15,7 @@
         <p class="info-date">{{$notice->notice_date}}</p>
     </div>
     <div class="list-btn">
-        <a href="#"><p class="info-list-btn">一覧を見る</p></a>
+        <a href="{{route('guide.notice')}}"><p class="info-list-btn">一覧を見る</p></a>
     </div>            
 </section>
 @endsection

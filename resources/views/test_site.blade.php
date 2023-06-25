@@ -17,11 +17,7 @@
     </section>
     <section class="test_site_detail">
         {{-- @if(!$test->isEmpty()) --}}
-        <p class="predetail_title">最近の開催試験</p>
-        
-
         <div class="ganre_detail" style="border:0;">
-
             <div class="ganre_context">
                 <p class="ganre_date">開催日：{{$test->get_test_date()}}</p>
                 <p class="ganre_time">開催時間：{{$test->get_begin_time()}}～{{$test->get_end_time()}}</p>

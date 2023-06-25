@@ -39,12 +39,12 @@
                     @endphp
                     @if($pstyle == 1)
                         @foreach ($problem_pre_answers as $problem_answer_each)
-                            <input type="radio" class="rd-box" value= "{{$problem_answer_each}}" name="radio_{{$i}}" ><label for="">{{$problem_answer_each}}</label>
+                            <input type="radio" class="rd-box" value= "{{$problem_answer_each}}" style="width:20px;" name="radio_{{$i}}" ><label for="">{{$problem_answer_each}}</label>
                         @endforeach
                     
                     @elseif($pstyle == 2)
                         @foreach ($problem_pre_answers as $problem_answer_each)
-                            <input type="checkbox" class="ck-box" value= "{{$problem_answer_each}}"><label for="">{{$problem_answer_each}}</label>
+                            <input type="checkbox" class="ck-box" value= "{{$problem_answer_each}}" style="width:20px;"><label for="" style="width:100px;">{{$problem_answer_each}}</label>
                         @endforeach
                     
                     @elseif($pstyle == 3)
@@ -68,7 +68,7 @@
     
     <script>
     var current_section = 1;
-    var problem_process_time = {{$problem_ids[0]->problem->problem_time}}
+    var problem_process_time = {{(count($problem_ids)<1)? 0 : $problem_ids[0]->problem->problem_time}}
     $(document).ready(function(){
         $(".next_problem").click(function(){
             next_page(parseInt($(this).parent().parent().attr('id').replace('problem_section_', '')));

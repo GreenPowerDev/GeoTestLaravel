@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Province;
 use App\Models\Ganre;
+use App\Models\Notice;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,7 @@ class HomeController extends Controller
     {
         $provinces = Province::take(4)->get();
         $ganres = Ganre::all();
-        return view('welcome', ['provinces'=>$provinces, 'ganres'=>$ganres]);
+        $notices = Notice::all();
+        return view('welcome', ['provinces'=>$provinces, 'ganres'=>$ganres, 'notices'=>$notices]);
     }
 }
