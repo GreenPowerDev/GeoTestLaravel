@@ -37,7 +37,6 @@
                         <div id="accordion2">
 
                             @foreach($problems as $problem)
-                            {{print_r($problem->selected_flag($test->id))}}
                             <div class="card" style="{{$problem->selected_flag($test->id)}}">
                                 <div class="card-header" id="headingFour">
                                     <h5 class="mb-0">
