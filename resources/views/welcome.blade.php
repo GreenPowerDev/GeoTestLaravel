@@ -20,7 +20,7 @@
                     @foreach ($notices as $notice)
                         <div class="sch_details">
                             <p class="detail_date">{{$notice->notice_date}}</p>
-                            <a href="#" class="detail_title">{{$notice->notice_contitle}}</a>
+                            <a href="{{route('notice.select', ['id'=>$notice->id])}}" class="detail_title">{{$notice->notice_contitle}}</a>
                             <p class="detail_content">{{$notice->notice_context}}</p>
                         </div>            
                     @endforeach
