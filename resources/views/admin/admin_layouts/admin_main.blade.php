@@ -188,11 +188,11 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.test.make')}}">試験作成</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.test.problem')}}">試験問題選択</a>
+                                        <li class="nav-item" style="display:none;">
+                                            <a class="nav-link" href="#">試験問題選択</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.test.problem_make')}}">問題選択</a>
+                                            <a class="nav-link" href="{{route('admin.test.problem_make')}}">問題作成</a>
                                         </li>
                                         {{-- <li class="nav-item">
                                             <a class="nav-link" href="pages/form-validation.html">Parsely Validations</a>

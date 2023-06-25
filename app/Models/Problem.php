@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Test2problem;
 
 class Problem extends Model
 {
@@ -34,5 +35,19 @@ class Problem extends Model
     public function test2problem()
     {   
         return $this->hasMany('App\Models\Test2problem');
+    }
+    public function selected_flag($test_id){
+        $tp_test2problem = Test2problem::where([
+            'test_id'=>$test_id,
+            'problem_id'=>$this->id
+        ])->first();
+        return (is_null($tp_test2problem)) ? "display:block;" : "display:none;";
+    }
+    public function selected_flag_num($test_id){
+        $tp_test2problem = Test2problem::where([
+            'test_id'=>$test_id,
+            'problem_id'=>$this->id
+        ])->first();
+        return (is_null($tp_test2problem)) ? 0 : 1;
     }
 }

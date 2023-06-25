@@ -120,9 +120,9 @@ class AdminController extends Controller
             'ganres'=>$ganres
         ]);
     }
-    public function test_problem(){
-        return view('admin.test_problem');
-    }
+    // public function test_problem(){
+    //     return view('admin.test_problem');
+    // }
 
     public function add_test(Request $request){
         $test = new Test();
@@ -152,9 +152,17 @@ class AdminController extends Controller
 
         $test->save();
 
-        return redirect()->route('admin.test.make');
+        //return redirect()->route('admin.test.make');
+        return $this->test_problem($test->id);
 
     }
+
+    public function test_problem($id){
+        $test = Test::find($id);
+        $problems = Problem::all();
+        return view('admin.test_problem',['test'=>$test, 'problems'=>$problems]);
+    }
+
 
     public function problem_make(){
         $ganres = Ganre::all();
