@@ -16,7 +16,8 @@
     <div class="m-container">
 	<!-- main -->
         <div class="main-w3layouts wrapper">
-            <h1>ログーイン</h1>
+            <h1>試験場入場<h2>
+            <p style="text-align:center; color:red;">メールで送信した試験番号とパスワードを入力してください。</p>
             <div class="main-agileinfo">
                 
                 <div class="agileits-top">
