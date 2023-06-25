@@ -61,14 +61,15 @@
 
                 @foreach($allowed_tests as $allowed_test)
                 <div class="reservation_content">
+                    <p class="reservation_contetnt_title">試験タイトル:{{$allowed_test->test->name}}</p>
                     <div class="reservation_when">
-                        <p class="reservation_date">開催日：2023年○○月○○日</p>
-                        <p class="reservation_time">開催時間：○○時○○分～○○時○○分</p>
+                        <p class="reservation_date">開催日：{{$allowed_test->test->get_test_date()}}</p>
+                        <p class="reservation_time">開催時間：{{$allowed_test->test->get_begin_time()}}～{{$allowed_test->test->get_end_time()}}</p>
                     </div>
                     <div class="reservation_context">
-                        <p class="reservation_area">エリア： <span>○○○○</span></p>
-                        <p class="reservation_ganre">ジャンル： <span>○○○○</span></p>
-                        <p class="reservation_level">レベル：<span>○○</span></p>
+                        <p class="reservation_area">エリア： <span>{{$allowed_test->test->get_province_name()}}</span></p>
+                        <p class="reservation_ganre">ジャンル： <span>{{$allowed_test->test->get_ganre_name()}}</span></p>
+                        <p class="reservation_level">レベル：<span>{{$allowed_test->test->get_level_name()}}</span></p>
                     </div>
                     <a href="{{route('test.login_form', ['id'=>$allowed_test->id])}}">
                         <div class="to_test_site">
