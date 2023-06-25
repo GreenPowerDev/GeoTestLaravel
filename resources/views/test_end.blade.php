@@ -15,7 +15,13 @@
                 メールが届きましたら、「マイページ」にて <br>   
                 結果をご確認くださいませ。
             </p>
+            <a href="{{route('welcome_page')}}">
+                <div class="to-top_page">
+                次の問題へ    
+                </div>
+            </a>
         </div>
+
     </section>
 
 @endsection

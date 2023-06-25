@@ -23,8 +23,13 @@
     text-align: left;
 }
 .end_field{
-    width: 570px;
+    max-width: 870px;
     margin: 0 auto;
+    text-align: center;
+}
+.end_field p{
+    width:100%;
+    text-align: center;
 }
 .end_title{
     font-size: 70px;
@@ -34,6 +39,16 @@
     font-size: 25px;
     padding: 5px;
     line-height: 40px;
+}
+.to-top_page{
+    padding: 28px;
+    width: 100%;
+    border-radius: 26px;
+    background-color: #13AE6A;
+    color: white;
+    font-size: 40px;
+    margin-top: 94px;
+    text-align: center;
 }
 
 /* ------------------------------------ */
