@@ -240,7 +240,8 @@
 .area_detail{
     background-color: white;
     padding: 20px;
-    padding-bottom: 70px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     height: 50%;
 }
 .area_img{

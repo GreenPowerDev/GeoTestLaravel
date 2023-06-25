@@ -22,6 +22,7 @@
                             <img src="{{$test->province->img_url}}" alt="">
                         </div>
                         <div class="area_detail">
+                            <p class='area_detail_title'>試験タイトル:{{$test->name}}
                             <p class="ganre_date">開催日：{{$test->get_test_date()}}</p>
                             <p class="ganre_time">開催時間：{{$test->get_begin_time()}}～{{$test->get_end_time()}}</p>
                             <p class="ganre_level">レベル：{{$test->get_level_name()}}</p>

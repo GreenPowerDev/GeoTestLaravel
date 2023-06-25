@@ -83,6 +83,8 @@
                         @if (is_null($province->province_first_test()))
                         <p class="predetail_title" >テストはありません。</p>
                         @else
+                        
+                            <p class="aera_detail_test_title">試験タイトル:{{$province->province_first_test()->name}}</p>
                             <p class="area_detail-date">開催日：{{$province->province_first_test()->get_test_date()}}</p>
                             <p class="area_detail-time">開催時間：{{$province->province_first_test()->get_begin_time()}}
                                                         ～{{$province->province_first_test()->get_end_time()}}</p>
