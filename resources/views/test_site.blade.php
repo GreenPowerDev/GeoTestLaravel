@@ -2,7 +2,6 @@
 @section('main-content')
 <link href="{{asset('/css/test_site_style.css')}}" rel='stylesheet'>
 <section class="manvisual">
-        ddgsdfgsfdgfdg
         <div class="test_site_img">
             <p class="test_site_name">
 
