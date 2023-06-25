@@ -2,12 +2,14 @@
 @section('main-content')
     <link href="{{asset('/css/test_process_style.css')}}" rel='stylesheet'>
     <section class="mainvisual">
-    <form action="route('admin.test.estimate.calc')" method="POST">
+    <form action="{{route('admin.test.estimate.calc')}}" method="POST">
+        @csrf
         @php
              $i=0;
              $total_count = sizeof($problem_ids);
         @endphp
-        <input type="hidden" value="{{$total_count}}">
+        <input type="hidden" name="test_id" value="{{$test->id}}">
+        <input type="hidden" value="{{$total_count}}" name="problem_count">
         @foreach($problem_ids as $problem_id)
             @php
                 $i++;
@@ -37,12 +39,12 @@
                     @endphp
                     @if($pstyle == 1)
                         @foreach ($problem_pre_answers as $problem_answer_each)
-                            <input type="radio" class="rd-box" value= "{{$problem_answer_each}}"><label for="send_answer_{{$j}}">{{$problem_answer_each}}</label>
+                            <input type="radio" class="rd-box" value= "{{$problem_answer_each}}" name="radio_{{$i}}" ><label for="">{{$problem_answer_each}}</label>
                         @endforeach
                     
                     @elseif($pstyle == 2)
                         @foreach ($problem_pre_answers as $problem_answer_each)
-                            <input type="checkbox" class="ck-box" value= "{{$problem_answer_each}}"><label for="send_answer_{{$j}}">{{$problem_answer_each}}</label>
+                            <input type="checkbox" class="ck-box" value= "{{$problem_answer_each}}"><label for="">{{$problem_answer_each}}</label>
                         @endforeach
                     
                     @elseif($pstyle == 3)
@@ -53,7 +55,7 @@
                 <input type="hidden" name = "result_answer_{{$i}}" id="result_answer_{{$i}}" value="" >
                 <div>
                     <div class="next_problem">
-                    次の問題へ    
+                        次の問題へ    
                     </div>
                 </div>
             </div>
@@ -61,13 +63,12 @@
         <div class="problem-section" id ="problem_section_{{$i+1}}" {{(!($i-1))? '': "style=display:none"}}>
                 <input type="submit" class="next_problem" value="テスト結果の送信">
         </div>
-
     </form>
     </section>
     
     <script>
     var current_section = 1;
-    var problem_process_time = parseInt("{{$problem_ids[0]->problem->problem_time}}");
+    var problem_process_time = {{$problem_ids[0]->problem->problem_time}}
     $(document).ready(function(){
         $(".next_problem").click(function(){
             next_page(parseInt($(this).parent().parent().attr('id').replace('problem_section_', '')));
@@ -86,7 +87,7 @@
             let tp_ck_val = ''; 
             $(this).parent().find('.rd-box').each(function(){
                 if($(this).prop('checked') != true) return;
-                tp_ck_val +="#" + $(this).val();
+                tp_ck_val = $(this).val();
             });
             $("#result_answer_"+current_section).val(tp_ck_val);
         })
@@ -116,11 +117,10 @@
 
         alert("the end!");
     }
-   // result_answers+="#" + result_answer_{{$j}}
 
 
     window.onbeforeunload = function() {
-        return "試験に再受験できません。本当に脱退しますか？";
+        return ;
     }
     function disableF5(e) {
         if ((e.which || e.keyCode) == 116 || (e.which || e.keyCode) == 82) e.preventDefault(); 
