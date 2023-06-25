@@ -24,115 +24,21 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
             <h5 class="card-header">試験問題選択</h5>
-            <div class="row px-2">
-                <!-- ============================================================== -->
-                <!-- accrodions style one -->
-                <!-- ============================================================== -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <div class="section-block">
-                        <h5 class="section-title">試験選択</h5>
-                        <div class="img-modal-search-bar">
-                            <input type="text" class="pl-5" id="search_card" placeholder="テスト名検索" style="width: 400px; padding-left: 20px;">
-                        </div>
-                    </div>
-                    <div class="accrodion-regular hx-500">
-                        <div id="accordion">
+            <div class="test-problem-page">
 
-                            @foreach($tests as $test)
-
-
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne_{{$test->id}}" aria-expanded="false" aria-controls="collapseOne_{{$test->id}}">
-                                       <span class="title-text">{{$test->name}}</span>
-                                       </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseOne_{{$test->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
-                                    <div class="card-body">
-                                        <p class="lead"> 
-                                            {{$test->get_test_date()}} &nbsp;&nbsp;&nbsp; 
-                                            {{$test->get_begin_time()}}～{{$test->get_end_time()}} 
-                                        </p>
-                                        <p class="problem-state">
-                                            レベル：{{$test->get_level_name()}}&nbsp;&nbsp;&nbsp;
-                                            ジャンル：{{$test->get_ganre_name()}} &nbsp;&nbsp;&nbsp;
-                                            県名：{{$test->get_province_name()}} &nbsp;&nbsp;&nbsp;
-                                            金額：{{$test->price}}       
-                                        </p>
-                                        <input type="hidden" id="test_name_{{$test->id}}" value="{{$test->name}}">
-                                        <button onclick="select_test({{$test->id}})" class="btn btn-secondary">選択</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            @endforeach
-
-
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- end accrodions style one -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- end accrodions style two -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- accrodions style four -->
-                <!-- ============================================================== -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                    <form action="{{route('admin.test.add_problem_test')}}" method="post">
-                        @csrf
-                        <div class="section-block">
-                            <h5 class="section-title">試験</h5>
-                        </div>
-                        <input type="hidden" name="sel_test_id" id="sel_test_id" value="0">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend"><span class="input-group-text">テスト名</span></div>
-                            <input type="text" placeholder="" class="form-control" id="sel_test_name" readonly>
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend"><span class="input-group-text">試験時間</span></div>
-                            <input type="text" placeholder="" class="form-control" id="sel_test_datetime" readonly>
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend"><span class="input-group-text">試験情報</span></div>
-                            <input type="text" placeholder="" class="form-control" id="sel_test_state" readonly>
-                        </div>
-                        
-                    
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend"><span class="input-group-text">　問題数</span></div>
-                            <input type="text" placeholder="" class="form-control" id="sel_test_total_count" value="0" readonly>
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend"><span class="input-group-text">合計時間</span></div>
-                            <input type="text" placeholder="" class="form-control" id="sel_test_total_time" value="0分" readonly>
-                        </div>
-                        <input type="hidden" id="problem_ids" name="problem_ids" value="">
-                        <div class="w-100 text-center">
-                            <input type="submit" class="btn btn-primary" value="保存">
-                        </div>
-                    </form>
-                </div>
-                <!-- ============================================================== -->
-                <!-- end accrodions style four -->
-                <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- accrodions style two -->
                 <!-- ============================================================== -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="problems-section px-2">
                     <div class="section-block">
                         <h5 class="section-title">問題選択</h5>
                     </div>
-                    <div class="accrodion-outline hx-500">
+                    <div class="accrodion-outline hx-1000">
                         <div id="accordion2">
 
                             @foreach($problems as $problem)
-
-                            <div class="card">
+                            {{print_r($problem->selected_flag($test->id))}}
+                            <div class="card" style="{{$problem->selected_flag($test->id)}}">
                                 <div class="card-header" id="headingFour">
                                     <h5 class="mb-0">
                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour_{{$problem->id}}" aria-expanded="false" aria-controls="collapseFour_{{$problem->id}}">
@@ -161,23 +67,97 @@
                 <!-- ============================================================== -->
                 <!-- end accrodions style two -->
                 <!-- ============================================================== -->
+
+                <!-- ============================================================== -->
+                <!-- accrodions style four -->
+                <!-- ============================================================== -->
+                <div class="selected-section px-2">
+                    <div class="test-view-section">
+                        <form action="{{route('admin.test.add_problem_test')}}" method="post">
+                            @csrf
+                            <div class="section-block">
+                                <h5 class="section-title">試験</h5>
+                            </div>
+                            <input type="hidden" name="sel_test_id" id="sel_test_id" value="{{$test->id}}">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend"><span class="input-group-text">テスト名</span></div>
+                                <input type="text" placeholder="" class="form-control" value="{{$test->name}}" id="sel_test_name" readonly>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend"><span class="input-group-text">試験時間</span></div>
+                                <input type="text" placeholder="" class="form-control" 
+                                value = "{{$test->get_test_date()}} &nbsp;&nbsp;&nbsp; {{$test->get_begin_time()}}～{{$test->get_end_time()}}"
+                                id="sel_test_datetime" readonly>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend"><span class="input-group-text">試験情報</span></div>
+                                <input type="text" placeholder="" class="form-control" id="sel_test_state" 
+                                value="レベル：{{$test->get_level_name()}} &nbsp;&nbsp;&nbsp; ジャンル：{{$test->get_ganre_name()}} &nbsp;&nbsp;&nbsp; 県名：{{$test->get_province_name()}} &nbsp;&nbsp;&nbsp; 金額：{{$test->price}}" 
+                                readonly>
+                            </div>
+                            
+                        
+                            {{-- <div class="input-group mb-3">
+                                <div class="input-group-prepend"><span class="input-group-text">　問題数</span></div>
+                                <input type="text" placeholder="" class="form-control" id="sel_test_total_count" value="0" readonly>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend"><span class="input-group-text">合計時間</span></div>
+                                <input type="text" placeholder="" class="form-control" id="sel_test_total_time" value="0分" readonly>
+                            </div> --}}
+                            <input type="hidden" id="problem_ids" name="problem_ids" value="">
+                            <div class="w-100 text-center">
+                                <input type="submit" class="btn btn-primary" value="保存">
+                            </div>
+                        </form>
+                    </div>
+                
+                <!-- ============================================================== -->
+                <!-- end accrodions style four -->
+                <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- accrodions style three -->
                 <!-- ============================================================== -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="test-selected-problems">
 
-                   
-                    <div class="section-block">
-                        <h5 class="section-title">試験問題</h5>
-                    </div>
-                    <div class="accrodion-regular hx-500">
-                        <div id="accordion3">
-
-
-                        </div>
-                    </div>
                     
+                        <div class="section-block">
+                            <h5 class="section-title">試験問題</h5>
+                        </div>
+                        <div class="accrodion-regular hx-500">
+                            <div id="accordion3">
 
+                                @foreach($problems as $problem)
+                                @if($problem->selected_flag_num($test->id))
+                                <div class="card">
+                                    <div class="card-header" id="headingSeven">
+                                        <h5 class="mb-0">
+                                           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven_{{$problem->id}}" aria-expanded="false" aria-controls="collapseSeven_{{$problem->id}}">
+                                            <span class="title-text">{{$problem->answer_text}}</span>
+                                           </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseSeven_{{$problem->id}}" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion2" style="">
+                                        <div class="card-body">
+                                            <p class="lead"></p>
+                                            <p class="problem-state">
+                                                レベル：{{$problem->level->level_name}}&nbsp;&nbsp;&nbsp;
+                                                ジャンル：{{$problem->ganre->ganre_name}} &nbsp;&nbsp;&nbsp;
+                                                県名：{{$problem->province->name}}
+                                            </p>
+                                            <button onclick="del_problem({{$problem->id}})" class="btn btn-secondary">削除</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                                @endforeach
+
+
+                            </div>
+                        </div>
+                        
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,8 +235,30 @@
     }
 </script>
 <style>
+    .test-problem-page{
+        display: flex;
+    }
+    .problems-section{
+        width:50%;
+    }
+    .selected-section{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .test-view-section{
+        width:100%;
+    }
     .hx-500{
         height: 300px!important;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    .test-selected-problems{
+        width: 100%
+    }
+    .hx-1000{
+        height: 600px!important;
         overflow: hidden;
         overflow-y: auto;
     }

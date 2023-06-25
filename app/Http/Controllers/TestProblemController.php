@@ -14,17 +14,11 @@ use App\Models\Test;
 use App\Models\Problem;
 use App\Models\Test2problem;
 use App\Mail\EndMail;
+use App\Models\Passed;
 
 class TestProblemController extends Controller
 {
     //
-    public function test_problem(){
-        $tests = Test::all();
-        $problems = Problem::all();
-
-        //dd($problems[0]->province);
-        return view('admin.test_problem',['tests'=>$tests, 'problems'=>$problems]);
-    }
     public function add_problem_test(Request $request){
         $test_id = $request->sel_test_id;
         $problem_ids_text = $request->problem_ids;
@@ -35,7 +29,7 @@ class TestProblemController extends Controller
             $test2problem->problem_id = $problem_id;
             $test2problem->save();
         }
-        return $this->test_problem();
+        return redirect()->route('admin.dashboard');
     }
 
     public function calc_test(Request $request){
@@ -77,6 +71,11 @@ class TestProblemController extends Controller
         $total_score = array_sum($mark_total);
         $avg_score = $total_score/$total_problem_count;
         $pass_state = ($avg_score > 8)? "合格" : "不合格";
+
+        $passed = new Passed();
+        $passed->state = $pass_state;
+        $passed->score = $avg_score;
+        $passed->save();
 
         $this->end_mail_send($test_id, $avg_score, $pass_state);
 
