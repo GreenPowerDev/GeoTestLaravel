@@ -16,6 +16,8 @@ use App\Http\Controllers\GuideController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\GanreController;
 use App\Http\Controllers\TestProblemController;
+use App\Http\Controllers\NoticeController;
+
 
 
 /*
@@ -51,8 +53,9 @@ Route::post('mypage/test_login', [MypageController::class, 'test_login'])->name(
 Route::post('mypage/test/enter', [MypageController::class, 'test_enter'])->name('test.enter');
 
 
+Route::get('guide/notice', [NoticeController::class, 'notice'])->name('guide.notice');
+Route::get('guide/notice/{id}', [NoticeController::class, 'notice_select'])->name('notice.select');
 
-Route::get('guide/notice', [GuideController::class, 'notice'])->name('guide.notice');
 Route::get('guide/about_site', [GuideController::class, 'about_site'])->name('guide.about_site');
 Route::get('guide/method', [GuideController::class, 'method'])->name('guide.method');
 Route::get('guide/question', [GuideController::class, 'question'])->name('guide.question');

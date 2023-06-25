@@ -44,6 +44,9 @@
     font-size: 15px;
     line-height: 24px;
     margin: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .sch_title{
     background-color: #13AE6A;

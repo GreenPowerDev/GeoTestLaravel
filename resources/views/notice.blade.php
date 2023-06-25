@@ -4,22 +4,25 @@
 <section class="mainvisual">
         <div class="notice_screen">
             <p class="notice_title">サイトからのお知らせ</p>
+            
             <div class="notice_content">
+                @foreach ($notices as $notice)
                 <div class="notice_items">
-                    <a href="#">
-                        <div class="area_img">
-                            <img src="{{asset('/img/information/img_sample.png')}}" alt="">
+                    <a href="{{route('notice.select', ['id'=>$notice->id])}}">
+                        <div class="notice_img">
+                            <img src="{{$notice->notice_img_url}}" alt="">
                         </div>
                         <div class="notice_detail">
-                            <p class="notice_detail-date">○○○○年○○月○○日</p>
-                            <p class="notice_detail-title">Dummy Title</p>
-                            <p class="notice_detail-text">Dummy Text Dummy Text Dum…</p>
+                            <p class="notice_detail-date">{{$notice->notice_date}}</p>
+                            <p class="notice_detail-title">{{$notice->notice_contitle}}</p>
+                            <p class="notice_detail-text">{{$notice->notice_context}}</p>
                         </div>
                     </a>
                 </div>
+                @endforeach
             </div>
-            <div class="pagination">
-                <a href="#">最初<<　1 2 3…　>>最後</a>
+            <div>
+                {{ $notices->links('pagination')}}
             </div>
         </div>
     </section>

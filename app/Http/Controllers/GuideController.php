@@ -27,7 +27,7 @@ class GuideController extends Controller
 
         $allowed_tests = [];
         foreach($test2users as $test2user){
-            //dd($test2user->allowed_id);
+
             if($test2user->allowed_id !== 0 && $test2user->mail_sended === 1){
                 array_push($allowed_tests, $test2user);
             }
