@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Notice;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Notice;
 
 class NoticeSeeder extends Seeder
 {
@@ -16,40 +16,58 @@ class NoticeSeeder extends Seeder
         //
         Notice::create([
             'notice_date'=>'○○○○年○○月○○日',
-            'notice_title'=>'Dummy Title',
-            'notice_context'=>'Dummy Text Dummy Text Dum…',
-            'ntice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
         ]);
         Notice::create([
             'notice_date'=>'○○○○年○○月○○日',
-            'notice_title'=>'Dummy Title',
-            'notice_context'=>'Dummy Text Dummy Text Dum…',
-            'ntice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
         ]);
         Notice::create([
             'notice_date'=>'○○○○年○○月○○日',
-            'notice_title'=>'Dummy Title',
-            'notice_context'=>'Dummy Text Dummy Text Dum…',
-            'ntice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
         ]);
         Notice::create([
             'notice_date'=>'○○○○年○○月○○日',
-            'notice_title'=>'Dummy Title',
-            'notice_context'=>'Dummy Text Dummy Text Dum…',
-            'ntice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
         ]);
         Notice::create([
             'notice_date'=>'○○○○年○○月○○日',
-            'notice_title'=>'Dummy Title',
-            'notice_context'=>'Dummy Text Dummy Text Dum…',
-            'ntice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
         ]);
         Notice::create([
             'notice_date'=>'○○○○年○○月○○日',
-            'notice_title'=>'Dummy Title',
-            'notice_context'=>'Dummy Text Dummy Text Dum…',
-            'ntice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
         ]);
-        
+        Notice::create([
+            'notice_date'=>'○○○○年○○月○○日',
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+        ]);
+        Notice::create([
+            'notice_date'=>'○○○○年○○月○○日',
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+        ]);
+        Notice::create([
+            'notice_date'=>'○○○○年○○月○○日',
+            'notice_contitle'=>'Dummy Title',
+            'notice_context'=>'Dummy Text Dummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy TextDummy Text Dum…',
+            'notice_img_url'=>asset('img/top/test_area/top_fukuoka.png')
+        ]);
+       
     }
 }

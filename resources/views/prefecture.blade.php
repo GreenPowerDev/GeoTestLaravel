@@ -48,9 +48,16 @@
                     <p class="ganre_level">レベル：{{$test->get_level_name()}}</p>
                     <p class="ganre_level">ジャンル：{{$test->get_ganre_name()}}</p>
                 </div>
+
+                @if($test->get_allowed_state()==0)
                 <div class="ganre_apply">
                     <a href="{{route('test.apply',['id'=>$test->id])}}" class="ganre_apply-btn">申し込む</a>
                 </div>
+                @else
+                <div>
+                <p class="ganre_apply-btn" style="background-color:#C7C7C7">申請済み</p>
+                </div>
+                @endif
             </div>            
 
         @endforeach

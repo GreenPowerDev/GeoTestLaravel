@@ -160,7 +160,7 @@
                 </div>
             </div>
             <div class="copylight">
-                <p>©○○○○ All Rights Reserved.</p>
+                <p>© <script>document.write(new Date().getFullYear())</script> All Rights Reserved.</p>
             </div>
         </div>
     </footer>

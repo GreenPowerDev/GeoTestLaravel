@@ -18,6 +18,10 @@ class Test2user extends Model
     {
         return $this->belongsTo('App\Models\Allowed','allowed_id','id');
     }
+    public function passed()
+    {
+        return $this->belongsTo('App\Models\Passed','passed_id','id');
+    }
 
     public function test()
     {

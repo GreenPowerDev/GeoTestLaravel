@@ -17,36 +17,13 @@
                         インフォメーション
                     </div>
                     <div class="sch-content">
+                    @foreach ($notices as $notice)
                         <div class="sch_details">
-                            <p class="detail_date">○○○○年○○月○○日</p>
-                            <a href="#" class="detail_title">Dummy Title</a>
-                            <p class="detail_content">Dummy Text Dummy Text Dummy Text Dummy T…</p>
+                            <p class="detail_date">{{$notice->notice_date}}</p>
+                            <a href="#" class="detail_title">{{$notice->notice_contitle}}</a>
+                            <p class="detail_content">{{$notice->notice_context}}</p>
                         </div>            
-                        <div class="sch_details">
-                            <p class="detail_date">○○○○年○○月○○日</p>
-                            <a href="#" class="detail_title">Dummy Title</a>
-                            <p class="detail_content">Dummy Text Dummy Text Dummy Text Dummy T…</p>
-                        </div>            
-                        <div class="sch_details">
-                            <p class="detail_date">○○○○年○○月○○日</p>
-                            <a href="#" class="detail_title">Dummy Title</a>
-                            <p class="detail_content">Dummy Text Dummy Text Dummy Text Dummy T…</p>
-                        </div>            
-                        <div class="sch_details">
-                            <p class="detail_date">○○○○年○○月○○日</p>
-                            <a href="#" class="detail_title">Dummy Title</a>
-                            <p class="detail_content">Dummy Text Dummy Text Dummy Text Dummy T…</p>
-                        </div>
-                        <div class="sch_details">
-                            <p class="detail_date">○○○○年○○月○○日</p>
-                            <a href="#" class="detail_title">Dummy Title</a>
-                            <p class="detail_content">Dummy Text Dummy Text Dummy Text Dummy T…</p>
-                        </div>
-                        <div class="sch_details">
-                            <p class="detail_date">○○○○年○○月○○日</p>
-                            <a href="#" class="detail_title">Dummy Title</a>
-                            <p class="detail_content">Dummy Text Dummy Text Dummy Text Dummy T…</p>
-                        </div>
+                    @endforeach
                     </div>
                     <div class="sch_footer">
                         <a href="{{route('guide.notice')}}"><p class="list_footer">一覧を見る</p></a>

@@ -37,7 +37,14 @@ class AdminController extends Controller
     public function reserve_delete($id){
         if(!Auth::check()) return redirect()->route('_login');
         if(Auth::user()->user_role != 1) return redirect()->route('home');
+        $reservation = Reservation::find($id);
+        $test2user = $reservation->test2user[0];
 
+        //dd($test2user[0]->id);
+        //$test2user_re = Test2user::find($test2user[0]->id);
+        //dd($test2user);
+        $test2user->reservation_id = 0;
+        $test2user->save();
         Reservation::where('id',$id)->delete();
         $test2users = Test2user::all();
         return view('admin.reservation', ['test2users'=>$test2users]);

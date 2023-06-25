@@ -11,6 +11,8 @@
         <div class="recent_result">
             <p class="recent_result_title title">最近受けた検定</p>
             <div class="recent_result_detail">
+            @foreach ($allowed_tests as $allowed_test)
+            
                 <div class="recent_test">
                     <div class="recent_when">
                         <p class="recent_date">開催日：2023年○○月○○日</p>
@@ -21,38 +23,26 @@
                         <p class="recent_ganre">ジャンル： <span>○○○○</span></p>
                         <p class="recent_level">レベル：<span>○○</span></p>
                     </div>
-                    <div class="recent_test_result pass_style">
-                        <span>合格</span> 
-                    </div>
+                    @if($allowed_test->passed === null || $allowed_test->passed->state === null)
+                        @if($allowed_test->test->check_datetime())
+                        <div class="recent_test_result nogaze_style">
+                            <span>合否判定待ち</span> 
+                        </div>
+                        @endif
+                    @elseif($allowed_test->passed->state == '不合格')
+                        
+                        <div class="recent_test_result fail_style">
+                            <span>不合格</span> 
+                        </div>
+                        
+                    @elseif($allowed_test->passed->state == '合格')
+                        <div class="recent_test_result pass_style">
+                            <span>合格</span> 
+                        </div>
+                    @endif
                 </div>
-                <div class="recent_test">
-                    <div class="recent_when">
-                        <p class="recent_date">開催日：2023年○○月○○日</p>
-                        <p class="recent_time">開催時間：○○時○○分～○○時○○分</p>
-                    </div>
-                    <div class="recent_context">
-                        <p class="recent_ganre">エリア： <span>○○○○</span></p>
-                        <p class="recent_ganre">ジャンル： <span>○○○○</span></p>
-                        <p class="recent_level">レベル：<span>○○</span></p>
-                    </div>
-                    <div class="recent_test_result nogaze_style">
-                        <span>合否判定待ち</span> 
-                    </div>
-                </div>
-                <div class="recent_test">
-                    <div class="recent_when">
-                        <p class="recent_date">開催日：2023年○○月○○日</p>
-                        <p class="recent_time">開催時間：○○時○○分～○○時○○分</p>
-                    </div>
-                    <div class="recent_context">
-                        <p class="recent_ganre">エリア： <span>○○○○</span></p>
-                        <p class="recent_ganre">ジャンル： <span>○○○○</span></p>
-                        <p class="recent_level">レベル：<span>○○</span></p>
-                    </div>
-                    <div class="recent_test_result fail_style">
-                        <span>不合格</span> 
-                    </div>
-                </div>
+                
+            @endforeach
             </div>
         </div>
         <div class="reservation_list">
@@ -60,6 +50,8 @@
             <div class="reservation_detail">
 
                 @foreach($allowed_tests as $allowed_test)
+                @if($allowed_test->test->check_datetime())
+
                 <div class="reservation_content">
                     <p class="reservation_contetnt_title">試験タイトル:{{$allowed_test->test->name}}</p>
                     <div class="reservation_when">
@@ -77,13 +69,27 @@
                         </div>
                     </a>
                 </div>
+                @endif
                 @endforeach
 
             </div>
         </div>
-        <div class="passed_test_list">
+        {{-- <div class="passed_test_list">
             <p class="passed_test_title title">合格済み検定一覧</p>
             <div class="passed_test_detail">
+            @foreach ($passed_tests as $passed_test)
+                <div class="passed_test_content">
+                    <div class="passed_test_when">
+                        <p class="passed_test_date">開催日：{{$passed_test->test->get_test_date()}}</p>
+                        <p class="passed_test_time">開催時間：{{$passed_test->test->get_begin_time()}}～{{$passed_test->test->get_end_time()}}</p>
+                    </div>
+                    <div class="passed_test_context">
+                        <p class="passed_test_area">エリア： <span>{{$passed_test->test->get_province_name()}}</span></p>
+                        <p class="passed_test_ganre">ジャンル： <span>{{$passed_test->test->get_ganre_name()}}</span></p>
+                        <p class="passed_test_level">レベル：<span>{{$passed_test->test->get_level_name()}}</span></p>
+                    </div>
+                </div>
+            @endforeach
                 <div class="passed_test_content">
                     <div class="passed_test_when">
                         <p class="passed_test_date">開催日：2023年○○月○○日</p>
@@ -106,18 +112,32 @@
                         <p class="passed_test_level">レベル：<span>○○</span></p>
                     </div>
                 </div>
-                <div class="passed_test_content">
-                    <div class="passed_test_when">
-                        <p class="passed_test_date">開催日：2023年○○月○○日</p>
-                        <p class="passed_test_time">開催時間：○○時○○分～○○時○○分</p>
+            </div> --}}
+        {{-- </div> --}}
+            <div class="passed_test_list">
+            @foreach ($allowed_tests as $allowed_test)
+            @if($allowed_test->test->check_datetime())
+                <div class="recent_test">
+                    <div class="recent_when">
+                        <p class="recent_date">開催日：2023年○○月○○日</p>
+                        <p class="recent_time">開催時間：○○時○○分～○○時○○分</p>
                     </div>
-                    <div class="passed_test_context">
-                        <p class="passed_test_area">エリア： <span>○○○○</span></p>
-                        <p class="passed_test_ganre">ジャンル： <span>○○○○</span></p>
-                        <p class="passed_test_level">レベル：<span>○○</span></p>
+                    <div class="recent_context">
+                        <p class="recent_ganre">エリア： <span>○○○○</span></p>
+                        <p class="recent_ganre">ジャンル： <span>○○○○</span></p>
+                        <p class="recent_level">レベル：<span>○○</span></p>
                     </div>
+                    @if($allowed_test->passed !== null)
+                        @if($allowed_test->passed->state == '合格')
+                            <div class="recent_test_result pass_style">
+                                <span>合格</span> 
+                            </div>
+                        @endif
+                    @endif
                 </div>
+            @endif
+            @endforeach
             </div>
-        </div>
+
     </section>
     @endsection
