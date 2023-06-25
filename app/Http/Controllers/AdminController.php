@@ -102,7 +102,7 @@ class AdminController extends Controller
             'test_pass_id' => $test_pass_id,
             'test_pass_pwd' => $test_pass_pwd,
         ];
-        //Mail::to(Auth::user()->email)->send(new AllowedMail($mailData));
+        Mail::to(Auth::user()->email)->send(new AllowedMail($mailData));
 
         $test2user->mail_sended = 1;
         $test2user->save();

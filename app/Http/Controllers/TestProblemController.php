@@ -99,7 +99,7 @@ class TestProblemController extends Controller
             'score' => $score,
             'user_name'=>$user_name
         ];
-        //Mail::to(Auth::user()->email)->send(new EndMail($mailData));
+        Mail::to(Auth::user()->email)->send(new EndMail($mailData));
         return;
     }
     public function test_select(){
