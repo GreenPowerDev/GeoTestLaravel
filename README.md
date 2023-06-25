@@ -4,6 +4,8 @@ web site for geomatical test with laravel
 
 #INSTALLING
 
+
+
 ```
 composer install
 ```
@@ -22,6 +24,10 @@ DB_PASSWORD=
 ```
 
 And then run this code to migrate.
+
+```
+php artisan db:create
+```
 
 ```
 php artisan migrate:fresh --seed

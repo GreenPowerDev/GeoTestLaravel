@@ -38,18 +38,18 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">管理ページ</a>
+                <a class="navbar-brand" href="{{route('home')}}">ホームページ</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
-                        <li class="nav-item">
+                        <li class="nav-item" style="display:none;">
                             <div id="custom-search" class="top-search-bar">
                                 <input class="form-control" type="text" placeholder="Search..">
                             </div>
                         </li>
-                        <li class="nav-item dropdown notification">
+                        <li class="nav-item dropdown notification" style="display:none;">
                             <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
                             <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
                                 <li>
@@ -96,7 +96,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown connection">
+                        <li class="nav-item dropdown connection" style="display:none;">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
                             <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
                                 <li class="connection-list">
@@ -128,7 +128,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown nav-user">
+                        <li class="nav-item dropdown nav-user" style="display:none;">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('admin/images/avatar-1.jpg')}}" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
@@ -188,8 +188,8 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.test.make')}}">試験作成</a>
                                         </li>
-                                        <li class="nav-item" style="display:none;">
-                                            <a class="nav-link" href="#">試験問題選択</a>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.test.test_select')}}">試験問題選択</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.test.problem_make')}}">問題作成</a>
@@ -506,7 +506,7 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">@yield('root')</a></li>
+                                            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}" class="breadcrumb-link">@yield('root')</a></li>
                                             <li class="breadcrumb-item" aria-current="page">@yield('sub-root1')</li>
                                             <li class="breadcrumb-item active" aria-current="page">@yield('sub-root2')</li>
                                         </ol>

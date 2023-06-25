@@ -97,7 +97,7 @@
      
                     </div>
                     <div class="d-flex w-100">
-                        <button type="submit" class="btn btn-space btn-primary mx-auto">Submit</button>
+                        <button type="submit" class="btn btn-space btn-primary mx-auto"> 保 存 </button>
                     </div>
                 </form>
             </div>
