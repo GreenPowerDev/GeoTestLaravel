@@ -25,6 +25,23 @@
     font-size: 35px;
     padding-left: 20px;
 }
+#province_search_key{
+    border-radius: 19px;
+    background-color: #13AE6A;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+}
+#province_search_key:hover{
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #13AE6A;
+    color: #13AE6A;
+}
 .test_areas{
     display: flex;
     justify-content: space-between;
