@@ -14,6 +14,7 @@ use App\Models\Test;
 use App\Models\Problem;
 use App\Models\Test2problem;
 use App\Mail\EndMail;
+use Mail;
 use App\Models\Passed;
 
 class TestProblemController extends Controller

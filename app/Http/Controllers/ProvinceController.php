@@ -12,7 +12,7 @@ class ProvinceController extends Controller
     //
     public function index_selected($id){
         $province = Province::find($id);
-        $tests = Test::where('test_date', '>=', Carbon::now())
+        $tests = Test::where('test_date', '>=', Carbon::today())
             ->where('province_id', $id)
             ->orderBy('test_date')
             ->get();
@@ -22,7 +22,7 @@ class ProvinceController extends Controller
         ]);
     }
     public function all_area_selected(){
-        $tests = Test::where('test_date', '>=', Carbon::now())
+        $tests = Test::where('test_date', '>=', Carbon::today())
             ->orderBy('test_date')
             ->paginate(4);
         // $province = $tests->province;
