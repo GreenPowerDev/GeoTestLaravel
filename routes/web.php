@@ -17,7 +17,7 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\GanreController;
 use App\Http\Controllers\TestProblemController;
 use App\Http\Controllers\NoticeController;
-
+use App\Http\Controllers\AdminEditController;
 
 
 /*
@@ -67,6 +67,8 @@ Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected']
 
 
 
+
+
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
 
 Route::get('payment/apply/{id}', [TestPaymantController::class, 'payment_apply'])->name('payment.apply');
@@ -89,6 +91,12 @@ Route::get('admin/test/test_select', [TestProblemController::class, 'test_select
 Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
 Route::post('admin/test/add_problem_test', [TestProblemController::class, 'add_problem_test'])->name('admin.test.add_problem_test');
 Route::post('admin/test/estimate/calc', [TestProblemController::class, 'calc_test'])->name('admin.test.estimate.calc');
+Route::get('admin/prefecture/new')
+Route::get('admin/prefecture/view')
+Route::get('admin/ganre/new')
+Route::get('admin/ganre/view')
+Route::get('admin/notice/new')
+Route::get('admin/notice/view')
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');
