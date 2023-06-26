@@ -17,7 +17,7 @@
             </p>
             <a href="{{route('welcome_page')}}">
                 <div class="to-top_page">
-                次の問題へ    
+                トップページへ    
                 </div>
             </a>
         </div>
