@@ -76,7 +76,7 @@ class TestSeeder extends Seeder
         ]);
         Test::create([
             'name'=>'ggg',
-            'test_date'=>Carbon::parse('2023-06-17'),
+            'test_date'=>Carbon::parse('2023-06-26'),
             'begin_time'=>'09:00:00',
             'end_time'=>'09:30:00',
             'ganre_id'=>'1',
@@ -96,7 +96,7 @@ class TestSeeder extends Seeder
         ]);
         Test::create([
             'name'=>'hhh',
-            'test_date'=>Carbon::parse('2023-06-31'),
+            'test_date'=>Carbon::parse('2023-06-30'),
             'begin_time'=>'12:00:00',
             'end_time'=>'13:00:00',
             'ganre_id'=>'5',
@@ -106,7 +106,7 @@ class TestSeeder extends Seeder
         ]);
         Test::create([
             'name'=>'1111',
-            'test_date'=>Carbon::parse('2023-06-31'),
+            'test_date'=>Carbon::parse('2023-06-28'),
             'begin_time'=>'12:00:00',
             'end_time'=>'13:00:00',
             'ganre_id'=>'4',
@@ -116,7 +116,7 @@ class TestSeeder extends Seeder
         ]);
         Test::create([
             'name'=>'h2h',
-            'test_date'=>Carbon::parse('2023-06-31'),
+            'test_date'=>Carbon::parse('2023-06-27'),
             'begin_time'=>'12:00:00',
             'end_time'=>'13:00:00',
             'ganre_id'=>'2',
@@ -156,9 +156,9 @@ class TestSeeder extends Seeder
         ]);
         Test::create([
             'name'=>'666',
-            'test_date'=>Carbon::parse('2023-06-24'),
-            'begin_time'=>'01:00:00',
-            'end_time'=>'02:00:00',
+            'test_date'=>Carbon::parse('2023-06-26'),
+            'begin_time'=>'09:25:00',
+            'end_time'=>'10:00:00',
             'ganre_id'=>'1',
             'level_id'=>'2',
             'province_id'=>'6',
