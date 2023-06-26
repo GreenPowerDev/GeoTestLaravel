@@ -13,7 +13,7 @@
             試験名：{{$test_name}}
         </p>
         <p>
-            試験日時：{{$period}}
+            試験日時：{{$test_period}}
         </p>
         <p>
             結果：{{$pass_state}}
