@@ -86,9 +86,6 @@
         <p class="sns-title">SNSメディア</p>
         <div class="sns-items">
             <div class="sns-items-img">
-                <a href="#"><img src="{{asset('img/top/sns_media/top_spotify.png')}}" alt=""></a>
-            </div>
-            <div class="sns-items-img">
                 <a href="#"><img src="{{asset('img/top/sns_media/top_youtube.png')}}" alt=""></a>
             </div>
             <div class="sns-items-img">
@@ -99,9 +96,6 @@
             </div>
             <div class="sns-items-img">
                 <a href="#"><img src="{{asset('img/top/sns_media/top_instagram.png')}}" alt=""></a>
-            </div>
-            <div class="sns-items-img">
-                <a href="#"><img src="{{asset('img/top/sns_media/top_tiktok.png')}}" alt=""></a>
             </div>
         </div>
     </section>

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Test2user;
+use App\Models\Test2problem;
 use Carbon\Carbon;
 
 class Test extends Model
@@ -83,6 +84,11 @@ class Test extends Model
         }        
         return $reserved;
     }
+    public function get_problem_count(){
+        $test_id = $this->id;
+        $test2problems = Test2problem::where('test_id' ,$test_id)->get();
+        return sizeof($test2problems);
+    }
 
     public function check_datetime(){
         $endTime = Carbon::create($this->test_date." ".$this->end_time); // Set the end time (year, month, day, hour, minute, second)
@@ -90,10 +96,8 @@ class Test extends Model
         $currentTIme = Carbon::now(); // Get the current time
 
         if ($endTime->isPast()) {
-            // The time is over
             return 0;
         } else {
-            // The time is not over
             return 1;
         }
     }

@@ -3,10 +3,13 @@
 <link href="{{asset('/css/area_style.css')}}" rel='stylesheet'>
 <section class="test_area">
         <p class="test_area-title">試験エリア一覧</p>
+        <form method="POST" action="">
         <div class="area_search">
             <label for="area_search_input">県名で検索</label>
-            <input type="text" class="area_search_input" id="area_search_input">
+            <input type="text" class="area_search_input" id="area_search_input" name="area_search_input">
+            <input type="submit" id="province_search_key" value="検索">
         </div>
+        </form>
         <div class="test_areas">
             @if(!$tests->isEmpty())
                 @foreach($tests as $test)
@@ -27,6 +30,7 @@
                             <p class="ganre_time">開催時間：{{$test->get_begin_time()}}～{{$test->get_end_time()}}</p>
                             <p class="ganre_level">レベル：{{$test->get_level_name()}}</p>
                             <p class="ganre_level">ジャンル：{{$test->get_ganre_name()}}</p>
+                            <p class="ganre_count"> 出題数: {{$test->get_problem_count()}}</p>
                         </div>
                     </a>
                 </div>

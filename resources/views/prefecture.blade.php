@@ -26,6 +26,7 @@
                 <p class="ganre_time">開催時間：{{$tests[0]->get_begin_time()}}～{{$tests[0]->get_end_time()}}</p>
                 <p class="ganre_level">レベル：{{$tests[0]->get_level_name()}}</p>
                 <p class="ganre_level">ジャンル：{{$tests[0]->get_ganre_name()}}</p>
+                <p class="ganre_count"> 出題数: {{$tests[0]->get_problem_count()}}</p>
             </div>
             <div class="ganre_apply">
                 <a href="{{route('test.apply',['id'=>$tests[0]->id])}}" class="ganre_apply-btn">申し込む</a>
@@ -47,6 +48,7 @@
                     <p class="ganre_time">開催時間：{{$test->get_begin_time()}}～{{$test->get_end_time()}}</p>
                     <p class="ganre_level">レベル：{{$test->get_level_name()}}</p>
                     <p class="ganre_level">ジャンル：{{$test->get_ganre_name()}}</p>
+                    <p class="ganre_count"> 出題数: {{$test->get_problem_count()}}</p>
                 </div>
 
                 @if($test->get_allowed_state()==0)
