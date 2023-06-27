@@ -26,7 +26,7 @@ class Problem extends Model
     }
     public function ganre()
     {
-        return $this->belongsTo('App\Models\Ganre','ganre_num','ganre_num');
+        return $this->belongsTo('App\Models\Ganre','ganre_num','id');
     }
     public function province()
     {   

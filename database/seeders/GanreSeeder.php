@@ -15,23 +15,18 @@ class GanreSeeder extends Seeder
     {
         //
         Ganre::create([
-            'ganre_num'=>'1',
             'ganre_name'=>'グルメ'
         ]);
         Ganre::create([
-            'ganre_num'=>'2',
             'ganre_name'=>'歴史'
         ]);
         Ganre::create([
-            'ganre_num'=>'3',
             'ganre_name'=>'観光'
         ]);
         Ganre::create([
-            'ganre_num'=>'4',
             'ganre_name'=>'市町村'
         ]);
         Ganre::create([
-            'ganre_num'=>'5',
             'ganre_name'=>'産業'
         ]);
     }

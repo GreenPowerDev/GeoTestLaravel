@@ -30,7 +30,7 @@ class Test extends Model
     }
     public function ganre()
     {
-        return $this->belongsTo('App\Models\Ganre','ganre_id','ganre_num');
+        return $this->belongsTo('App\Models\Ganre','ganre_id','id');
     }
     public function reservation()
     {   
