@@ -64,6 +64,7 @@ Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
 Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
 Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected'])->name('prefecture.select');
 Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
+Route::get('prefecture/search/result', [ProvinceController::class, 'prefecture_search'])->name('prefecture.search');
 
 
 
@@ -91,12 +92,6 @@ Route::get('admin/test/test_select', [TestProblemController::class, 'test_select
 Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
 Route::post('admin/test/add_problem_test', [TestProblemController::class, 'add_problem_test'])->name('admin.test.add_problem_test');
 Route::post('admin/test/estimate/calc', [TestProblemController::class, 'calc_test'])->name('admin.test.estimate.calc');
-Route::get('admin/prefecture/new')
-Route::get('admin/prefecture/view')
-Route::get('admin/ganre/new')
-Route::get('admin/ganre/view')
-Route::get('admin/notice/new')
-Route::get('admin/notice/view')
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');
