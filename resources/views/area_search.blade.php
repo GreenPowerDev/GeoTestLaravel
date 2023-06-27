@@ -7,7 +7,8 @@
         @csrf
         <div class="area_search">
             <label for="area_search_input">県名で検索</label>
-            <input type="text" class="area_search_input" id="area_search_input" name="province_name">
+            {{-- {{dd($province_name)}} --}}
+            <input type="text" class="area_search_input" id="area_search_input" name="province_name" value= "{{$province_name}}">
             <input type="submit" id="province_search_key" value="検索">
         </div>
         </form>
@@ -31,15 +32,17 @@
                             <p class="ganre_time">開催時間：{{$test->get_begin_time()}}～{{$test->get_end_time()}}</p>
                             <p class="ganre_level">レベル：{{$test->get_level_name()}}</p>
                             <p class="ganre_level">ジャンル：{{$test->get_ganre_name()}}</p>
-                            <p class="ganre_count"> 出題数: {{$test->get_problem_count()}}</p>
+                            <p class="ganre_count"> 出題: {{$test->get_problem_count()}}</p>
                         </div>
                     </a>
                 </div>
                 @endforeach
         </div>
+        @if ($tests->lastPage() > 1)
         <div>
             {{ $tests->links('pagination')}}
         </div>
+        @endif
         @else
         <p class="test_area-title">テストはありません。</p>
         @endif

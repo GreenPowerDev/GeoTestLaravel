@@ -64,6 +64,7 @@ Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
 Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
 Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected'])->name('prefecture.select');
 Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
+Route::get('prefecture/search/result', [ProvinceController::class, 'prefecture_search'])->name('prefecture.search');
 
 
 
@@ -91,6 +92,7 @@ Route::get('admin/test/test_select', [TestProblemController::class, 'test_select
 Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
 Route::post('admin/test/add_problem_test', [TestProblemController::class, 'add_problem_test'])->name('admin.test.add_problem_test');
 Route::post('admin/test/estimate/calc', [TestProblemController::class, 'calc_test'])->name('admin.test.estimate.calc');
+<<<<<<< HEAD
 
 Route::get('admin/prefecture/new', [AdminEditController::class, 'prefecture_new'])->name('admin.prefecture.new');
 Route::get('admin/prefecture/view', [AdminEditController::class, 'prefecture_view'])->name('admin.prefecture.view');
@@ -118,6 +120,8 @@ Route::post('admin/notice/picture_upload', [AdminEditController::class, 'notice_
 Route::get('admin/user/view', [AdminEditController::class, 'user_view'])->name('admin.user.view');
 Route::get('admin/user/delete/{id}', [AdminEditController::class, 'user_delete'])->name('admin.user.delete');
 
+=======
+>>>>>>> 9b01baef098ef3842fb6db940441071d5b355f9d
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');

@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="{{asset('/css/pagination_style.css')}}">
 <nav>
     <ul class="pagination">
+    <script>
+     var serach_word = $("#area_search_input").val();
+    </script>
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
             <li class="page-item disabled">
@@ -30,7 +33,11 @@
                         </li>
                     @else
                         <li class="page-item">
-                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                            <a class="page-link" 
+                            href="{{ $url }}"
+                            onclick="location.href=this.href+'&province_name='+serach_word;return false;">
+                            {{ $page }}
+                            </a>
                         </li>
                     @endif
                 @endforeach
