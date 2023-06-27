@@ -17,7 +17,6 @@
                 <img src="{{asset('img/top/mainvisual/header/top_logo.png')}}" alt="">
             </div>
             <div class="top_buttons pcbtn">
-                {{-- <a href="{{route('logout')}}" class="button logout"> ログアウト</a> --}}
                 <a class="button logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -59,7 +58,6 @@
                                         <a href="">お客様情報</a>
                                     </div>
                                     <div class="top_buttons spbtn">
-                                        {{-- <a href="{{route('logout')}}" class="button logout"> ログアウト</a> --}}
                                         <a class="button logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
                                     </div>
                                 </div>

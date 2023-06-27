@@ -73,7 +73,6 @@ class Test extends Model
     public function get_allowed_state(){
         $test_id= $this->id;
 
-        //dd(Auth::user()->id);
         $test2user = Test2user::where([
             'user_id'=>Auth::user()->id,
             'test_id'=>$test_id
@@ -91,22 +90,12 @@ class Test extends Model
     }
 
     public function check_datetime(){
-        $endTime = Carbon::create($this->test_date." ".$this->end_time); // Set the end time (year, month, day, hour, minute, second)
-        //dd($endTime);
-        $currentTIme = Carbon::now(); // Get the current time
-
+        $endTime = Carbon::create($this->test_date." ".$this->end_time); 
+        $currentTIme = Carbon::now(); 
         if ($endTime->isPast()) {
             return 0;
         } else {
             return 1;
         }
     }
-    // public function get_province_name()
-    // {
-    //     return $this->belongsTo('App\Models\Province')->name;
-    // }
-    // public function get_province_id()
-    // {
-    //     return $this->belongsTo('App\Models\Province')->id;
-    // }
 }

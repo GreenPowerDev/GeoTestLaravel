@@ -7,7 +7,6 @@
         @csrf
         <div class="area_search">
             <label for="area_search_input">県名で検索</label>
-            {{-- {{dd($province_name)}} --}}
             <input type="text" class="area_search_input" id="area_search_input" name="province_name" value= "{{$province_name}}">
             <input type="submit" id="province_search_key" value="検索">
         </div>

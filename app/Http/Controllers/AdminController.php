@@ -30,7 +30,6 @@ class AdminController extends Controller
         if(Auth::user()->user_role != 1) return redirect()->route('home');
 
         $test2users = Test2user::all();
-        //dd($test2users[0]->reservation->user()->id);
         return view('admin.reservation', ['test2users'=>$test2users]);
     }
 
@@ -39,10 +38,6 @@ class AdminController extends Controller
         if(Auth::user()->user_role != 1) return redirect()->route('home');
         $reservation = Reservation::find($id);
         $test2user = $reservation->test2user[0];
-
-        //dd($test2user[0]->id);
-        //$test2user_re = Test2user::find($test2user[0]->id);
-        //dd($test2user);
         $test2user->reservation_id = 0;
         $test2user->save();
         Reservation::where('id',$id)->delete();
@@ -95,7 +90,6 @@ class AdminController extends Controller
         '：'.$reservation->test()->first()->get_begin_time().
         '～'.$reservation->test()->first()->get_end_time();
         
-        //dd($test_pass_id);
         $actionText  = '登録画面へ';
         $mailData = [
             'period'=> $period,
@@ -120,9 +114,6 @@ class AdminController extends Controller
             'ganres'=>$ganres
         ]);
     }
-    // public function test_problem(){
-    //     return view('admin.test_problem');
-    // }
 
     public function add_test(Request $request){
         $test = new Test();
@@ -152,7 +143,6 @@ class AdminController extends Controller
 
         $test->save();
 
-        //return redirect()->route('admin.test.make');
         return $this->test_problem($test->id);
 
     }
@@ -199,6 +189,4 @@ class AdminController extends Controller
         return redirect()->route('admin.test.problem_make');
 
     }
-
-
 }
