@@ -32,6 +32,7 @@ class MypageController extends Controller
         $test2user = Test2user::find($tp_id);
         $province = $test2user->test->province;
         $test = $test2user->test;
+        //dd($province);
         return view('test_site', ['province'=>$province, 'test'=>$test]);
     }
 

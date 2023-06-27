@@ -6,12 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\Province;
 use App\Models\Test;
 use Carbon\Carbon;
+<<<<<<< HEAD
+use Illuminate\Support\Facades\Auth;
+=======
 use Illuminate\Support\Facades\DB;
+>>>>>>> 9b01baef098ef3842fb6db940441071d5b355f9d
 
 class ProvinceController extends Controller
 {
     //
     public function index_selected($id){
+        if(!Auth::check()) return redirect()->route('_login');
         $province = Province::find($id);
         $tests = Test::where('test_date', '>=', Carbon::today())
             ->where('province_id', $id)
@@ -23,6 +28,7 @@ class ProvinceController extends Controller
         ]);
     }
     public function all_area_selected(){
+        if(!Auth::check()) return redirect()->route('_login');
         $tests = Test::where('test_date', '>=', Carbon::today())
             ->orderBy('test_date')
             ->paginate(4);

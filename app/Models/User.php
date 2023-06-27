@@ -47,5 +47,18 @@ class User extends Authenticatable
     {   
         return $this->hasMany('App\Models\Reservation');
     }
+    public function test2users()
+    {   
+        return $this->hasMany('App\Models\Test2user');
+    }
+    public function get_reserve_count(){
+        return sizeof($this->test2users->where('reservation_id', '<>', '0'));
+    }
+    public function get_allowed_count(){
+        return sizeof($this->test2users->where('allowed_id', '<>', '0'));
+    }
+    public function get_passed_count(){
+        return sizeof($this->test2users->where('passed_id', '<>', '0'));
+    }
     
 }

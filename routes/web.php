@@ -92,6 +92,36 @@ Route::get('admin/test/test_select', [TestProblemController::class, 'test_select
 Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
 Route::post('admin/test/add_problem_test', [TestProblemController::class, 'add_problem_test'])->name('admin.test.add_problem_test');
 Route::post('admin/test/estimate/calc', [TestProblemController::class, 'calc_test'])->name('admin.test.estimate.calc');
+<<<<<<< HEAD
+
+Route::get('admin/prefecture/new', [AdminEditController::class, 'prefecture_new'])->name('admin.prefecture.new');
+Route::get('admin/prefecture/view', [AdminEditController::class, 'prefecture_view'])->name('admin.prefecture.view');
+Route::get('admin/prefecture/edit/{id}', [AdminEditController::class, 'prefecture_edit'])->name('admin.prefecture.edit');
+Route::get('admin/prefecture/delete/{id}', [AdminEditController::class, 'prefecture_delete'])->name('admin.prefecture.delete');
+Route::post('admin/prefecture/save', [AdminEditController::class, 'prefecture_save'])->name('admin.prefecture.save');
+Route::post('admin/prefecture/picture_upload', [AdminEditController::class, 'prefecture_upload'])->name('admin.prefecture.upload');
+
+Route::get('admin/ganre/new', [AdminEditController::class, 'ganre_new'])->name('admin.ganre.new');
+Route::get('admin/ganre/view', [AdminEditController::class, 'ganre_view'])->name('admin.ganre.view');
+Route::get('admin/ganre/edit/{id}', [AdminEditController::class, 'ganre_edit'])->name('admin.ganre.edit');
+Route::get('admin/ganre/delete/{id}', [AdminEditController::class, 'ganre_delete'])->name('admin.ganre.delete');
+Route::post('admin/ganre/save', [AdminEditController::class, 'ganre_save'])->name('admin.ganre.save');
+
+
+Route::get('admin/notice/new', [AdminEditController::class, 'notice_new'])->name('admin.notice.new');
+Route::get('admin/notice/view', [AdminEditController::class, 'notice_view'])->name('admin.notice.view');
+Route::get('admin/notice/edit/{id}', [AdminEditController::class, 'notice_edit'])->name('admin.notice.edit');
+Route::get('admin/notice/delete/{id}', [AdminEditController::class, 'notice_delete'])->name('admin.notice.delete');
+Route::post('admin/notice/save', [AdminEditController::class, 'notice_save'])->name('admin.notice.save');
+Route::post('admin/notice/picture_upload', [AdminEditController::class, 'notice_upload'])->name('admin.notice.upload');
+
+
+//Route::get('admin/user/new', [AdminEditController::class, 'user_new'])->name('admin.notice.new');
+Route::get('admin/user/view', [AdminEditController::class, 'user_view'])->name('admin.user.view');
+Route::get('admin/user/delete/{id}', [AdminEditController::class, 'user_delete'])->name('admin.user.delete');
+
+=======
+>>>>>>> 9b01baef098ef3842fb6db940441071d5b355f9d
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');
