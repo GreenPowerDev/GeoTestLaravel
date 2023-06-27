@@ -29,7 +29,19 @@
                 <p class="ganre_count"> 出題数: {{$tests[0]->get_problem_count()}}</p>
             </div>
             <div class="ganre_apply">
-                <a href="{{route('test.apply',['id'=>$tests[0]->id])}}" class="ganre_apply-btn">申し込む</a>
+
+            @if($tests[0]->get_allowed_state()==0)
+
+                <div class="ganre_apply">
+                    <a href="{{route('test.apply',['id'=>$tests[0]->id])}}" class="ganre_apply-btn">申し込む</a>
+                </div>
+                @else
+                <div>
+                <p class="ganre_apply-btn" style="background-color:#C7C7C7">申請済み</p>
+                </div>
+
+            @endif
+
             </div>
         </div>  
 
