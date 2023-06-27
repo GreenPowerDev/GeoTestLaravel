@@ -6,11 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Province;
 use App\Models\Test;
 use Carbon\Carbon;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
-=======
 use Illuminate\Support\Facades\DB;
->>>>>>> 9b01baef098ef3842fb6db940441071d5b355f9d
 
 class ProvinceController extends Controller
 {
