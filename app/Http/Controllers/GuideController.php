@@ -31,9 +31,6 @@ class GuideController extends Controller
             if($test2user->allowed_id !== 0 && $test2user->mail_sended === 1){
                 array_push($allowed_tests, $test2user);
             }
-            else{
-                //if($test2user->allowed_id)
-            }
         }
 
         return view('my_page', ['allowed_tests'=>$allowed_tests]);

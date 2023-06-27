@@ -14,7 +14,6 @@ class VerificationController extends Controller
 {
     public function verifyMailSend(Request $requset){
         $encrypt_address = Crypt::encryptString($requset->email);
-        //dd($encrypt_address);
         $notifiable = route('getVerifyMail',['hash'=>$encrypt_address]);
         $this->toMail($notifiable, $requset->email);
         return redirect()->route('mailSended');
@@ -24,8 +23,7 @@ class VerificationController extends Controller
     }
     public function toMail($notifiable, $email)
     {
-        $actionUrl = $notifiable;     //verificationUrl required for the verification link
-        // dd($actionUrl);
+        $actionUrl = $notifiable;     
         $actionText  = '登録画面へ';
         $mailData = [
             'user'=> $email,

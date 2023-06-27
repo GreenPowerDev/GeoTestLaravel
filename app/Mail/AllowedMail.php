@@ -13,10 +13,6 @@ class AllowedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
-
     public function __construct($mailData)
     {
         $this->mailData = $mailData;

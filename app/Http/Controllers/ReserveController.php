@@ -11,7 +11,6 @@ class ReserveController extends Controller
 {
     //
     public function add($id){
-        //dd(Auth::user()->id);
         if(!Auth::check()) return redirect()->route('_login');
         $reservation_model = new Reservation;
         $reservation_model->test_id = $id;

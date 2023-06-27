@@ -19,23 +19,7 @@ use App\Http\Controllers\TestProblemController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\AdminEditController;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('welcome');
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome_page');
-// Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(['auth', 'verified']);
 
@@ -45,8 +29,6 @@ Route::post('login', [LoginController::class, 'login'])->name('login');
 Route::get('_register', [RegisterController::class, 'showRegistrationForm'])->name('_register');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-
-
 
 Route::get('mypage/test_login_/{id}', [MypageController::class, 'test_login_form'])->name('test.login_form');
 Route::post('mypage/test_login', [MypageController::class, 'test_login'])->name('test.login');
@@ -66,13 +48,9 @@ Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected
 Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
 Route::get('prefecture/search/result', [ProvinceController::class, 'prefecture_search'])->name('prefecture.search');
 
-
-
-
-
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
 
-Route::get('payment/apply/{id}', [TestPaymantController::class, 'payment_apply'])->name('payment.apply');
+Route::post('payment/apply/', [TestPaymantController::class, 'payment_apply'])->name('payment.apply');
 
 Route::get('reserve/add/{id}', [ReserveController::class, 'add'])->name('reserve.add');
 
@@ -115,7 +93,6 @@ Route::post('admin/notice/save', [AdminEditController::class, 'notice_save'])->n
 Route::post('admin/notice/picture_upload', [AdminEditController::class, 'notice_upload'])->name('admin.notice.upload');
 
 
-//Route::get('admin/user/new', [AdminEditController::class, 'user_new'])->name('admin.notice.new');
 Route::get('admin/user/view', [AdminEditController::class, 'user_view'])->name('admin.user.view');
 Route::get('admin/user/delete/{id}', [AdminEditController::class, 'user_delete'])->name('admin.user.delete');
 

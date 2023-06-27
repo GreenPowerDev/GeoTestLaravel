@@ -4,14 +4,12 @@
 <section class="test_area">
         <p class="test_area-title">試験エリア一覧</p>
         <div class="area_search">
-            {{-- <label for="area_search_input">名で検索</label>
-            <input type="text" class="area_search_input" id="area_search_input"> --}}
         </div>
         <div class="test_areas">
             @if(!$tests->isEmpty())
                 @foreach($tests as $test)
                 <div class="test_area-part">
-                    <a href="#">
+                    <a href="{{route('prefecture.select', ['id'=>$test->province->id])}}">
                         <div class="area_img">
                             <p class="area_name">
                                 @foreach(mb_str_split($test->province->name) as $char)

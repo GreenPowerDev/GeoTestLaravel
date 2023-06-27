@@ -140,13 +140,6 @@ class AdminEditController extends Controller
         return redirect()->route('admin.notice.view');
     }
 
-    //---------User---------//
-    // public function ganre_new(){
-    //     $ganre = new ganre();
-    //     $ganre->name = '';
-    //     return view('admin.ganre.edit', ['ganre'=>$ganre]);
-
-    // }
     public function user_view(){
         $users = User::all();
         return view('admin.user.view', ['users'=>$users]);

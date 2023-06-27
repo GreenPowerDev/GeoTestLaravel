@@ -15,7 +15,6 @@
         </div>
     </section>
     <section class="test_site_detail">
-        {{-- @if(!$test->isEmpty()) --}}
         <div class="ganre_detail" style="border:0;">
             <div class="ganre_context">
                 <p class="ganre_date">開催日：{{$test->get_test_date()}}</p>
@@ -28,7 +27,6 @@
         <div class="wait_time">
             <?php
             $date_scr = $test->test_date." ".$test->begin_time;
-            //$timestamp_scr = strtotime($date_scr);
             ?>
             <input type="hidden" id="test_begin_time" value="{{$date_scr}}">
             
@@ -38,14 +36,12 @@
             切り替わります。 <br>
             今しばらくお待ちください。</p>
         </div>
-        {{-- @endif --}}
         <form method="POST" action="{{route('test.enter')}}" id="enter_test_form">
             @csrf
             <input type="hidden" name="test_id" value="{{$test->id}}">
         </form>
     </section>
     <script>
-        //alert();
         var startDate = new Date();
         var timestamp = $('#test_begin_time').val(); 
         var endDate = new Date(timestamp);
@@ -53,7 +49,6 @@
         var seconds = Math.floor((endDate - startDate)/1000);
         var interval = setInterval(function() {
 
-        //by parsing integer, I avoid all extra string processing
         var r_days = Math.floor(seconds / (60 * 60 * 24));
         var r_hours = Math.floor((seconds % (60 * 60 * 24)) / ( 60 *  60));
         var r_minutes = Math.floor((seconds % (60 * 60)) /  60);
