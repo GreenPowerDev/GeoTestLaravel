@@ -105,7 +105,6 @@
                     processData: false,
                     async: false,
                     success: function (data, status) {
-                        alert(data.file_url);
                         $("#notice_img").attr('src', "{{url('/')}}"+'/'+data.file_url);
                         $("#notice_url").val("{{url('/')}}"+'/'+data.file_url);
                     }

@@ -61,7 +61,7 @@ class AdminEditController extends Controller
 
     //---------Ganre---------//
     public function ganre_new(){
-        $ganre = new ganre();
+        $ganre = new Ganre();
         $ganre->name = '';
         return view('admin.ganre.edit', ['ganre'=>$ganre]);
 
@@ -126,7 +126,7 @@ class AdminEditController extends Controller
     public function notice_save(Request $request){
         $notice = new Notice();
         $date_val = str_replace(['年','月','日'], '', $request->notice_date);
-        if($request->province_id > 0) $notice = Notice::find($request->province_id);
+        if($request->notice_id > 0) $notice = Notice::find($request->notice_id);
         $notice->notice_contitle = $request->add_test_name;
         $notice->notice_img_url = $request->notice_url;
         $notice->notice_context = $request->notice_context;

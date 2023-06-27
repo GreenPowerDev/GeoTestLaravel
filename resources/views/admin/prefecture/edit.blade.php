@@ -93,7 +93,6 @@
                     processData: false,
                     async: false,
                     success: function (data, status) {
-                        alert(data.file_url);
                         $("#province_img").attr('src', "{{url('/')}}"+'/'+data.file_url);
                         $("#province_url").val("{{url('/')}}"+'/'+data.file_url);
                     }
