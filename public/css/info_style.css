@@ -29,11 +29,12 @@
     margin: 0 auto;
     font-size: 22px;
     line-height: 36px;
-    text-align: center;
+    text-align: left;
     padding-top: 47px;
 }
 .info-date{
     margin: 30px;
+    text-align: center;
 }
 .list-btn{
     display: flex;
