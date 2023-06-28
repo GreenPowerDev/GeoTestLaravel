@@ -21,6 +21,8 @@ class TestProblemController extends Controller
 {
     //
     public function add_problem_test(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+
         $test_id = $request->sel_test_id;
         $problem_ids_text = $request->problem_ids;
         $problem_ids = explode("#", substr($problem_ids_text,1));
@@ -34,6 +36,8 @@ class TestProblemController extends Controller
     }
 
     public function calc_test(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+
         $test_id = $request->test_id;
         $total_problem_count = $request->problem_count;
         $mark_total = [];
@@ -84,6 +88,8 @@ class TestProblemController extends Controller
     }
 
     public function end_mail_send($test_id, $score, $pass_state){
+        if(!Auth::check()) return redirect()->route('_login');
+
         $test = Test::find($test_id);
         $test_name = $test->name;
         $user_name = Auth::user()->name;
@@ -104,6 +110,8 @@ class TestProblemController extends Controller
         return;
     }
     public function test_select(){
+        if(!Auth::check()) return redirect()->route('_login');
+
         $tests = Test::all();
         return view('admin.test_select', ['tests'=>$tests]);
     }

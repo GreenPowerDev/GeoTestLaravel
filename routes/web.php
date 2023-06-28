@@ -41,6 +41,7 @@ Route::get('guide/notice/{id}', [NoticeController::class, 'notice_select'])->nam
 Route::get('guide/about_site', [GuideController::class, 'about_site'])->name('guide.about_site');
 Route::get('guide/method', [GuideController::class, 'method'])->name('guide.method');
 Route::get('guide/question', [GuideController::class, 'question'])->name('guide.question');
+Route::get('guide/privacy', [GuideController::class, 'privacy'])->name('guide.privacy');
 Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
 
 Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
