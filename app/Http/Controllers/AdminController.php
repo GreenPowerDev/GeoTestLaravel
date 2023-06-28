@@ -22,6 +22,7 @@ class AdminController extends Controller
     public function index(){
         if(!Auth::check()) return redirect()->route('_login');
         if(Auth::user()->user_role != 1) return redirect()->route('home');
+
         return view('admin.index');
     }
 
@@ -36,6 +37,7 @@ class AdminController extends Controller
     public function reserve_delete($id){
         if(!Auth::check()) return redirect()->route('_login');
         if(Auth::user()->user_role != 1) return redirect()->route('home');
+
         $reservation = Reservation::find($id);
         $test2user = $reservation->test2user[0];
         $test2user->reservation_id = 0;
@@ -74,6 +76,9 @@ class AdminController extends Controller
     }
 
     public function reserve_mail_send($id){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+
         $test2user = Test2user::where([
             'user_id'=>Auth::user()->id,
             'reservation_id'=>$id
@@ -105,6 +110,9 @@ class AdminController extends Controller
     }
 
     public function test_make(){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+
         $ganres = Ganre::all();
         $levels = Level::all();
         $provinces = Province::all();
@@ -116,6 +124,9 @@ class AdminController extends Controller
     }
 
     public function add_test(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+
         $test = new Test();
         
         
@@ -148,6 +159,9 @@ class AdminController extends Controller
     }
 
     public function test_problem($id){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+
         $test = Test::find($id);
         $problems = Problem::all();
         return view('admin.test_problem',['test'=>$test, 'problems'=>$problems]);
@@ -167,6 +181,9 @@ class AdminController extends Controller
     }
 
     public function add_problem(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+        
         $problem = new Problem();
 
         $snd_province_id = Province::where('name', $request->snd_province)->first()->id; 

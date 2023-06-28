@@ -13,7 +13,7 @@
                             <img src="{{$notice->notice_img_url}}" alt="">
                         </div>
                         <div class="notice_detail">
-                            <p class="notice_detail-date">{{$notice->notice_date}}</p>
+                            <p class="notice_detail-date">{{$notice->get_notice_date()}}</p>
                             <p class="notice_detail-title">{{$notice->notice_contitle}}</p>
                             <p class="notice_detail-text">{{$notice->notice_context}}</p>
                         </div>

@@ -13,10 +13,14 @@ class MypageController extends Controller
 {
     //
     public function test_login_form($id){
+        if(!Auth::check()) return redirect()->route('_login');
+        
         return view('test_site_login',['id'=>$id]);
     }
 
     public function test_login(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+        
         $test2user = Test2user::find($request->allowed_test_id);
         $origin_id = $test2user->allowed->test_pass_id;
         $origin_pwd = $test2user->allowed->test_pass_pwd;
@@ -29,6 +33,8 @@ class MypageController extends Controller
     }
 
     public function go_test_site($tp_id){
+        if(!Auth::check()) return redirect()->route('_login');
+        
         $test2user = Test2user::find($tp_id);
         $province = $test2user->test->province;
         $test = $test2user->test;
@@ -36,6 +42,8 @@ class MypageController extends Controller
     }
 
     public function test_enter(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+        
         $user_id = Auth::user()->id;
         $test_id = $request->test_id;
         $test = Test::find($test_id);

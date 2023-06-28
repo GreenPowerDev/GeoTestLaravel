@@ -12,7 +12,7 @@
 <section class="info-data">
     <div class="info-detail">
         <p class="info-content">{{$notice->notice_context}}</p>
-        <p class="info-date">{{$notice->notice_date}}</p>
+        <p class="info-date">{{$notice->get_notice_date()}}</p>
     </div>
     <div class="list-btn">
         <a href="{{route('guide.notice')}}"><p class="info-list-btn">一覧を見る</p></a>

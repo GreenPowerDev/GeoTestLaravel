@@ -39,6 +39,8 @@ class GuideController extends Controller
         return view('method');
     }
     public function question(){
+        if(!Auth::check()) return redirect()->route('_login');
+        
         return view('question');
     }
     public function privacy(){

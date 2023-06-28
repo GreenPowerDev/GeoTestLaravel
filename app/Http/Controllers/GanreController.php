@@ -12,6 +12,8 @@ class GanreController extends Controller
 {
     //
     public function ganre_selected($id){
+        if(!Auth::check()) return redirect()->route('_login');
+        
         $ganre = Ganre::find($id);
         $tests = Test::where('test_date', '>=', Carbon::now())
             ->where('ganre_id', $id)
