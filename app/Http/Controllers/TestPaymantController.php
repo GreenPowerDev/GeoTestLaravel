@@ -8,6 +8,8 @@ class TestPaymantController extends Controller
 {
     //
     public function payment_apply(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+        
         $id = $request->id;
 
         if(!$request->agree){

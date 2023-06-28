@@ -19,7 +19,7 @@
                     <div class="sch-content">
                     @foreach ($notices as $notice)
                         <div class="sch_details">
-                            <p class="detail_date">{{$notice->notice_date}}</p>
+                            <p class="detail_date">{{$notice->get_notice_date()}}</p>
                             <a href="{{route('notice.select', ['id'=>$notice->id])}}" class="detail_title">{{$notice->notice_contitle}}</a>
                             <p class="detail_content">{{$notice->notice_context}}</p>
                         </div>            
