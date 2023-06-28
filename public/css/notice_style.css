@@ -29,6 +29,7 @@
 }
 .notice_items img{
     width: 280px;
+    height: 172px;
 }
 .notice_img{
     margin: 0;
@@ -79,7 +80,6 @@
         padding-top: 63px;
     }
     .notice_detail{
-        width: 90%;
         margin: 0 auto;
         text-align: left;
         font-size: 15px;
