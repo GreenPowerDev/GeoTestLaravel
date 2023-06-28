@@ -96,9 +96,9 @@
                                     <div class="menu_items">
                                         <a href="">サイトポリシー</a></div>
                                     <div class="menu_items">
-                                        <a href="">プライバシーポリシー</a></div>
+                                        <a href="{{ route('logout') }}">プライバシーポリシー</a></div>
                                     <div class="menu_items customer">
-                                        <a href="{{route('my_page')}}">マイページ</a>
+                                        <a href="{{route('guide.privacy')}}">マイページ</a>
                                     </div>
                                     <div class="top_buttons spbtn">
 
@@ -128,7 +128,7 @@
                 <a href="{{route('search.area')}}"><p>試験エリア一覧</p></a>
                 <a href="{{route('guide.method')}}"><p>試験内容と受験方法</p></a>
                 <a href="#"><p>サイトポリシー</p></a>
-                <a href="#"><p>プライバシーポリシー</p></a>
+                <a href="{{route('guide.privacy')}}"><p>プライバシーポリシー</p></a>
             </div>
         </div>
     </header>
@@ -156,7 +156,7 @@
                     <div class="footer_items" style="padding-left: 50px;">
                         <a href="">サイトポリシー</a></div>
                     <div class="footer_items" >
-                        <a href="" style="padding-left: 50px;">プライバシーポリシー</a></div>
+                        <a href="{{route('guide.privacy')}}" style="padding-left: 50px;">プライバシーポリシー</a></div>
                 </div>
             </div>
             <div class="copylight">

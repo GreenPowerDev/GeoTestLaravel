@@ -41,4 +41,7 @@ class GuideController extends Controller
     public function question(){
         return view('question');
     }
+    public function privacy(){
+        return view('privacy_policy');
+    }
 }

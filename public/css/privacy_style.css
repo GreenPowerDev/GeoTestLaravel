@@ -1,0 +1,37 @@
+.privacy_policy{
+    padding-top: 190px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.privacy_whole{
+    max-width: 1120px;
+    margin: 0 auto;
+}
+.privacy_summary{
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+}
+.article{
+    padding-top: 20px;
+}
+.article_title{
+    font-size: 30px;
+}
+.article_context p  {
+    padding: 5px 0;
+}
+li{
+    padding: 5px 0;
+}
+@media only screen and (max-width:1280px) {
+    .privacy_whole{
+        max-width: 90%;
+    }
+}
+@media only screen and (max-width:768px) {
+    .privacy_policy{
+        padding-top: 80px;
+        font-size: 35px;
+    }
+}
