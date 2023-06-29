@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Test;
+use Illuminate\Support\Facades\Auth;
+
 
 class TestController extends Controller
 {

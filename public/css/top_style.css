@@ -205,6 +205,9 @@ header {
     right: 0;
     z-index: 5;
 }
+.hamburger:hover {
+    cursor: pointer;
+}
 .nav {
     position: fixed;
     width: 100%;

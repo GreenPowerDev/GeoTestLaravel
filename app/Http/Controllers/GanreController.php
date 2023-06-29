@@ -7,6 +7,7 @@ use App\Models\Ganre;
 use App\Models\Province;
 use App\Models\Test;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class GanreController extends Controller
 {
