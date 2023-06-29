@@ -54,7 +54,7 @@
                                         <p class="problem-state">
                                             {{$test->get_test_date()}} &nbsp;&nbsp;&nbsp; {{$test->get_begin_time()}}～{{$test->get_end_time()}}
                                         </p>
-                                        <a href="{{route('admin.test.test_problem_edit', ['id'=>$test->id])}}" class="btn btn-secondary">追加</a>
+                                        <a href="{{route('admin.test.test_problem_edit', ['id'=>$test->id])}}" class="btn btn-secondary">選択</a>
                                     </div>
                                 </div>
                             </div>
