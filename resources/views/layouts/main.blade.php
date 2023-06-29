@@ -94,7 +94,7 @@
                                         <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                         <a href="{{route('guide.about_site')}}">このサイトについて</a></div>
                                     <div class="menu_items">
-                                        <a href="">サイトポリシー</a></div>
+                                        <a href="{{route('guide.site_policy')}}">サイトポリシー</a></div>
                                     <div class="menu_items">
                                         <a href="{{ route('logout') }}">プライバシーポリシー</a></div>
                                     <div class="menu_items customer">
@@ -127,7 +127,7 @@
                 <a href="{{route('guide.about_site')}}"><p>このサイトについて</p></a>
                 <a href="{{route('search.area')}}"><p>試験エリア一覧</p></a>
                 <a href="{{route('guide.method')}}"><p>試験内容と受験方法</p></a>
-                <a href="#"><p>サイトポリシー</p></a>
+                <a href="{{route('guide.site_policy')}}"><p>サイトポリシー</p></a>
                 <a href="{{route('guide.privacy')}}"><p>プライバシーポリシー</p></a>
             </div>
         </div>
@@ -154,7 +154,7 @@
                         <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                         <a href="{{route('guide.about_site')}}">このサイトについて</a></div>
                     <div class="footer_items" style="padding-left: 50px;">
-                        <a href="">サイトポリシー</a></div>
+                        <a href="{{route('guide.site_policy')}}">サイトポリシー</a></div>
                     <div class="footer_items" >
                         <a href="{{route('guide.privacy')}}" style="padding-left: 50px;">プライバシーポリシー</a></div>
                 </div>

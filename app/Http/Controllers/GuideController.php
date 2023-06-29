@@ -46,4 +46,7 @@ class GuideController extends Controller
     public function privacy(){
         return view('privacy_policy');
     }
+    public function site_policy(){
+        return view('site_policy');
+    }
 }
