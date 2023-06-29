@@ -8,7 +8,6 @@ use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-
 use Illuminate\Http\Request;
 
 class AdminEditController extends Controller
