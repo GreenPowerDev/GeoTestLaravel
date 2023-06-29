@@ -14,14 +14,7 @@ class EmailSend extends Command
      */
     protected $signature = 'email:send';
 
-    public function handle() 
-    {
-        $users = User::all(); 
-        foreach ($users as $user) {
-            Mail::to($user->email)->send(new TestEmail());
-        }  
-    }
-
+    
     /**
      * The console command description.
      *
@@ -32,5 +25,18 @@ class EmailSend extends Command
     /**
      * Execute the console command.
      */
+    public function handle() 
+    {
+        $users = User::where('test_date', $test_date)
+                    ->get();
+
+        if ($users->count() > 0) {
+            foreach ($users as $user) {
+                Mail::to($user)->send(new TestMail($user));
+            }
+        }
+
+        return 0;
+    }
 
 }
