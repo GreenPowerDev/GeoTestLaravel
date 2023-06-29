@@ -42,6 +42,7 @@ Route::get('guide/about_site', [GuideController::class, 'about_site'])->name('gu
 Route::get('guide/method', [GuideController::class, 'method'])->name('guide.method');
 Route::get('guide/question', [GuideController::class, 'question'])->name('guide.question');
 Route::get('guide/privacy', [GuideController::class, 'privacy'])->name('guide.privacy');
+Route::get('guide/site/policy', [GuideController::class, 'site_policy'])->name('guide.site_policy');
 Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
 
 Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
