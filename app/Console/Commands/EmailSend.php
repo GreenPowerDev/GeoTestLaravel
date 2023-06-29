@@ -27,6 +27,7 @@ class EmailSend extends Command
      */
     public function handle() 
     {
+        // $this->test2user()->test()->test_date
         $users = User::where('test_date', $test_date)
                     ->get();
 
