@@ -183,6 +183,7 @@
                                 <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-4"><i class="fas fa-pencil-alt"></i>試験管理</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
+                                            
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.test.make')}}">試験作成</a>
                                         </li>
@@ -224,6 +225,29 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.notice.view')}}">お知らせ一覧</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-31" aria-controls="submenu-4">フリー問題</a>
+                                <div id="submenu-31" class="collapse submenu" style="">
+                                    <ul clas="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 1])}}">グルメ</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 2])}}">歴史</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 3])}}">観光</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 4])}}">市町村</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 5])}}">産業</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 6]) }}">***</a>
                                         </li>
                                     </ul>
                                 </div>

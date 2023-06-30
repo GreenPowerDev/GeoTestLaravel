@@ -12,6 +12,8 @@ use App\Models\Province;
 use App\Models\Level;
 use App\Models\Ganre;
 use App\Models\Problem;
+use App\Models\FreeTest2problem;
+
 use Mail;
 use Carbon\Carbon;
 use App\Mail\AllowedMail;
@@ -164,34 +166,34 @@ class AdminController extends Controller
 
         $test = Test::find($id);
         $problems = Problem::all();
+        dd($test);
         return view('admin.test_problem',['test'=>$test, 'problems'=>$problems]);
     }
-
-
+    
     public function problem_make(){
         $ganres = Ganre::all();
         $levels = Level::all();
         $provinces = Province::all();
-
+        
         return view('admin.problem_make', [
             'levels'=>$levels,
             'provinces'=>$provinces,
             'ganres'=>$ganres
         ]);
     }
-
+    
     public function add_problem(Request $request){
         if(!Auth::check()) return redirect()->route('_login');
         if(Auth::user()->user_role != 1) return redirect()->route('home');
         
         $problem = new Problem();
-
+        
         $snd_province_id = Province::where('name', $request->snd_province)->first()->id; 
         $snd_ganre_id = Ganre::where('ganre_name', $request->snd_ganre)->first()->id; 
         $snd_level_id = Level::where('level_name', $request->snd_level)->first()->id;
         $snd_problem_time = (int)$request->snd_mintime * 60 + (int)$request->snd_secondtime;
-
-
+        
+        
         $problem->pstyle = $request->snd_pstyle_id;
         $problem->answer_text = $request->snd_problem_text;
         $problem->pre_answer = $request->snd_pre_answers;
@@ -206,4 +208,6 @@ class AdminController extends Controller
         return redirect()->route('admin.test.problem_make');
 
     }
+    
+
 }

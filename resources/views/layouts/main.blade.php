@@ -81,6 +81,10 @@
                         <div class="nav-wrapper">
                             <nav>
                                 <div class="wrapper-items">
+                                    <div class="menu_items customer">
+                                        <img src="{{asset('img/top/mainvisual/header/sp_user_icon.png')}}" alt="">
+                                        <a href="{{route('guide.privacy')}}">マイページ</a>
+                                    </div>
                                     <div class="menu_items">
                                         <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                         <a href="{{route('guide.question')}}">お問合せ</a></div>
@@ -97,9 +101,6 @@
                                         <a href="{{route('guide.site_policy')}}">サイトポリシー</a></div>
                                     <div class="menu_items">
                                         <a href="{{ route('logout') }}">プライバシーポリシー</a></div>
-                                    <div class="menu_items customer">
-                                        <a href="{{route('guide.privacy')}}">マイページ</a>
-                                    </div>
                                     <div class="top_buttons spbtn">
 
                                         @if(Auth::check())
