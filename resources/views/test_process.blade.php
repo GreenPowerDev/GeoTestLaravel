@@ -74,14 +74,16 @@
 
         @if(Auth::check())
 
-        <div class="problem-section" id ="problem_section_{{$i+1}}" {{(!($i-1))? '': "style=display:none"}}>
+        <div class="problem-section mark_treat" id ="problem_section_{{$i+1}}" {{(!($i-1))? '': "style=display:none"}}>
+                <img src="{{asset('img/top/test_area/top_free_'.$test->id.'.jpg')}}" alt="" style="min-height:500px; width:100%">
                 <input type="submit" class="next_problem" value="テスト結果の送信">
         </div>
 
         @endif
         @if(!Auth::check())
 
-        <div class="problem-section" id ="problem_section_{{$i+1}}" {{(!($i-1))? '': "style=display:none"}}>
+        <div class="problem-section" id ="problem_section_{{$i+1}}" {{(!($i-1))? '': "style=display:none; margin-top:500px;"}}>
+                <img src="{{asset('img/top/test_area/top_free_'.$test_id.'.jpg')}}" alt="" style="min-height:500px; width:100%">
                 <input type="submit" class="next_problem" value="テスト結果">
         </div>
 

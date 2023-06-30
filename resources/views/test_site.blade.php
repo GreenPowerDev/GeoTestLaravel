@@ -21,7 +21,7 @@
                 <p class="ganre_time">開催時間：{{$test->get_begin_time()}}～{{$test->get_end_time()}}</p>
                 <p class="ganre_level">レベル：{{$test->get_level_name()}}</p>
                 <p class="ganre_level">ジャンル：{{$test->get_ganre_name()}}</p>
-                <p class="ganre_count"> 出題数: {{$test;./6TY ->get_problem_count()}}</p>
+                <p class="ganre_count"> 出題数: {{$test->get_problem_count()}}</p>
             </div>
         </div>
         
