@@ -44,13 +44,18 @@
 
     <section class="free_test">
         <p class="free_test-title">お試し検定</p>
-        <p class="free_test-summary">6つの都道府県で各6問お楽しみいただけます！</p>
+        <p class="free_test-summary">6つの都道府県で各5問お楽しみいただけます！</p>
         <div class="free_test_parts">
+        @php
+        $i=0;
+        @endphp
         @foreach($first_tests as $first_test)
-
+            @php
+            $i++;
+            @endphp
             <div class="free_test-part">
                     <div class="free_test_img">
-                        <img src="{{asset('img/top/test_area/top_nagoya.jpg')}}" alt="">
+                        <img src="{{asset('img/top/test_area/top_free_'.$i.'.jpg')}}" alt="">
                     </div>
                     <div class="free_test_detail" id="free_test_detail">
                         <p class="free_test_detail-ganre">ジャンル：{{$first_test['ganre']}}</p>

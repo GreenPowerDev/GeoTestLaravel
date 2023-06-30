@@ -225,6 +225,7 @@
     margin: 0 auto;
 }
 .free_test-title{
+    padding-top: 50px;
     text-align: center;
     font-size: 35px;
     line-height: 56px;
@@ -337,9 +338,7 @@
         padding: 20px;
         padding-bottom: 70px;
     }
-    .free_test_detail p{
-        /* font-size: 15px; */
-    }
+
     .free_test_detail-title{
         font-size: 20px !important;
     }
