@@ -15,22 +15,28 @@ class FreeTest2problemSeeder extends Seeder
     {
         //
         FreeTest2problem::create([
-            'test_id'=>'1'
+            'test_id'=>'1',
+            'problem_id' => '2'
         ]);
         FreeTest2problem::create([
-            'test_id'=>'2'
+            'test_id'=>'2',
+            'problem_id' => '5'
         ]);
         FreeTest2problem::create([
-            'test_id'=>'3'
+            'test_id'=>'3',
+            'problem_id' => '6'
         ]);
         FreeTest2problem::create([
-            'test_id'=>'4'
+            'test_id'=>'4',
+            'problem_id' => '4'
         ]);
         FreeTest2problem::create([
-            'test_id'=>'5'
+            'test_id'=>'5',
+            'problem_id' => '8'
         ]);
         FreeTest2problem::create([
-            'test_id'=>'6'
+            'test_id'=>'6',
+            'problem_id' => '9'
         ]);
     }
 }
