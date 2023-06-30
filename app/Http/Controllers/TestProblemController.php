@@ -77,7 +77,7 @@ class TestProblemController extends Controller
             }    
         }
         $total_score = array_sum($mark_total);
-        $avg_score = $total_score/$total_problem_count;
+        $avg_score = round($total_score/$total_problem_count, 2);
         $pass_state = ($avg_score > 8)? "合格" : "不合格";
         
         if(Auth::check()) {
