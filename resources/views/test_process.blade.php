@@ -8,14 +8,25 @@
              $i=0;
              $total_count = sizeof($problem_ids);
         @endphp
+        @if(Auth::check())
         <input type="hidden" name="test_id" value="{{$test->id}}">
         <input type="hidden" value="{{$total_count}}" name="problem_count">
+        @endif
+        @if(!Auth::check())
+        <input type="hidden" name="test_id" value="{{$test_id}}">
+        <input type="hidden" value="{{$total_count}}" name="problem_count">
+        @endif
         @foreach($problem_ids as $problem_id)
             @php
                 $i++;
             @endphp
             <div class="problem-section" id ="problem_section_{{$i}}" {{(!($i-1))? '': "style=display:none"}}>
+            @if(Auth::check())
                 <input type="hidden" name ="problem_id_{{$i}}" id ="problem_id_{{$i}}" value ="{{$problem_id->problem->id}}">
+            @endif
+            @if(!Auth::check())
+                <input type="hidden" name ="problem_id_{{$i}}" id ="problem_id_{{$i}}" value ="{{$problem_id->problem_id}}">
+            @endif
                 <div class="problem_count">
                     <div class="problem_no">問<span>{{$i}}</span></div>
                     <div class="problem_number"><span>{{$i}}</span>/<span>{{$total_count}}</span></div>
@@ -60,9 +71,21 @@
                 </div>
             </div>
         @endforeach
+
+        @if(Auth::check())
+
         <div class="problem-section" id ="problem_section_{{$i+1}}" {{(!($i-1))? '': "style=display:none"}}>
                 <input type="submit" class="next_problem" value="テスト結果の送信">
         </div>
+
+        @endif
+        @if(!Auth::check())
+
+        <div class="problem-section" id ="problem_section_{{$i+1}}" {{(!($i-1))? '': "style=display:none"}}>
+                <input type="submit" class="next_problem" value="テスト結果">
+        </div>
+
+        @endif
     </form>
     </section>
     

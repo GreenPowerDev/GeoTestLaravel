@@ -18,6 +18,8 @@ use App\Http\Controllers\GanreController;
 use App\Http\Controllers\TestProblemController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\AdminEditController;
+use App\Http\Controllers\FreeTestController;
+
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome_page');
 
@@ -103,3 +105,8 @@ Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])
 Route::get('/email/verify/{hash}', [VerificationController::class, 'getVerifyMail'])->name('getVerifyMail');
 
 Route::get('/mailSended', [VerificationController::class, 'mailSended'])->name('mailSended');
+
+
+Route::get('admin/test/free_test/enter/{id}', [FreeTestController::class, 'free_test_enter'])->name('free_test_enter');
+Route::get('admin/test/free_test/{id}', [FreeTestController::class, 'free_test'])->name('admin.test.free_test');
+Route::post('admin/test/free_test_problem/', [FreeTestController::class, 'free_test_problem'])->name('free_test_problem');

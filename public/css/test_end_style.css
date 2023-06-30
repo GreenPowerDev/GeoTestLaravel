@@ -44,6 +44,16 @@
     padding: 28px;
     width: 100%;
     border-radius: 26px;
+    background-color: #00F589;
+    color: white;
+    font-size: 40px;
+    margin-top: 94px;
+    text-align: center;
+}
+.to-register_page{
+    padding: 28px;
+    width: 100%;
+    border-radius: 26px;
     background-color: #13AE6A;
     color: white;
     font-size: 40px;

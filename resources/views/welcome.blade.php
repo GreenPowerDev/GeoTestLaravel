@@ -32,11 +32,43 @@
             </div>
         </div>
     </section>
+
+    
     <section class="promotion">
         <p class="promotion_title">プロモーション</p>
         <div class="video">
         </div>
     </section>
+
+    @if(!Auth::check())
+
+    <section class="free_test">
+        <p class="free_test-title">お試し検定</p>
+        <p class="free_test-summary">6つの都道府県で各6問お楽しみいただけます！</p>
+        <div class="free_test_parts">
+        @foreach($first_tests as $first_test)
+
+            <div class="free_test-part">
+                    <div class="free_test_img">
+                        <img src="{{asset('img/top/test_area/top_nagoya.jpg')}}" alt="">
+                    </div>
+                    <div class="free_test_detail" id="free_test_detail">
+                        <p class="free_test_detail-ganre">ジャンル：{{$first_test['ganre']}}</p>
+                        <p class="free_test_detail-level">出題数：{{$first_test['count']}}</p>
+                        <div class="free_test_enter">
+                            <a class="free_test_enter_btn" href="{{route('free_test_enter', ["id"=>$first_test['free_id']])}}">検定開始</a>
+                        </div>
+                    </div>
+            </div>
+
+        @endforeach
+        </div>
+    </section>
+
+    @endif
+
+    @if(Auth::check())
+
     <section class="test_area">
         <p class="test_area-title">試験エリア</p>
         <div class="test_areas">
@@ -82,6 +114,9 @@
             </div>
         </div>
     </section>
+
+    @endif
+
     <section class="sns_media">
         <p class="sns-title">SNSメディア</p>
         <div class="sns-items">
@@ -99,6 +134,9 @@
             </div>
         </div>
     </section>
+
+    @if(Auth::check())
+
     <section class="search_by_ganre">
         <p class="search_ganre-title">ジャンルから探す</p>
         <div class="search_ganre-btns">
@@ -113,6 +151,7 @@
             @endforeach
         </div>
     </section>
+    @endif
     <section class="content">
         <p class="content-title">コンテンツ</p>
         <div class="content-items">

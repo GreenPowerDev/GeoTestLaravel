@@ -13,6 +13,7 @@ use App\Models\Ganre;
 use App\Models\Test;
 use App\Models\Problem;
 use App\Models\Test2problem;
+use App\Models\FreeTest2problem;
 use App\Mail\EndMail;
 use Mail;
 use App\Models\Passed;
@@ -24,20 +25,22 @@ class TestProblemController extends Controller
         if(!Auth::check()) return redirect()->route('_login');
 
         $test_id = $request->sel_test_id;
+        Test2problem::where('test_id',$test_id)->delete();
         $problem_ids_text = $request->problem_ids;
         $problem_ids = explode("#", substr($problem_ids_text,1));
-        foreach($problem_ids as $problem_id){
-            $test2problem = new Test2problem();
-            $test2problem->test_id = $test_id;
-            $test2problem->problem_id = $problem_id;
-            $test2problem->save();
+        if(!$problem_ids){
+            foreach($problem_ids as $problem_id){
+                $test2problem = new Test2problem();
+                $test2problem->test_id = $test_id;
+                $test2problem->problem_id = $problem_id;
+                $test2problem->save();
+            }
         }
         return redirect()->route('admin.dashboard');
     }
 
     public function calc_test(Request $request){
-        if(!Auth::check()) return redirect()->route('_login');
-
+        
         $test_id = $request->test_id;
         $total_problem_count = $request->problem_count;
         $mark_total = [];
@@ -70,21 +73,26 @@ class TestProblemController extends Controller
                 array_push($mark_total, $cur_mark);
             }
             else{
-    
+                
             }    
         }
         $total_score = array_sum($mark_total);
         $avg_score = $total_score/$total_problem_count;
         $pass_state = ($avg_score > 8)? "合格" : "不合格";
+        
+        if(Auth::check()) {
+            $passed = new Passed();
+            $passed->state = $pass_state;
+            $passed->score = $avg_score;
+            $passed->save();
+            
+            $this->end_mail_send($test_id, $avg_score, $pass_state);
 
-        $passed = new Passed();
-        $passed->state = $pass_state;
-        $passed->score = $avg_score;
-        $passed->save();
-
-        $this->end_mail_send($test_id, $avg_score, $pass_state);
-
-        return view('test_end');
+            return view('test_end');
+        }
+        if(!Auth::check()){
+            return view('test_end', ['avg_score'=>$avg_score, 'pass_state'=>$pass_state]);
+        }
     }
 
     public function end_mail_send($test_id, $score, $pass_state){
@@ -115,4 +123,5 @@ class TestProblemController extends Controller
         $tests = Test::all();
         return view('admin.test_select', ['tests'=>$tests]);
     }
+
 }

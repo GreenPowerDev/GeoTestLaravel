@@ -166,6 +166,9 @@ header {
     .customer{
         display: block;
     }
+    .customer img{
+        width: 37px;
+    }
     .menubar p{
         font-size: 15px;
     }
@@ -292,6 +295,7 @@ nav a:hover:before {
     nav .menu_items img{
         width: 20px;
         height: auto;
+        background: none;
     }
     .top_logo img, .menu img{
         height: 50px;

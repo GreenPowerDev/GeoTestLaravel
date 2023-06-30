@@ -50,4 +50,11 @@ class Problem extends Model
         ])->first();
         return (is_null($tp_test2problem)) ? 0 : 1;
     }
+    public function selected_free_num($test_id){
+        $tp_test2problem = FreeTest2problem::where([
+            'test_id'=>$test_id,
+            'problem_id'=>$this->id
+        ])->first();
+        return (is_null($tp_test2problem)) ? 0 : 1;
+    }
 }
