@@ -24,7 +24,7 @@ class WelcomeController extends Controller
             else if($free_test[0]->test_id == 3){$first_test_item['ganre'] = '観光';}
             else if($free_test[0]->test_id == 4){$first_test_item['ganre'] = '市町村';}
             else if($free_test[0]->test_id == 5){$first_test_item['ganre'] = '産業';}            
-            else $free_ganre_name = '';
+            else $first_test_item['ganre']  = '';
 
             $first_test_item['count'] =sizeof(FreeTest2problem::where('test_id', $free_test[0]->test_id)->get()); 
             $first_test_item['free_id'] = $free_test[0]->test_id;

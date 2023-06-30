@@ -27,7 +27,7 @@
     @if(!Auth::check())
         <div class="end_field">
             <p class="end_title">お疲れ様でした！</p>
-            <p class="end_context">あなたのスコアは"{{$avg_score}}"点で、"{{$pass_state}}"です。<br>
+            <p class="end_context">あなたのスコアは<span style="font-size: 40px; padding:10px; color:red;"> {{$avg_score}}</span>点で、<span style="font-size: 40px; padding:10px; color:red;">{{$pass_state}}</span>です。<br>
             楽しかったですか？<br>
                 「無料会員登録」をすると、今後<br>
                 さまざまな検定を受験することができます！  
