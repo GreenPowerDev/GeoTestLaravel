@@ -1,4 +1,13 @@
 /* ------------mainvisual-------- */
+@font-face {
+    font-family: 'ComicSansMS3';  
+    src: url(../fonts/ComicSansMS3.ttf);  
+}
+@font-face {
+    font-family: 'HGRME';  
+    src: url(../fonts/HGRME_0.TTC);  
+}
+
 .mainvisual {
     height: 100vh;
     width: 100%;
@@ -24,21 +33,28 @@
 }
 .top_up_title, .top_down_title{
     position: absolute;
-    font-family: 'Courier New', Courier, monospace;
     color: white;
+    font-weight: 500;
 }
 .top_up_title{
-    top: 0;
-    left: 60px;
-    font-size: 50px;
+    top: 60px;
+    left: 80px;
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
 }
 .top_down_title{
-    bottom: 50px;
+    bottom: 60px;
     left: 50%;
-    font-size: 30px;
-    font-weight: 500px;
+    font-size: 45px;
+    font-weight: 500;
     transform: translateX(-50%);
     text-align: center;
+    font-family:'HGRME';
+}
+
+#meister{
+    font-size: 65px;
 }
 .top_right{
     width: 30%;
@@ -138,10 +154,18 @@
     .back_pc{
         display: none;
     }
-    .top_down_title{
-        font-size: 23px;
+    .top_up_title #span-meister{
+        margin-left: 60px;
     }
-
+    .top_down_title{
+        font-size: 30px;
+        width: 90%;
+        margin: 0 auto;
+        bottom: 50px;
+    }
+    #meister{
+        font-size: 35px;
+    }
     .sch_title{
         padding: 10px;
         border-top-left-radius: 15px;
@@ -150,7 +174,7 @@
     .list_footer{
         padding: 10px;
         border-radius: 0 0 15px 15px;
-
+        
     }
     .top_right {
         visibility: hidden;
@@ -164,7 +188,7 @@
         align-items: center;
         justify-content: center;
         transition: all .4s;
-      }
+    }
     .test_schedul{
         height: calc(100vh - 170px);
     }
@@ -172,7 +196,7 @@
         height: calc(100vh - 255px);
     }
     .top_right:target {
-    visibility: visible;
+        visibility: visible;
     opacity: 1;
     }
     .top_right__close {
@@ -225,11 +249,14 @@
         
     }
 }
-@media only screen and (max-width:590px) {
-    #down_title_space{
-        display: block;
+@media only screen and (max-width:500px) {
+    .top_up_title{
+        top: 60px;
+        left: 50%;
+        font-size: 70px;
+        transform: translateX(-50%);
+        text-align: center;
     }
-
 }
 
 /* --------------promotion--------------   */

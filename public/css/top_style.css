@@ -3,6 +3,7 @@
     font-family: 'Yu Gothic';
 }
 
+
 body {
     max-width: 100%;
     /* overflow-x: hidden; */
@@ -12,6 +13,10 @@ body {
     font-weight: bold;
 }
 
+@font-face {
+    font-family: 'ComicSansMS3';  
+    src: url(../fonts/ComicSansMS3.ttf);  
+}
 a {
     text-decoration: none;
     color: black;

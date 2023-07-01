@@ -6,8 +6,8 @@
             <div class="top_left">
                 <img src="{{asset('img/top/mainvisual/top_background.png')}}" alt="" class="back_pc">
                 <img src="{{asset('img/top/mainvisual/top_sp.jpg')}}" alt="" class="back_sp">
-                <p class="top_up_title"><span style="margin-right:50px">Special</span><br><span style="margin-left:50px">Meister</span></p>
-                <p class="top_down_title">私が地元の<br id="down_title_space"> Meisterです。</p>
+                <p class="top_up_title"><span style="font-family: 'ComicSansMS3';">Special</span><br><span id='sapn-meister' style="margin-left:100px;font-family: 'ComicSansMS3';">Meister</span></p>
+                <p class="top_down_title">私が地元の<br id="down_title_space"><span id="meister"> Meister</span>です。</p>
             </div>
             <div class="test_schedul-modal">
                 <a href="#modal-btn" class="schedul_btn"><p style="margin:0; padding:0;">情報</p> </a>
