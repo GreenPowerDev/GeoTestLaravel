@@ -23,7 +23,10 @@ class GuideController extends Controller
     public function my_page(){
 
         if(!Auth::check()) return redirect()->route('_login');
-        $test2users = Test2user::where('user_id', Auth::user()->id)->get();
+        $test2users = Test2user::where('user_id', Auth::user()->id)
+                    ->get();
+        
+                    
 
         $allowed_tests = [];
         foreach($test2users as $test2user){

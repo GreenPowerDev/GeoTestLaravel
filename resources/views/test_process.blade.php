@@ -32,7 +32,7 @@
                     <div class="problem_number"><span>{{$i}}</span>/<span>{{$total_count}}</span></div>
                 </div>
                 <div class="problem_detail">
-                    <p> </p>
+                    <p></p>
                 </div>
                 <p class="problem_text">
                     {{$problem_id->problem->answer_text}}
