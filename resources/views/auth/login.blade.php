@@ -16,7 +16,7 @@
     <div class="m-container">
 	<!-- main -->
         <div class="main-w3layouts wrapper">
-            <h1>ログーイン</h1>
+            <h1>ログイン</h1>
             <div class="main-agileinfo">
                 
                 <div class="agileits-top">
@@ -26,13 +26,13 @@
                         <input id="email" type="email" class="text email" name="email" placeholder="メールアドレス" value="{{ old('email') }}" required autocomplete="email">
                         @error('email')
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong>これらの認証情報は当社の記録と一致しません。</strong>
                         </span>
                         @enderror
                         <input id="password" type="password" class="text" name="password" placeholder="パスワード" required autocomplete="current-password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong>これらの認証情報は当社の記録と一致しません。</strong>
                         </span>
                         @enderror
 

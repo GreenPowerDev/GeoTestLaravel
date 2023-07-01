@@ -6,6 +6,8 @@
             <div class="top_left">
                 <img src="{{asset('img/top/mainvisual/top_background.png')}}" alt="" class="back_pc">
                 <img src="{{asset('img/top/mainvisual/top_sp.jpg')}}" alt="" class="back_sp">
+                <p class="top_up_title"><span style="margin-right:50px">Special</span><br><span style="margin-left:50px">Meister</span></p>
+                <p class="top_down_title">私が地元の<br id="down_title_space"> Meisterです。</p>
             </div>
             <div class="test_schedul-modal">
                 <a href="#modal-btn" class="schedul_btn"><p style="margin:0; padding:0;">情報</p> </a>
@@ -56,6 +58,13 @@
             <div class="free_test-part">
                     <div class="free_test_img">
                         <img src="{{asset('img/top/test_area/top_free_'.$i.'.jpg')}}" alt="">
+                        <p class="free_test_name">
+                            @foreach(mb_str_split($first_test['province']) as $char)
+                                {{$char}}
+                                <br>
+                            @endforeach
+                            
+                        </p>
                     </div>
                     <div class="free_test_detail" id="free_test_detail">
                         <p class="free_test_detail-ganre">ジャンル：{{$first_test['ganre']}}</p>
