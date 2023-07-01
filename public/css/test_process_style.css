@@ -43,18 +43,19 @@
     font-size: 20px;
 }
 .next_problem{
-    padding: 28px;
-    width: 100%;
+    padding: 15px;
+    width: 50%;
+    margin: 0 auto;
     border-radius: 26px;
     background-color: #13AE6A;
     color: white;
     font-size: 40px;
     margin-top: 94px;
     text-align: center;
+    border: none;
 }
-
 .mark_treat{
-    min-height: 800px;
+    text-align: center;
 }
 
 @media only screen and (max-width:1440px) {

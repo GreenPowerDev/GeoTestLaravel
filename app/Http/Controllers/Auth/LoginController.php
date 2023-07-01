@@ -28,6 +28,14 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+
+    // protected function sendFailedLoginResponse(Request $request)
+    //     {
+    //         throw ValidationException::withMessages([
+    //             'username or password is incorrect!!!'
+    //             ]);
+    //     }
+
     /**
      * Create a new controller instance.
      *
