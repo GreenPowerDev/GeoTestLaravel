@@ -166,7 +166,6 @@ class AdminController extends Controller
 
         $test = Test::find($id);
         $problems = Problem::all();
-        dd($test);
         return view('admin.test_problem',['test'=>$test, 'problems'=>$problems]);
     }
     

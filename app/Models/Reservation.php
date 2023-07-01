@@ -48,6 +48,8 @@ class Reservation extends Model
 
     public function get_reserve_state(){
         $result = '';
+        if($this->test2user()->first()->allowed_id == -1){$result = 'キャンセル';}
+        else
         $result = ($this->test2user()->first()->allowed_id == 0) ? '未許可' : '許可';
         return $result;
     }
