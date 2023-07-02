@@ -23,6 +23,7 @@ class GuideController extends Controller
     public function my_page(){
 
         if(!Auth::check()) return redirect()->route('_login');
+<<<<<<< HEAD
         // $test2users = Test2user::where('user_id', Auth::user()->id)
         //             ->get();
                     $test2users = Test2user::where('user_id', Auth::user()->id)
@@ -33,6 +34,10 @@ class GuideController extends Controller
         // usort($test2users, function($a, $b) {
         //     return $a->get_test_date() > $b->get_test_date();
         // });
+=======
+        $test2users = Test2user::where('user_id', Auth::user()->id)
+                    ->get();
+>>>>>>> 185d713054037b7b7a1f7ba77b9cefc37ffaa611
         
                     
 
