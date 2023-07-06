@@ -39,6 +39,9 @@
     <section class="promotion">
         <p class="promotion_title">プロモーション</p>
         <div class="video">
+            <video controls>
+                <source src="{{asset('img/interview01.mp4')}}" type="video/mp4">
+            </video>
         </div>
     </section>
 
