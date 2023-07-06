@@ -271,6 +271,14 @@
     background-color: #333333;
     margin: 25px auto;
 }
+.promotion .video video{
+    width: 100%;
+    height: 100%;
+}
+.promotion .video source{
+    width: 100%;
+    height: 100%;
+}
 @media only screen and (max-width:1440px) {
     .promotion .video{
         width: 80%;
