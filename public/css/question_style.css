@@ -1,10 +1,10 @@
 /* -----------mainviual----------- */
 .mainvisual{
-    padding-top: 170px;
+    padding-top: 80px;
 }
 .mainvisual img{
     width: 100%;
-    height: calc(100vh - 170px);
+    height: calc(100vh - 80px);
     object-fit: cover;
     position: relative;
 }
@@ -60,12 +60,6 @@
 }
 /* -----------------sp------------------- */
 @media only screen and (max-width:1280px) {
-    .mainvisual{
-        padding-top: 150px;
-    }
-    .mainvisual img{
-        height: calc(100vh - 150px);
-    }
     .question_main{
         font-size: 60px;
     }
@@ -80,10 +74,10 @@
 }
 @media only screen and (max-width:768px) {
     .mainvisual{
-        padding-top: 50px;
+        padding-top: 60px;
     }
     .mainvisual img{
-        height: calc(100vh - 50px);
+        height: calc(100vh - 60px);
     }
     .question_main{
         font-size: 60px;

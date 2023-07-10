@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.main')
 @section('main-content')
 <link href="{{asset('/css/welcome_style.css')}}" rel='stylesheet'>
     <section class="mainvisual">
