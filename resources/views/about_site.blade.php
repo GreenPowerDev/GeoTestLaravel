@@ -3,7 +3,8 @@
     <link href="{{asset('/css/about_site_style.css')}}" rel='stylesheet'>
     <section class="manvisual">
         <div class="about_img">
-            <img src="{{asset('/img/top/content/top_about.png')}}" alt="">
+            <p class="about_title">このサイトについて</p>
+            <img src="{{asset('/img/top/content/top_about.jpg')}}" alt="">
         </div>
     </section>
     <section class="about_detail">

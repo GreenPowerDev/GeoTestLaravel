@@ -6,12 +6,21 @@
     padding-top: 170px;
     max-width: 1120px;
     margin: 0 auto;
+    position: relative;
+    padding-bottom: 150px;
+}
+
+.notice-blueboard{
+    position: absolute;
+    top: 200px;
+    right: 100px;
+    width: 150px;
 }
 .notice_title{
     text-align: center;
     font-size: 40px;
-    padding-top: 36px;
-    padding-bottom: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     margin: 0;
 }
 .notice_content{
@@ -19,7 +28,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
 }
+.notice-notepad{
+    width: 30%;
+    top: -140px;
+    left: -150px;
+    z-index: -1;
+    position: absolute;
+}
+
 .notice_items{
     padding: 20px 23px;
     border: 1px solid #13AE6A;

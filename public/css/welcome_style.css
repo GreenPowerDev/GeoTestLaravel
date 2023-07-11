@@ -139,6 +139,12 @@
     padding-bottom: 100px;
 }
 
+.promo_clock{
+    position: absolute;
+    left: 0;
+    top: 150px;
+    z-index: 3;
+}
 .promo_girl{
     position: absolute;
     left: 0;
@@ -189,7 +195,7 @@
         margin: 0 auto;
     }
     
-    .promo_camera, .promo_girl{
+    .promo_camera, .promo_girl, .promo_clock{
         display: none;
     }
 }
@@ -476,6 +482,13 @@
     justify-content: space-between;
 }
 
+.sns-meister{
+    position: absolute;
+    width: 30%;
+    bottom: 0;
+    right: 150px;
+    z-index: -1;
+}
 .sns-girl{
     position: absolute;
     bottom: 0;
@@ -565,6 +578,9 @@
     .sns-girl{
         width: 50%;
     }
+    .sns-meister{
+        display: none;
+    }
 }
 /* ----------search_by_ganre----------- */
 .search_by_ganre{
@@ -621,24 +637,6 @@
         margin: 0 auto;
     }
 }
-/* @media only screen and (max-width:768px) {
-    .search_ganre-btns-btn{
-        padding: 15px;
-        margin-bottom: 20px;
-    }
-    .search_each_ganre a{
-        width: 80%;
-    }
-    .search_ganre-title{
-        font-size: 30px!important;
-    }
-    
-}
-@media only screen and (max-width:500px) {
-    .search_each_ganre{
-        width: 100%;
-    }
-} */
 
 /* ------------content--------------- */
 .content{
@@ -658,13 +656,36 @@
     display: flex;
     justify-content: center;
 }
+.content-items-left, .content-items-right{
+    position: relative;
+}
+.content-items-title{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    text-shadow: 3px 3px 2px black;
+}
+.content-items img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
 .content-items-left img, .content-items-right img {
-	opacity: 1;
+    opacity: 1;
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
 .content-items-left:hover img, .content-items-right:hover img {
-	opacity: .5;
+    opacity: .5;
+}
+.content-items-left:hover .content-items-title, .content-items-right:hover .content-items-title {
+    text-shadow: 5px 5px 5px black;
 }
 @media only screen and (max-width:1440px) {
     .content-items{
