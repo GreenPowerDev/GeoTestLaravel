@@ -19,6 +19,7 @@ use App\Http\Controllers\TestProblemController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\AdminEditController;
 use App\Http\Controllers\FreeTestController;
+//use App\Http\Controllers\TestPaymantController;
 
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome_page');
@@ -110,3 +111,5 @@ Route::get('/mailSended', [VerificationController::class, 'mailSended'])->name('
 Route::get('admin/test/free_test/enter/{id}', [FreeTestController::class, 'free_test_enter'])->name('free_test_enter');
 Route::get('admin/test/free_test/{id}', [FreeTestController::class, 'free_test'])->name('admin.test.free_test');
 Route::post('admin/test/free_test_problem/', [FreeTestController::class, 'free_test_problem'])->name('free_test_problem');
+
+Route::post('/charge', [TestPaymantController::class, 'charge'])->name('payment.charge');
