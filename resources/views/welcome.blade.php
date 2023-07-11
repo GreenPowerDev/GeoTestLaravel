@@ -217,9 +217,9 @@
 
     <section class="content">
         <div class="content-items">
-            <div class="content-items-left"><a href="{{route('guide.about_site')}}"><img src="{{asset('img/top/content/top_about.jpg')}}" alt=""></a>
+            <div class="content-items-left"><a href="{{route('guide.about_site')}}"><p class="content-items-title">このサイトについて</p><img src="{{asset('img/top/content/top_about.jpg')}}" alt=""></a>
             </div>
-            <div class="content-items-right"><a href="{{route('guide.method')}}"><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
+            <div class="content-items-right"><a href="{{route('guide.method')}}"><p class="content-items-title">試験内容と受験方法</p><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
         </div>
 
     </section>
