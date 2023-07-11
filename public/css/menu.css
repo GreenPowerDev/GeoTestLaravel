@@ -261,6 +261,7 @@ footer{
     width: 100%;
     padding: 50px;
     background-color: #13AE6A;
+    font-family: "HGRME";
     padding-bottom: 10px;
     bottom: 0;
 }
@@ -268,6 +269,10 @@ footer{
 .footer_logo{
     position: absolute;
     left: 3%;
+}
+
+.footer_logo img{
+    height: 60px;
 }
 
 .footer_detail{
@@ -297,7 +302,9 @@ footer{
     color: white;
     font-size: 15px;
 }
-
+.footer_links:hover{
+    color: #8F0D0D;
+}
 
 /* -----------------resposive(1280)---------------------- */
 @media only screen and (max-width:1279px) {
@@ -329,8 +336,7 @@ footer{
     }
     
     .footer_logo{
-        height: 40px;
-        padding-left: 20px;
+        height: 30px;
     }
     
     .footer_logo img{
@@ -344,6 +350,8 @@ footer{
     .footer_links{
         font-size: 0.9rem;
     }
+
+
 }
 
 /* ---------------------------sp------------------------------- */

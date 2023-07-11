@@ -50,9 +50,21 @@
                 <img src="{{asset('img/menu/ico_register.png')}}" alt="register-icon">
             </a>
         @endif
+        
+        @if(Auth::check())
+        @if(Auth::user()->user_role == 1)
+
+            <a href="{{route('guide.question')}}" class="squre-btns to_admin-page">
+                <img src="{{asset('img/menu/ico_admin.png')}}" alt="admin-icon">
+            </a>
+        @endif
+
+        @else
             <a href="{{route('guide.question')}}" class="squre-btns question">
                 <img src="{{asset('img/menu/ico_question.png')}}" alt="question-icon">
             </a>
+
+        @endif
             <div class="hamburger">
                 <div id="menuToggle">
                     <input type="checkbox" />

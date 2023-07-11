@@ -621,24 +621,6 @@
         margin: 0 auto;
     }
 }
-/* @media only screen and (max-width:768px) {
-    .search_ganre-btns-btn{
-        padding: 15px;
-        margin-bottom: 20px;
-    }
-    .search_each_ganre a{
-        width: 80%;
-    }
-    .search_ganre-title{
-        font-size: 30px!important;
-    }
-    
-}
-@media only screen and (max-width:500px) {
-    .search_each_ganre{
-        width: 100%;
-    }
-} */
 
 /* ------------content--------------- */
 .content{
@@ -670,6 +652,7 @@
     color: white;
     width: 100%;
     text-align: center;
+    z-index: 3;
 }
 .content-items img{
     width: 100%;
@@ -683,6 +666,9 @@
 }
 .content-items-left:hover img, .content-items-right:hover img {
 	opacity: .5;
+}
+.content-items-left:hover .content-items-title, .content-items-right:hover .content-items-title {
+	color: #8F0D0D;
 }
 @media only screen and (max-width:1440px) {
     .content-items{
