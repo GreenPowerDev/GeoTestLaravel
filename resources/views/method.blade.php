@@ -3,6 +3,7 @@
     <link href="{{asset('/css/method_style.css')}}" rel='stylesheet'>
     <section class="manvisual">
         <div class="method_img">
+            <p class="method_title">試験内容と<br class="method-br"> 受験方法</p>
             <img src="{{asset('/img/top/content/top_method.png')}}" alt="">
         </div>
     </section>
