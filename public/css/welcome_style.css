@@ -139,6 +139,12 @@
     padding-bottom: 100px;
 }
 
+.promo_clock{
+    position: absolute;
+    left: 0;
+    top: 150px;
+    z-index: 3;
+}
 .promo_girl{
     position: absolute;
     left: 0;
@@ -189,7 +195,7 @@
         margin: 0 auto;
     }
     
-    .promo_camera, .promo_girl{
+    .promo_camera, .promo_girl, .promo_clock{
         display: none;
     }
 }
@@ -476,6 +482,13 @@
     justify-content: space-between;
 }
 
+.sns-meister{
+    position: absolute;
+    width: 30%;
+    bottom: 0;
+    right: 150px;
+    z-index: -1;
+}
 .sns-girl{
     position: absolute;
     bottom: 0;
@@ -564,6 +577,9 @@
     }
     .sns-girl{
         width: 50%;
+    }
+    .sns-meister{
+        display: none;
     }
 }
 /* ----------search_by_ganre----------- */

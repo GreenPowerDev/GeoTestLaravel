@@ -45,6 +45,7 @@
     
     <section class="promotion">
         <div class="promotion_detail">
+            <img class="promo_clock" src="{{asset('img/users/clock.png')}}" alt="map-image">
             <img class="promo_girl" src="{{asset('img/users/promo_girl.png')}}" alt="map-image">
             <img class="promo_camera" src="{{asset('img/users/promo_camera.png')}}" alt="map-image">
 
@@ -159,6 +160,7 @@
 
     <section class="sns_media">
         <img class="sns-girl" src="{{asset('img/users/sns-girl.png')}}">
+        <img class="sns-meister" src="{{asset('img/users/meister00.png')}}">
         <p class="sns-title">SNSメディア</p>
         <div class="sns-bg">
             <div class="sns-map"></div>
