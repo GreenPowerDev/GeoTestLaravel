@@ -1,9 +1,11 @@
 @extends('layouts.main')
 @section('main-content')
 <link href="{{asset('/css/mypage_style.css')}}" rel='stylesheet'>
-<section class="mypage">
+    <div class="my_page-top-color"></div>
+    <div class="my_page-bottom-color"></div>
+<section class="my_page">
         <div class="user_information">
-            <p class="title">お客様情報</p>
+            <p class="title">マイ情報</p>
             <p class="user_name">氏名:　<span>{{Auth::user()->name}}</span></p>
             <p class="user_mail_address">メールアドレス:　<span>{{Auth::user()->email}}</span></p>
         </div>
@@ -13,6 +15,7 @@
             @foreach ($allowed_tests as $allowed_test)
             @if(!$allowed_test->test->check_datetime())
                 <div class="recent_test">
+                <div class="recent-container">
                     <div class="recent_when">
                         <p class="recent_date">開催日：{{$allowed_test->test->get_test_date()}}</p>
                         <p class="recent_time">開催時間：{{$allowed_test->test->get_begin_time()}}～{{$allowed_test->test->get_end_time()}}</p>
@@ -22,6 +25,7 @@
                         <p class="recent_ganre">ジャンル： <span>{{$allowed_test->test->get_ganre_name()}}</span></p>
                         <p class="recent_level">レベル：<span>{{$allowed_test->test->get_level_name()}}</span></p>
                     </div>
+                </div>
                     @if($allowed_test->passed === null || $allowed_test->passed->state === null)
                         
                         <div class="recent_test_result nogaze_style">

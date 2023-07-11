@@ -1,12 +1,12 @@
 /* -----------mainviual----------- */
 .mainvisual{
     padding-top: 80px;
+    position: relative;
 }
 .mainvisual img{
     width: 100%;
     height: calc(100vh - 80px);
     object-fit: cover;
-    position: relative;
 }
 .question_main{
     position: absolute;

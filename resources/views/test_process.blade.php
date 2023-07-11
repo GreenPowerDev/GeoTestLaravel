@@ -27,6 +27,7 @@
             @if(!Auth::check())
                 <input type="hidden" name ="problem_id_{{$i}}" id ="problem_id_{{$i}}" value ="{{$problem_id->problem_id}}">
             @endif
+                <div class="problem-container">
                 <div class="problem_count">
                     <div class="problem_no">問<span>{{$i}}</span></div>
                     <div class="problem_number"><span>{{$i}}</span>/<span>{{$total_count}}</span></div>
@@ -37,10 +38,13 @@
                 <p class="problem_text">
                     {{$problem_id->problem->answer_text}}
                 </p>
+                </div>
+                <div class="answer-container">
                 <div class="answer_count">
                     <input type="hidden" id="time_value_{{$i}}" value="{{$problem_id->problem->problem_time}}">
                     <div class="answer_no">答</div>
                     <div class="answer_number">残り時間： <span id="time_text_{{$i}}"> </span> </div>
+                    <img class="answer-clock" src="{{asset('img/users/clock.png')}}">
                 </div>
                 <div class="answer_detail">
                     @php
@@ -69,6 +73,7 @@
                         次の問題へ    
                     </div>
                 </div>
+                </div>
             </div>
         @endforeach
 
@@ -83,7 +88,7 @@
         @if(!Auth::check())
 
         <div class="problem-section mark_treat"  id ="problem_section_{{$i+1}}" {{(!($i-1))? 'style=text-align: center;': "style=display:none;"}}>
-                <img src="{{asset('img/top/test_area/top_free_'.$test_id.'.jpg')}}" alt="" style="min-height:500px; width:100%">
+                <img src="{{asset('img/top/test_area/top_free_'.$test_id.'.jpg')}}" alt="" >
                 <input type="submit" class="next_problem" value="テスト結果">
         </div>
 
@@ -96,7 +101,7 @@
     var problem_process_time = {{(count($problem_ids)<1)? 0 : $problem_ids[0]->problem->problem_time}}
     $(document).ready(function(){
         $(".next_problem").click(function(){
-            next_page(parseInt($(this).parent().parent().attr('id').replace('problem_section_', '')));
+            next_page(parseInt($(this).parent().parent().parent().attr('id').replace('problem_section_', '')));
             current_section++;
         })
 

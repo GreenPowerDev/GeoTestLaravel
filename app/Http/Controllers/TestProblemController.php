@@ -40,6 +40,7 @@ class TestProblemController extends Controller
     }
 
     public function calc_test(Request $request){
+        if($request){
         
         $test_id = $request->test_id;
         $total_problem_count = $request->problem_count;
@@ -92,7 +93,11 @@ class TestProblemController extends Controller
         }
         if(!Auth::check()){
             return view('test_end', ['avg_score'=>$avg_score, 'pass_state'=>$pass_state]);
+        }}
+        else{
+            return view('method');
         }
+        
     }
 
     public function end_mail_send($test_id, $score, $pass_state){
