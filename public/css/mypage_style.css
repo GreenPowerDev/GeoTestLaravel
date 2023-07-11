@@ -53,12 +53,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 25px auto;
 }
 
-.recent_when, .recent_context, .reservation_when, .reservation_context, .passed_test_when, .passed_test_context{
+ .recent_context, .reservation_when, .reservation_context, .passed_test_when, .passed_test_context{
     display: flex;
     justify-content: left;
 }
+
 .recent_when p, .recent_context p, .reservation_when p, .reservation_context p, .passed_test_when p, .passed_test_context p {
     padding-right: 50px;
 }
@@ -66,8 +68,12 @@
     text-align: center;
     padding: 10px 20px;
     font-size: 30px;
-    margin: 25px auto;
 }
+
+.recent_when .recent_time,.recent_context .recent_level{
+    padding-right: 0;
+}
+
 .recent_result_detail{
     background-color: white;
 }
@@ -132,6 +138,7 @@
     .recent_result_detail, .reservation_detail{
         height: 400px;
     }
+
 }
 
 @media only screen and (max-width:768px) {
@@ -177,6 +184,11 @@
     .recent_result_detail, .reservation_detail, .passed_test_detail{
         padding: 10px;
     }
+
+    .recent_test_result{
+        padding: 5px 10px;
+    }
+
 }
 @media only screen and (max-width:420px) {
     .title{
