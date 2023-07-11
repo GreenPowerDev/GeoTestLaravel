@@ -1,11 +1,11 @@
 /* -----------mainviual----------- */
 .test_site_img{
-    padding-top: 170px;
+    padding-top: 80px;
     position: relative;
 }
 .test_site_img img {
     width: 100%;
-    height: calc(100vh - 170px);
+    height: calc(100vh - 80px);
     object-fit: cover;
 }
 .test_site_name{
@@ -45,10 +45,22 @@
     justify-content: center;
     align-items: center;
     margin: 30px 0;
+    position: relative;
+    padding-top: 50px;
 }
+.test_schedul-bg{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    z-index: -1;
+}
+
 .ganre_context p{
     text-align: left;
     font-size: 25px;
+    font-weight: 500;
     margin: 0;
     
 }
@@ -66,10 +78,21 @@
 .wait_time{
     text-align: center;
     font-size: 35px;
+    font-weight: 500;
+    padding-bottom: 150px;
+    padding-top: 150px;
 }
+
+#calc_time{
+    font-family: 'HGRME';
+    font-weight: bold;
+    font-size: larger;
+    padding: 0 10px;
+}
+
 @media only screen and (max-width:1440px) {
     .test_site_detail{
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
     }
     .ganre_apply-btn{
@@ -87,145 +110,35 @@
     .recent_detail p, .ganre_detail p {
         font-size: 20px;
     }
-}
-@media only screen and (max-width:900px) {
-    .ganre_detail{
-        flex-wrap: wrap;
-        justify-content: center;
+    .test_schedul-bg{
+        width: 500px;
     }
-    .ganre_name{
+    .wait_time p{
         font-size: 30px;
-    }
-    .ganre_apply{
-        margin-top: 30px;
-    }
-    .ganre_type{
-        padding: 10px;
-    }
-    .ganre_detail{
-        padding: 10px
-    }
-}
-@media only screen and (max-width:460px) {
-    .recent_detail p, .ganre_detail p {
-        font-size: 15px;
-    }
-    .ganre_apply-btn{
-        font-size: 25px;
-        padding: 15px 20px;
-    }
-    
-}
-@media only screen and (max-width:1330px) {
-    
-    .top_left{
-        width: 100%;
-        position: relative;
-    }
-    .hamburger img{
-        width: 100px;
-        height: auto;
-    }
-    .top_right{
-        width: 300px;
-        position: absolute;
-        right: 0;
-        padding-right: 5;
-    }
-    .sch-content{
-        background-color: white;
-    }
-    .test_site_img{
-        padding-top: 100px;
-    }
-    .test_schedul{
-    height: calc(100vh - 250px);
-    }
-    .test_site_img img{
-        height: calc(100vh - 100px);
+        font-weight: 600;
     }
 }
 @media only screen and (max-width:768px) {
-    .sch_title{
-        padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
-    .list_footer{
-        padding: 10px;
-        border-radius: 0 0 15px 15px;
-
-    }
-    .top_right {
-        visibility: hidden;
-        width: 100%;
-        opacity: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all .4s;
-      }
-    .test_schedul{
-        height: calc(100vh - 150px);
-    }
-    .sch-content{
-        height: calc(100vh - 255px);
-    }
-    .top_right:target {
-    visibility: visible;
-    opacity: 1;
-    }
-    .top_right__close {
-        display: inline;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        color: #585858;
-        text-decoration: none;
-        z-index: 99999;
-    }
-    .test_schedul-modal{
-        display: inline;
-        position: absolute;
-        top: 100px;
-        right: 20px;
-    }
-    .test_schedul-modal a {
-        padding: 20px;
-        background-color: #13AE6A;
-        display: inline-block;
-        color: white;
-        border-radius: 50%;
-        font-size: 25px;
-        text-align: center;
-    }
-    .test_schedul-modal a:hover {
-        background-color: white;
-        border: 1px solid #13AE6A;
-        color: #13AE6A;
-    }
-    .test_schedul-modal a:visited {
-        display: none;
-    }
     
-    .top_logo img, .menu img{
-        height: 50px;
-        width: auto;
-    }
-    .top_logo{
-        margin: 0 20px;
-    }
-    header{
-        height: 50px;
-    }
     .test_site_img img{
-        height: calc(100vh - 50px);
+        height: calc(100vh - 60px);
     }
     .test_site_img{
-        padding-top: 50px;
+        padding-top: 60px;
+    }
+    .wait_time p{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+
+}
+@media only screen and (max-width:540px) {
+    .recent_detail p, .ganre_detail p {
+        font-size: 15px;
+    }
+    .test_schedul-bg{
+        width: 340px;
+        top: 40%;
     }
 }
