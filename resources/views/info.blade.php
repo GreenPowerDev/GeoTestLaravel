@@ -4,8 +4,10 @@
 <section class="mainvisual">
     <div class="info_screen">
         <p class="info-title">{{$notice->notice_contitle}}</p>
-        <div style="width: 100%;">
+        <div style="position: relative">
             <img src="{{$notice->notice_img_url}}" alt="画像">
+            <img class="notice_greeting" src="{{asset('/img/users/greeting.png')}}">
+            <img class="notice_point" src="{{asset('/img/users/point.png')}}">
         </div>
     </div>
 </section>
