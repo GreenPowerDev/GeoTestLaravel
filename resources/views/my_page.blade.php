@@ -8,6 +8,7 @@
             <p class="title">マイ情報</p>
             <p class="user_name">氏名:　<span>{{Auth::user()->name}}</span></p>
             <p class="user_mail_address">メールアドレス:　<span>{{Auth::user()->email}}</span></p>
+            <img src="{{asset('/img/users/meister00.png')}}" class="user-meister">
         </div>
         <div class="recent_result">
             <p class="recent_result_title title">最近受けた検定</p>

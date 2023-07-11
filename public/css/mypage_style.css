@@ -27,7 +27,15 @@
     margin-bottom: 20px;
 }
 .user_information{
+    position: relative;
     margin-top: 62px;
+}
+
+.user-meister{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 150px;
 }
 .user_information p{ 
     margin: 0;
@@ -153,6 +161,11 @@
     }
     .my_page{
         padding-top: 80px;
+    }
+
+    .user-meister{
+        top: -60px;
+        height: 100px;
     }
     .recent_when, .recent_context, .reservation_when, .reservation_context, .passed_test_when, .passed_test_context{
         justify-content: left;
