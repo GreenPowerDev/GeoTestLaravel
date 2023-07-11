@@ -2,10 +2,8 @@
 @section('main-content')
 <link href="{{asset('/css/test_end_style.css')}}" rel='stylesheet'>
     <section class="mainvisual">
-        <div class="mianscreen">
-            <img src=" {{asset('/img/top/test_area/top_wakayama.png')}} " alt="">
-            <p class="endtext">試験終了</p>
-        </div>
+        <img src=" {{asset('/img/top/test_area/top_wakayama.png')}} " alt="">
+        <p class="endtext">試験終了</p>
     </section>
     <section class="test_end_notice">
     @if(Auth::check())
@@ -27,7 +25,7 @@
     @if(!Auth::check())
         <div class="end_field">
             <p class="end_title">お疲れ様でした！</p>
-            <p class="end_context">あなたのスコアは<span style="font-size: 40px; padding:10px; color:red;"> {{$avg_score}}</span>点で、<span style="font-size: 40px; padding:10px; color:red;">{{$pass_state}}</span>です。<br>
+            <p class="end_context">あなたのスコアは<span style="font-size: 40px; padding:10px; color:red;"> {{$avg_score}}</span>点で、 <br id="mark_and_re"><span style="font-size: 40px; padding:10px; color:red;">{{$pass_state}}</span>です。<br>
             楽しかったですか？<br>
                 「無料会員登録」をすると、今後<br>
                 さまざまな検定を受験することができます！  

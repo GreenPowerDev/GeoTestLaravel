@@ -129,7 +129,7 @@
                         <div class="area_detail" id="areadetail">
                             <p class="area_detail-title">最近の開催試験</p>
                             @if (is_null($province->province_first_test()))
-                            <p class="predetail_title" >テストはありません。</p><br><br><br><br>
+                            <p class="predetail_title" >テストはありません。</p><br><br><br><br><br>
                             @else
                             
                                 <p class="aera_detail_test_title">試験タイトル:{{$province->province_first_test()->name}}</p>

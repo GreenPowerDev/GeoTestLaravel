@@ -9,6 +9,7 @@ body {
     margin: 0;
     font-size: 20px;
     font-weight: bold;
+    position: relative;
 }
 
 /* !---------------------------font-family-------------------------- */
@@ -261,6 +262,7 @@ footer{
     padding: 50px;
     background-color: #13AE6A;
     padding-bottom: 10px;
+    bottom: 0;
 }
 
 .footer_logo{
