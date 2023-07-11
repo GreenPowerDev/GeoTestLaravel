@@ -11,6 +11,8 @@
     font-size: 60px;
     color: white;
     z-index: 3;
+    text-shadow: 5px 5px 5px black;
+
 }
 .about_img img {
     width: 100%;
