@@ -217,7 +217,7 @@
 
     <section class="content">
         <div class="content-items">
-            <div class="content-items-left"><a href="{{route('guide.about_site')}}"><img src="{{asset('img/top/content/top_about.png')}}" alt=""></a>
+            <div class="content-items-left"><a href="{{route('guide.about_site')}}"><img src="{{asset('img/top/content/top_about.jpg')}}" alt=""></a>
             </div>
             <div class="content-items-right"><a href="{{route('guide.method')}}"><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
         </div>

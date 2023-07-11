@@ -59,7 +59,7 @@
 }
 .recent_test{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 25px auto;
 }
