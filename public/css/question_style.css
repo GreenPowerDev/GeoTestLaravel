@@ -80,7 +80,7 @@
         height: calc(100vh - 60px);
     }
     .question_main{
-        font-size: 60px;
+        font-size: 40px;
     }
     #question_send_value{
         padding: 10px;
