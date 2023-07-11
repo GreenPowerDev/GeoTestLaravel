@@ -54,7 +54,7 @@
         @if(Auth::check())
         @if(Auth::user()->user_role == 1)
 
-            <a href="{{route('guide.question')}}" class="squre-btns to_admin-page">
+            <a href="{{route('admin.dashboard')}}" class="squre-btns to_admin-page">
                 <img src="{{asset('img/menu/ico_admin.png')}}" alt="admin-icon">
             </a>
         @endif
@@ -74,16 +74,18 @@
 
                     <ul id="menu">
                         <div class="menu-list">
+                        @if(Auth::check())
                             <div class="menu_items customer">
-                                {{-- <img src="{{asset('img/top/mainvisual/header/sp_user_icon.png')}}" alt=""> --}}
+                                <img src="{{asset('img/top/mainvisual/header/sp_user_icon.png')}}" alt="">
                                 <a href="{{route('my_page')}}">マイページ</a>
                             </div>
+                        @endif
                             <div class="menu_items">
                                 <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                 <a href="{{route('guide.question')}}">お問合せ</a></div>
                             <div class="menu_items">
                                 <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                                <a href="">Q&A</a></div>
+                                <a href="{{route('guide.method')}}">試験内容と受験方法</a></div>
                             <div class="menu_items">
                                 <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                 <a href="{{route('guide.notice')}}">サイトからのお知らせ</a></div>
@@ -91,11 +93,28 @@
                                 <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                 <a href="{{route('guide.about_site')}}">このサイトについて</a></div>
                             <div class="menu_items">
+                                <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                 <a href="{{route('guide.site_policy')}}">サイトポリシー</a></div>
                             <div class="menu_items">
+                                <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
                                 <a href="{{ route('logout') }}">プライバシーポリシー</a></div>
-                            <div class="top_buttons spbtn">
                         </div>
+                            <div class="menu_items-setting">
+                             @if(Auth::check())
+
+                                <a class="button logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                    
+                                @else
+                                    
+                                <a href="{{route('_verifyMailSend')}}" class="button register">会員登録</a>
+                                <a href="{{route('_login')}}" class="button login"> ログイン</a>
+                
+                            @endif
+
+                            </div>
                     </ul>
                 </div>
                 <p>メニュー</p>
@@ -112,11 +131,11 @@
             <img src="{{asset('img/menu/top_logo.png')}}" alt="">
         </a>
         <div class="footer_detail">
-            <a class="footer_links"><i class="fa fa-user" aria-hidden="true" style="font-siza:20px;"></i>お問合せ</a>
-            <a class="footer_links"><i class="fa fa-hand-o-right" aria-hidden="true" style="font-siza:20px;"></i>サイトからのお知らせ</a>
-            <ul><a class="footer_links"><i class="fa fa-hand-o-right" aria-hidden="true" style="font-siza:20px;"></i>このサイトについて</a>
-                <li><a class="footer_links">サイトポリシー</a></li>
-                <li><a class="footer_links">プライバシーポリシー</a></li></ul>
+            <a class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-siza:20px;"></i>お問合せ</a>
+            <a class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-siza:20px;"></i>サイトからのお知らせ</a>
+            <ul><a class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-siza:20px;"></i>このサイトについて</a>
+                <li><a class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-siza:20px;"></i>サイトポリシー</a></li>
+                <li><a class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-siza:20px;"></i>プライバシーポリシー</a></li></ul>
         </div>
         <div class="copylight">
             <p>© <script>document.write(new Date().getFullYear())</script> All Rights Reserved.</p>
