@@ -69,6 +69,9 @@
 #mark_and_re{
     display: none;
 }
+.end_field a:hover{
+    color:  #8F0D0D;
+}
 /* ------------------------------------ */
 @media only screen and (max-width:1280px) {
     .endtext{

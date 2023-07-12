@@ -28,7 +28,7 @@ class TestProblemController extends Controller
         Test2problem::where('test_id',$test_id)->delete();
         $problem_ids_text = $request->problem_ids;
         $problem_ids = explode("#", substr($problem_ids_text,1));
-        if(!$problem_ids){
+        if($problem_ids){
             foreach($problem_ids as $problem_id){
                 $test2problem = new Test2problem();
                 $test2problem->test_id = $test_id;
@@ -36,6 +36,8 @@ class TestProblemController extends Controller
                 $test2problem->save();
             }
         }
+
+
         return redirect()->route('admin.dashboard');
     }
 

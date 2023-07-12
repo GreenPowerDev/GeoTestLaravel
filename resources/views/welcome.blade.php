@@ -52,7 +52,7 @@
             <p class="promotion_title">プロモーション</p>
 
             <div class="video">
-                <video controls>
+                <video id="video" controls muted autoplay>
                     <source src="{{asset('img/interview01.mp4')}}" type="video/mp4">
                 </video>
             </div>
@@ -202,18 +202,19 @@
     @endif
 
     <div class="slider">
-            <div id="slider-container">
-                <div id="slider-scroller">
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(8).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(7).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(6).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(4).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(3).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(5).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(1).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(2).png')}}" /></div>
-                </div>
+        <div id="slider-container">
+            <div id="slider-scroller">
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(1).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(2).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(3).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(5).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(6).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(4).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(7).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(8).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(9).png')}}" /></div>
             </div>
+        </div>
     </div>
 
 
@@ -223,25 +224,25 @@
             </div>
             <div class="content-items-right"><a href="{{route('guide.method')}}"><p class="content-items-title">試験内容と受験方法</p><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
         </div>
-
     </section>
 
     <div class="slider">
-            <div id="slider-right-container">
-                <div id="slider-right-scroller">
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(8).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(7).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(6).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(4).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(3).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(5).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(1).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(2).png')}}" /></div>
-                </div>
+        <div id="slider-right-container">
+            <div id="slider-right-scroller">
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(1).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(2).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(3).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(4).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(5).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(6).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(7).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(8).png')}}" /></div>
             </div>
+        </div>
     </div>
 
 
 <script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/slide.js')}}"></script>   
+<script src="{{asset('js/slide.js')}}"></script> 
+
 @endsection

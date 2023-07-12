@@ -5,6 +5,8 @@
 
 .about_title{
     position: absolute;
+    width: 100%;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -33,6 +35,10 @@
     margin: 0;
     font-size: 20px;
 }
+#about_space{
+    display: none;
+}
+
 @media only screen and (max-width:1440px) {
     .about_detail{
         width: 80%;
@@ -52,8 +58,16 @@
     }
 }
 
-@media only screen and (max-width:460px) {
+@media only screen and (max-width:768px) {
+    .about_title{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width:465px) {
     .about_context p {
         font-size: 15px;
+    }
+    #about_space{
+        display: block;
     }
 }
