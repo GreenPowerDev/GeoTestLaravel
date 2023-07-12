@@ -10,11 +10,14 @@
     transform: translate(-50%, -50%);
     font-size: 60px;
     color: white;
+    text-shadow: 5px 5px 5px black;
+    z-index: 3;
 }
 .method_img img {
     width: 100%;
     height: calc(100vh - 80px);
     object-fit: cover;
+    opacity: 0.7;
 }
 
 .method-br{
@@ -22,23 +25,47 @@
 }
 /* ----------method_detail-------- */
 .method_detail{
-    max-width: 1120px;
-    text-align: left;
+    max-width: 1000px;
     margin: 0 auto;
+    text-align: left;
+    padding-top: 100px;
 }
+
+.method_detail p, .method_detail li{
+    padding: 10px 0;
+}
+
+.method_contitle{
+    font-size: 35px;
+}
+
+.method_example{
+    display: flex;
+}
+
 .method_context{
-    padding: 56px 0;
+    padding-bottom: 100px;
 }
-.method_context p{
-    margin: 0;
-    font-size: 20px;
+
+.method_detail li{
+    display: flex;
+    align-items: center;
 }
+.method_detail li img{
+    width: 40%;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+
+
 @media only screen and (max-width:1440px) {
     .method_detail{
         width: 80%;
         margin: 0 auto;
     }
 }
+
 @media only screen and (max-width:1279px) {
     .method_img img{
         height: calc(100vh - 60px);
@@ -58,7 +85,10 @@
     }
 }
 @media only screen and (max-width:460px) {
-    .method_context p {
+    .method_detail p, .method_detail li{
         font-size: 15px;
+    }
+    .method_detail .method_contitle{
+        font-size: 25px;
     }
 }
