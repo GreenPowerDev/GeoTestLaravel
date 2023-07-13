@@ -6,16 +6,17 @@
 }
 .mainvisual img{
     width: 100%;
-    height: calc(100% - 80px);
+    height: calc(100vh - 80px);
     object-fit: cover;
+    opacity: 0.7;
 }
 .end_field{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* font-size: 70px; */
     color: white;
+    text-shadow: 3px 5px black;
 }
 .test_end_notice{
     width: 100%;

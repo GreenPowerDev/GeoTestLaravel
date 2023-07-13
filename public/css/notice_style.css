@@ -83,17 +83,12 @@
         justify-content: center;
     }
 }
+@media only screen and (max-width:1330px) {
+    .notice-notepad{
+        left: 0;
+    }
+}
 @media only screen and (max-width:768px) {
-    .top_logo img, .menu img{
-        height: 60px;
-        width: auto;
-    }
-    .top_logo{
-        margin: 0 20px;
-    }
-    header{
-        height: 60px;
-    }
     .notice_screen{
         padding-top: 63px;
     }
