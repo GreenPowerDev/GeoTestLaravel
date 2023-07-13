@@ -318,6 +318,7 @@ footer{
 .footer_logo{
     position: absolute;
     left: 3%;
+    top: 30px;
 }
 
 .footer_logo img{
