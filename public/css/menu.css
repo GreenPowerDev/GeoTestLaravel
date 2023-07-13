@@ -84,6 +84,7 @@ header {
             text-transform: uppercase;
             overflow: hidden;
             transition: 1s all ease;
+            text-align: center;
         }
           .menubar a::before{
             background: black;
@@ -309,6 +310,9 @@ footer{
     font-family: "HGRME";
     padding-bottom: 10px;
     bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .footer_logo{
@@ -410,7 +414,12 @@ footer{
     .footer_detail{
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+
+    .footer_detail .footer_site, .footer_detail .footer_question{
+        padding-left: 40px;
     }
 
     .top_btns .login{
@@ -428,7 +437,9 @@ footer{
         font-size: 20px;
         font-weight: 500;
     }
-    
+    .footer_logo{
+        top: 20px;
+    }
 
     .copylight{
         font-size: 10px;

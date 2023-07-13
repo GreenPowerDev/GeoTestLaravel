@@ -49,7 +49,7 @@
             <img class="promo_camera" src="{{asset('img/users/promo_camera.png')}}" alt="map-image">
 
             <p class="promotion_title">プロモーション<br>
-                <span class="title_space">(Promotion)</span>
+                <span class="title_space">Promotion</span>
             </p>
 
             <div class="video">
@@ -64,7 +64,7 @@
     @if(!Auth::check())
 
     <section class="free_test">
-        <p class="free_test-title">お試し検定<br><span class="title_space">(Trial test)</span></p>
+        <p class="free_test-title">お試し検定<br><span class="title_space">Trial test</span></p>
         <p class="free_test-summary">6つの都道府県で各5問お楽しみいただけます！</p>
         <div class="free_test-bg">
             <img class="free_test-trunk" src="{{asset('img/users/trunk.png')}}">
@@ -221,7 +221,8 @@
 
     <section class="content">
         <div class="content-items">
-            <div class="content-items-left"><a href="{{route('guide.about_site')}}"><p class="content-items-title">このサイトについて</p><img src="{{asset('img/top/content/top_about.jpg')}}" alt=""></a>
+            <div class="content-items-left"><a href="{{route('guide.about_site')}}"><p class="content-items-title">日本地域マイスター<br>検定について
+</p><img src="{{asset('img/top/content/top_about.jpg')}}" alt=""></a>
             </div>
             <div class="content-items-right"><a href="{{route('guide.method')}}"><p class="content-items-title">試験内容と受験方法</p><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
         </div>

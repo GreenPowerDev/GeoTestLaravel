@@ -167,7 +167,7 @@
 .promotion_title{
     text-align: center;
     font-size: 35px;
-    line-height: 56px;
+    line-height: 30px;
     margin: 0;
     padding-top: 70px;
 }
@@ -222,7 +222,7 @@
     padding-top: 150px;
     text-align: center;
     font-size: 35px;
-    line-height: 56px;
+    line-height: 30px;
     margin: 0;
 }
 
@@ -338,7 +338,7 @@
 @media only screen and (max-width:1440px) {
 
     .free_test_parts{
-        max-width: 90%;
+        max-width: 480px;
         margin: 0 auto;
         justify-content: center;
     }
@@ -347,6 +347,9 @@
     }
 }
 @media only screen and (max-width:768px) {
+    .free_test-part{
+        width: 100%;
+    }
     .test_free_test-title{
         font-size: 30px;
     }
@@ -447,16 +450,20 @@
 }
 @media only screen and (max-width:1440px) {
     .test_areas{
-        max-width: 90%;
+        max-width: 480px;
         margin: 0 auto;
         justify-content: center;
     }
 
+    
     .to_area-list-btn{
         padding: 20px 40px;
     }
 }
 @media only screen and (max-width:767px) {
+    .test_area{
+        width: 100%;
+    }
     .to_area-list-btn{
         font-size: 20px;
     }
@@ -472,8 +479,12 @@
         width: 100%;
     }
 
-    .free_test-trunk-right, .free_test-trunk{
+    .free_test-trunk-right{
         width: 40%;
+    }
+    .free_test-trunk{
+        width: 40%;
+        top: -40px;
     }
 
 }
@@ -815,7 +826,7 @@
 }
 
 .slider{
-    width: 80%;
+    width: 100%;
     overflow: hidden;
     margin: 0 auto;
     position: relative;
@@ -842,10 +853,10 @@
   }
   
   .slider-item {
-    width: 220px;
+    width: 210px;
     height: 110px;
     display: inline-block;
-    margin: 20px;
+    margin: 0px;
     position: relative;
   }
   
@@ -859,7 +870,6 @@
 #slider-right-container {
     height: 150px;
     width: 100% ;
-    /* top: 0; */
     left: 0;
     right: 0;
     bottom: 0;
@@ -877,10 +887,10 @@
   }
   
   .slider-right-item {
-    width: 220px;
+    width: 210px;
     height: 110px;
     display: inline-block;
-    margin: 20px;
+    margin: 0px;
     position: relative;
   }
   
