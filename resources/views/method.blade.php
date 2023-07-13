@@ -19,7 +19,7 @@
         </div>
         <p class="method_contitle">[受験方法]</p>
         <div class="method_context"><ul>
-            <li class="method_sentence" style="flex-direction:column"> 日本地域マイスター検定はオンラインで受験をします。スマートフォン、タブレット、パソコンのいずれでも受験が可能です。<img  style="width:50%" src="{{asset('/img/top/content/top_method-online.jpg')}}"></li>
+            <li class="method_sentence" style="flex-direction:column"> 日本地域マイスター検定はオンラインで受験をします。スマートフォン、タブレット、パソコンのいずれでも受験が可能です。<img class="method_online" src="{{asset('/img/top/content/top_method-online.jpg')}}"></li>
             <li class="method_sentence">日本地域マイスター検定のウェブサイトから申込みます。ジャンル、都道府県、クラス(級)を選びます。</li>
             <div class="method_example"><p>例<p><p>　ジャンル：文化・歴史<br> 　都道府県：神奈川県<br> 　クラス(級)：ブロンズ(3級)</p></div>
             <li class="method_sentence">申込が完了すると、受験に関する案内(受験票に相当）がメールで送られてきます。受験に関するご自分の状況はマイページでいつでも確認できます。</li>

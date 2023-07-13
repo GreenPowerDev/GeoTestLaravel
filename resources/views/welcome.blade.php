@@ -39,17 +39,18 @@
             <a href="{{route('guide.notice')}}"><div class="top_notices-all">一覧を見る</div></a>
         </div>
 
-        <img class="top_map" src="{{asset('img/users/main_map.png')}}" alt="map-image">
     </section>
 
     
     <section class="promotion">
         <div class="promotion_detail">
             <img class="promo_clock" src="{{asset('img/users/clock.png')}}" alt="map-image">
-            <img class="promo_girl" src="{{asset('img/users/promo_girl.png')}}" alt="map-image">
+            {{-- <img class="promo_girl" src="{{asset('img/users/promo_girl.png')}}" alt="map-image"> --}}
             <img class="promo_camera" src="{{asset('img/users/promo_camera.png')}}" alt="map-image">
 
-            <p class="promotion_title">プロモーション</p>
+            <p class="promotion_title">プロモーション<br>
+                <span class="title_space">(Promotion)</span>
+            </p>
 
             <div class="video">
                 <video id="video" controls muted autoplay>
@@ -63,7 +64,7 @@
     @if(!Auth::check())
 
     <section class="free_test">
-        <p class="free_test-title">お試し検定</p>
+        <p class="free_test-title">お試し検定<br><span class="title_space">(Trial test)</span></p>
         <p class="free_test-summary">6つの都道府県で各5問お楽しみいただけます！</p>
         <div class="free_test-bg">
             <img class="free_test-trunk" src="{{asset('img/users/trunk.png')}}">
@@ -159,11 +160,10 @@
     @endif
 
     <section class="sns_media">
-        <img class="sns-girl" src="{{asset('img/users/sns-girl.png')}}">
-        <img class="sns-meister" src="{{asset('img/users/meister00.png')}}">
+        {{-- <img class="sns-girl" src="{{asset('img/users/sns-girl.png')}}"> --}}
         <p class="sns-title">SNSメディア</p>
         <div class="sns-bg">
-            <div class="sns-map"></div>
+            {{-- <div class="sns-map"></div> --}}
             <div class="sns-items">
                 <div class="sns-items-img">
                     <a href="#"><img src="{{asset('img/top/sns_media/top_youtube.png')}}" alt=""></a>
@@ -178,6 +178,7 @@
                     <a href="#"><img src="{{asset('img/top/sns_media/top_instagram.png')}}" alt=""></a>
                 </div>
             </div>
+            <img class="sns-meister" src="{{asset('img/users/meister00.png')}}">
         </div>
     </section>
 
