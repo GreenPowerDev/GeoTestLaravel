@@ -186,13 +186,14 @@
 
     <section class="search_by_ganre">
         <p class="search_ganre-title">ジャンルから探す</p>
-
         <div class="search_ganre-btns">
+
             <img class="search_tree" src="{{asset('img/users/trees.png')}}" alt="">
+
             @foreach($ganres as $ganre)
 
             <div class="search_each_ganre">
-                <a href="{{route('ganre.select', ['id'=>$ganre->id])}}" >
+                <a  href="{{route('ganre.select', ['id'=>$ganre->id])}}" >
                     <p class="search_ganre-btns-btn">{{$ganre->ganre_name}}</p>
                 </a>
             </div>

@@ -597,7 +597,6 @@
 .search_by_ganre{
     background-color: #A3DFC3;
     padding-top: 100px;
-    z-index: -2;
     position: relative;
 }
 .search_ganre-title{
@@ -613,6 +612,7 @@
     flex-wrap: wrap;
     position: relative;
     padding-bottom: 230px;
+    z-index: 3;
 }
 .search_tree{
     position: absolute;

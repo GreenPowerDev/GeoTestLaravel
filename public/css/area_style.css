@@ -3,6 +3,7 @@
 .test_area_wrapper {
     background-color: #FBFBE3;
     position:relative;
+    z-index: 3;
 }
 .icon_controll {
     width:100%;
@@ -20,6 +21,7 @@
 .icon5,
 .icon6 {
     position:absolute;
+    z-index: -1;
 }
 .icon1 {
     width:120px;
@@ -79,6 +81,7 @@
 }
 .area_search_input{
     border-radius: 19px;
+    padding-left: 5px;
     width: 400px;
     font-size: 35px;
 }
@@ -86,7 +89,7 @@
     border-radius: 19px;
     background-color: #13AE6A;
     color: white;
-    padding:0 30px;
+    padding: 10px 30px;
     font-size: 30px;
     font-weight: bold;
     border: none;
@@ -232,8 +235,9 @@
         font-size: 30px;
     }
     .area_search_input{
-        width: 90%;
-        margin: 0 auto;
+        width: 60%;
+        font-size: 25px;
+        padding: 10px;
     }
     .test_area-part{
         margin: 10px;
