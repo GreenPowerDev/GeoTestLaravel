@@ -46,17 +46,21 @@
 .method_context{
     padding-bottom: 100px;
 }
-
+.method_context ul{
+    padding: 0;
+}
 .method_detail li{
     display: flex;
     align-items: center;
 }
 .method_detail li img{
-    width: 40%;
-    padding: 50px;
+    width: 400px;
+    padding: 20px;
     border-radius: 20px;
 }
-
+.method_detail li .method_online{
+    width: 60%;
+}
 
 
 @media only screen and (max-width:1440px) {
@@ -73,7 +77,7 @@
     .method_img{
         padding-top: 60px;
     }
-
+    
     .method_title{
         font-size: 35px;
     }
@@ -83,6 +87,14 @@
     .method-br{
         display: block;
     }
+    .method_detail li{
+        flex-direction: column;
+    }
+    .method_detail li img, .method_detail li .method_online{
+        width: 300px;
+        margin: 0 auto;
+    }
+    
 }
 @media only screen and (max-width:460px) {
     .method_detail p, .method_detail li{
@@ -90,5 +102,9 @@
     }
     .method_detail .method_contitle{
         font-size: 25px;
+    }
+    .method_detail li img, .method_detail li .method_online{
+        width: 250px;
+        margin: 0 auto;
     }
 }
