@@ -29,8 +29,8 @@
             <form action="{{route('prefecture.search')}}" method="GET">
             @csrf
             <div class="area_search">
-                <label for="area_search_input">県名で検索</label>
-                <input type="text" class="area_search_input" id="area_search_input" name="province_name">
+                {{-- <label for="area_search_input"></label> --}}
+                <input type="text" class="area_search_input" id="area_search_input" name="province_name" placeholder="県名で検索">
                 <input type="submit" id="province_search_key" value="検索">
             </div>
             </form>

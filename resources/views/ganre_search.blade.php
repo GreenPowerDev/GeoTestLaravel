@@ -60,7 +60,9 @@
                     @endforeach
             </div>
             <div>
+            @if ($tests->lastPage() > 1)
                 {{ $tests->links('pagination')}}
+             @endif
             </div>
             @else
             <p class="test_area-title">テストはありません。</p>
