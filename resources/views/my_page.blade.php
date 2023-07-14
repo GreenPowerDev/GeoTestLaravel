@@ -8,6 +8,33 @@
             <p class="title">マイ情報</p>
             <p class="user_name">氏名:　<span>{{Auth::user()->name}}</span></p>
             <p class="user_mail_address">メールアドレス:　<span>{{Auth::user()->email}}</span></p>
+            <br>
+            @php
+                $class = 0;
+            @endphp
+            <p>
+            あなたは
+            @foreach ($allowed_tests as $allowed_test)
+                @if(!is_null($allowed_test->passed->state == '合格'))
+                 @php
+                    $class = 1;
+                @endphp
+
+                    「<span>{{$allowed_test->test->get_province_name()}}</span>県 
+                    <span>{{$allowed_test->test->get_ganre_name()}}</span>
+                    <span>{{$allowed_test->test->get_level_name()}}</span>
+                    メイスター」
+                    {{-- {{dd($allowed_test->test->get_province_name())}} --}}
+
+                @endif
+                
+            @endforeach
+            @if($class == 1)
+                を取得しました。
+            @else
+                取得した資格がありません。 頑張ってください。
+            @endif
+            </p>
             <img src="{{asset('/img/users/meister00.png')}}" class="user-meister">
         </div>
         <div class="recent_result">

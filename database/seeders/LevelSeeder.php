@@ -16,15 +16,19 @@ class LevelSeeder extends Seeder
         //
         Level::create([
             'level_num'=>'1',
-            'level_name'=>'初級'
+            'level_name'=>'ブロンズ(3級)'
         ]);
         Level::create([
             'level_num'=>'2',
-            'level_name'=>'中級'
+            'level_name'=>'シルバー(2級)'
         ]);
         Level::create([
             'level_num'=>'3',
-            'level_name'=>'上級'
+            'level_name'=>'ゴールド(準1級)'
+        ]);
+        Level::create([
+            'level_num'=>'4',
+            'level_name'=>'プラチナ(1級'
         ]);
     }
 }
