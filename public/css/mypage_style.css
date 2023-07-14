@@ -34,7 +34,7 @@
 .user-meister{
     position: absolute;
     right: 0;
-    top: 0;
+    top: -20px;
     height: 150px;
 }
 .user_information p{ 
@@ -164,7 +164,7 @@
     }
 
     .user-meister{
-        top: -60px;
+        top: -25px;
         height: 100px;
     }
     .recent_when, .recent_context, .reservation_when, .reservation_context, .passed_test_when, .passed_test_context{
