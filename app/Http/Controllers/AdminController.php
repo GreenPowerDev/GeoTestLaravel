@@ -74,6 +74,24 @@ class AdminController extends Controller
         $test2user->allowed_id = $allowed->id;
         $test2user->save();
 
+        $test_pass_id = $test2user->allowed()->first()->test_pass_id;
+        $test_pass_pwd = $test2user->allowed()->first()->test_pass_pwd;
+        
+        $period = $reservation->test()->first()->get_test_date().
+        '：'.$reservation->test()->first()->get_begin_time().
+        '～'.$reservation->test()->first()->get_end_time();
+        
+        $actionText  = '登録画面へ';
+        $mailData = [
+            'period'=> $period,
+            'test_pass_id' => $test_pass_id,
+            'test_pass_pwd' => $test_pass_pwd,
+        ];
+        Mail::to(Auth::user()->email)->send(new AllowedMail($mailData));
+
+        $test2user->mail_sended = 1;
+        $test2user->save();
+        
         return redirect()->route('admin.reserve.accept');
     }
 
