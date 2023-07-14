@@ -48,10 +48,12 @@ Route::get('guide/privacy', [GuideController::class, 'privacy'])->name('guide.pr
 Route::get('guide/site/policy', [GuideController::class, 'site_policy'])->name('guide.site_policy');
 Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
 
-Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
 Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected'])->name('prefecture.select');
-Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
 Route::get('prefecture/search/result', [ProvinceController::class, 'prefecture_search'])->name('prefecture.search');
+Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
+Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
+Route::get('ganre/search/result', [GanreController::class, 'ganre_search'])->name('ganre.search');
+Route::get('garne/search', [GanreController::class, 'all_ganre_selected'])->name('search.ganre');
 
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
 
