@@ -418,7 +418,6 @@
 .area_detail p{
     margin: 0;
     font-size: 20px;
-    font-weight: 500;
 }
 .area_detail-title{
     text-align: center;
@@ -476,6 +475,12 @@
 
     .area_detail{
         padding-bottom: 70px;
+    }
+    .area_detail p{
+        font-size: 15px;
+    }
+    .area_detail-title{
+        font-size: 20px !important;
     }
 
     .area_img img{
