@@ -7,14 +7,14 @@
 .my_page-top-color{
     position:absolute; 
     background-color:#CEFFEA; 
-    height:1000px; 
+    height:1070px; 
     z-index:-1; 
     width:100% 
 }
 .my_page-bottom-color{
     position:absolute; 
     background-color:#F5F5DC; 
-    top: 1000px;
+    top: 1070px;
     bottom:0; 
     right:0; 
     left:0; 
@@ -124,10 +124,10 @@
 }
 @media only screen and (max-width:1024px) {
     .my_page-top-color{
-        height: 900px;
+        height: 940px;
     }
     .my_page-bottom-color{
-        top: 900px;
+        top: 940px;
     }
     
     .user_lists{

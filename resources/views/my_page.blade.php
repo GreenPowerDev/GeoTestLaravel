@@ -15,7 +15,7 @@
             <p>
             あなたは
             @foreach ($allowed_tests as $allowed_test)
-                @if(!is_null($allowed_test->passed->state == '合格'))
+                @if($allowed_test->passed->state == '合格')
                  @php
                     $class = 1;
                 @endphp
@@ -113,13 +113,13 @@
                     @if($allowed_test->passed->state == '合格')
                         <div class="passed_test_content">
                             <div class="passed_test_when">
-                                <p class="passed_test_date">開催日：{{$passed_test->test->get_test_date()}}</p>
-                                <p class="passed_test_time">開催時間：{{$passed_test->test->get_begin_time()}}～{{$passed_test->test->get_end_time()}}</p>
+                                <p class="passed_test_date">開催日：{{$allowed_test->test->get_test_date()}}</p>
+                                <p class="passed_test_time">開催時間：{{$allowed_test->test->get_begin_time()}}～{{$allowed_test->test->get_end_time()}}</p>
                             </div>
                             <div class="passed_test_context">
-                                <p class="passed_test_area">エリア： <span>{{$passed_test->test->get_province_name()}}</span></p>
-                                <p class="passed_test_ganre">ジャンル： <span>{{$passed_test->test->get_ganre_name()}}</span></p>
-                                <p class="passed_test_level">レベル：<span>{{$passed_test->test->get_level_name()}}</span></p>
+                                <p class="passed_test_area">エリア： <span>{{$allowed_test->test->get_province_name()}}</span></p>
+                                <p class="passed_test_ganre">ジャンル： <span>{{$allowed_test->test->get_ganre_name()}}</span></p>
+                                <p class="passed_test_level">レベル：<span>{{$allowed_test->test->get_level_name()}}</span></p>
                             </div>
                         </div>
                     @endif
