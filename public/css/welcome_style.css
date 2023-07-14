@@ -231,6 +231,9 @@
     font-size: 25px;
     font-weight: 500;
     line-height: 47px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .title_space{
     padding: 0;
@@ -369,7 +372,7 @@
 .test_area-title{
     text-align: center;
     font-size: 35px;
-    line-height: 56px;
+    line-height: 30px;
     margin: 0;
     padding-top: 150px;
 }
@@ -518,7 +521,7 @@
 .sns-title{
     text-align: center;
     font-size: 35px !important;
-    line-height: 56px;
+    line-height: 30px;
     padding-bottom: 12px;
     margin-top: 117px;
 }
@@ -603,7 +606,7 @@
 .search_ganre-title{
     text-align: center;
     font-size: 40px !important;
-    line-height: 65px;
+    line-height: 30px;
     padding-bottom: 12px;
 }
 .search_ganre-btns{
@@ -670,6 +673,7 @@
 }
 .content-items-left, .content-items-right{
     position: relative;
+    width: 50%;
 }
 .content-items-title{
     position: absolute;
@@ -715,6 +719,10 @@
     }
     .content-title{
         font-size: 30px!important;
+    }
+    .content-items-left, .content-items-right{
+        position: relative;
+        width: 100%;
     }
 }
 

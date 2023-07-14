@@ -93,8 +93,9 @@ body{
 }
 
 .next_problem:hover{
-    color: #ee4f47;
+    /* color: #ee4f47; */
     background-color: aquamarine;
+    border: 2px solid #13AE6A;
     cursor: pointer;
 }
 

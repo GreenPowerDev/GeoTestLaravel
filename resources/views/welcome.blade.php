@@ -108,7 +108,8 @@
     @if(Auth::check())
 
     <section class="test_area">
-        <p class="test_area-title">試験エリア</p>
+        <p class="test_area-title">試験エリア<br>
+        <span class="title_space">Test area</span></p>
         <div class="free_test-bg">
             <img class="free_test-trunk" src="{{asset('img/users/trunk.png')}}">
             <img class="free_test-trunk-right" src="{{asset('img/users/trunk.png')}}">
@@ -161,7 +162,7 @@
 
     <section class="sns_media">
         {{-- <img class="sns-girl" src="{{asset('img/users/sns-girl.png')}}"> --}}
-        <p class="sns-title">SNSメディア</p>
+        <p class="sns-title">SNSメディア<br><span class="title_space">SNS media</span></p>
         <div class="sns-bg">
             {{-- <div class="sns-map"></div> --}}
             <div class="sns-items">
@@ -185,7 +186,7 @@
     @if(Auth::check())
 
     <section class="search_by_ganre">
-        <p class="search_ganre-title">ジャンルから探す</p>
+        <p class="search_ganre-title">ジャンルから探す<br><span class="title_space">Search by ganre</span></p>
         <div class="search_ganre-btns">
 
             <img class="search_tree" src="{{asset('img/users/trees.png')}}" alt="">
