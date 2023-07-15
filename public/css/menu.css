@@ -3,6 +3,20 @@
     font-family: 'NotoSansJP-Bold';
 }
 
+*::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #13AE6A;
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+  }
+
 body {
     max-width: 100%;
     padding: 0;
@@ -87,7 +101,7 @@ header {
             text-align: center;
         }
           .menubar a::before{
-            background: black;
+            background: grey;
             content: "";
             position: absolute;
             top: 50%;
@@ -146,7 +160,7 @@ header {
     .hamburger p{
         font-size: 9px;
         color: white;
-        padding-top: 27px;
+        padding-top: 33px;
     }
     /* ---------------------------hamburger-menu------------------------ */
 
@@ -154,7 +168,7 @@ header {
         #menuToggle {
             display: block;
             position: absolute;
-            top: 20px;
+            top: 30px;
             z-index: 1;
             -webkit-user-select: none;
             user-select: none;
@@ -196,6 +210,10 @@ header {
             transform-origin: 10% 100%;
         }
 
+        #menuToggle input:checked~#menuToggle {
+            top:40px;
+
+        }
         #menuToggle input:checked~span {
             opacity: 1;
             transform: rotate(45deg) translate(-2px, -1px);
@@ -271,7 +289,7 @@ header {
         }
 
         #menuToggle input:checked~ul {
-            top: -3%;
+            top: -2%;
             transform: scale(1);
             opacity: 1;
         }
@@ -288,12 +306,20 @@ header {
     z-index: 1000;
 }
 
-#back-to-top::after {
-    content: url(../img/menu/to-top.png);
+#back-to-top p{
+    padding: 10px 15px;
+    color: white;
+    background-color: #232323;
+    font-size: 30px;
+    border-radius: 20px;
+    font-family: "ComicSansMS3";
 }
-
 #back-to-top:hover {
     cursor: pointer;
+}
+#back-to-top:hover p{
+    color: #13AE6A;
+    opacity: 0.8;
 }
 
 #back-to-top.show {
@@ -403,6 +429,13 @@ footer{
         font-size: 0.9rem;
     }
 
+    .hamburger p{
+        padding-top: 27px;
+    }
+    #menuToggle {
+        top: 20px;
+    }
+
 
 }
 
@@ -442,4 +475,6 @@ footer{
     .copylight{
         font-size: 10px;
     }
+    
+
 }

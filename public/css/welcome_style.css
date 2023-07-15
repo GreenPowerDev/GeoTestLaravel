@@ -298,13 +298,13 @@
     height: 309px;
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
     object-fit: cover;
 }
 .free_test_img:hover img {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
 }
 .free_test_detail p{
     margin: 0;
@@ -344,15 +344,18 @@
     border-radius: 18px;
 }
 @media only screen and (max-width:1440px) {
-
+    
+    .to_free_test-list-btn{
+        padding: 20px 40px;
+    }
+}
+@media only screen and (max-width:995px) {
     .free_test_parts{
         max-width: 480px;
         margin: 0 auto;
         justify-content: center;
     }
-    .to_free_test-list-btn{
-        padding: 20px 40px;
-    }
+
 }
 @media only screen and (max-width:768px) {
     .free_test-part{
@@ -413,13 +416,13 @@
     height: 309px;
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
     object-fit: cover;
 }
 .area_img:hover img {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
 }
 .area_detail p{
     margin: 0;
@@ -457,15 +460,17 @@
     border-radius: 29px;
 }
 @media only screen and (max-width:1440px) {
+    
+    
+    .to_area-list-btn{
+        padding: 20px 40px;
+    }
+}
+@media only screen and (max-width:995px) {
     .test_areas{
         max-width: 480px;
         margin: 0 auto;
         justify-content: center;
-    }
-
-    
-    .to_area-list-btn{
-        padding: 20px 40px;
     }
 }
 @media only screen and (max-width:767px) {
@@ -556,13 +561,13 @@
     padding: 5px;
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
     border-radius: 20px;
 }
 .sns-items-img:hover img {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
 }
 @media only screen and (max-width:1440px) {
     .sns-bg{
@@ -685,6 +690,7 @@
 .content-items-left, .content-items-right{
     position: relative;
     width: 50%;
+    height: auto;
 }
 .content-items-title{
     position: absolute;
@@ -700,7 +706,7 @@
 }
 .content-items img{
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 .content-items-left img, .content-items-right img {

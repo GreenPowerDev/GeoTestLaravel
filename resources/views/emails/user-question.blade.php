@@ -6,7 +6,7 @@
     </head>
 
     <body>
-        @if($reply != '')
+        @if($reply == '')
         <p>
             {{$user_name}}からお問い合わせが来ています。
         </p>
@@ -29,7 +29,13 @@
 
         @if($reply != '')
         <p>
-            お問合せ内容：{{$reply}}
+            件名：{{$user_contitle}}
+        </p>
+        <p>
+            お問合せ内容：{{$user_context}}
+        </p>
+        <p>
+            回答内容：{{$reply}}
         </p>
         @endif
         
