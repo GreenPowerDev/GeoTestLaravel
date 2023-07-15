@@ -78,7 +78,6 @@ class MypageController extends Controller
         ];
         $question_list = new UserQuestion($mailData);
         $question_list->save();
-        dd(config('app.email'));
         Mail::to(config('app.email'))->send(new QAMail($mailData));
         return redirect()->route('welcome_page')->with('message', 'お問い合わせを送信しました。');
     }
