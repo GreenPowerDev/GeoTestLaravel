@@ -170,6 +170,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.user.view')}}">ユーザー一覧</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.user.question')}}">お客様お問い合わせ一覧</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-briefcase"></i>試験予約管理</a>
