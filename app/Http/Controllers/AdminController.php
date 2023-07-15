@@ -91,46 +91,13 @@ class AdminController extends Controller
 
         $user = User::where([
             'id'=>$test2user->user_id
-        ])->first();
+        ])->first(); 
         Mail::to($user->email)->send(new AllowedMail($mailData));
         
         $test2user->mail_sended = 1;
         $test2user->save();
         
         return redirect()->route('admin.reserve.accept');
-    }
-
-    public function reserve_mail_send($id){
-        if(!Auth::check()) return redirect()->route('_login');
-        if(Auth::user()->user_role != 1) return redirect()->route('home');
-
-        $test2user = Test2user::where([
-            'user_id'=>Auth::user()->id,
-            'reservation_id'=>$id
-        ])->first();
-
-        
-        if(is_null($test2user)) return redirect()->route('admin.reserve.accept');
-        if($test2user->allowed_id == 0) return redirect()->route('admin.reserve.accept');
-        $test_pass_id = $test2user->allowed()->first()->test_pass_id;
-        $test_pass_pwd = $test2user->allowed()->first()->test_pass_pwd;
-        
-        $period = $reservation->test()->first()->get_test_date().
-        '：'.$reservation->test()->first()->get_begin_time().
-        '～'.$reservation->test()->first()->get_end_time();
-        
-        $actionText  = '登録画面へ';
-        $mailData = [
-            'period'=> $period,
-            'test_pass_id' => $test_pass_id,
-            'test_pass_pwd' => $test_pass_pwd,
-        ];
-        Mail::to(Auth::user()->email)->send(new AllowedMail($mailData));
-
-        $test2user->mail_sended = 1;
-        $test2user->save();
-        return redirect()->route('admin.reserve.accept');
-
     }
 
     public function test_make(){

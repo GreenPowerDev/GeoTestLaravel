@@ -229,9 +229,17 @@ class AdminEditController extends Controller
         if(!Auth::check()) return redirect()->route('_login');
         if(Auth::user()->user_role != 1) return redirect()->route('home');
 
+
         $userquestion = UserQuestion::find($request->userquestion_id);
         $userquestion->reply =$request->reply_text;
         $userquestion->save();
+
+        $user_mail = UserQuestion::find($request->userquestion_id)->user_mail;
+
+        $mailData = [
+            'reply' => $request->reply_text,
+        ];
+        Mail::to($user_mail)->send(new QAMail($mailData));
         
         $userquestions = UserQuestion::all();
         return view('admin.user.question', ['userquestions'=>$userquestions]);
