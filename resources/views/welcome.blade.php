@@ -45,14 +45,14 @@
     <section class="promotion">
         <div class="promotion_detail">
             <img class="promo_clock" src="{{asset('img/users/clock.png')}}" alt="map-image">
-            {{-- <img class="promo_girl" src="{{asset('img/users/promo_girl.png')}}" alt="map-image"> --}}
-            <img class="promo_camera" src="{{asset('img/users/promo_camera.png')}}" alt="map-image">
+            <img class="promo_girl" src="{{asset('img/users/promo_girl.png')}}" alt="map-image">
 
             <p class="promotion_title">プロモーション<br>
                 <span class="title_space">Promotion</span>
             </p>
 
             <div class="video">
+            <img class="promo_camera" src="{{asset('img/users/promo_camera.png')}}" alt="map-image">
                 <video id="video" controls muted autoplay>
                     <source src="{{asset('img/interview01.mp4')}}" type="video/mp4">
                 </video>

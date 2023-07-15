@@ -18,10 +18,12 @@
 .bg-pc{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .bg-sp{
     display: none;
+    object-fit: cover;
 }
 
 .top_subject, .top_idea{
@@ -148,17 +150,19 @@
     left: 0;
     top: 150px;
     z-index: 3;
+    display: none;
 }
 .promo_girl{
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: -100px;
+    bottom: -80px;
+    width: 650px;
     z-index: 3;
 }
 
 .promo_camera{
     position: absolute;
-    right: 0;
+    right: -200px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -169,7 +173,7 @@
     font-size: 35px;
     line-height: 30px;
     margin: 0;
-    padding-top: 70px;
+    padding-top: 140px;
 }
 
 .promotion .video{
@@ -296,6 +300,7 @@
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
+    object-fit: cover;
 }
 .free_test_img:hover img {
     -webkit-transform: scale(1.3);
@@ -410,6 +415,7 @@
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
+    object-fit: cover;
 }
 .area_img:hover img {
     -webkit-transform: scale(1.3);
