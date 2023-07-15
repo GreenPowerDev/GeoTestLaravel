@@ -15,6 +15,8 @@
             <p>
             あなたは
             @foreach ($allowed_tests as $allowed_test)
+            @if(!is_null($allowed_test))
+            @if(!is_null($allowed_test->passed))
                 @if($allowed_test->passed->state == '合格')
                  @php
                     $class = 1;
@@ -26,6 +28,8 @@
                     メイスター」
                     {{-- {{dd($allowed_test->test->get_province_name())}} --}}
 
+                @endif
+                @endif
                 @endif
                 
             @endforeach

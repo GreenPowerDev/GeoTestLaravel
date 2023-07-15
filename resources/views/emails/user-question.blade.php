@@ -6,6 +6,7 @@
     </head>
 
     <body>
+        @if($reply != '')
         <p>
             {{$user_name}}からお問い合わせが来ています。
         </p>
@@ -22,15 +23,22 @@
             お問合せ内容：{{$user_context}}
         </p>
 
-        
-        
+        @endif
 
+        <br>
+
+        @if($reply != '')
+        <p>
+            お問合せ内容：{{$reply}}
+        </p>
+        @endif
+        
+        <br>
         <p>
             よろしくお願いします、 
             
             {{ config('app.name')}}
         </p>
-
         
     </body>
 
