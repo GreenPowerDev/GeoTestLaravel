@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             ProblemSeeder::class,
             NoticeSeeder::class,
             FreeTest2problemSeeder::class,
+            UserQuestionSeeder::class,
     	]);
         
     }

@@ -48,6 +48,7 @@
 .notice_items img{
     width: 280px;
     height: 172px;
+    object-fit: cover;
 }
 .notice_img{
     margin: 0;

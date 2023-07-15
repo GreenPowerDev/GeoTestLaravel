@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>試験サイト</title>
+    <title>{{config('app.name')}}</title>
     <link rel="stylesheet" href="{{asset('css/menu.css')}}">
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome.min.css')}}">
@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="{{asset('css/fontawesome.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Yu Gothic' rel='stylesheet'>
 </head>
-
-
 <body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
@@ -52,13 +50,17 @@
         @endif
         
         @if(Auth::check())
-        @if(Auth::user()->user_role == 1)
+            @if(Auth::user()->user_role == 1)
 
-            <a href="{{route('admin.dashboard')}}" class="squre-btns to_admin-page">
-                <img src="{{asset('img/menu/ico_admin.png')}}" alt="admin-icon">
+                <a href="{{route('admin.dashboard')}}" class="squre-btns to_admin-page">
+                    <img src="{{asset('img/menu/ico_admin.png')}}" alt="admin-icon">
+                </a>
+
+            @else
+            <a href="{{route('guide.question')}}" class="squre-btns question">
+                <img src="{{asset('img/menu/ico_question.png')}}" alt="question-icon">
             </a>
-        @endif
-
+            @endif
         @else
             <a href="{{route('guide.question')}}" class="squre-btns question">
                 <img src="{{asset('img/menu/ico_question.png')}}" alt="question-icon">
@@ -141,6 +143,11 @@
     @if(session()->has('message'))
     <script>
         toastr.success("{{ session()->get('message') }}");
+    </script>
+    @endif
+    @if(session()->has('waringmessage'))
+    <script>
+        toastr.warning("{{ session()->get('waringmessage') }}");
     </script>
     @endif
 </body>

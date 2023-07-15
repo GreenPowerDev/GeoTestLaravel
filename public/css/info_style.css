@@ -20,6 +20,7 @@
     width: 60%;
     margin: 0 auto;
     display: flex;
+    object-fit: cover;
 }
 .info_screen .notice_greeting{
     width: 10%;

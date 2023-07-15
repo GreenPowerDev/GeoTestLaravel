@@ -35,6 +35,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('mypage/test_login_/{id}', [MypageController::class, 'test_login_form'])->name('test.login_form');
 Route::post('mypage/test_login', [MypageController::class, 'test_login'])->name('test.login');
 Route::post('mypage/test/enter', [MypageController::class, 'test_enter'])->name('test.enter');
+Route::post('question/', [MypageController::class, 'question_admin'])->name('question_admin');
 
 
 Route::get('guide/notice', [NoticeController::class, 'notice'])->name('guide.notice');
@@ -101,6 +102,9 @@ Route::post('admin/notice/picture_upload', [AdminEditController::class, 'notice_
 
 Route::get('admin/user/view', [AdminEditController::class, 'user_view'])->name('admin.user.view');
 Route::get('admin/user/delete/{id}', [AdminEditController::class, 'user_delete'])->name('admin.user.delete');
+Route::get('admin/user/question', [AdminEditController::class, 'user_question'])->name('admin.user.question');
+Route::post('admin/user/question/reply', [AdminEditController::class, 'user_question_reply'])->name('admin.user.reply');
+Route::get('admin/user/question/delete{id}', [AdminEditController::class, 'user_question_delete'])->name('admin.user.question.delete');
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');

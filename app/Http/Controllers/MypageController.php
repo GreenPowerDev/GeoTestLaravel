@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Test2user;
 use App\Models\Test;
 use App\Models\Test2problem;
+use App\Models\UserQuestion;
 use Illuminate\Support\Facades\Auth;
+
+use App\Mail\QAMail;
+
+use Mail;
+
 
 
 class MypageController extends Controller
@@ -53,5 +59,27 @@ class MypageController extends Controller
             'test'=>$test,
             'problem_ids'=>$problem_ids
         ]);
+    }
+
+
+    public function question_admin(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+
+        if(Auth::user()->name != $request->question_name || Auth::user()->email != $request->question_mail_address)
+
+            return redirect()->route('guide.question')->with('waringmessage', '名前またはメールアドレスが正しくありません。');
+        $mailData = [
+            'user_name'=> $request->question_name,
+            'user_mail' => $request->question_mail_address,
+            'user_phone' => $request->question_phone,
+            'user_contitle' => $request->question_contitle,
+            'user_context' => $request->question_context,
+            'reply' => '',
+        ];
+        $question_list = new UserQuestion($mailData);
+        $question_list->save();
+        dd(config('app.email'));
+        Mail::to(config('app.email'))->send(new QAMail($mailData));
+        return redirect()->route('welcome_page')->with('message', 'お問い合わせを送信しました。');
     }
 }
