@@ -18,7 +18,7 @@
         </div>
         <div class="question_mail_address">
             <label for="question_mail_address">メールアドレス<span class="question_request">（必須）</span></label>
-            <input type="text" id="qustion_mail_address" name="question_mail_address" required>
+            <input type="email" id="qustion_mail_address" name="question_mail_address" required>
         </div>
         <div class="question_contitle">
             <label for="question_contitle">件名<span class="question_request">（必須）</span></label>
@@ -26,8 +26,7 @@
         </div>
         <div class="question_context">
             <label for="question_context">お問合せ内容<span class="question_request">（必須）</span></label>
-            <textarea type="text" id="qustion_context" name="question_context" required>
-            </textarea>
+            <textarea type="text" id="qustion_context" name="question_context" required></textarea>
         </div>
         <div class="question_send">
             <input type="submit" value="送信する" name="question_send_value" id="question_send_value">
