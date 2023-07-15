@@ -8,7 +8,8 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\UserQuestion;
 use Illuminate\Support\Facades\Auth;
-
+use App\Mail\QAMail;
+use Mail;
 use Illuminate\Http\Request;
 
 class AdminEditController extends Controller
@@ -238,6 +239,9 @@ class AdminEditController extends Controller
 
         $mailData = [
             'reply' => $request->reply_text,
+            'user_context' =>$userquestion->user_context,
+            'user_contitle' =>$userquestion->user_contitle,
+
         ];
         Mail::to($user_mail)->send(new QAMail($mailData));
         

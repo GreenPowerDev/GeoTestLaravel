@@ -117,7 +117,7 @@
         </div>
     </header>
 
-    <a id="back-to-top"></a>
+    <a id="back-to-top"><p>Top</p> </a>
 
     @yield('main-content')
 
