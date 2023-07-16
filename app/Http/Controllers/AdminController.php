@@ -157,6 +157,17 @@ class AdminController extends Controller
         $problems = Problem::all();
         return view('admin.test_problem',['test'=>$test, 'problems'=>$problems]);
     }
+
+    public function test_problem_del($id){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+
+        if(!is_null(Test::find($id)))
+            Test::find($id)->delete();
+        
+        $tests = Test::all();
+        return view('admin.test_select', ['tests'=>$tests]);
+    }
     
     public function problem_make(){
         $ganres = Ganre::all();
