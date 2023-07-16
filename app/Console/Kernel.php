@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
         // $schedule->command('email:send')
         //         ->withoutOverlapping()
-        //         ->everyMinute(); 
+        //         ->everyMinute();
+        $schedule->command('app:test-day')->everyMinute();
     }
 
     /**
