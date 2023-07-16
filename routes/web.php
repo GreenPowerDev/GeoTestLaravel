@@ -73,6 +73,7 @@ Route::get('admin/test/problem_make', [AdminController::class, 'problem_make'])-
 Route::post('admin/test/add_problem', [AdminController::class, 'add_problem'])->name('admin.test.add_problem');
 
 Route::get('admin/test/test_problem_edit/{id}', [AdminController::class, 'test_problem'])->name('admin.test.test_problem_edit');
+Route::get('admin/test/test_problem_del/{id}', [AdminController::class, 'test_problem_del'])->name('admin.test.test_problem_del');
 Route::get('admin/test/test_select', [TestProblemController::class, 'test_select'])->name('admin.test.test_select');
 Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
 Route::post('admin/test/add_problem_test', [TestProblemController::class, 'add_problem_test'])->name('admin.test.add_problem_test');

@@ -272,34 +272,53 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
-.free_test-part{
+/* .free_test-part{
+    
     background-color: white;
     border-radius: 12px;
     border: 23px solid #13AE6A;
     height: 100%;
     margin: 20px;
+} */
+
+/* .test_area-part{ */
+.free_test-part{
+    background-color: white;
+    border-radius: 12px;
+    border: 23px solid #13AE6A;
+    margin: 21px 10px 46px 10px;
+    width: 480px;
 }
 .free_test_detail{
     background-color: white;
     padding: 20px;
     padding-top: 10px;
     padding-bottom: 30px;
-    height: 50%;
 }
 .free_test_img{
+    /* background-color: white;
+    position: relative;
+    width: 100%;
+    overflow: hidden; */
     background-color: white;
     position: relative;
     width: 100%;
     overflow: hidden;
+    margin-bottom:-10px;
 }
 .free_test_img img {
-    width: 410px;
+    /* width: 410px;
     height: 309px;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
+    object-fit: cover; */
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+    width:100%;
     object-fit: cover;
 }
 .free_test_img:hover img {
@@ -364,9 +383,9 @@
     .test_free_test-title{
         font-size: 30px;
     }
-    .free_test_detail{
+    /* .free_test_detail{
         padding-bottom: 70px;
-    }
+    } */
     .free_test_img img{
         width: 100%;
     }
@@ -412,7 +431,7 @@
     border-radius: 12px;
     border: 23px solid #13AE6A;
     margin: 21px 10px 46px 10px;
-    width: 494px;
+    width: 480px;
 }
 .area_img{
     background-color: white;
@@ -485,8 +504,6 @@
     border-radius: 29px;
 }
 @media only screen and (max-width:1440px) {
-    
-    
     .to_area-list-btn{
         padding: 20px 40px;
     }
@@ -522,7 +539,12 @@
     .area_img img{
         width: 100%;
     }
-
+    .area_name{
+        top: 10px; left: 15px;
+        font-size: 15px !important;
+        padding: 22px 15px;
+        margin: 0;
+    }
     .free_test-trunk-right{
         width: 40%;
     }
