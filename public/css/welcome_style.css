@@ -319,6 +319,7 @@
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
     width:100%;
+    height: 266px;
     object-fit: cover;
 }
 .free_test_img:hover img {
