@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>試験サイト</title>
+    <title>{{config('app.name')}}</title>
     <link rel="stylesheet" href="{{asset('css/menu.css')}}">
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome.min.css')}}">
@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="{{asset('css/fontawesome.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Yu Gothic' rel='stylesheet'>
 </head>
-
-
 <body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
@@ -25,7 +23,7 @@
         </a>
 
         <div class="menubar">
-            <a href="{{route('guide.about_site')}}" class="menu-links">このサイトについて</a>
+            <a href="{{route('guide.about_site')}}" class="menu-links">日本地域マイスター<br>検定について</a>
             <a href="{{route('search.area')}}" class="menu-links">試験エリア一覧</a>
             <a href="{{route('guide.method')}}" class="menu-links">試験内容と受験方法</a>
             <a href="{{route('guide.site_policy')}}" class="menu-links">サイトポリシー</a>
@@ -50,9 +48,25 @@
                 <img src="{{asset('img/menu/ico_register.png')}}" alt="register-icon">
             </a>
         @endif
+        
+        @if(Auth::check())
+            @if(Auth::user()->user_role == 1)
+
+                <a href="{{route('admin.dashboard')}}" class="squre-btns to_admin-page">
+                    <img src="{{asset('img/menu/ico_admin.png')}}" alt="admin-icon">
+                </a>
+
+            @else
             <a href="{{route('guide.question')}}" class="squre-btns question">
                 <img src="{{asset('img/menu/ico_question.png')}}" alt="question-icon">
             </a>
+            @endif
+        @else
+            <a href="{{route('guide.question')}}" class="squre-btns question">
+                <img src="{{asset('img/menu/ico_question.png')}}" alt="question-icon">
+            </a>
+
+        @endif
             <div class="hamburger">
                 <div id="menuToggle">
                     <input type="checkbox" />
@@ -62,28 +76,40 @@
 
                     <ul id="menu">
                         <div class="menu-list">
+                        @if(Auth::check())
                             <div class="menu_items customer">
-                                {{-- <img src="{{asset('img/top/mainvisual/header/sp_user_icon.png')}}" alt=""> --}}
-                                <a href="{{route('my_page')}}">マイページ</a>
+                                <a href="{{route('my_page')}}"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:20px;"></i>マイページ</a>
                             </div>
+                        @endif
                             <div class="menu_items">
-                                <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                                <a href="{{route('guide.question')}}">お問合せ</a></div>
+                                <a href="{{route('guide.question')}}"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:20px"></i>お問合せ</a></div>
                             <div class="menu_items">
-                                <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                                <a href="">Q&A</a></div>
+                                <a href="{{route('guide.method')}}"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:20px"></i>試験内容と受験方法</a></div>
                             <div class="menu_items">
-                                <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                                <a href="{{route('guide.notice')}}">サイトからのお知らせ</a></div>
+                                <a href="{{route('guide.notice')}}"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:20px"></i>サイトからのお知らせ</a></div>
                             <div class="menu_items">
-                                <img src="{{asset('img/top/mainvisual/header/top_go_icon.png')}}" alt="">
-                                <a href="{{route('guide.about_site')}}">このサイトについて</a></div>
+                                <a href="{{route('guide.about_site')}}"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:20px"></i>日本地域マイスター<br>検定について</a></div>
                             <div class="menu_items">
-                                <a href="{{route('guide.site_policy')}}">サイトポリシー</a></div>
+                                <a href="{{route('guide.site_policy')}}"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:20px"></i>サイトポリシー</a></div>
                             <div class="menu_items">
-                                <a href="{{ route('logout') }}">プライバシーポリシー</a></div>
-                            <div class="top_buttons spbtn">
+                                <a href="{{ route('guide.privacy')}}"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:20px"></i>プライバシーポリシー</a></div>
                         </div>
+                            <div class="menu_items-setting">
+                             @if(Auth::check())
+
+                                <a class="button logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                    
+                                @else
+                                    
+                                <a href="{{route('_verifyMailSend')}}" class="button register">会員登録</a>
+                                <a href="{{route('_login')}}" class="button login"> ログイン</a>
+                
+                            @endif
+
+                            </div>
                     </ul>
                 </div>
                 <p>メニュー</p>
@@ -91,7 +117,7 @@
         </div>
     </header>
 
-    <a id="back-to-top"></a>
+    <a id="back-to-top"><p>Top</p> </a>
 
     @yield('main-content')
 
@@ -100,11 +126,11 @@
             <img src="{{asset('img/menu/top_logo.png')}}" alt="">
         </a>
         <div class="footer_detail">
-            <a class="footer_links"><i class="fa fa-user" aria-hidden="true" style="font-siza:20px;"></i>お問合せ</a>
-            <a class="footer_links"><i class="fa fa-hand-o-right" aria-hidden="true" style="font-siza:20px;"></i>サイトからのお知らせ</a>
-            <ul><a class="footer_links"><i class="fa fa-hand-o-right" aria-hidden="true" style="font-siza:20px;"></i>このサイトについて</a>
-                <li><a class="footer_links">サイトポリシー</a></li>
-                <li><a class="footer_links">プライバシーポリシー</a></li></ul>
+            <a href="{{route('guide.question')}}" class="footer_links footer_question"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>お問合せ</a>
+            <a href="{{route('guide.notice')}}" class="footer_links footer_site" ><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-size:20px;"></i>サイトからのお知らせ</a>
+            <ul><a href="{{route('guide.about_site')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-size:20px;"></i>このサイトについて</a>
+                <li><a href="{{route('guide.site_policy')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>サイトポリシー</a></li>
+                <li><a href="{{route('guide.privacy')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>プライバシーポリシー</a></li></ul>
         </div>
         <div class="copylight">
             <p>© <script>document.write(new Date().getFullYear())</script> All Rights Reserved.</p>
@@ -117,6 +143,11 @@
     @if(session()->has('message'))
     <script>
         toastr.success("{{ session()->get('message') }}");
+    </script>
+    @endif
+    @if(session()->has('waringmessage'))
+    <script>
+        toastr.warning("{{ session()->get('waringmessage') }}");
     </script>
     @endif
 </body>

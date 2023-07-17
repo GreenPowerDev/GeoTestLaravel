@@ -7,14 +7,14 @@
 .my_page-top-color{
     position:absolute; 
     background-color:#CEFFEA; 
-    height:1000px; 
+    height:1070px; 
     z-index:-1; 
     width:100% 
 }
 .my_page-bottom-color{
     position:absolute; 
     background-color:#F5F5DC; 
-    top: 1000px;
+    top: 1070px;
     bottom:0; 
     right:0; 
     left:0; 
@@ -34,7 +34,7 @@
 .user-meister{
     position: absolute;
     right: 0;
-    top: 0;
+    top: -20px;
     height: 150px;
 }
 .user_information p{ 
@@ -59,7 +59,7 @@
 }
 .recent_test{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 25px auto;
 }
@@ -124,10 +124,10 @@
 }
 @media only screen and (max-width:1024px) {
     .my_page-top-color{
-        height: 900px;
+        height: 940px;
     }
     .my_page-bottom-color{
-        top: 900px;
+        top: 940px;
     }
     
     .user_lists{
@@ -164,7 +164,7 @@
     }
 
     .user-meister{
-        top: -60px;
+        top: -25px;
         height: 100px;
     }
     .recent_when, .recent_context, .reservation_when, .reservation_context, .passed_test_when, .passed_test_context{

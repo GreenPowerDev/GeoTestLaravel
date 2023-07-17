@@ -1,19 +1,20 @@
 /* -----------mainviual----------- */
 .mainvisual{
     padding-top: 80px;
+    height: 100vh;
     position: relative;
 }
 .mainvisual img{
     width: 100%;
     height: calc(100vh - 80px);
     object-fit: cover;
+    opacity: 0.7;
 }
-.endtext{
+.end_field{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    font-size: 70px;
     color: white;
 }
 .test_end_notice{
@@ -69,27 +70,37 @@
 #mark_and_re{
     display: none;
 }
+.to-top_page:hover, .to-register_page:hover{
+    cursor: pointer;
+    /* text-shadow: 3px 5px black; */
+    background-color: white;
+    color: #13AE6A;
+    border: 2px solid #00F589;
+
+}
+
+
 /* ------------------------------------ */
 @media only screen and (max-width:1280px) {
-    .endtext{
+    .end_title{
         font-size: 60px;
     }
-}
-@media only screen and (max-width:768px) {
+    .end_field{
+        width: 100%;
+    }
     .mainvisual{
         padding-top: 60px;
     }
     .mainvisual img{
         height: calc(100vh - 60px);
     }
-    .endtext{
-        font-size: 60px;
+    .to-top_page, .to-register_page{
+        font-size: 25px;
+        padding: 20px 25px;
+        margin-top: 40px;
     }
 }
 @media only screen and (max-width:768px) {
-    .endtext{
-        font-size: 40px;
-    }
     .end_field{
         width: 100%;
     }

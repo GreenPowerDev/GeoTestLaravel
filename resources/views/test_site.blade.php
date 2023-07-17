@@ -16,6 +16,7 @@
     </section>
     <section class="test_site_detail">
         <div class="ganre_detail" style="border:0;">
+        <img class="test_schedul-bg" src="{{asset('img/users/test_schedul.jpg')}}">
             <div class="ganre_context">
                 <p class="ganre_date">開催日：{{$test->get_test_date()}}</p>
                 <p class="ganre_time">開催時間：{{$test->get_begin_time()}}～{{$test->get_end_time()}}</p>

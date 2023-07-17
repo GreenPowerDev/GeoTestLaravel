@@ -39,19 +39,21 @@
             <a href="{{route('guide.notice')}}"><div class="top_notices-all">一覧を見る</div></a>
         </div>
 
-        <img class="top_map" src="{{asset('img/users/main_map.png')}}" alt="map-image">
     </section>
 
     
     <section class="promotion">
         <div class="promotion_detail">
+            <img class="promo_clock" src="{{asset('img/users/clock.png')}}" alt="map-image">
             <img class="promo_girl" src="{{asset('img/users/promo_girl.png')}}" alt="map-image">
-            <img class="promo_camera" src="{{asset('img/users/promo_camera.png')}}" alt="map-image">
 
-            <p class="promotion_title">プロモーション</p>
+            <p class="promotion_title">プロモーション<br>
+                <span class="title_space">Promotion</span>
+            </p>
 
             <div class="video">
-                <video controls>
+            <img class="promo_camera" src="{{asset('img/users/promo_camera.png')}}" alt="map-image">
+                <video id="video" controls muted autoplay>
                     <source src="{{asset('img/interview01.mp4')}}" type="video/mp4">
                 </video>
             </div>
@@ -62,7 +64,7 @@
     @if(!Auth::check())
 
     <section class="free_test">
-        <p class="free_test-title">お試し検定</p>
+        <p class="free_test-title">お試し検定<br><span class="title_space">Trial test</span></p>
         <p class="free_test-summary">6つの都道府県で各5問お楽しみいただけます！</p>
         <div class="free_test-bg">
             <img class="free_test-trunk" src="{{asset('img/users/trunk.png')}}">
@@ -106,7 +108,8 @@
     @if(Auth::check())
 
     <section class="test_area">
-        <p class="test_area-title">試験エリア</p>
+        <p class="test_area-title">試験エリア<br>
+        <span class="title_space">Test area</span></p>
         <div class="free_test-bg">
             <img class="free_test-trunk" src="{{asset('img/users/trunk.png')}}">
             <img class="free_test-trunk-right" src="{{asset('img/users/trunk.png')}}">
@@ -158,10 +161,10 @@
     @endif
 
     <section class="sns_media">
-        <img class="sns-girl" src="{{asset('img/users/sns-girl.png')}}">
-        <p class="sns-title">SNSメディア</p>
+        {{-- <img class="sns-girl" src="{{asset('img/users/sns-girl.png')}}"> --}}
+        <p class="sns-title">SNSメディア<br><span class="title_space">SNS media</span></p>
         <div class="sns-bg">
-            <div class="sns-map"></div>
+            {{-- <div class="sns-map"></div> --}}
             <div class="sns-items">
                 <div class="sns-items-img">
                     <a href="#"><img src="{{asset('img/top/sns_media/top_youtube.png')}}" alt=""></a>
@@ -176,20 +179,22 @@
                     <a href="#"><img src="{{asset('img/top/sns_media/top_instagram.png')}}" alt=""></a>
                 </div>
             </div>
+            <img class="sns-meister" src="{{asset('img/users/meister00.png')}}">
         </div>
     </section>
 
     @if(Auth::check())
 
     <section class="search_by_ganre">
-        <p class="search_ganre-title">ジャンルから探す</p>
-
+        <p class="search_ganre-title">ジャンルから探す<br><span class="title_space">Search by ganre</span></p>
         <div class="search_ganre-btns">
+
             <img class="search_tree" src="{{asset('img/users/trees.png')}}" alt="">
+
             @foreach($ganres as $ganre)
 
             <div class="search_each_ganre">
-                <a href="{{route('ganre.select', ['id'=>$ganre->id])}}" >
+                <a  href="{{route('ganre.select', ['id'=>$ganre->id])}}" >
                     <p class="search_ganre-btns-btn">{{$ganre->ganre_name}}</p>
                 </a>
             </div>
@@ -200,46 +205,49 @@
     @endif
 
     <div class="slider">
-            <div id="slider-container">
-                <div id="slider-scroller">
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(8).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(7).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(6).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(4).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(3).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(5).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(1).png')}}" /></div>
-                    <div class="slider-item"><img src="{{asset('img/users/users_slide(2).png')}}" /></div>
-                </div>
+        <div id="slider-container">
+            <div id="slider-scroller">
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(1).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(2).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(3).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(5).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(6).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(4).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(7).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(8).png')}}" /></div>
+                <div class="slider-item"><img src="{{asset('img/users/users_slide(9).png')}}" /></div>
             </div>
+        </div>
     </div>
 
 
     <section class="content">
         <div class="content-items">
-            <div class="content-items-left"><a href="{{route('guide.about_site')}}"><img src="{{asset('img/top/content/top_about.png')}}" alt=""></a>
+            <div class="content-items-left"><a href="{{route('guide.about_site')}}">
+                <p class="content-items-title">日本地域マイスター<br>検定について</p>
+                <img src="{{asset('img/top/content/top_about.jpg')}}" alt=""></a>
             </div>
-            <div class="content-items-right"><a href="{{route('guide.method')}}"><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
+            <div class="content-items-right"><a href="{{route('guide.method')}}"><p class="content-items-title">試験内容と受験方法</p><img src="{{asset('img/top/content/top_method.png')}}" alt=""></a></div>
         </div>
-
     </section>
 
     <div class="slider">
-            <div id="slider-right-container">
-                <div id="slider-right-scroller">
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(8).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(7).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(6).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(4).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(3).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(5).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(1).png')}}" /></div>
-                    <div class="slider-right-item"><img src="{{asset('img/users/users_slide(2).png')}}" /></div>
-                </div>
+        <div id="slider-right-container">
+            <div id="slider-right-scroller">
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(1).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(2).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(3).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(4).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(5).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(6).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(7).png')}}" /></div>
+                <div class="slider-right-item"><img src="{{asset('img/users/user_slide(8).png')}}" /></div>
             </div>
+        </div>
     </div>
 
 
 <script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/slide.js')}}"></script>   
+<script src="{{asset('js/slide.js')}}"></script> 
+
 @endsection

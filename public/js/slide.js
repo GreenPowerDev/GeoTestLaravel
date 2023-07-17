@@ -1,7 +1,7 @@
 function slideSlider()
 {
     $("#slider-scroller").css({"left":"0%","transition":"all 0s linear"});
-    $("#slider-scroller").css({"left": String(parseInt($("#slider-scroller").css("left")) - 500) + "px","transition":"all 5s linear"});
+    $("#slider-scroller").css({"left": String(parseInt($("#slider-scroller").css("left")) - 500) + "px","transition":"all 5.1s linear"});
     setTimeout(function(){moveSliderItem()}, 2635);
   }
   
@@ -14,8 +14,8 @@ function slideSlider()
   
   function slideSlider_right(){
     $("#slider-right-scroller").css({"right":"0%","transition":"all 0s linear"});
-    $("#slider-right-scroller").css({"right": String(parseInt($("#slider-right-scroller").css("right")) - 500) + "px","transition":"all 4.2s linear"});
-    setTimeout(function(){moveSlider_rightItem()}, 2000);
+    $("#slider-right-scroller").css({"right": String(parseInt($("#slider-right-scroller").css("right")) - 500) + "px","transition":"all 5.1s linear"});
+    setTimeout(function(){moveSlider_rightItem()}, 2635);
   }
   
   function moveSlider_rightItem(){
@@ -24,3 +24,12 @@ function slideSlider()
   }
   
   slideSlider_right();
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("video");
+  
+    video.addEventListener("ended", function() {
+       video.currentTime = 0;  
+       video.play();  
+    }); 
+  });  

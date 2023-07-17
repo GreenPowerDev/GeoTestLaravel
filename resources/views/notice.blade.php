@@ -6,6 +6,8 @@
             <p class="notice_title">サイトからのお知らせ</p>
             
             <div class="notice_content">
+            {{-- <img class="notice-blueboard" src="{{asset('img/users/notice.png')}}"> --}}
+            <img class="notice-notepad" src="{{asset('img/users/notepad.png')}}">
                 @foreach ($notices as $notice)
                 <div class="notice_items">
                     <a href="{{route('notice.select', ['id'=>$notice->id])}}">

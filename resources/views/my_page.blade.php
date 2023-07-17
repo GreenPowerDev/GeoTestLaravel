@@ -8,6 +8,37 @@
             <p class="title">マイ情報</p>
             <p class="user_name">氏名:　<span>{{Auth::user()->name}}</span></p>
             <p class="user_mail_address">メールアドレス:　<span>{{Auth::user()->email}}</span></p>
+            <br>
+            @php
+                $class = 0;
+            @endphp
+            <p>
+            あなたは
+            @foreach ($allowed_tests as $allowed_test)
+            @if(!is_null($allowed_test))
+            @if(!is_null($allowed_test->passed))
+                @if($allowed_test->passed->state == '合格')
+                 @php
+                    $class = 1;
+                @endphp
+
+                    「<span>{{$allowed_test->test->get_province_name()}}</span>県 
+                    <span>{{$allowed_test->test->get_ganre_name()}}</span>
+                    <span>{{$allowed_test->test->get_level_name()}}</span>
+                    メイスター」
+                    {{-- {{dd($allowed_test->test->get_province_name())}} --}}
+
+                @endif
+                @endif
+                @endif
+                
+            @endforeach
+            @if($class == 1)
+                を取得しました。
+            @else
+                取得した資格がありません。 頑張ってください。
+            @endif
+            </p>
             <img src="{{asset('/img/users/meister00.png')}}" class="user-meister">
         </div>
         <div class="recent_result">
@@ -53,10 +84,8 @@
         <div class="reservation_list">
             <p class="reservation_title title">予約済み検定</p>    
             <div class="reservation_detail">
-
                 @foreach($allowed_tests as $allowed_test)
                 @if($allowed_test->test->check_datetime())
-
                 <div class="reservation_content">
                     <p class="reservation_contetnt_title">試験タイトル:{{$allowed_test->test->name}}</p>
                     <div class="reservation_when">
@@ -68,7 +97,7 @@
                         <p class="reservation_ganre">ジャンル： <span>{{$allowed_test->test->get_ganre_name()}}</span></p>
                         <p class="reservation_level">レベル：<span>{{$allowed_test->test->get_level_name()}}</span></p>
                     </div>
-                    <a href="{{route('test.login_form', ['id'=>$allowed_test->id])}}">
+                    <a href="{{route('test.login_form', ['id'=>$allowed_test->allowed_id])}}">
                         <div class="to_test_site">
                             試験画面へ進む
                         </div>
@@ -88,13 +117,13 @@
                     @if($allowed_test->passed->state == '合格')
                         <div class="passed_test_content">
                             <div class="passed_test_when">
-                                <p class="passed_test_date">開催日：{{$passed_test->test->get_test_date()}}</p>
-                                <p class="passed_test_time">開催時間：{{$passed_test->test->get_begin_time()}}～{{$passed_test->test->get_end_time()}}</p>
+                                <p class="passed_test_date">開催日：{{$allowed_test->test->get_test_date()}}</p>
+                                <p class="passed_test_time">開催時間：{{$allowed_test->test->get_begin_time()}}～{{$allowed_test->test->get_end_time()}}</p>
                             </div>
                             <div class="passed_test_context">
-                                <p class="passed_test_area">エリア： <span>{{$passed_test->test->get_province_name()}}</span></p>
-                                <p class="passed_test_ganre">ジャンル： <span>{{$passed_test->test->get_ganre_name()}}</span></p>
-                                <p class="passed_test_level">レベル：<span>{{$passed_test->test->get_level_name()}}</span></p>
+                                <p class="passed_test_area">エリア： <span>{{$allowed_test->test->get_province_name()}}</span></p>
+                                <p class="passed_test_ganre">ジャンル： <span>{{$allowed_test->test->get_ganre_name()}}</span></p>
+                                <p class="passed_test_level">レベル：<span>{{$allowed_test->test->get_level_name()}}</span></p>
                             </div>
                         </div>
                     @endif

@@ -6,8 +6,10 @@ use App\Models\Ganre;
 use App\Models\Notice;
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\UserQuestion;
 use Illuminate\Support\Facades\Auth;
-
+use App\Mail\QAMail;
+use Mail;
 use Illuminate\Http\Request;
 
 class AdminEditController extends Controller
@@ -200,7 +202,7 @@ class AdminEditController extends Controller
         $users = User::all();
         return view('admin.user.view', ['users'=>$users]);
     }
-
+    
     public function user_delete($id){
         if(!Auth::check()) return redirect()->route('_login');
         if(Auth::user()->user_role != 1) return redirect()->route('home');
@@ -209,4 +211,41 @@ class AdminEditController extends Controller
         return redirect()->route('admin.user.view');
     }
     
+    public function user_question(){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+        
+        $userquestions = UserQuestion::all();
+        return view('admin.user.question', ['userquestions'=>$userquestions]);
+    }
+    
+    public function user_question_delete($id){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+        UserQuestion::find($id)->delete();
+        return redirect()->route('admin.user.question');
+    }
+    
+    public function user_question_reply(Request $request){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+
+
+        $userquestion = UserQuestion::find($request->userquestion_id);
+        $userquestion->reply =$request->reply_text;
+        $userquestion->save();
+
+        $user_mail = UserQuestion::find($request->userquestion_id)->user_mail;
+
+        $mailData = [
+            'reply' => $request->reply_text,
+            'user_context' =>$userquestion->user_context,
+            'user_contitle' =>$userquestion->user_contitle,
+
+        ];
+        Mail::to($user_mail)->send(new QAMail($mailData));
+        
+        $userquestions = UserQuestion::all();
+        return view('admin.user.question', ['userquestions'=>$userquestions]);
+    }
 }

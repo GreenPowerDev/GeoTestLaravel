@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Test2user;
+use App\Models\User;
 use App\Models\Test;
 use App\Models\Reservation;
 use App\Models\Allowed;
@@ -61,7 +62,6 @@ class AdminController extends Controller
         $make_id = substr(str_shuffle(str_repeat($pool_num, 5)), 0, 8);
         
         $test2user = Test2user::where([
-            'user_id'=>Auth::user()->id,
             'reservation_id'=>$id
         ])->first();
         if($test2user->allowed_id != 0) return redirect()->route('admin.reserve.accept');
@@ -74,25 +74,10 @@ class AdminController extends Controller
         $test2user->allowed_id = $allowed->id;
         $test2user->save();
 
-        return redirect()->route('admin.reserve.accept');
-    }
-
-    public function reserve_mail_send($id){
-        if(!Auth::check()) return redirect()->route('_login');
-        if(Auth::user()->user_role != 1) return redirect()->route('home');
-
-        $test2user = Test2user::where([
-            'user_id'=>Auth::user()->id,
-            'reservation_id'=>$id
-        ])->first();
-
-        $reservation = Reservation::find($id);
-        
-        if(is_null($test2user)) return redirect()->route('admin.reserve.accept');
-        if($test2user->allowed_id == 0) return redirect()->route('admin.reserve.accept');
         $test_pass_id = $test2user->allowed()->first()->test_pass_id;
         $test_pass_pwd = $test2user->allowed()->first()->test_pass_pwd;
         
+        $reservation = Reservation::find($id);
         $period = $reservation->test()->first()->get_test_date().
         '：'.$reservation->test()->first()->get_begin_time().
         '～'.$reservation->test()->first()->get_end_time();
@@ -103,12 +88,16 @@ class AdminController extends Controller
             'test_pass_id' => $test_pass_id,
             'test_pass_pwd' => $test_pass_pwd,
         ];
-        Mail::to(Auth::user()->email)->send(new AllowedMail($mailData));
 
+        $user = User::where([
+            'id'=>$test2user->user_id
+        ])->first(); 
+        Mail::to($user->email)->send(new AllowedMail($mailData));
+        
         $test2user->mail_sended = 1;
         $test2user->save();
+        
         return redirect()->route('admin.reserve.accept');
-
     }
 
     public function test_make(){
@@ -167,6 +156,17 @@ class AdminController extends Controller
         $test = Test::find($id);
         $problems = Problem::all();
         return view('admin.test_problem',['test'=>$test, 'problems'=>$problems]);
+    }
+
+    public function test_problem_del($id){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+
+        if(!is_null(Test::find($id)))
+            Test::find($id)->delete();
+        
+        $tests = Test::all();
+        return view('admin.test_select', ['tests'=>$tests]);
     }
     
     public function problem_make(){

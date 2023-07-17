@@ -35,6 +35,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('mypage/test_login_/{id}', [MypageController::class, 'test_login_form'])->name('test.login_form');
 Route::post('mypage/test_login', [MypageController::class, 'test_login'])->name('test.login');
 Route::post('mypage/test/enter', [MypageController::class, 'test_enter'])->name('test.enter');
+Route::post('question/', [MypageController::class, 'question_admin'])->name('question_admin');
 
 
 Route::get('guide/notice', [NoticeController::class, 'notice'])->name('guide.notice');
@@ -47,10 +48,12 @@ Route::get('guide/privacy', [GuideController::class, 'privacy'])->name('guide.pr
 Route::get('guide/site/policy', [GuideController::class, 'site_policy'])->name('guide.site_policy');
 Route::get('my_page', [GuideController::class, 'my_page'])->name('my_page');
 
-Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
 Route::get('prefecture/select/{id}', [ProvinceController::class, 'index_selected'])->name('prefecture.select');
-Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
 Route::get('prefecture/search/result', [ProvinceController::class, 'prefecture_search'])->name('prefecture.search');
+Route::get('prefecture/search', [ProvinceController::class, 'all_area_selected'])->name('search.area');
+Route::get('ganre/select/{id}', [GanreController::class, 'ganre_selected'])->name('ganre.select');
+Route::get('ganre/search/result', [GanreController::class, 'ganre_search'])->name('ganre.search');
+Route::get('garne/search', [GanreController::class, 'all_ganre_selected'])->name('search.ganre');
 
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
 
@@ -70,6 +73,7 @@ Route::get('admin/test/problem_make', [AdminController::class, 'problem_make'])-
 Route::post('admin/test/add_problem', [AdminController::class, 'add_problem'])->name('admin.test.add_problem');
 
 Route::get('admin/test/test_problem_edit/{id}', [AdminController::class, 'test_problem'])->name('admin.test.test_problem_edit');
+Route::get('admin/test/test_problem_del/{id}', [AdminController::class, 'test_problem_del'])->name('admin.test.test_problem_del');
 Route::get('admin/test/test_select', [TestProblemController::class, 'test_select'])->name('admin.test.test_select');
 Route::post('admin/test/problem/save', [TestProblemController::class, 'test_problem_save'])->name('admin.test.problem.save');
 Route::post('admin/test/add_problem_test', [TestProblemController::class, 'add_problem_test'])->name('admin.test.add_problem_test');
@@ -99,6 +103,9 @@ Route::post('admin/notice/picture_upload', [AdminEditController::class, 'notice_
 
 Route::get('admin/user/view', [AdminEditController::class, 'user_view'])->name('admin.user.view');
 Route::get('admin/user/delete/{id}', [AdminEditController::class, 'user_delete'])->name('admin.user.delete');
+Route::get('admin/user/question', [AdminEditController::class, 'user_question'])->name('admin.user.question');
+Route::post('admin/user/question/reply', [AdminEditController::class, 'user_question_reply'])->name('admin.user.reply');
+Route::get('admin/user/question/delete{id}', [AdminEditController::class, 'user_question_delete'])->name('admin.user.question.delete');
 
 Route::get('_verifyMailSend', [VerificationController::class, '_verifyMailSend'])->name('_verifyMailSend');
 Route::post('verifyMailSend', [VerificationController::class, 'verifyMailSend'])->name('verifyMailSend');
