@@ -4,33 +4,18 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Console\Commands\TestDay;
 
 class Kernel extends ConsoleKernel
 {
-    /**
-     * Define the application's command schedule.
-     */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
-        // $schedule->command('email:send')
-        //         ->withoutOverlapping()
-        //         ->everyMinute();
-        $schedule->command('app:test-day')->everyMinute();
+        $schedule->command('test-day')->everyMinute();
     }
 
-    /**
-     * Register the commands for the application.
-     */
     protected function commands(): void
     {
-        $this->load(__DIR__.'/Commands');
-        
+        $this->load(__DIR__.'/Commands');  
         require base_path('routes/console.php');
-        // $this->commands([
-        //     'serve' => function () {
-        //         $this->call('schedule:run');
-        //     }    
-        // ]);
     }
 }

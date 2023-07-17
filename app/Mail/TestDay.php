@@ -17,16 +17,16 @@ class TestDay extends Mailable
      * Create a new message instance.
      */
 
-    public $user;
+    // public $user;
 
-    public function __construct($user)
+    public function __construct($mailData)
     {
-        $this->user = $user;
+        $this->mailData = $mailData;
     }
 
     public function build()
     {
-        return $this->subject('abcd '. $this->user->name)
-                    ->view('emails.test-day');
+        return $this->subject('試験通知 ')
+                    ->view('emails.test-day', $this->mailData);
     }
 }
