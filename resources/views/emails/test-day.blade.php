@@ -10,21 +10,15 @@
             こんにちは。日本地域マイスターです。
 
         </p>
-        {{-- <p>
-            試験日時：{{$period}}
+        <p>あなたは今日 {{$test->get_test_date()}}に試験が予約されています。</p>
+        <p>
+            試験名: {{$test->name}}
         </p>
         <p>
-            ID：{{$test_pass_id}}
+            試験日時："{{$test->get_begin_time()}}~{{$test->get_end_time()}}"
         </p>
         <p>
-            パスワード：{{$test_pass_pwd}}
-        </p> --}}
-
-        
-        
-
-        <p>
-            よろしくお願いします、 
+            がんばってください、 
             
             {{ config('app.name')}}
         </p>

@@ -9,10 +9,10 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class TestDay extends Mailable
+class TestDayMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+ 
     /**
      * Create a new message instance.
      */
