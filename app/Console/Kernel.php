@@ -10,7 +10,8 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('test-day')->everyMinute();
+        $schedule->command('test-day')->cron('* * * * *');
+        // ->everyMinute();
     }
 
     protected function commands(): void

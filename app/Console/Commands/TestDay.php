@@ -29,6 +29,7 @@ class TestDay extends Command
     protected $description = 'Command description';
 
     public function handle(){
+        \Log::info("Cron is working fine!");
         $tests = Test::where('test_date', Carbon::today())->get();
         if($tests){
             foreach($tests as $test){
