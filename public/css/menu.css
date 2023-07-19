@@ -42,6 +42,10 @@ body {
     font-family: 'HGRME';  
     src: url(../fonts/HGRME_0.TTC);  
 }
+@font-face {
+    font-family: 'YuGothic';  
+    src: url(../fonts/yugothib.ttf);  
+}
 
 /* !-----------------------------tags------------------------------- */
 
@@ -216,18 +220,18 @@ header {
         }
         #menuToggle input:checked~span {
             opacity: 1;
-            transform: rotate(45deg) translate(-2px, -1px);
-            background: #232323;
+            transform: rotate(45deg) translate(5px, -10px);
+            background: #ef0c0c;
         }
 
-        #menuToggle input:checked~span:nth-last-child(3) {
+        /* #menuToggle input:checked~span:nth-last-child(3) {
             opacity: 0;
             transform: rotate(0deg) scale(0.2, 0.2);
-        }
+        } */
 
         #menuToggle input:checked~span:nth-last-child(2) {
             opacity: 1;
-            transform: rotate(-45deg) translate(0, -1px);
+            transform: rotate(-45deg) translate(5px, 10px);
         }
 
         #menu {
@@ -312,7 +316,7 @@ header {
     background-color: #232323;
     font-size: 30px;
     border-radius: 20px;
-    font-family: "ComicSansMS3";
+    font-family: "YuGothic";
 }
 #back-to-top:hover {
     cursor: pointer;
@@ -382,9 +386,9 @@ footer{
     color: #8F0D0D;
     cursor: pointer;
 }
-.footer_detail .footer_site, .footer_detail .footer_question{
+/* .footer_detail .footer_site, .footer_detail .footer_question{
     padding-left: 40px;
-}
+} */
 
 /* -----------------resposive(1280)---------------------- */
 @media only screen and (max-width:1279px) {
@@ -392,15 +396,15 @@ footer{
         height: 60px;
     }
     
-    .top_logo{
-        height: 40px;
-        padding-left: 20px;
-    }
     
     .top_logo img{
         height: 40px;
     }
-     */
+    */
+    .top_logo{
+        /* height: 40px; */
+        padding-left: 20px;
+    }
     .menubar{
         width: calc(100% - 200px);
         left: 53%;
@@ -429,12 +433,12 @@ footer{
         font-size: 0.9rem;
     }
 
-    .hamburger p{
+    /* .hamburger p{
         padding-top: 27px;
     }
     #menuToggle {
         top: 20px;
-    }
+    } */
 
 
 }
@@ -480,7 +484,7 @@ footer{
 }
 
 @media only screen and (max-width:450px) {
-    .top_btns .squre-btns{
+    .top_btns .logout, .top_btns .register{
         display: none;
     }
 

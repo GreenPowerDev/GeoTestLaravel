@@ -78,8 +78,6 @@
             <p class="free_test-title">お試し検定<br><span class="title_space">Trial test</span></p>
             <p class="free_test-summary">6つの都道府県で各5問お楽しみいただけます！</p>
             <div class="free_test-bg">
-                <img class="free_test-trunk" src="{{ asset('img/users/trunk.png') }}" data-aos="fade-right">
-                <img class="free_test-trunk-right" src="{{ asset('img/users/trunk.png') }}" style="transform: scaleX(-1);" data-aos="fade-left">
                 <div class="free_test_parts">
                     @php
                         $i = 0;
@@ -121,10 +119,9 @@
                 <span class="title_space">Test area</span>
             </p>
 
-            <div class="free_test-bg">
             <img src="{{asset('img/users/coming-soon2.png')}}" style="width:100%">
-                {{-- <img class="free_test-trunk" src="{{ asset('img/users/trunk.png') }}" data-aos="fade-right">
-                <img class="free_test-trunk-right" src="{{ asset('img/users/trunk.png') }}" data-aos="fade-left">
+            {{-- <div class="free_test-bg"> --}}
+                {{-- 
                 <div class="test_areas">
                     @foreach ($provinces as $province)
                         <div class="test_area-part" data-aos="flip-right">
@@ -164,7 +161,7 @@
                     @endforeach
 
                 </div> --}}
-            </div>
+            {{-- </div> --}}
             {{-- <div class="to_area-list">
                 <div>
                     <a href="{{ route('search.area') }}" class="to_area-list-btn">試験エリア一覧ページへ</a>
@@ -199,18 +196,18 @@
     @if (Auth::check())
         <section class="search_by_ganre">
             <p class="search_ganre-title">ジャンルから探す<br><span class="title_space">Search by ganre</span></p>
-            <div class="search_ganre-btns">
+            <img src="{{asset('img/users/coming-soon2.png')}}" style="width:100%">
+            {{-- <div class="search_ganre-btns">
 
                 <img class="search_tree" src="{{ asset('img/users/trees.png') }}" alt="">
-                <img src="{{asset('img/users/coming-soon2.png')}}" style="width:100%">
-                {{-- @foreach ($ganres as $ganre)
+                @foreach ($ganres as $ganre)
                     <div class="search_each_ganre" data-aos="zoom-in">
                         <a href="{{ route('ganre.select', ['id' => $ganre->id]) }}">
                             <p class="search_ganre-btns-btn">{{ $ganre->ganre_name }}</p>
                         </a>
                     </div>
-                @endforeach --}}
-            </div>
+                @endforeach
+            </div> --}}
         </section>
     @endif
 
