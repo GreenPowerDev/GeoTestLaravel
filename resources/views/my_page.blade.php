@@ -5,7 +5,7 @@
     <div class="my_page-bottom-color"></div>
 <section class="my_page">
         <div class="user_information">
-            <p class="title">マイ情報</p>
+            <p class="title">あなたの情報</p>
             <p class="user_name">氏名:　<span>{{Auth::user()->name}}</span></p>
             <p class="user_mail_address">メールアドレス:　<span>{{Auth::user()->email}}</span></p>
             <br>
@@ -13,7 +13,6 @@
                 $class = 0;
             @endphp
             <p>
-            あなたは
             @foreach ($allowed_tests as $allowed_test)
             @if(!is_null($allowed_test))
             @if(!is_null($allowed_test->passed))
@@ -36,10 +35,10 @@
             @if($class == 1)
                 を取得しました。
             @else
-                取得した資格がありません。 頑張ってください。
+                まだ取得した資格がありません。 頑張ってください。
             @endif
             </p>
-            <img src="{{asset('/img/users/meister00.png')}}" class="user-meister">
+            <img src="{{asset('img/users/promo_girl.png')}}" class="user-meister">
         </div>
         <div class="recent_result">
             <p class="recent_result_title title">最近受けた検定</p>

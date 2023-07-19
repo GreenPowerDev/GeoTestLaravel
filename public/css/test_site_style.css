@@ -120,12 +120,12 @@
 }
 @media only screen and (max-width:768px) {
     
-    .test_site_img img{
+    /* .test_site_img img{
         height: calc(100vh - 60px);
     }
     .test_site_img{
         padding-top: 60px;
-    }
+    } */
     .wait_time p{
         font-size: 25px;
         font-weight: 600;

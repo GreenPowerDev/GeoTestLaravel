@@ -71,13 +71,13 @@
 }
 
 @media only screen and (max-width:1279px) {
-    .method_img img{
+    /* .method_img img{
         height: calc(100vh - 60px);
     }
     .method_img{
         padding-top: 60px;
     }
-    
+     */
     .method_title{
         font-size: 35px;
     }

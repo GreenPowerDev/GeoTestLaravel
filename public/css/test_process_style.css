@@ -54,7 +54,7 @@ body{
 .answer_number{
     border-radius: 18px;
     margin-top: 36px;
-    padding-right: 100px;
+    padding-right: 20px;
 }
 .answer_detail textarea{
     width: 100%;

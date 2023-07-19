@@ -1,7 +1,15 @@
 @extends('layouts.main')
 @section('main-content')
 <link href="{{asset('/css/test_end_style.css')}}" rel='stylesheet'>
-    <section class="mainvisual">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<script>
+
+    AOS.init({
+    duration: 1200,
+})
+</script>
+    <section class="mainvisual" data-aos="fade-up">
         <img src=" {{asset('/img/top/test_area/top_wakayama.png')}} " alt="">
         {{-- <p class="endtext">試験終了</p> --}}
     {{-- </section>

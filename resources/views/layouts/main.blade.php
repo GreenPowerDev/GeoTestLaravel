@@ -24,7 +24,12 @@
 
         <div class="menubar">
             <a href="{{route('guide.about_site')}}" class="menu-links">日本地域マイスター<br>検定について</a>
-            <a href="{{route('search.area')}}" class="menu-links">試験エリア一覧</a>
+            @if(Auth::check())
+            <a href="{{route('search.area')}}" class="menu-links">
+            @else
+            <a href="#" style="color:grey;pointer-events: none;">
+            @endif
+            試験エリア一覧</a>
             <a href="{{route('guide.method')}}" class="menu-links">試験内容と受験方法</a>
             <a href="{{route('guide.site_policy')}}" class="menu-links">サイトポリシー</a>
             <a href="{{route('guide.privacy')}}" class="menu-links">プライバシーポリシー</a>
@@ -117,7 +122,7 @@
         </div>
     </header>
 
-    <a id="back-to-top"><p>Top</p> </a>
+    <a id="back-to-top"><p>TOP</p> </a>
 
     @yield('main-content')
 
@@ -126,14 +131,14 @@
             <img src="{{asset('img/menu/top_logo.png')}}" alt="">
         </a>
         <div class="footer_detail">
-            <a href="{{route('guide.question')}}" class="footer_links footer_question"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>お問合せ</a>
-            <a href="{{route('guide.notice')}}" class="footer_links footer_site" ><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-size:20px;"></i>サイトからのお知らせ</a>
+            <ul><a href="{{route('guide.question')}}" class="footer_links footer_question"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>お問合せ</a></ul>
+            <ul><a href="{{route('guide.notice')}}" class="footer_links footer_site" ><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-size:20px;"></i>サイトからのお知らせ</a></ul>
             <ul><a href="{{route('guide.about_site')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-size:20px;"></i>このサイトについて</a>
                 <li><a href="{{route('guide.site_policy')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>サイトポリシー</a></li>
                 <li><a href="{{route('guide.privacy')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>プライバシーポリシー</a></li></ul>
         </div>
         <div class="copylight">
-            <p>© <script>document.write(new Date().getFullYear())</script> All Rights Reserved.</p>
+            <p>© <script>document.write(new Date().getFullYear())</script>総合検定研究所</p>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>

@@ -388,7 +388,7 @@ footer{
 
 /* -----------------resposive(1280)---------------------- */
 @media only screen and (max-width:1279px) {
-    header{
+    /* header{
         height: 60px;
     }
     
@@ -400,7 +400,7 @@ footer{
     .top_logo img{
         height: 40px;
     }
-    
+     */
     .menubar{
         width: calc(100% - 200px);
         left: 53%;
@@ -412,10 +412,10 @@ footer{
         
     }
     
-    .squre-btns img{
+    /* .squre-btns img{
         height: 45px;
         width: 45px;
-    }
+    } */
     
     .footer_logo{
         height: 30px;
@@ -476,5 +476,12 @@ footer{
         font-size: 10px;
     }
     
+
+}
+
+@media only screen and (max-width:450px) {
+    .top_btns .squre-btns{
+        display: none;
+    }
 
 }

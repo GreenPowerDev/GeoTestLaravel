@@ -23,11 +23,11 @@ class WelcomeController extends Controller
             $first_test_item['count'] =sizeof(FreeTest2problem::where('test_id', $free_test[0]->test_id)->get()); 
             $first_test_item['free_id'] = $free_test[0]->test_id;
 
-            if($free_test[0]->test_id == 1){$first_test_item['province'] = '神奈川';}
+            if($free_test[0]->test_id == 1){$first_test_item['province'] = '東京';}
             else if($free_test[0]->test_id == 2){$first_test_item['province'] = '長野';}
             else if($free_test[0]->test_id == 3){$first_test_item['province'] = '名古屋';}
             else if($free_test[0]->test_id == 4){$first_test_item['province'] = '沖縄';}
-            else if($free_test[0]->test_id == 5){$first_test_item['province'] = '東京';}            
+            else if($free_test[0]->test_id == 5){$first_test_item['province'] = '神奈川';}            
             else $first_test_item['province'] = '大阪';
             
             array_push($first_tests, $first_test_item);

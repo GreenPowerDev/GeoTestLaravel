@@ -96,10 +96,6 @@ class FreeTest2problemSeeder extends Seeder
         ]);
         FreeTest2problem::create([
             'test_id'=>'5',
-            'problem_id' => '3'
-        ]);
-        FreeTest2problem::create([
-            'test_id'=>'5',
             'problem_id' => '23'
         ]);
         FreeTest2problem::create([
