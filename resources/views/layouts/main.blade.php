@@ -132,7 +132,7 @@
         <div class="footer_detail">
             <ul><a href="{{route('guide.question')}}" class="footer_links footer_question"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>お問合せ</a></ul>
             <ul><a href="{{route('guide.notice')}}" class="footer_links footer_site" ><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-size:20px;"></i>サイトからのお知らせ</a></ul>
-            <ul><a href="{{route('guide.about_site')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-size:20px; text-align:center"></i>日本地域マイスター<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 検定について</a>
+            <ul><a href="{{route('guide.about_site')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px" aria-hidden="true" style="font-size:20px; text-align:center"></i>日本地域マイスター<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 検定について</a>
                 <li><a href="{{route('guide.site_policy')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>サイトポリシー</a></li>
                 <li><a href="{{route('guide.privacy')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>プライバシーポリシー</a></li></ul>
         </div>

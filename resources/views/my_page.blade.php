@@ -1,10 +1,18 @@
 @extends('layouts.main')
 @section('main-content')
 <link href="{{asset('/css/mypage_style.css')}}" rel='stylesheet'>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<script>
+
+    AOS.init({
+    duration: 1200,
+})
+</script>
     <div class="my_page-top-color"></div>
     <div class="my_page-bottom-color"></div>
-<section class="my_page">
-        <div class="user_information">
+<section class="my_page" >
+        <div class="user_information" data-aos="fade-down">
             <p class="title">あなたの情報</p>
             <p class="user_name">氏名:　<span>{{Auth::user()->name}}</span></p>
             <p class="user_mail_address">メールアドレス:　<span>{{Auth::user()->email}}</span></p>
@@ -40,7 +48,7 @@
             </p>
             <img src="{{asset('img/users/promo_girl.png')}}" class="user-meister">
         </div>
-        <div class="recent_result">
+        <div class="recent_result" data-aos="fade-right">
             <p class="recent_result_title title">最近受けた検定</p>
             <div class="recent_result_detail">
             @foreach ($allowed_tests as $allowed_test)
@@ -80,7 +88,7 @@
             @endforeach
             </div>
         </div>
-        <div class="reservation_list">
+        <div class="reservation_list" data-aos="fade-left">
             <p class="reservation_title title">予約済み検定</p>    
             <div class="reservation_detail">
                 @foreach($allowed_tests as $allowed_test)
@@ -107,7 +115,7 @@
 
             </div>
         </div>
-        <div class="passed_test_list">
+        <div class="passed_test_list" data-aos="fade-up">
             <p class="passed_test_title title">合格済み検定一覧</p>
             <div class="passed_test_detail">
             @foreach ($allowed_tests as $allowed_test)

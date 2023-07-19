@@ -162,7 +162,7 @@ header {
     }
 
     .hamburger p{
-        font-size: 9px;
+        font-size: 10px;
         color: white;
         padding-top: 33px;
     }
@@ -172,7 +172,7 @@ header {
         #menuToggle {
             display: block;
             position: absolute;
-            top: 30px;
+            top: 28px;
             z-index: 1;
             -webkit-user-select: none;
             user-select: none;
@@ -193,9 +193,9 @@ header {
 
         #menuToggle span {
             display: block;
-            width: 27px;
+            width: 30px;
             height: 3px;
-            margin-bottom: 3px;
+            margin-bottom: 8px;
             position: relative;
             background: #cdcdcd;
             border-radius: 3px;
@@ -220,7 +220,7 @@ header {
         }
         #menuToggle input:checked~span {
             opacity: 1;
-            transform: rotate(45deg) translate(5px, -10px);
+            transform: rotate(45deg) translate(10px, -6px);
             background: black;
         }
 
@@ -231,7 +231,7 @@ header {
 
         #menuToggle input:checked~span:nth-last-child(2) {
             opacity: 1;
-            transform: rotate(-45deg) translate(5px, 10px);
+            transform: rotate(-45deg) translate(3px, 13px);
         }
 
         #menu {
@@ -452,9 +452,10 @@ footer{
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding-top: 20px;
     }
-
+    footer{
+        padding-top: 40px;
+    }
 
 
     .top_btns .login{
@@ -479,7 +480,9 @@ footer{
     .copylight{
         font-size: 10px;
     }
-    
+    footer ul{
+        margin-bottom: 0;
+    }
 
 }
 
