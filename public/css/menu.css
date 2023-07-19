@@ -221,7 +221,7 @@ header {
         #menuToggle input:checked~span {
             opacity: 1;
             transform: rotate(45deg) translate(5px, -10px);
-            background: #ef0c0c;
+            background: black;
         }
 
         /* #menuToggle input:checked~span:nth-last-child(3) {
