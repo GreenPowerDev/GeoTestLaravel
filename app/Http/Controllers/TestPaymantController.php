@@ -28,9 +28,8 @@ class TestPaymantController extends Controller
                 'description' => 'Example Charge',
                 'source' => $token,
             ]);
-            
             // Handle successful payment
-            return redirect()->back()->with('message', 'Payment successful!');
+            return redirect()->back()->with('message', 'お支払いが完了しました。!');
         } catch (\Exception $e) {
             // Handle payment error
             return redirect()->back()->with('message', $e->getMessage());
