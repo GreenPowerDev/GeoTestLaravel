@@ -24,11 +24,11 @@
 
         <div class="menubar">
             <a href="{{route('guide.about_site')}}" class="menu-links">日本地域マイスター<br>検定について</a>
-            @if(Auth::check())
+            {{-- @if(Auth::check())
             <a href="{{route('search.area')}}" class="menu-links">
-            @else
+            @else --}}
             <a href="#" style="display: none;">
-            @endif
+            {{-- @endif --}}
             試験エリア一覧</a>
             <a href="{{route('guide.method')}}" class="menu-links">試験内容と受験方法</a>
             <a href="{{route('guide.site_policy')}}" class="menu-links">サイトポリシー</a>

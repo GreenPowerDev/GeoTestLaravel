@@ -195,7 +195,7 @@
 
     @if (Auth::check())
         <section class="search_by_ganre">
-            <p class="search_ganre-title">ジャンルから探す<br><span class="title_space">Search by ganre</span></p>
+            <p class="search_ganre-title">ジャンルから探す<br><span class="title_space">Search by genre</span></p>
             <img src="{{asset('img/users/coming-soon2.png')}}" style="width:100%">
             {{-- <div class="search_ganre-btns">
 
