@@ -15,7 +15,7 @@ class TestPaymantController extends Controller
         $id = $request->id;
         $test_price = Test::find($id)->price;
         
-        dd($test_price);
+        //dd($test_price);
         if(!$request->agree){
             return redirect()->route('test.apply', $id) ;
         }
@@ -23,7 +23,7 @@ class TestPaymantController extends Controller
         $this->charge($id, $test_price);
     }
 
-    public function charge($id, $test_price)
+    public function payment_charge()
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
