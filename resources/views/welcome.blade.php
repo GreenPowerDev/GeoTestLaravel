@@ -285,7 +285,7 @@
             ];
         }
         $('#top_screen_id').vegas({
-            overlay: true,
+            //overlay: true,
             transition: 'blur',
             transitionDuration: 2000,
             delay: 10000,
