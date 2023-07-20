@@ -73,12 +73,12 @@
     }
 }
 @media only screen and (max-width:768px) {
-    .mainvisual{
+    /* .mainvisual{
         padding-top: 60px;
     }
     .mainvisual img{
         height: calc(100vh - 60px);
-    }
+    } */
     .question_main{
         font-size: 40px;
     }

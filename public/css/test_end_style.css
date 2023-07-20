@@ -88,12 +88,12 @@
     .end_field{
         width: 100%;
     }
-    .mainvisual{
+    /* .mainvisual{
         padding-top: 60px;
     }
     .mainvisual img{
         height: calc(100vh - 60px);
-    }
+    } */
     .to-top_page, .to-register_page{
         font-size: 25px;
         padding: 20px 25px;

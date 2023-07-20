@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{asset('/css/pagination_style.css')}}">
 <nav>
-    <ul class="pagination">
+    <ul class="pagination" style="padding-left:0;">
     <script>
      var serach_word = $("#area_search_input").val();
     </script>
