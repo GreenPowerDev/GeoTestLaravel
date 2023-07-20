@@ -19,6 +19,30 @@ class TestPaymantController extends Controller
         if(!$request->agree){
             return redirect()->route('test.apply', $id) ;
         }
-        return redirect()->route('reserve.add',['id'=>$id]);
+        // return redirect()->route('reserve.add',['id'=>$id, 'test_price'=>$test_price]);
+        $this->charge($id, $test_price);
+    }
+
+    public function charge($id, $test_price)
+    {
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+
+        $token = $request->input('stripeToken');
+        $amount = $test_price; // Amount in cents
+
+        try {
+            $charge = Charge::create([
+                'amount' => $amount,
+                'currency' => 'jpy',
+                'description' => 'Example Charge',
+                'source' => $token,
+            ]);
+
+            // Handle successful payment
+            return redirect()->back()->with('message', 'Payment successful!');
+        } catch (\Exception $e) {
+            // Handle payment error
+            return redirect()->back()->with('message', $e->getMessage());
+        }
     }
 }
