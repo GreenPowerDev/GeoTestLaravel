@@ -4,6 +4,16 @@
 <section class="terms_use">
 <form action="{{route('payment.apply')}}" method="POST" > 
 @csrf
+<script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{ env('STRIPE_KEY') }}"
+    data-amount="1000"
+    data-name="Example Site"
+    data-description="Example charge"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-currency="jpy">
+</script>
 <input type="hidden" value='{{$test->id}}' name="id">
         <p class="terms_title">試験お申込みに対する<br class="sp-lp">利用規約</p> 
         <div class="terms_context">
