@@ -25,6 +25,7 @@
     font-weight: normal;
 }
 li{
+    font-weight: normal;
     padding: 5px 0;
 }
 @media only screen and (max-width:1280px) {
