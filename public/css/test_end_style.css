@@ -53,6 +53,8 @@
     margin-top: 94px;
     text-align: center;
     font-weight: 600;
+    display: none;
+
 }
 .to-register_page{
     margin: 0 auto;

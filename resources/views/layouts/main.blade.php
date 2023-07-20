@@ -27,7 +27,7 @@
             @if(Auth::check())
             <a href="{{route('search.area')}}" class="menu-links">
             @else
-            <a href="#" style="color:grey;pointer-events: none;">
+            <a href="#" style="display: none;">
             @endif
             試験エリア一覧</a>
             <a href="{{route('guide.method')}}" class="menu-links">試験内容と受験方法</a>
