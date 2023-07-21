@@ -51,5 +51,5 @@
         </div>
     @endif
     </section>
-
+ <a href="{{route('welcome_page')}}" id="top-page"><p>トップページへ</p> </a>
 @endsection

@@ -380,6 +380,9 @@
 @media only screen and (max-width:768px) {
     .free_test-part{
         width: 100%;
+        border: 15px solid #13AE6A;
+        margin-bottom: 70px;
+
     }
     .test_free_test-title{
         font-size: 30px;
@@ -519,6 +522,8 @@
 @media only screen and (max-width:767px) {
     .test_area{
         width: 100%;
+        border: 15px solid #13AE6A;
+        margin-bottom: 70px;
     }
     .to_area-list-btn{
         font-size: 20px;
@@ -881,12 +886,12 @@
     }
     
     .top_notices-modal a {
-        padding: 15px;
+        padding: 10px;
         background-color: #13AE6A;
         display: inline-block;
         color: white;
         border-radius: 50%;
-        font-size: 25px;
+        font-size: 15px;
         text-align: center;
     }
     .top_notices-modal a:hover {
