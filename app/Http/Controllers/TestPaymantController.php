@@ -15,7 +15,7 @@ class TestPaymantController extends Controller
         if(!Auth::check()) return redirect()->route('_login');
         $id = $request->id;
         if(!$request->agree){
-            return redirect()->route('test.apply', $id) ;
+            return redirect()->route('test.apply', $id)->with('waringmessage', 'お支払いはキャンセルされました。利用規約に同意してください。') ;
         }
         Stripe::setApiKey(env('STRIPE_SECRET'));
         $token = $request->input('stripeToken');
@@ -29,7 +29,7 @@ class TestPaymantController extends Controller
                 'source' => $token,
             ]);
             // Handle successful payment
-            return redirect()->back()->with('message', 'お支払いが完了しました。!');
+            return redirect()->route('welcome_page')->with('message', 'お支払いが完了しました。!');
         } catch (\Exception $e) {
             // Handle payment error
             return redirect()->back()->with('message', $e->getMessage());
