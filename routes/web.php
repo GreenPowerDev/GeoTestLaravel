@@ -58,6 +58,7 @@ Route::get('garne/search', [GanreController::class, 'all_ganre_selected'])->name
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
 
 Route::post('payment/apply/', [TestPaymantController::class, 'payment_apply'])->name('payment.apply');
+Route::post('payment/charge/', [TestPaymantController::class, 'payment_charge'])->name('payment.charge');
 
 Route::get('reserve/add/{id}', [ReserveController::class, 'add'])->name('reserve.add');
 

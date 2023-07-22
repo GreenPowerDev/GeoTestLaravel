@@ -27,7 +27,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     position: relative;
 }
 .notice-notepad{
@@ -48,7 +48,7 @@
 .notice_items img{
     width: 280px;
     height: 172px;
-    object-fit: cover;
+    object-fit: content;
 }
 .notice_img{
     margin: 0;

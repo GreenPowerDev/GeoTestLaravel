@@ -58,14 +58,29 @@
     justify-content: center;
     margin-bottom: 150px;
 }
-.to_pay_btn{
-    padding: 28px 184px;
+.stripe-button-el{
+    padding: 15px 100px;
     background-color: #13AE6A;
     color: white;
     font-size: 40px;
     border-radius: 26px;
     font-weight: bold;
     border: none;
+    background-image: none;
+}
+.stripe-button-el span{
+    background-image: none;
+    background: none;
+    box-shadow: none;
+    font-size: 35px;
+}
+.stripe-button-el:hover{
+    border: 2px solid #13AE6A;
+    background-color: white;
+}
+.stripe-button-el:hover span{
+    background-color: white;
+    color: #13AE6A;
 }
 @media only screen and (max-width:1440px) {
     .terms_use, .application_flow{
@@ -76,7 +91,7 @@
     }
 }
 @media only screen and (max-width:1024px) {
-    .to_pay_btn{
+    .stripe-button-el{
         font-size: 30px;
         padding: 20px 80px;
     }
@@ -119,7 +134,7 @@
         padding: 20px;
         margin-bottom: 50px;
     }
-    .to_pay_btn{
+    .stripe-button-el{
         font-size: 25px;
         padding: 10px 50px;
     }
