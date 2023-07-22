@@ -522,7 +522,6 @@
 @media only screen and (max-width:767px) {
     .test_area{
         width: 100%;
-        border: 15px solid #13AE6A;
         margin-bottom: 70px;
     }
     .to_area-list-btn{
@@ -927,9 +926,9 @@
     /* bottom: 0; */
     margin: auto;
     overflow: hidden;
-  }
-  
-  #slider-scroller {
+}
+
+#slider-scroller {
     position: absolute;
     top: 0;
     left: 0;
@@ -939,18 +938,18 @@
   }
   
   .slider-item {
-    width: 260px;
-    height: 160px;
+      width: 260px;
+      height: 160px;
     display: inline-block;
     margin: 0px;
     position: relative;
-  }
-  
-  .slider-item img {
+}
+
+.slider-item img {
     position: absolute;
     max-width: 250px;
     height: 150px;
-  }
+}
 
 
 #slider-right-container {
@@ -961,30 +960,79 @@
     bottom: 0;
     margin: auto;
     overflow: hidden;
-  }
-  
-  #slider-right-scroller {
+}
+
+#slider-right-scroller {
     position: absolute;
     right: 0;
     bottom: 0;
     transition: all 1s ease;
     display: flex;
     overflow: hidden;
-  }
-  
-  .slider-right-item {
+}
+
+.slider-right-item {
     width: 260px;
     height: 160px;
     display: inline-block;
     margin: 0px;
     position: relative;
-  }
-  
-  .slider-right-item img {
+}
+
+.slider-right-item img {
     position: absolute;
     max-width: 250px;
     height: 150px;
-  }
-  footer{
+}
+footer{
     margin-top: 100px;
-  }
+}
+/* ------------------------coming soon-------------------- */
+.test_area{
+    padding-bottom: 50px;
+}
+.search_by_ganre{
+    padding-bottom: 50px;
+}
+.animation {
+    height: 800px;
+    animation-name: graphic;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin: 0 auto;
+}
+.search_ganre-btns.animation{
+    background-position: top;
+}
+
+@keyframes graphic {
+    0%   {background-image: url(../img/users/coming-soon1.png)}
+    25%  {background-image: url(../img/users/coming-soon2.png)}
+    50%  {background-image: url(../img/users/coming-soon3.png)}
+    75%  {background-image: url(../img/users/coming-soon4.png)}
+    100% {background-image: url(../img/users/coming-soon1.png)}
+}
+
+@media only screen and (max-width:1440px) {
+    .animation{
+        height: 500px;
+    }
+}
+@media only screen and (max-width:900px) {
+    .animation{
+        height: 400px;
+    }
+}
+@media only screen and (max-width:768px) {
+    .animation{
+        height: 300px;
+    }
+}
+@media only screen and (max-width:545px) {
+    .animation{
+        height: 200px;
+    }
+}

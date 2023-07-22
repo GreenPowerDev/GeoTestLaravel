@@ -235,22 +235,22 @@
                                 <div id="submenu-31" class="collapse submenu" style="">
                                     <ul clas="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 1])}}">グルメ</a>
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 1])}}">東京</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 2])}}">歴史</a>
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 2])}}">長野</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 3])}}">観光</a>
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 3])}}">名古屋</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 4])}}">市町村</a>
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 4])}}">沖縄</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 5])}}">産業</a>
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 5])}}">神奈川</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 6]) }}">***</a>
+                                            <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 6]) }}">大阪</a>
                                         </li>
                                     </ul>
                                 </div>

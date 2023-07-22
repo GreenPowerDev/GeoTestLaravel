@@ -14,7 +14,7 @@ class WelcomeController extends Controller
     //
     public function index(){
         $provinces = Province::take(4)->get();
-        $free_tests = FreeTest2problem::all()->groupBy('test_id');
+        $free_tests = FreeTest2problem::orderBy('test_id')->get()->groupBy('test_id');
         $first_tests = [];
         foreach($free_tests as $free_test){
             $first_test_item = [];
@@ -41,6 +41,6 @@ class WelcomeController extends Controller
         $notices = Notice::where('notice_date', '<=', $currentTime)
                         ->orderByDesc('notice_date')
                         ->get();
-        return view('welcome', ['provinces'=>$provinces, 'ganres'=>$ganres, 'notices'=>$notices, 'first_tests'=>$first_tests    ] );
+        return view('welcome', ['provinces'=>$provinces, 'ganres'=>$ganres, 'notices'=>$notices, 'first_tests'=>$first_tests] );
     }
 }

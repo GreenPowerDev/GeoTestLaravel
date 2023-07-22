@@ -137,7 +137,7 @@
                 <li><a href="{{route('guide.privacy')}}" class="footer_links"><i class="fa fa-location-arrow" style="padding-right:10px"  aria-hidden="true" style="font-size:20px;"></i>プライバシーポリシー</a></li></ul>
         </div>
         <div class="copylight">
-            <p>© <script>document.write(new Date().getFullYear())</script>総合検定研究所</p>
+            <p>©<script>document.write(new Date().getFullYear())</script> 総合検定研究所</p>
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
