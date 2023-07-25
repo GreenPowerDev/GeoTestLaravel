@@ -171,6 +171,9 @@
                                             <a class="nav-link" href="{{route('admin.user.view')}}">ユーザー一覧</a>
                                         </li>
                                         <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.user.payment')}}">決済状態</a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.user.question')}}">お客様お問い合わせ一覧</a>
                                         </li>
                                     </ul>

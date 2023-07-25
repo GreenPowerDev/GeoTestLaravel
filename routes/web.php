@@ -103,6 +103,7 @@ Route::post('admin/notice/picture_upload', [AdminEditController::class, 'notice_
 
 
 Route::get('admin/user/view', [AdminEditController::class, 'user_view'])->name('admin.user.view');
+Route::get('admin/user/payment', [AdminEditController::class, 'user_payment'])->name('admin.user.payment');
 Route::get('admin/user/delete/{id}', [AdminEditController::class, 'user_delete'])->name('admin.user.delete');
 Route::get('admin/user/question', [AdminEditController::class, 'user_question'])->name('admin.user.question');
 Route::post('admin/user/question/reply', [AdminEditController::class, 'user_question_reply'])->name('admin.user.reply');

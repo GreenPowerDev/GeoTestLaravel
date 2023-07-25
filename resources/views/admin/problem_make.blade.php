@@ -52,7 +52,10 @@
                         </div>    
                     </div>
                     <div class="border-top">
-                        <div id="pre_answer_home" class="form-group row d-flex">
+                        <p>答えを入力してから追加ボタンをクリックすることを忘れないでください。</p>
+                        <div class="form-group row d-flex"  id="pre_answer_home">
+
+                       
                             <label for="pre_answer" class="col-12 col-sm-3 col-form-label text-sm-right ">予想答え</label>
                             <div class="col-12 col-sm-8 col-lg-6">
                                 <input type="text" id="pre_answer_each" class = "form-control form-control-lg">
@@ -130,12 +133,13 @@
             var snd_correct_answers;
             var pstyle_set = document.getElementById("pstyle_set");
             var pstyle_detail = document.getElementById("pstyle_detail");
-            var pre_answer_home = document.getElementById("pre_answer");
+            var pre_answer_home = document.getElementById("pre_answer_home");
             var i = 0; var j=0;
             function pstyle(){
+                
                 pstyle_id = document.getElementById("pstyle_id").value;
                 if(pstyle_id == 1){pstyle_name = "'ラジオ"}
-                else if(pstyle == 2){pstyle_name = "チェックボックス"}
+                else if(pstyle_id == 2){pstyle_name = "チェックボックス"}
                 else{pstyle_name = "インフット"}
                 
                 problem_text = document.getElementById("problem_text").value;
@@ -152,7 +156,7 @@
 
                 pstyle_set.style.display = "none";
                 pstyle_detail.style.display = "block";
-                if(pstyle_id == 3){pre_answer_home.style.display = "none";}
+                if(pstyle_id == 3){pre_answer_home.setAttribute('style', 'display:none !important');}
             }
 
             function add_preanswer(){

@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Stripe\Stripe;
 use Stripe\Charge;
 use App\Models\Test;
+use App\Models\Payment;
+use Carbon\Carbon;
 
 class TestPaymantController extends Controller
 {
@@ -28,6 +30,12 @@ class TestPaymantController extends Controller
                 'description' => 'Example Charge',
                 'source' => $token,
             ]);
+            $payment = new Payment();
+            $payment->test_id = Test::find($id)->name;
+            $payment->user_id = Auth::user()->name;
+            $payment->price = $amount;
+            $payment->test_date = Carbon::today();
+            $payment->save();
             // Handle successful payment
             return redirect()->route('welcome_page')->with('message', 'お支払いが完了しました。!');
         } catch (\Exception $e) {
