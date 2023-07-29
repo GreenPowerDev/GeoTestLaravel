@@ -21,7 +21,8 @@
                     <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">ジャンル名</th>
+                            <th scope="col">地域名</th>
+                            <th scope="col">県名</th>
                             <th scope="col">画像</th>
                             <th scope="col"></th>
                         </tr>
@@ -35,11 +36,12 @@
                         @foreach ($provinces as $province)
                         <tr>
                             <th scope="row">{{++$i}}</th>
+                            <td>{{$province->region_name}}</td>
                             <td>{{$province->name}}</td>
                             <td><img class="embed-img" src="{{$province->img_url}}" alt=""></td>
                             <td>
                                 <a class="btn btn-outline-primary" href="{{route('admin.prefecture.edit', ['id'=>$province->id])}}">編集</a>
-                                <a  class="btn btn-outline-dark"  href="{{route('admin.prefecture.delete', ['id'=>$province->id])}}">削除</a>
+                                {{-- <a  class="btn btn-outline-dark"  href="{{route('admin.prefecture.delete', ['id'=>$province->id])}}">削除</a> --}}
                             </td>
                         </tr>
 

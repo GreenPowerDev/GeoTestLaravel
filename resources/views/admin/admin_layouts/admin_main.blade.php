@@ -170,9 +170,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.user.view')}}">ユーザー一覧</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{route('admin.user.payment')}}">決済状態</a>
-                                        </li>
+                                        
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.user.question')}}">お客様お問い合わせ一覧</a>
                                         </li>
@@ -201,17 +199,17 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fas fa-chart-area"></i>県名編集</a>
-                                <div id="submenu-2" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
+                                <a class="nav-link" href="{{route('admin.prefecture.view')}}" ><i class="fas fa-chart-area"></i>県名編集</a>
+                                {{-- <div id="submenu-2" class="collapse submenu" style=""> --}}
+                                    {{-- <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.prefecture.new')}}">新規作成</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.prefecture.view')}}">県名一覧</a>
                                         </li>
-                                    </ul>
-                                </div>
+                                    </ul> --}}
+                                {{-- </div> --}}
                                 <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fas fa-indent"></i>ジャンル編集</a>
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
@@ -236,7 +234,7 @@
                                 </div>
                                 <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-31" aria-controls="submenu-4"><i class="fab fa-leanpub"></i>フリー問題</a>
                                 <div id="submenu-31" class="collapse submenu" style="">
-                                    <ul clas="nav flex-column">
+                                    <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 1])}}">東京</a>
                                         </li>
@@ -254,6 +252,20 @@
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('admin.test.free_test', ['id' => 6]) }}">大阪</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-32" aria-controls="submenu-4"><i class=" fas fa-yen-sign"></i>決済統計</a>
+                                <div id="submenu-32" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('admin.user.payment')}}">決済テーブル</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('status.month', ['point_date'=>Carbon\Carbon::now()->format('Y-m-d')])}}">月別表示</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('status.date', ['point_date'=>Carbon\Carbon::now()->format('Y-m-d')]) }}">日別表示</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -303,27 +315,7 @@
             </div>
 
         </div>
-        <!-- ============================================================== -->
-        <!-- end wrapper  -->
-        <!-- ============================================================== -->
     </div>
-    
-    <!-- ============================================================== -->
-    <!-- end main wrapper  -->
-    <!-- ============================================================== -->
-
-    <!-- chart chartist js -->
-    {{-- <script src="{{asset('admin/vendor/charts/chartist-bundle/chartist.min.js')}}"></script>
-    <!-- sparkline js -->
-    <script src="{{asset('admin/vendor/charts/sparkline/jquery.sparkline.js')}}"></script>
-    <!-- morris js -->
-    <script src="{{asset('admin/vendor/charts/morris-bundle/raphael.min.js')}}"></script>
-    <script src="{{asset('admin/vendor/charts/morris-bundle/morris.js')}}"></script>
-    <!-- chart c3 js -->
-    <script src="{{asset('admin/vendor/charts/c3charts/c3.min.js')}}"></script>
-    <script src="{{asset('admin/vendor/charts/c3charts/d3-5.4.0.min.js')}}"></script>
-    <script src="{{asset('admin/vendor/charts/c3charts/C3chartjs.js')}}"></script>
-    <script src="{{asset('admin/libs/js/dashboard-ecommerce.js')}}"></script> --}}
     
 </body>
 </html>
