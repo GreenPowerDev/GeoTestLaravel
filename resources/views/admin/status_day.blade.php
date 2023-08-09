@@ -19,9 +19,8 @@
     <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">決済統計</h5>
-                <div class="card-body">
-                    <div class="card-body border-top d-flex justify-content-center">
+                {{-- <h5 class="card-header">決済統計</h5> --}}
+                    <div class="card-header d-flex justify-content-center align-items-center">
                         <h5>日付に行く</h5>
                         <div class="form-group mx-3">
                             <div class="input-group date" id="datetimepicker4" data-target-input="nearest" >
@@ -32,7 +31,9 @@
                             </div>
                         </div>
                     </div>
-                    <div id="morris_totalrevenue"></div>
+                <div class="card-body">
+                    <div id="morris_totalrevenue">
+                    </div>
                 </div>
                 <div class="card-footer">
                     <p class="display-7 font-weight-bold"><span class="text-primary d-inline-block" id='dis_price'>{{$dis_price}}
@@ -52,11 +53,15 @@
         Morris.Area({
             element: 'morris_totalrevenue',
             behaveLikeLine: true,
+            pointFillColor: '#ff0000',
+
+        
             data: [
                 @foreach ($totals as $key=>$price)
                     { x: "{{ $key }}", y: {{$price}}, } , 
                 @endforeach
             ],
+
             xkey: 'x',
             ykey: 'y',
             xkeys: ['x'],
@@ -92,6 +97,7 @@
                             labels: ['￥'],
                             lineColors: ['#5969ff'],
                             resize: true
+
                         });
                     }           
                 });

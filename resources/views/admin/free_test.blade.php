@@ -37,7 +37,7 @@
                         <div id="accordion2">
 
                             @foreach($problems as $problem)
-                            <div class="card" style="{{$problem->selected_flag($test)}}">
+                            <div class="card" style="{{$problem->selected_flag($test_id)}}">
                                 <div class="card-header" id="headingFour">
                                     <h5 class="mb-0">
                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour_{{$problem->id}}" aria-expanded="false" aria-controls="collapseFour_{{$problem->id}}">
@@ -77,12 +77,9 @@
                             <div class="section-block">
                                 <h5 class="section-title">試験</h5>
                             </div>
-                            <input type="hidden" name="sel_test_id" id="sel_test_id" value="{{$test->test_id}}">
+                            <input type="hidden" name="sel_test_id" id="sel_test_id" value="{{$test_id}}">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend"><span class="input-group-text">試験情報</span></div>
-                                <input type="text" placeholder="" class="form-control" id="sel_test_state" 
-                                value=" ジャンル：{{$test->free_test_id($test->test_id)}}" 
-                                readonly>
                             </div>
                             
                         
@@ -116,7 +113,10 @@
                         <div class="accrodion-regular hx-500">
                             <div id="accordion3">
                                 @foreach($problems as $problem)
+                                @foreach ($tests as $test)
+                                    
                                 @if($problem->selected_free_num($test->problem_id))
+
                                 <div class="card">
                                     <div class="card-header" id="headingSeven">
                                         <h5 class="mb-0">
@@ -138,6 +138,8 @@
                                     </div>
                                 </div>
                                 @endif
+                                @endforeach
+
                                 @endforeach
 
 

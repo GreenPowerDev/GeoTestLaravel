@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Test2problem;
-
+use App\Models\FreeTest2problem;
 class Problem extends Model
 {
     use HasFactory;
@@ -42,6 +42,13 @@ class Problem extends Model
             'problem_id'=>$this->id
         ])->first();
         return (is_null($tp_test2problem)) ? "display:block;" : "display:none;";
+    }
+    public function free_selected_flag($test_id){
+        $tp_freetest2problem = FreeTest2problem::where([
+            'test_id'=>$test_id,
+            'problem_id'=>$this->id
+        ])->first();
+        return (is_null($tp_freetest2problem)) ? "display:block;" : "display:none;";
     }
     public function selected_flag_num($test_id){
         $tp_test2problem = Test2problem::where([

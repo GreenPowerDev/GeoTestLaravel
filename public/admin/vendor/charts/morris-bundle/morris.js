@@ -1241,6 +1241,7 @@ Licensed under the BSD-2-Clause License.
     };
 
     Line.prototype.drawLinePoint = function(xPos, yPos, pointColor, lineIndex) {
+      console.log(this.raphael.circle(xPos, yPos, this.pointSizeForSeries(lineIndex)).attr('fill', 'red').attr('stroke-width', this.pointStrokeWidthForSeries(lineIndex)).attr('stroke', this.pointStrokeColorForSeries(lineIndex)));
       return this.raphael.circle(xPos, yPos, this.pointSizeForSeries(lineIndex)).attr('fill', pointColor).attr('stroke-width', this.pointStrokeWidthForSeries(lineIndex)).attr('stroke', this.pointStrokeColorForSeries(lineIndex));
     };
 

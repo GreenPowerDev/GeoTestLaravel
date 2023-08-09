@@ -16,13 +16,14 @@ class FreeTestController extends Controller
     public function free_test($id){
         if(!Auth::check()) return redirect()->route('_login');
         $problems = Problem::all();
-        $test = FreeTest2problem::find($id);
-        if(!$test){
-            $test = new FreeTest2problem();
-            $test->test_id = $id;
-        }
+        $tests = FreeTest2problem::where('test_id', $id)->get();
 
-        return view('admin.free_test', ['test'=>$test, 'problems'=>$problems]);
+        // if(!$test){
+        //     $test = new FreeTest2problem();
+        //     $test->test_id = $id;
+        // }
+
+        return view('admin.free_test', ['test_id'=>$id, 'tests'=>$tests, 'problems'=>$problems]);
     }
 
     public function free_test_problem(Request $request){

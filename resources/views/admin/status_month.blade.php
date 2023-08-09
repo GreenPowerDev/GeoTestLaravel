@@ -19,9 +19,8 @@
     <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">決済統計</h5>
-                <div class="card-body">
-                    <div class="card-body border-top d-flex justify-content-center">
+                {{-- <h5 class="card-header">決済統計</h5> --}}
+                    <div class="card-header border-top d-flex justify-content-center">
                         <h5>月に行く</h5>
                         <div class="form-group  mx-3">
                             <div class="input-group date" id="datetimepicker11" data-target-input="nearest">
@@ -32,6 +31,7 @@
                             </div>
                         </div>
                     </div>
+                <div class="card-body">
                     <div id="morris_totalrevenue"></div>
                 </div>
                 <div class="card-footer">
