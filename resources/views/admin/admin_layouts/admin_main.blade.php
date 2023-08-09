@@ -232,7 +232,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-31" aria-controls="submenu-4"><i class="fab fa-leanpub"></i>フリー問題</a>
+                                <a class="nav-link" href="" data-toggle="collapse" aria-expanded="false" data-target="#submenu-31" aria-controls="submenu-4"><i class="fab fa-leanpub"></i>フリー検定</a>
                                 <div id="submenu-31" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">

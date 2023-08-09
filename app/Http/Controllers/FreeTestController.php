@@ -17,12 +17,6 @@ class FreeTestController extends Controller
         if(!Auth::check()) return redirect()->route('_login');
         $problems = Problem::all();
         $tests = FreeTest2problem::where('test_id', $id)->get();
-
-        // if(!$test){
-        //     $test = new FreeTest2problem();
-        //     $test->test_id = $id;
-        // }
-
         return view('admin.free_test', ['test_id'=>$id, 'tests'=>$tests, 'problems'=>$problems]);
     }
 
