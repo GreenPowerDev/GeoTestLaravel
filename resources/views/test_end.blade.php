@@ -33,6 +33,16 @@
     @if(!Auth::check())
         <div class="end_field">
             <p class="end_title">お疲れ様でした！</p>
+            <p class="end_context">あなたの試験結果は &nbsp
+            @foreach ($indivi_scores as $i=>$score)
+                @if ($i == 4)
+                    <span style="color:#00ffff">{{$i+1}}</span> - <span style="color:#00f58a">{{$score}}</span>  &nbsp
+                @else
+                    <span style="color:#00ffff">{{$i+1}}</span> - <span style="color:#00f58a">{{$score}}</span> , &nbsp
+                @endif
+                    
+            @endforeach
+            です。</p>
             <p class="end_context">あなたのスコアは<span style="font-size: 40px; padding:10px; color:red;"> {{$avg_score}}</span>点です。<br>
             楽しかったですか？<br>
                 「無料会員登録」をすると、今後<br>

@@ -100,7 +100,7 @@
                             <div class="menu_items">
                                 <a href="{{ route('guide.privacy')}}"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:20px"></i>プライバシーポリシー</a></div>
                         </div>
-                            <div class="menu_items-setting">
+                        <div class="menu_items-setting">
                              @if(Auth::check())
 
                                 <a class="button logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
@@ -115,7 +115,7 @@
                 
                             @endif
 
-                            </div>
+                        </div>
                     </ul>
                 </div>
                 <p>メニュー</p>

@@ -82,7 +82,6 @@ class TestProblemController extends Controller
         $total_score = array_sum($mark_total);
         $avg_score = round($total_score/$total_problem_count, 2);
         $pass_state = ($avg_score > 8)? "合格" : "不合格";
-        
         if(Auth::check()) {
             $passed = new Passed();
             $passed->state = $pass_state;
@@ -90,11 +89,11 @@ class TestProblemController extends Controller
             $passed->save();
             
             $this->end_mail_send($test_id, $avg_score, $pass_state);
-
+            
             return view('test_end');
         }
         if(!Auth::check()){
-            return view('test_end', ['avg_score'=>$avg_score, 'pass_state'=>$pass_state]);
+            return view('test_end', ['avg_score'=>$avg_score, 'pass_state'=>$pass_state, 'indivi_scores'=>$mark_total]);
         }}
         else{
             return view('method');
