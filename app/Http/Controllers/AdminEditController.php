@@ -7,6 +7,7 @@ use App\Models\Notice;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\UserQuestion;
+use App\Models\Payment;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\QAMail;
 use Mail;
@@ -201,6 +202,13 @@ class AdminEditController extends Controller
         
         $users = User::all();
         return view('admin.user.view', ['users'=>$users]);
+    }
+    public function user_payment(){
+        if(!Auth::check()) return redirect()->route('_login');
+        if(Auth::user()->user_role != 1) return redirect()->route('home');
+        
+        $user2payments = Payment::all();
+        return view('admin.payment', ['user2payments'=>$user2payments]);
     }
     
     public function user_delete($id){

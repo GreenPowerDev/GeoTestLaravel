@@ -44,7 +44,7 @@
                     <input type="hidden" id="time_value_{{$i}}" value="{{$problem_id->problem->problem_time}}">
                     <div class="answer_no">答</div>
                     <div class="answer_number">残り時間： <span id="time_text_{{$i}}"> </span> </div>
-                    <img class="answer-clock" src="{{asset('img/users/clock.png')}}">
+                    {{-- <img class="answer-clock" src="{{asset('img/users/clock.png')}}"> --}}
                 </div>
                 <div class="answer_detail">
                     @php

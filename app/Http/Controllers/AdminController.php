@@ -195,13 +195,16 @@ class AdminController extends Controller
         
         $problem->pstyle = $request->snd_pstyle_id;
         $problem->answer_text = $request->snd_problem_text;
-        $problem->pre_answer = $request->snd_pre_answers;
+        if($request->snd_pstyle_id == 3){
+            $problem->pre_answer = '';}
+        else{
+            $problem->pre_answer = $request->snd_pre_answers;}
         $problem->correct_answer = $request->snd_correct_answers;
         $problem->province_num = $snd_province_id;
         $problem->ganre_num = $snd_ganre_id;
         $problem->level_num = $snd_level_id;
         $problem->problem_time = $snd_problem_time;
-
+            dd($problem);
         $problem->save();
 
         return redirect()->route('admin.test.problem_make');

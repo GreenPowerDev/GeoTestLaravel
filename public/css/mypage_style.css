@@ -33,9 +33,10 @@
 
 .user-meister{
     position: absolute;
-    right: 0;
+    right: 20px;
     top: -20px;
-    height: 150px;
+    height: 210px;
+    transform: scaleX(-1);
 }
 .user_information p{ 
     margin: 0;
@@ -121,14 +122,15 @@
         width: 90%;
         padding-top: 120px;
     }
-}
-@media only screen and (max-width:1024px) {
     .my_page-top-color{
-        height: 940px;
+        height: 1024px;
     }
     .my_page-bottom-color{
-        top: 940px;
+        top: 1024px;
     }
+}
+
+@media only screen and (max-width:1024px) {
     
     .user_lists{
         justify-content: center;
@@ -147,9 +149,24 @@
         height: 400px;
     }
 
-}
+    .my_page-top-color{
+        height: 960px;
+    }
+    .my_page-bottom-color{
+        top: 960px;
+    }
 
+}
+@media only screen and (max-width:980px) {
+    
+}
 @media only screen and (max-width:768px) {
+    .my_page-top-color{
+        height: 880px;
+    }
+    .my_page-bottom-color{
+        top: 880px;
+    }
     .title{
         font-size: 30px;
     }   
@@ -186,11 +203,11 @@
     }
 }
 @media only screen and (max-width:530px) {
-    .my_page{
-        padding: 0px;
-        padding-top: 60px;
+    /* .my_page{ */
+        /* padding: 0px; */
+        /* padding-top: 60px; */
         
-    }
+    /* } */
     .user_information{
         padding: 10px;
     }

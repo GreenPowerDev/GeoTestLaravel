@@ -251,11 +251,10 @@
         overflow-y: auto;
     }
     #accordion3{
-        display: flex;
-        flex-wrap: wrap;
+
     }
     #accordion3 .card{
-        width: 50%;
+
     }
     .temp-problem{
         display: none;

@@ -135,14 +135,14 @@
         padding: 10px
     }
 }
-@media only screen and (max-width:768px) {
+/* @media only screen and (max-width:768px) {
     .prefecture_img img{
         height: calc(100vh - 60px);
     }
     .prefecture_img{
         padding-top: 60px;
     }
-}
+} */
 @media only screen and (max-width:460px) {
     .recent_detail p, .ganre_detail p {
         font-size: 15px;

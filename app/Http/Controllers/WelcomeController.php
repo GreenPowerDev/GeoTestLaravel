@@ -14,7 +14,7 @@ class WelcomeController extends Controller
     //
     public function index(){
         $provinces = Province::take(4)->get();
-        $free_tests = FreeTest2problem::all()->groupBy('test_id');
+        $free_tests = FreeTest2problem::orderBy('test_id')->get()->groupBy('test_id');
         $first_tests = [];
         foreach($free_tests as $free_test){
             $first_test_item = [];
@@ -23,11 +23,11 @@ class WelcomeController extends Controller
             $first_test_item['count'] =sizeof(FreeTest2problem::where('test_id', $free_test[0]->test_id)->get()); 
             $first_test_item['free_id'] = $free_test[0]->test_id;
 
-            if($free_test[0]->test_id == 1){$first_test_item['province'] = '神奈川';}
+            if($free_test[0]->test_id == 1){$first_test_item['province'] = '東京';}
             else if($free_test[0]->test_id == 2){$first_test_item['province'] = '長野';}
             else if($free_test[0]->test_id == 3){$first_test_item['province'] = '名古屋';}
             else if($free_test[0]->test_id == 4){$first_test_item['province'] = '沖縄';}
-            else if($free_test[0]->test_id == 5){$first_test_item['province'] = '東京';}            
+            else if($free_test[0]->test_id == 5){$first_test_item['province'] = '神奈川';}            
             else $first_test_item['province'] = '大阪';
             
             array_push($first_tests, $first_test_item);
@@ -41,6 +41,6 @@ class WelcomeController extends Controller
         $notices = Notice::where('notice_date', '<=', $currentTime)
                         ->orderByDesc('notice_date')
                         ->get();
-        return view('welcome', ['provinces'=>$provinces, 'ganres'=>$ganres, 'notices'=>$notices, 'first_tests'=>$first_tests    ] );
+        return view('welcome', ['provinces'=>$provinces, 'ganres'=>$ganres, 'notices'=>$notices, 'first_tests'=>$first_tests] );
     }
 }

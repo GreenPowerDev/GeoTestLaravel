@@ -53,6 +53,8 @@
     margin-top: 94px;
     text-align: center;
     font-weight: 600;
+    display: none;
+
 }
 .to-register_page{
     margin: 0 auto;
@@ -79,6 +81,32 @@
 
 }
 
+#top-page{
+    display: inline-block;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+#top-page p{
+    padding: 10px 15px;
+    color: white;
+    background-color: #232323;
+    font-size: 15px;
+    border-radius: 20px;
+    font-family: "YuGothic";
+}
+#top-page:hover {
+    cursor: pointer;
+}
+#top-page:hover p{
+    color: #13AE6A;
+    opacity: 0.8;
+}
+
+
+
 
 /* ------------------------------------ */
 @media only screen and (max-width:1280px) {
@@ -88,12 +116,12 @@
     .end_field{
         width: 100%;
     }
-    .mainvisual{
+    /* .mainvisual{
         padding-top: 60px;
     }
     .mainvisual img{
         height: calc(100vh - 60px);
-    }
+    } */
     .to-top_page, .to-register_page{
         font-size: 25px;
         padding: 20px 25px;

@@ -5,17 +5,17 @@
 
 *::-webkit-scrollbar {
     width: 10px;
-  }
+}
 
-  *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: #ffffff;
-  }
+}
 
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: #13AE6A;
     border-radius: 15px;
     border: 2px solid #ffffff;
-  }
+}
 
 body {
     max-width: 100%;
@@ -41,6 +41,10 @@ body {
 @font-face {
     font-family: 'HGRME';  
     src: url(../fonts/HGRME_0.TTC);  
+}
+@font-face {
+    font-family: 'YuGothic';  
+    src: url(../fonts/yugothib.ttf);  
 }
 
 /* !-----------------------------tags------------------------------- */
@@ -158,7 +162,7 @@ header {
     }
 
     .hamburger p{
-        font-size: 9px;
+        font-size: 10px;
         color: white;
         padding-top: 33px;
     }
@@ -168,7 +172,7 @@ header {
         #menuToggle {
             display: block;
             position: absolute;
-            top: 30px;
+            top: 28px;
             z-index: 1;
             -webkit-user-select: none;
             user-select: none;
@@ -189,9 +193,9 @@ header {
 
         #menuToggle span {
             display: block;
-            width: 27px;
+            width: 30px;
             height: 3px;
-            margin-bottom: 3px;
+            margin-bottom: 8px;
             position: relative;
             background: #cdcdcd;
             border-radius: 3px;
@@ -216,18 +220,18 @@ header {
         }
         #menuToggle input:checked~span {
             opacity: 1;
-            transform: rotate(45deg) translate(-2px, -1px);
-            background: #232323;
+            transform: rotate(45deg) translate(10px, -6px);
+            background: black;
         }
 
-        #menuToggle input:checked~span:nth-last-child(3) {
+        /* #menuToggle input:checked~span:nth-last-child(3) {
             opacity: 0;
             transform: rotate(0deg) scale(0.2, 0.2);
-        }
+        } */
 
         #menuToggle input:checked~span:nth-last-child(2) {
             opacity: 1;
-            transform: rotate(-45deg) translate(0, -1px);
+            transform: rotate(-45deg) translate(3px, 13px);
         }
 
         #menu {
@@ -312,7 +316,7 @@ header {
     background-color: #232323;
     font-size: 30px;
     border-radius: 20px;
-    font-family: "ComicSansMS3";
+    font-family: "YuGothic";
 }
 #back-to-top:hover {
     cursor: pointer;
@@ -382,25 +386,25 @@ footer{
     color: #8F0D0D;
     cursor: pointer;
 }
-.footer_detail .footer_site, .footer_detail .footer_question{
+/* .footer_detail .footer_site, .footer_detail .footer_question{
     padding-left: 40px;
-}
+} */
 
 /* -----------------resposive(1280)---------------------- */
 @media only screen and (max-width:1279px) {
-    header{
+    /* header{
         height: 60px;
     }
     
-    .top_logo{
-        height: 40px;
-        padding-left: 20px;
-    }
     
     .top_logo img{
         height: 40px;
     }
-    
+    */
+    .top_logo{
+        /* height: 40px; */
+        padding-left: 20px;
+    }
     .menubar{
         width: calc(100% - 200px);
         left: 53%;
@@ -412,29 +416,23 @@ footer{
         
     }
     
-    .squre-btns img{
+    /* .squre-btns img{
         height: 45px;
         width: 45px;
-    }
+    } */
     
-    .footer_logo{
-        height: 30px;
-    }
-    
-    .footer_logo img{
-        height: 40px;
-    }
+
     
     .footer_links{
         font-size: 0.9rem;
     }
 
-    .hamburger p{
+    /* .hamburger p{
         padding-top: 27px;
     }
     #menuToggle {
         top: 20px;
-    }
+    } */
 
 
 }
@@ -448,9 +446,10 @@ footer{
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding-top: 20px;
     }
-
+    footer{
+        padding-top: 40px;
+    }
 
 
     .top_btns .login{
@@ -471,10 +470,25 @@ footer{
     .footer_logo{
         top: 20px;
     }
-
+    .footer_logo{
+        height: 30px;
+    }
+    
+    .footer_logo img{
+        height: 50px;
+    }
     .copylight{
         font-size: 10px;
     }
-    
+    footer ul{
+        margin-bottom: 0;
+    }
+
+}
+
+@media only screen and (max-width:450px) {
+    .squre-btns.logout, .squre-btns.register{
+        display: none;
+    }
 
 }

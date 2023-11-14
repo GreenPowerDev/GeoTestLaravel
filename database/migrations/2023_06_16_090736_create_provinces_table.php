@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('provinces', function (Blueprint $table) {
             $table->id();
+            $table->string('region_name');
             $table->string('name');
             $table->string('img_url');
             $table->timestamps();

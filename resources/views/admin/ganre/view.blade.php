@@ -14,7 +14,7 @@
 @section('main-content')
 <div class="page-content">
     <div class="card main-center">
-        <h5 class="card-header">県名一覧</h5>
+        <h5 class="card-header">ジャンル名一覧</h5>
         <div class="card-body">
             <div class="table-responsive ">
                 <table class="table">

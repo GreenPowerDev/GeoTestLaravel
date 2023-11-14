@@ -9,12 +9,12 @@
     県名編集
 @endsection
 @section('sub-root2')
-    県名編集
+    ジャンル名編集
 @endsection
 @section('main-content')
 <div class="page-content">
     <div class="card main-center">
-        <h5 class="card-header">県名編集</h5>
+        <h5 class="card-header">ジャンル名編集</h5>
         <form method="POST" action="{{route('admin.ganre.save')}}" id="validationform">
             <div class="d-flex my-4 justify-content-around flex-column">
                 @csrf
@@ -24,7 +24,7 @@
                 <input type="hidden" name="ganre_id" id="ganre_id" value="{{$ganre->id}}">
                 @endif
                 <div class="name-area">
-                    <label class="mx-2">県名</label>
+                    <label class="mx-2">ジャンル名</label>
                     <div class="mx-2">
                         <input type="text" required="" class="form-input pl-2" name="add_ganre_name" value="{{$ganre->ganre_name}}">
                     </div>

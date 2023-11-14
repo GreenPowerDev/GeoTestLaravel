@@ -2,25 +2,33 @@
 @section('main-content')
 ​
 <link href="{{asset('/css/area_style.css')}}" rel='stylesheet'>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<script>
+
+    AOS.init({
+    duration: 1200,
+})
+</script>
     <div class="test_area_wrapper">
         <div class="icon_controll">
             <div class="icon1">
-                <img src="{{asset('/img/prefecture/star1.png')}}" alt="アイコン">
+                <img src="{{asset('/img/prefecture/star1.png')}}" alt="アイコン" data-aos="zoom-out">
             </div>
             <div class="icon2">
-                <img src="{{asset('/img/prefecture/star2.png')}}" alt="アイコン">
+                <img src="{{asset('/img/prefecture/star2.png')}}" alt="アイコン" data-aos="zoom-out">
             </div>
             <div class="icon3">
-                <img src="{{asset('/img/prefecture/star1.png')}}" alt="アイコン">
+                <img src="{{asset('/img/prefecture/star1.png')}}" alt="アイコン" data-aos="zoom-out">
             </div>
-            <div class="icon4">
-                <img src="{{asset('/img/prefecture/meister.png')}}" alt="アイコン">
-            </div>
+            {{-- <div class="icon4">
+                <img src="{{asset('/img/prefecture/meister.png')}}" alt="アイコン" data-aos="zoom-out">
+            </div> --}}
             <div class="icon5">
-                <img src="{{asset('/img/prefecture/star1.png')}}" alt="アイコン">
+                <img src="{{asset('/img/prefecture/star1.png')}}" alt="アイコン" data-aos="zoom-out">
             </div>
             <div class="icon6">
-                <img src="{{asset('/img/prefecture/mountain.png')}}" alt="アイコン">
+                <img src="{{asset('/img/prefecture/mountain.png')}}" alt="アイコン" data-aos="zoom-out">
             </div>
         </div>
         <section class="test_area">
@@ -36,7 +44,7 @@
             <div class="test_areas">
                 @if(!empty($tests))
                     @foreach($tests as $test)
-                    <div class="test_area-part">
+                    <div class="test_area-part" data-aos="flip-right">
                         <a href="{{route('prefecture.select', ['id'=>$test->province->id])}}">
                             <div class="area_img">
                                 <p class="area_name">

@@ -58,6 +58,12 @@ Route::get('garne/search', [GanreController::class, 'all_ganre_selected'])->name
 Route::get('test/apply/{id}', [TestController::class, 'apply_test'])->name('test.apply');
 
 Route::post('payment/apply/', [TestPaymantController::class, 'payment_apply'])->name('payment.apply');
+Route::post('payment/charge/', [TestPaymantController::class, 'payment_charge'])->name('payment.charge');
+Route::get('status/month/{point_date}', [TestPaymantController::class, 'get_point_month'])->name('status.month');
+Route::get('status/date/{point_date}', [TestPaymantController::class, 'get_point_date'])->name('status.date');
+Route::get('status/month_chart', [TestPaymantController::class, 'get_point_month_chart'])->name('status.month_chart');
+Route::get('status/date_chart', [TestPaymantController::class, 'get_point_date_chart'])->name('status.date_chart');
+
 
 Route::get('reserve/add/{id}', [ReserveController::class, 'add'])->name('reserve.add');
 
@@ -102,6 +108,7 @@ Route::post('admin/notice/picture_upload', [AdminEditController::class, 'notice_
 
 
 Route::get('admin/user/view', [AdminEditController::class, 'user_view'])->name('admin.user.view');
+Route::get('admin/user/payment', [AdminEditController::class, 'user_payment'])->name('admin.user.payment');
 Route::get('admin/user/delete/{id}', [AdminEditController::class, 'user_delete'])->name('admin.user.delete');
 Route::get('admin/user/question', [AdminEditController::class, 'user_question'])->name('admin.user.question');
 Route::post('admin/user/question/reply', [AdminEditController::class, 'user_question_reply'])->name('admin.user.reply');

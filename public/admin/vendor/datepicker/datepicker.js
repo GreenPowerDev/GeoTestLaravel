@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 
     if ($("#datetimepicker4").length) {
         $('#datetimepicker4').datetimepicker({
-            format: 'YYYY年MM月DD日'
+            format: 'YYYY-MM-DD'
         });
 
     }
@@ -108,7 +108,7 @@ jQuery(document).ready(function($) {
     if ($("#datetimepicker11").length) {
         $('#datetimepicker11').datetimepicker({
             viewMode: 'years',
-            format: 'MM/YYYY'
+            format: 'YYYY-MM'
         });
     }
 
